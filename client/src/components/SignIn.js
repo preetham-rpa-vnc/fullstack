@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Axios from "axios";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -36,7 +37,30 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   const classes = useStyles();
+  const [loginVal, setLoginVal] = useState({
+    username: "",
+    password: "",
+  });
 
+  const handleChange = (text) => (event) => {
+    setLoginVal({ ...loginVal, [text]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    Axios.post(`${process.env.REACT_APP_API_URI}/login`, loginVal)
+      .then((res) => {
+        console.log("res.data", res.data);
+        const { message, status } = res.data;
+        if (status) {
+          alert(message);
+        }
+        alert(message);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  console.log("login values", loginVal);
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -47,17 +71,18 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={handleSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="email"
+            id="username"
             label="User Name"
-            name="email"
-            autoComplete="email"
+            name="username"
+            autoComplete="username"
             autoFocus
+            onChange={handleChange("username")}
           />
           <TextField
             variant="outlined"
@@ -69,6 +94,7 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={handleChange("password")}
           />
           <Button
             type="submit"

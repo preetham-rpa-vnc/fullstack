@@ -35,4 +35,29 @@ module.exports = {
         .catch((err) => console.log("new user addind error", err));
     });
   },
+
+  loginUser: (loginUser) => {
+    console.log(loginUser);
+    const { username, password } = loginUser;
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collection.USER_COLLECTION)
+        .findOne({ username })
+        .then(async (user) => {
+          if (user) {
+            bcrypt.compare(password, user.password).then((resp) => {
+              if (resp) {
+                resolve({ message: "login success", status: true });
+              } else {
+                resolve({ message: "wrong passwored", status: false });
+              }
+            });
+          } else {
+            console.log("user doesn't exist");
+            resolve({ message: "user doesn't exist", status: false });
+          }
+        })
+        .catch((err) => console.log(err));
+    });
+  },
 };

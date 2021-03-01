@@ -15,7 +15,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Axios from "axios";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({ 
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing(3),
   },
   submit: {
@@ -62,7 +62,7 @@ export default function SignUp() {
             alert(`${exuser}, already taken`);
           }
           alert(`${exuser}, Welcome our team`);
-          setFormVal({
+          setFormVal({ 
             ...formVal,
             fname: "",
             lname: "",
