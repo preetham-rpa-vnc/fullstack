@@ -14,5 +14,5 @@ module.exports.connect = () => {
     state.db = data.db(dbName);
   });
 };
-
+ 
 module.exports.get = () => state.db;

@@ -14,6 +14,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import "./SignIn.css";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -22,16 +23,20 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
+  // avatar: {
+  //   margin: theme.spacing(1),
+  //   backgroundColor: theme.palette.secondary.main,
+  // },
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
   },
 }));
 
@@ -41,6 +46,8 @@ export default function SignIn() {
     username: "",
     password: "",
   });
+
+  const { username, password } = loginVal;
 
   const handleChange = (text) => (event) => {
     setLoginVal({ ...loginVal, [text]: event.target.value });
@@ -54,6 +61,7 @@ export default function SignIn() {
         const { message, status } = res.data;
         if (status) {
           alert(message);
+          setLoginVal({ ...loginVal, username: "", password: "" });
         }
         alert(message);
       })
@@ -62,58 +70,68 @@ export default function SignIn() {
 
   console.log("login values", loginVal);
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+    <div id="bodys">
+      <Container component="main" maxWidth="xs" id="container">
+        <CssBaseline />
+        <div className={classes.paper}>
+          {/* <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <form className={classes.form} noValidate onSubmit={handleSubmit}>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="username"
-            label="User Name"
-            name="username"
-            autoComplete="username"
-            autoFocus
-            onChange={handleChange("username")}
+        </Avatar> */}
+          <Avatar
+            alt="Remy Sharp"
+            src="http://pland.farm/bw-assets/bw-img/logo.png"
+            className={classes.image}
+            id="testind"
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={handleChange("password")}
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item>
-              <Link to="/signup" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <form className={classes.form} noValidate onSubmit={handleSubmit}>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="username"
+              label="User Name"
+              name="username"
+              autoComplete="username"
+              autoFocus
+              value={username}
+              onChange={handleChange("username")}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={handleChange("password")}
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item>
+                <Link to="/signup" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
-        </form>
-      </div>
-    </Container>
+          </form>
+        </div>
+      </Container>
+    </div>
   );
 }

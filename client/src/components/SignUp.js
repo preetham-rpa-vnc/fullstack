@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -14,8 +14,9 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Axios from "axios";
+import "./SignUp.css";
 
-const useStyles = makeStyles((theme) => ({ 
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
@@ -62,7 +63,7 @@ export default function SignUp() {
             alert(`${exuser}, already taken`);
           }
           alert(`${exuser}, Welcome our team`);
-          setFormVal({ 
+          setFormVal({
             ...formVal,
             fname: "",
             lname: "",
@@ -82,9 +83,15 @@ export default function SignUp() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        {/* <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
-        </Avatar>
+        </Avatar> */}
+        <Avatar
+          alt="Remy Sharp"
+          src="http://pland.farm/bw-assets/bw-img/logo.png"
+          className={classes.image}
+          id="testind"
+        />
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
@@ -132,6 +139,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                type="number"
                 variant="outlined"
                 required
                 fullWidth
