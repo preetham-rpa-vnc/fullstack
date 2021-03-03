@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Axios from "axios";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -15,6 +15,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import "./SignIn.css";
+import { authenticate, isAuth } from "../helper/authHelper";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignIn({ history }) {
   const classes = useStyles();
   const [loginVal, setLoginVal] = useState({
     username: "",
@@ -60,10 +61,14 @@ export default function SignIn() {
         console.log("res.data", res.data);
         const { message, status } = res.data;
         if (status) {
+          authenticate(res, () => {
+            isAuth() ? console.log("is auth") : console.log("no auth");
+            history.push("/home");
+            setLoginVal({ ...loginVal, username: "", password: "" });
+          });
+        } else {
           alert(message);
-          setLoginVal({ ...loginVal, username: "", password: "" });
         }
-        alert(message);
       })
       .catch((err) => console.error(err));
   };
@@ -71,6 +76,7 @@ export default function SignIn() {
   console.log("login values", loginVal);
   return (
     <div id="bodys">
+      {isAuth() ? <Redirect to="/home" /> : null}
       <Container component="main" maxWidth="xs" id="container">
         <CssBaseline />
         <div className={classes.paper}>

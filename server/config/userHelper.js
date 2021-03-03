@@ -47,7 +47,7 @@ module.exports = {
           if (user) {
             bcrypt.compare(password, user.password).then((resp) => {
               if (resp) {
-                resolve({ message: "login success", status: true });
+                resolve({ user, message: "login success", status: true });
               } else {
                 resolve({ message: "wrong passwored", status: false });
               }

@@ -4,7 +4,8 @@ import Home from "./components/HomePage/Home";
 // import testHome from "./components/HomePage/testHome";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
-import Cards from "./components/HomePage/Cards/Cards"
+import Cards from "./components/HomePage/Cards/Cards";
+import CSSGrid from "./components/HomePage/Cards/grid";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/signup" component={SignUp} />
       <Route path="/home" component={Cards} />
       <Route path="/view" component={ViewItems} />
+      <Route path="/grid" component={CSSGrid} />
     </Router>
   );
 }
