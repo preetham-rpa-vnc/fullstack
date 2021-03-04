@@ -1,8 +1,8 @@
 /* eslint-disable no-use-before-define */
-import React, { Fragment as div } from "react";
+import React, { Fragment as div, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { Box, Button, Grid, makeStyles } from "@material-ui/core";
+import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -31,60 +31,99 @@ const defaultProps = {
 
 export default function ComboBox() {
   const classes = useStyles();
+  const [searchData, setSearchData] = useState({});
+
+  const handleChange = (event) => {
+    console.log("event.targer.value", event.target.innerText);
+    setSearchData({
+      ...searchData,
+      [event.target.innerText]: event.target.innerText,
+    });
+  };
+
+  const handleClick = () => {
+    console.log("last data", searchData);
+  };
+
+  console.log("search data", searchData);
+
   return (
     <div container className={classes.container}>
-      <Box borderRadius={16} {...defaultProps} p={2}>
-        <Grid
-          container
-          spacing={3}
-          alignItems="center"
-          className={classes.searchItems}
-        >
-          <Grid item>
-            <Autocomplete
-              id="combo-box-demo"
-              options={top100Films}
-              getOptionLabel={(option) => option.title}
-              style={{ width: 300 }}
-              renderInput={(params) => (
-                <TextField {...params} label="Combo box" variant="outlined" />
-              )}
-            />
-          </Grid>
-          <Grid item>
-            <Autocomplete
-              id="combo-box-demo"
-              options={top100Films}
-              getOptionLabel={(option) => option.title}
-              style={{ width: 300 }}
-              renderInput={(params) => (
-                <TextField {...params} label="Combo box" variant="outlined" />
-              )}
-            />
-          </Grid>
-          <Grid item>
-            <Autocomplete
-              id="combo-box-demo"
-              options={top100Films}
-              getOptionLabel={(option) => option.title}
-              style={{ width: 300 }}
-              renderInput={(params) => (
-                <TextField {...params} label="Combo box" variant="outlined" />
-              )}
-            />
-          </Grid>
-          <Grid item>
-            <Button
-              variant="outlined"
-              size="large"
-              color="primary"
-              className={classes.margin}
-            >
-              Search
-            </Button>
-          </Grid>
+      <Grid container direction="column" spacing={4}>
+        <Grid item>
+          <Typography variant="h4">Search for seed near you</Typography>
         </Grid>
-      </Box>
+        <Grid item>
+          <Box borderRadius={16} {...defaultProps} p={2}>
+            <Grid
+              container
+              spacing={3}
+              alignItems="center"
+              className={classes.searchItems}
+            >
+              <Grid item>
+                <Autocomplete
+                  id="combo-box-demo"
+                  options={top100Films}
+                  getOptionLabel={(option) => option.title}
+                  style={{ width: 300 }}
+                  onChange={handleChange}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Select Crop"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item>
+                <Autocomplete
+                  id="combo-box-demo"
+                  options={top100Films}
+                  getOptionLabel={(option) => option.title}
+                  style={{ width: 300 }}
+                  onChange={handleChange}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Select Region"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item>
+                <Autocomplete
+                  id="combo-box-demo"
+                  options={top100Films}
+                  getOptionLabel={(option) => option.title}
+                  style={{ width: 350 }}
+                  onChange={handleChange}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Select Distance from current location"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  size="large"
+                  color="primary"
+                  className={classes.margin}
+                  onClick={handleClick}
+                >
+                  Search
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
+        </Grid>
+      </Grid>
     </div>
   );
 }

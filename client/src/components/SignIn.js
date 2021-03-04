@@ -69,7 +69,7 @@ export default function SignIn({ history }) {
         } else {
           alert(message);
         }
-      })
+      }) 
       .catch((err) => console.error(err));
   };
 

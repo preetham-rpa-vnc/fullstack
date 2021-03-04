@@ -16,7 +16,7 @@ import { machinery as allItems } from "../../Items/Items";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 300,
+    width: "100%",
   },
   gridOne: {
     marginTop: theme.spacing(1.3),
