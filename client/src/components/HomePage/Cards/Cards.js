@@ -13,8 +13,9 @@ import FirstBody from "./FirstBody/FirstBody";
 import { machinery } from "../Items/Items";
 import SeachItem from "../SearchItem";
 import LinkIcon from "@material-ui/icons/Link";
-import YouTubeIcon from '@material-ui/icons/YouTube';
+import YouTubeIcon from "@material-ui/icons/YouTube";
 import { Redirect } from "react-router-dom";
+import Axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,6 +69,9 @@ const MediaCard = () => {
   };
 
   useEffect(() => {
+    console.log("machinery", machinery);
+    Axios.post("http://localhost:5000/addallitems", machinery);
+
     setItemData(machinery);
   }, []);
 
@@ -213,13 +217,13 @@ const MediaCard = () => {
                                   color="primary"
                                   size="small"
                                   to={{
-                                    pathname: youtube
-                                      // "https://www.youtube.com/watch?v=nziA33FrhoI",
+                                    pathname: youtube,
+                                    // "https://www.youtube.com/watch?v=nziA33FrhoI",
                                   }}
                                   target="_blank"
                                   onClick={handleLink}
                                 >
-                                  <YouTubeIcon color="error"/>
+                                  <YouTubeIcon color="error" />
                                 </Links>
                               </Grid>
                             </Grid>

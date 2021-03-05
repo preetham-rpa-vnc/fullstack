@@ -1,5 +1,5 @@
 const { response } = require("express");
-const userHelper = require("../config/userHelper");
+const userHelper = require("../helper/userHelper");
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 
@@ -32,6 +32,11 @@ router.post("/login", (req, res) => {
 
     // console.log(res);
   });
+});
+
+router.post("/addallitems", (req, res) => {
+  // console.log("All items", req.body);
+  userHelper.addAllItems(req.body);
 });
 
 module.exports = router;

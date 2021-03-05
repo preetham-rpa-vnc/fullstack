@@ -60,4 +60,16 @@ module.exports = {
         .catch((err) => console.log(err));
     });
   },
+
+  addAllItems: async (allItems) => {
+    let len = allItems.lenght;
+    // console.log("all items", len);
+    // await db
+    //   .get()
+    //   .collection(collection.TEST_COLLECTION)
+    //   .insert(allItems)
+    //   .then((res) => {
+    //     console.log("response", res);
+    //   });
+  },
 };
