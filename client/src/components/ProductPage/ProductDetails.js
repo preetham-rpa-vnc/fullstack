@@ -8,8 +8,10 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import CheckCircleRoundedIcon from "@material-ui/icons/CheckCircleRounded";
 
 import React from "react";
+import MoreByCompany from "./MoreByCompany/MoreByCompany";
 
 const useStyles = makeStyles((theme) => ({
   media: {
@@ -45,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(5),
   },
   descriptionOne: {
-    fontSize: "15px",
+    fontSize: 20,
     fontWeight: "700",
     fontStretch: "normal",
     fontStyle: "normal",
@@ -97,6 +99,20 @@ const useStyles = makeStyles((theme) => ({
   },
   sellerBody: {
     padding: "46px 100px 33px 100px",
+  },
+  varified: {
+    alignSelf: "center",
+    color: "green",
+  },
+  divi: {
+    color: "red",
+    marginTop: theme.spacing(1.5),
+  },
+  checkICon: {
+    fontSize: 19,
+  },
+  joinDate: {
+    placeContent: "center",
   },
 }));
 
@@ -271,7 +287,11 @@ function ProductDetails() {
                 <Divider />
               </Box>
               <Box className={classes.sellerBody}>
-                <Typography>Personal Details</Typography>
+                <Box mb={2}>
+                  <Typography className={classes.descriptionOne}>
+                    Personal Details
+                  </Typography>
+                </Box>
                 <Grid container xs={12}>
                   <Grid item container xs={6} spacing={0}>
                     <Grid item container direction="column" xs={3}>
@@ -287,27 +307,57 @@ function ProductDetails() {
                       </Grid>
                     </Grid>
                     <Grid item container direction="column" xs={3}>
-                      <Grid item>
-                        <Typography>Personal Details</Typography>
-                      </Grid>
-                      <Grid item>
-                        <Typography>Personal Details</Typography>
-                      </Grid>
-                      <Grid item>
-                        <Typography>Personal Details</Typography>
-                      </Grid>
+                      <Box alignSelf="center">
+                        <Grid item>
+                          <Typography variant="caption">Seller Name</Typography>
+                        </Grid>
+                        <Grid item>
+                          <Typography variant="h5">Rashik</Typography>
+                        </Grid>
+                        <Grid item>
+                          <Typography variant="caption">
+                            Company Name
+                          </Typography>
+                        </Grid>
+                        <Grid item>
+                          <Typography variant="h5">Mahindra</Typography>
+                        </Grid>
+                      </Box>
                     </Grid>
                   </Grid>
-                  <Grid item xs={3}>
-                    Verified User
+                  <Grid
+                    item
+                    xs={3}
+                    container
+                    className={classes.varified}
+                    spacing={1}
+                  >
+                    <Grid item>
+                      <CheckCircleRoundedIcon className={classes.checkICon} />
+                    </Grid>
+                    <Grid item>Verified User</Grid>
                   </Grid>
-                  <Grid item xs={3}>
-                    January 2021
+                  <Divider orientation="vertical" flexItem />
+                  <Grid
+                    item
+                    xs={3}
+                    container
+                    direction="column"
+                    className={classes.joinDate}
+                  >
+                    <Grid item>
+                      <Typography variant="caption">JOINED ON</Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography>January 2021</Typography>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Box>
             </Box>
           </Grid>
+          <Divider />
+          <MoreByCompany />
         </Grid>
       </Box>
     </div>

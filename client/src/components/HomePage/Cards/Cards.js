@@ -5,7 +5,6 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-// import Typography from "@material-ui/core/Button";
 import Link from "@material-ui/core/Typography";
 import { Box, Divider, Grid, Paper, Typography } from "@material-ui/core";
 import { useHistory, Link as Links } from "react-router-dom";
@@ -102,7 +101,6 @@ const MediaCard = () => {
                 >
                   {itemData.map((data, index) => {
                     const { youtube } = data;
-                    console.log("youtube", youtube);
                     return (
                       <Grid
                         key={index}
@@ -192,16 +190,6 @@ const MediaCard = () => {
                                 </Grid>
                               </Grid>
                               <Divider />
-                              {/* <Link gutterBottom variant="h5" component="h2">
-                              {data.name}
-                            </Link>
-                            <Link
-                              variant="body2"
-                              color="textSecondary"
-                              component="p"
-                            >
-                              {data.comment}
-                            </Link> */}
                             </CardContent>
                           </CardActionArea>
                           <CardActions>
@@ -218,7 +206,6 @@ const MediaCard = () => {
                                   size="small"
                                   to={{
                                     pathname: youtube,
-                                    // "https://www.youtube.com/watch?v=nziA33FrhoI",
                                   }}
                                   target="_blank"
                                   onClick={handleLink}
