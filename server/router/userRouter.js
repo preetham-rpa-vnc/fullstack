@@ -34,9 +34,28 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.post("/addallitems", (req, res) => {
-  // console.log("All items", req.body);
-  userHelper.addAllItems(req.body);
+router.get("/getallitems", (req, res) => {
+  userHelper.getAllItems().then((allItems) => {
+    return res.json(allItems);
+  });
 });
+
+router.get("/getitem", (req, res) => {
+  const id = req.query.id;
+  userHelper
+    .getItems(id)
+    .then((item) => {
+      return res.json(item);
+    })
+    .catch((err) => console.log(err));
+});
+
+router.get("/getsimileritems", (req, res) => {
+  userHelper.getSimilerItems()
+  .then(items => {
+    res.json(items)
+  })
+  .catch(err => console.log(err))
+})
 
 module.exports = router;

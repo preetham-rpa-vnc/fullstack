@@ -6,6 +6,8 @@ import SignUp from "./components/SignUp";
 import Cards from "./components/HomePage/Cards/Cards";
 import CSSGrid from "./components/HomePage/Cards/grid";
 import ProductDetails from "./components/ProductPage/ProductDetails";
+import Footer from "./components/HomePage/Footer/Footer"
+import Header from "./components/Header/Header"
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       <Route path="/view" component={ViewItems} />
       <Route path="/product" component={ProductDetails} />
       <Route path="/grid" component={CSSGrid} />
+      <Footer />
     </Router>
   );
 }

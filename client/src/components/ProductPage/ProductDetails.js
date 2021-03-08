@@ -9,9 +9,12 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CheckCircleRoundedIcon from "@material-ui/icons/CheckCircleRounded";
-
-import React from "react";
+import queryString from "query-string";
+import React, { useEffect, useState } from "react";
 import MoreByCompany from "./MoreByCompany/MoreByCompany";
+import Axios from "axios";
+import { Link } from "react-router-dom";
+import LinkIcon from "@material-ui/icons/Link";
 
 const useStyles = makeStyles((theme) => ({
   media: {
@@ -73,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1.5),
   },
   itemDetails: {
-    backgroundColor: "#cbe4cb",
+    backgroundColor: "#dff1eb",
     width: "100%",
     height: "300px",
     borderRadius: "10px",
@@ -86,6 +89,7 @@ const useStyles = makeStyles((theme) => ({
   },
   margin: {
     margin: theme.spacing(1),
+    // backgroundColor: "#00b074"
   },
   buyButton: {
     float: "right",
@@ -114,9 +118,57 @@ const useStyles = makeStyles((theme) => ({
   joinDate: {
     placeContent: "center",
   },
+  items: {
+    fontWeight: "bolder",
+    fontSize: 15,
+    color: "#2a584c",
+  },
+  itemsOne: {
+    fontSize: 10,
+  },
+  mainItems: {
+    padding: "17px 3px 0 45px",
+    textAlignLast: "left",
+  },
+  sellerProfile: {
+    width: 200,
+    backgroundColor: "#efefef",
+    borderRadius: "5px 5px 0px 0px",
+    borderBottom: "4px solid #30a05f",
+    height: 50,
+    textAlign: "center",
+  },
 }));
 
-function ProductDetails() {
+function ProductDetails({ location }) {
+  const [productItem, setProductItem] = useState("");
+  const id = queryString.parse(location.search);
+
+  const {
+    _id,
+    crop,
+    description,
+    image,
+    manufactured,
+    name,
+    phaseofcrop,
+    prebuilt,
+    price,
+    use,
+    website,
+    youtube,
+  } = productItem;
+
+  useEffect(() => {
+    Axios.get(`http://localhost:5000/getitem`, {
+      params: id,
+    }).then((item) => {
+      setProductItem(item.data);
+    });
+  }, []);
+
+  console.log("productItem", productItem);
+
   const classes = useStyles();
   return (
     <div>
@@ -126,7 +178,7 @@ function ProductDetails() {
           <CardMedia
             className={classes.media}
             title="Contemplative Reptile"
-            image="https://5.imimg.com/data5/HZ/JZ/BV/SELLER-3213215/rice-huller-with-polisher-blower-attached-500x500.jpg"
+            image={image}
           />
         </Grid>
 
@@ -136,7 +188,7 @@ function ProductDetails() {
               <Grid item xs={6} container direction="column" spacing={1}>
                 <Grid item>
                   <Typography variant="h5" className={classes.sBody}>
-                    bremer seeds
+                    {name}
                   </Typography>
                 </Grid>
                 <Grid item container direction="row" spacing={1}>
@@ -164,7 +216,18 @@ function ProductDetails() {
                   m={1}
                   p={1}
                 >
-                  Last updated time
+                  {/* Last updated time */}
+                  <Link
+                    cursor="default"
+                    color="primary"
+                    size="small"
+                    to={{
+                      pathname: website,
+                    }}
+                    target="_blank"
+                  >
+                    <LinkIcon style={{ color: "blue" }} />
+                  </Link>
                 </Box>
               </Grid>
             </Grid>
@@ -178,7 +241,7 @@ function ProductDetails() {
                     </Typography>
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle1">see all seeds</Typography>
+                    <Typography variant="subtitle1">{description}</Typography>
                   </Grid>
                 </Grid>
                 <Grid item xs={6}>
@@ -186,7 +249,7 @@ function ProductDetails() {
                     <Grid container direction="column" spacing={1}>
                       <Box className={classes.insidePricef}>
                         <Grid item>
-                          <Typography>Rs 231000</Typography>
+                          <Typography>Rs {price}</Typography>
                         </Grid>
                         <Grid item>
                           <Typography>PER TONNE</Typography>
@@ -199,33 +262,45 @@ function ProductDetails() {
             </Grid>
             <Divider className={classes.divider} />
             <Box className={classes.itemDetails}>
-              <Grid container xs={12}>
+              <Grid container xs={12} className={classes.mainItems}>
                 <Grid item container className={classes.gridOne}>
                   <Grid item xs={4}>
-                    <Typography>CROP</Typography>
-                    <Typography>CROP</Typography>
+                    <Typography className={classes.items}>CROP</Typography>
+                    <Typography className={classes.itemsOne}>{crop}</Typography>
                   </Grid>
                   <Grid item xs={4}>
-                    <Typography>VARIETY</Typography>
-                    <Typography>VARIETY</Typography>
+                    <Typography className={classes.items}>PRE BUILT</Typography>
+                    <Typography className={classes.itemsOne}>
+                      {prebuilt}
+                    </Typography>
                   </Grid>
                   <Grid item xs={4}>
-                    <Typography>QUANTITY</Typography>
-                    <Typography>QUANTITY</Typography>
+                    <Typography className={classes.items}>QUANTITY</Typography>
+                    <Typography className={classes.itemsOne}>1</Typography>
                   </Grid>
                 </Grid>
                 <Grid item container className={classes.gridOne}>
                   <Grid item xs={4}>
-                    <Typography>CROP</Typography>
-                    <Typography>CROP</Typography>
+                    <Typography className={classes.items}>
+                      PHASE OF CROP
+                    </Typography>
+                    <Typography className={classes.itemsOne}>
+                      {phaseofcrop}
+                    </Typography>
                   </Grid>
                   <Grid item xs={4}>
-                    <Typography>VARIETY</Typography>
-                    <Typography>VARIETY</Typography>
+                    <Typography className={classes.items}>
+                      MANUFACTUARED
+                    </Typography>
+                    <Typography className={classes.itemsOne}>
+                      {manufactured}
+                    </Typography>
                   </Grid>
                   <Grid item xs={4}>
-                    <Typography>QUANTITY</Typography>
-                    <Typography>QUANTITY</Typography>
+                    <Typography className={classes.items}>VARIETY</Typography>
+                    <Typography className={classes.itemsOne}>
+                      VARIETY
+                    </Typography>
                   </Grid>
                 </Grid>
                 <Grid item container className={classes.gridOne}>
@@ -256,22 +331,27 @@ function ProductDetails() {
               <Grid container>
                 <Grid item>
                   <Button
-                    variant="outlined"
+                    variant="contained"
                     size="large"
-                    color="primary"
                     className={classes.margin}
+                    style={{ backgroundColor: "red", color: "white" }}
+                    target="_blank"
+                    href={youtube}
                   >
-                    Chat with the company
+                    Youtube
                   </Button>
                 </Grid>
                 <Grid item>
                   <Button
                     variant="contained"
                     size="large"
-                    color="primary"
+                    color="secondary"
                     className={classes.margin}
+                    style={{ backgroundColor: "#00b074" }}
+                    target="_blank"
+                    href={website}
                   >
-                    Buy
+                    Website
                   </Button>
                 </Grid>
               </Grid>
@@ -280,12 +360,16 @@ function ProductDetails() {
           <Divider />
           <Grid item>
             <Box mt={5} className={classes}>
-              <Box>
-                <Typography variant="h4" mt={3}>
+              <Box className={classes.sellerProfile}>
+                <Typography
+                  variant="h4"
+                  mt={3}
+                  style={{ fontSize: "25px", fontWeight: "700", padding: 7 }}
+                >
                   Seller Profile
                 </Typography>
-                <Divider />
               </Box>
+              <Divider />
               <Box className={classes.sellerBody}>
                 <Box mb={2}>
                   <Typography className={classes.descriptionOne}>
@@ -357,7 +441,7 @@ function ProductDetails() {
             </Box>
           </Grid>
           <Divider />
-          <MoreByCompany />
+          <MoreByCompany itemCrop={crop} />
         </Grid>
       </Box>
     </div>

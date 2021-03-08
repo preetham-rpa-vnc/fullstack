@@ -1,16 +1,57 @@
 import React from "react";
-import FormatAlignLeftIcon from "@material-ui/icons/FormatAlignLeft";
-import FormatBoldIcon from "@material-ui/icons/FormatBold";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
-export default function App() {
+import PropTypes from "prop-types";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
+import Slide from "@material-ui/core/Slide";
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+  console.log("props", children);
+  console.log("window", window);
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+  console.log("trigger", trigger);
+
   return (
-    <div>
-      <Grid container alignItems="center">
-        <FormatAlignLeftIcon />
-        <Divider orientation="vertical" flexItem />
-        <FormatBoldIcon />
-      </Grid>
-    </div>
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  window: PropTypes.func,
+};
+
+export default function HideAppBar(props) {
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <HideOnScroll {...props}>
+        <AppBar>
+          <Toolbar>
+            <Typography variant="h6">Scroll to Hide App Bar</Typography>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
+      <Toolbar />
+      <Container>
+        <Box my={2}>
+          {[...new Array(12)]
+            .map(
+              () => `Cras mattis consectetur purus sit amet fermentum.
+Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
+            )
+            .join("\n")}
+        </Box>
+      </Container>
+    </React.Fragment>
   );
 }

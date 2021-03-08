@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
   itemName: {
     marginTop: theme.spacing(2),
   },
+  firstBody: {
+    height: 300
+  }
 }));
 const MediaCard = () => {
   const history = useHistory();
@@ -60,16 +63,22 @@ const MediaCard = () => {
   const [itemData, setItemData] = useState([]);
 
   const handleClick = (id) => {
-    history.push(`/view?id=${id}`);
+    console.log("item _id", id);
+    history.push(`/product?id=${id}`);
+    // history.push(`/view?id=${id}`);
   };
 
-  const passData = (items) => {
+  const passData = (items) => { 
     setItemData(items);
   };
 
   useEffect(() => {
-    console.log("machinery", machinery);
-    Axios.post("http://localhost:5000/addallitems", machinery);
+    Axios.get("http://localhost:5000/getallitems")
+      .then((allDatas) => {
+        console.log("all datas", allDatas);
+        setItemData(allDatas.data);
+      })
+      .catch((err) => console.log(err));
 
     setItemData(machinery);
   }, []);
@@ -78,6 +87,7 @@ const MediaCard = () => {
     <Redirect href="https://www.youtube.com/watch?v=nziA33FrhoI" />;
     // Redirect="https://www.youtube.com/watch?v=nziA33FrhoI"
   };
+
 
   return (
     <>
@@ -89,7 +99,7 @@ const MediaCard = () => {
           <Grid item>
             <Grid container spacing={2}>
               <Grid item xs={3} m={2} mx="auto" mt={2}>
-                <FirstBody passData={passData} />
+                <FirstBody passData={passData} className={classes.firstBody} />
               </Grid>
               <Grid item xs={9}>
                 <Grid
@@ -110,7 +120,7 @@ const MediaCard = () => {
                         className={classes.space}
                       >
                         <Card className={classes.root} mt={2}>
-                          <CardActionArea onClick={() => handleClick(data.id)}>
+                          <CardActionArea onClick={() => handleClick(data._id)}>
                             <Grid container>
                               <Grid item xs={6} className={classes.itemName}>
                                 <Grid>

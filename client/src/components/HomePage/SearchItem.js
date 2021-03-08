@@ -113,9 +113,10 @@ export default function ComboBox() {
                 <Button
                   variant="contained"
                   size="large"
-                  color="primary"
+                  // color="primary"
                   className={classes.margin}
                   onClick={handleClick}
+                  style={{backgroundColor: "#30a05f", color: "white"}}
                 >
                   Search
                 </Button>

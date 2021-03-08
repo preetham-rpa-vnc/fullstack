@@ -1,6 +1,7 @@
 const db = require("../config/dbConnection");
 const bcrypt = require("bcrypt");
 const collection = require("../config/collections");
+const ObjectId = require("mongodb").ObjectID;
 
 module.exports = {
   addUser: (userData) => {
@@ -61,15 +62,41 @@ module.exports = {
     });
   },
 
-  addAllItems: async (allItems) => {
-    let len = allItems.lenght;
-    // console.log("all items", len);
-    // await db
-    //   .get()
-    //   .collection(collection.TEST_COLLECTION)
-    //   .insert(allItems)
-    //   .then((res) => {
-    //     console.log("response", res);
-    //   });
+  getAllItems: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collection.PRODUCT_COLLECTION)
+        .find()
+        .toArray()
+        .then((res) => {
+          resolve(res);
+        });
+    });
+  },
+
+  getItems: (id) => {
+    console.log("iiiiiiiiiiiiiid", id);
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collection.PRODUCT_COLLECTION)
+        .findOne({ _id: ObjectId(id) })
+        .then((item) => {
+          resolve(item);
+        })
+        .catch((err) => console.log(err));
+    });
+  },
+
+  getSimilerItems: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collection.PRODUCT_COLLECTION)
+        .find({crop: "All"})
+        .toArray()
+        .then((items) => {
+          resolve(items);
+        })
+        .catch((err) => console.log(err));
+    });
   },
 };

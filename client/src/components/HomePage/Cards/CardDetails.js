@@ -79,7 +79,7 @@ export default function Album({ location }) {
   let item = machinery.filter((data) => data.id === id.id);
 
   console.log("outp", item);
-
+ 
   return (
     <React.Fragment>
       <CssBaseline />
@@ -158,7 +158,7 @@ export default function Album({ location }) {
                 </Grid> */}
                   </Grid>
                 </div>
-              </div>
+              </div> 
             ))}
           </Container>
         </div>
