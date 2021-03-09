@@ -58,4 +58,8 @@ router.get("/getsimileritems", (req, res) => {
   .catch(err => console.log(err))
 })
 
+router.post("/insertalldata", (req, res) => {
+  userHelper.addAllData(req.body)
+})
+
 module.exports = router;

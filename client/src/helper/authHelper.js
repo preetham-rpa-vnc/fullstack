@@ -32,3 +32,17 @@ export const isAuth = () => {
     }
   }
 };
+
+export const removeCookie = (key) => {
+  console.log("################", key)
+  cookie.remove(key, { expires: 1 });
+};
+
+export const removeLocalStorage = (key) => {
+  localStorage.removeItem(key);
+};
+
+export const signout = () => {
+  removeCookie("token");
+  removeLocalStorage("user");
+};

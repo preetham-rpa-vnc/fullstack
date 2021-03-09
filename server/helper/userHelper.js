@@ -73,6 +73,16 @@ module.exports = {
         });
     });
   },
+  // getAllItems: () => {
+  //   return new Promise((resolve, reject) => {
+  //     db.get()
+  //     .aggregate(
+  //       [
+
+  //       ]
+  //     )
+  //   });
+  // },
 
   getItems: (id) => {
     console.log("iiiiiiiiiiiiiid", id);
@@ -91,12 +101,16 @@ module.exports = {
     return new Promise((resolve, reject) => {
       db.get()
         .collection(collection.PRODUCT_COLLECTION)
-        .find({crop: "All"})
+        .find({ crop: "All" })
         .toArray()
         .then((items) => {
           resolve(items);
         })
         .catch((err) => console.log(err));
     });
+  },
+
+  addAllData: (data) => {
+    db.get().collection(collection.PRODUCT_COLLECTION).insert(data);
   },
 };

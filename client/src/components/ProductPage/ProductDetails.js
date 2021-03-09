@@ -266,7 +266,7 @@ function ProductDetails({ location }) {
                 <Grid item container className={classes.gridOne}>
                   <Grid item xs={4}>
                     <Typography className={classes.items}>CROP</Typography>
-                    <Typography className={classes.itemsOne}>{crop}</Typography>
+                    <Typography className={classes.itemsOne}>crop,crop,crop,crop,crop,crop,crop</Typography>
                   </Grid>
                   <Grid item xs={4}>
                     <Typography className={classes.items}>PRE BUILT</Typography>

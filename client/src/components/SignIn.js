@@ -62,7 +62,7 @@ export default function SignIn({ history }) {
         const { message, status } = res.data;
         if (status) {
           authenticate(res, () => {
-            isAuth() ? console.log("is auth") : console.log("no auth");
+            window.location.reload()
             history.push("/home");
             setLoginVal({ ...loginVal, username: "", password: "" });
           });

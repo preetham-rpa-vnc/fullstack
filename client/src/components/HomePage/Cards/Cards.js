@@ -54,13 +54,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
   firstBody: {
-    height: 300
-  }
+    height: 300,
+  },
 }));
 const MediaCard = () => {
   const history = useHistory();
   const classes = useStyles();
   const [itemData, setItemData] = useState([]);
+  const [cropss, setCrops] = useState([]);
 
   const handleClick = (id) => {
     console.log("item _id", id);
@@ -68,26 +69,39 @@ const MediaCard = () => {
     // history.push(`/view?id=${id}`);
   };
 
-  const passData = (items) => { 
+  const passData = (items) => {
     setItemData(items);
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/getallitems")
+    Axios.post("http://localhost:5000/insertalldat", machinery)
       .then((allDatas) => {
         console.log("all datas", allDatas);
         setItemData(allDatas.data);
       })
       .catch((err) => console.log(err));
 
-    setItemData(machinery);
+    // setItemData(machinery);
   }, []);
+
+  useEffect(() => {
+    Axios.get("http://localhost:5000/getallitems")
+      .then((allDatas) => {
+        console.log("all datas", allDatas);
+        setItemData(allDatas.data);
+        // setCrops(allDatas.data.crop)
+      })
+      .catch((err) => console.log(err));
+
+    // setItemData(machinery);
+  }, []);
+
+  console.log("item all data", itemData);
 
   const handleLink = () => {
     <Redirect href="https://www.youtube.com/watch?v=nziA33FrhoI" />;
     // Redirect="https://www.youtube.com/watch?v=nziA33FrhoI"
   };
-
 
   return (
     <>
@@ -109,8 +123,8 @@ const MediaCard = () => {
                   justify="flex-start"
                   alignItems="flex-start"
                 >
-                  {itemData.map((data, index) => {
-                    const { youtube } = data;
+                  {itemData.slice().map((data, index) => {
+                    const { youtube, crops } = data;
                     return (
                       <Grid
                         key={index}
@@ -157,10 +171,18 @@ const MediaCard = () => {
                                     align="left"
                                   >
                                     <Grid variant="h4">crop</Grid>
-                                    <Grid>
-                                      <Typography variant="h6">
-                                        {data.crop}
-                                      </Typography>
+                                    <Grid container xs={12} spacing={1}>
+                                      {crops.slice(0, 2).map((datas) => {
+                                        return (
+                                          <Grid item>
+                                            <Typography
+                                              variant="h6"
+                                            >
+                                              {datas}
+                                            </Typography>
+                                          </Grid>
+                                        );
+                                      })}
                                     </Grid>
                                   </Grid>
                                 </Grid>
