@@ -18,7 +18,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
-import { isAuth, signout } from "../../helper/authHelper";
+import { isAuth, signout } from "../../helper/authHelper"; 
 import Logo from "../../images/logo.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -167,7 +167,7 @@ export default function HideAppBar(props) {
                                     <AccountCircle />
                                   </Grid>
                                   <Grid item>
-                                    <Typography>{isAuth().fname}</Typography>
+                                    <Typography>{isAuth().first_name}</Typography>
                                   </Grid>
                                 </Grid>
                               </Button>

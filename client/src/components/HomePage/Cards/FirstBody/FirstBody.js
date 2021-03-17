@@ -13,6 +13,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 // import { set } from "js-cookie";
 import React, { useEffect, useState } from "react";
 import { machinery as allItems } from "../../Items/Items";
+import Axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,18 +65,27 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-function FirstBody({ passData }) {
+function FirstBody({ itemData, passCrop }) {
   const classes = useStyles();
   const [state, setState] = useState({
     seed: false,
     machinery: false,
   });
-  const [value, setValue] = useState([0, 100]);
+  const [value, setValue] = useState([1, 100]);
   const [price, setPrice] = useState(0);
-  const [filterItem, setFilterItem] = useState({
-    seed: "",
-    machinery: "",
-  });
+  const [filterItem, setFilterItem] = useState({});
+  const [allCrops, setAllCrops] = useState([]);
+  const [selectedCrop, setSelectedCrop] = useState({});
+  const [cropsItems, setCropsItems] = useState([]);
+  const [itemCrop, setItemCrop] = useState([]);
+
+  useEffect(() => {
+    Axios.get("http://localhost:5000/getallcrops")
+      .then((allDatas) => {
+        setAllCrops(allDatas.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
@@ -86,39 +96,94 @@ function FirstBody({ passData }) {
     setPrice(finalPrice);
   }, [value]);
 
-  const handleChange = (text) => (event) => {
-    setState({ ...state, [text]: event.target.checked });
-    setFilterItem({ ...filterItem, [text]: event.target.value });
-    const { seed, machinery } = state;
-  };
-
   useEffect(() => {
-    const { seed, machinery } = state;
+    // console.log("item Data", itemData);
+    // console.log("selected crop", selectedCrop.length);
 
-    if (seed && machinery) {
-      const selectedItem = allItems.filter((item) => item.type);
-      console.log("selectedItem", selectedItem);
-    //   passData(selectedItem);
-    } else if (machinery) {
-      const selectedItem = allItems.filter(
-        (item) => filterItem.machinery === item.type
-      );
-      console.log("machinery", selectedItem);
-    //   passData(selectedItem);
-    } else if (seed) {
-      const selectedItem = allItems.filter(
-        (item) => filterItem.seed === item.type
-      );
-      console.log("seed", selectedItem);
-    //   passData(selectedItem);
+    if (selectedCrop.length === 0) {
+      console.log("ite empty");
     } else {
-    //   passData(allItems);
+      Axios.get("http://localhost:5000/getselectedcrops", {
+        params: {
+          selectedCrop,
+        },
+      })
+        .then((cropsData) => {
+          console.log("crops data", cropsData.data);
+          const cropItemsDatas = cropsData.data;
+          setCropsItems(cropsData.data);
+          passCrop(cropsData.data);
+        })
+        .catch((err) => console.log(err));
     }
-  }, [state]);
+  }, [selectedCrop]);
 
-  const items = ["seed", "machinery"];
+  console.log("selected crops", cropsItems);
 
-  console.log("clickItem", state);
+  const handleChange = (text) => (event) => {
+    console.log("text", text);
+    console.log("event.target.value", event.target.value);
+
+    if (event.target.checked === true) {
+      console.log("not a true value", event.target.checked);
+
+      console.log("all items is there", itemData);
+      const fiteredItems = itemData.filter((data) => data.crops === text);
+      console.log("filterd items yyess", fiteredItems);
+
+      passCrop(fiteredItems);
+    } else {
+      console.log("not a true value", event.target.checked);
+    }
+  };
+  // const handleChange = (text) => (event) => {
+  //   // setState({ ...state, [text]: event.target.checked });
+  //   // setFilterItem({ ...filterItem, [text]: event.target.value });
+  //   const item = event.target.value;
+  //   const checked = event.target.checked;
+  //   console.log("item ", item);
+  //   console.log("checked ", checked);
+  //   // setSelectedCrop({ ...selectedCrop, checked });
+  //   setFilterItem({ ...filterItem, [text]: event.target.checked });
+  //   if (checked) {
+  //     setSelectedCrop(item);
+  //     setItemCrop([...itemCrop, item]);
+  //   } else if (checked == false) {
+  //     const filter = itemCrop.filter((data) => data !== text);
+
+  //     console.log("filterssssssssssssss", itemCrop);
+
+  //     passCrop(filter);
+  //   }
+  // };
+
+  console.log("items crop", itemCrop);
+  console.log("item all selected", selectedCrop);
+
+  // useEffect(() => {
+  //   const { seed, machinery } = state;
+  //   if (seed && machinery) {
+  //     const selectedItem = allItems.filter((item) => item.type);
+  //     console.log("selectedItem", selectedItem);
+  //     //   passData(selectedItem);
+  //   } else if (machinery) {
+  //     const selectedItem = allItems.filter(
+  //       (item) => filterItem.machinery === item.type
+  //     );
+  //     console.log("machinery", selectedItem);
+  //     //   passData(selectedItem);
+  //   } else if (seed) {
+  //     const selectedItem = allItems.filter(
+  //       (item) => filterItem.seed === item.type
+  //     );
+  //     console.log("seed", selectedItem);
+  //     //   passData(selectedItem);
+  //   } else {
+  //     //   passData(allItems);
+  //   }
+  // }, [state]);
+
+  // const items = ["seed", "machinery"];
 
   return (
     <Box mt={2}>
@@ -129,18 +194,21 @@ function FirstBody({ passData }) {
         <FormGroup row>
           <Grid container direction="column" spacing={0}>
             <Box mr={10} className={classes.checkBox}>
-              {items.map((data, index) => (
-                <Grid item>
-                  <FormControlLabel
-                    key={index}
-                    control={
-                      <Checkbox name={data} onChange={handleChange(data)} />
-                    }
-                    label={data}
-                    value={data}
-                  />
-                </Grid>
-              ))}
+              {allCrops.map((data, index) => {
+                const { crop } = data;
+                return (
+                  <Grid item>
+                    <FormControlLabel
+                      key={index}
+                      control={
+                        <Checkbox name={crop} onChange={handleChange(crop)} />
+                      }
+                      label={crop}
+                      value={crop}
+                    />
+                  </Grid>
+                );
+              })}
             </Box>
           </Grid>
         </FormGroup>

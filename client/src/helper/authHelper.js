@@ -1,9 +1,10 @@
 import cookie from "js-cookie";
 
 export const authenticate = (user, next) => {
-  const { username, fname, lname, mobile } = user.data.user;
-  setCookie("token", user.data.token);
-  setLocalStorage("user", { username, fname, lname, mobile });
+  console.log("user", user);
+  const { first_name, last_name, user_mobile, token } = user;
+  setCookie("token", token);
+  setLocalStorage("user", { first_name, last_name, user_mobile });
   next();
 };
 
@@ -34,7 +35,7 @@ export const isAuth = () => {
 };
 
 export const removeCookie = (key) => {
-  console.log("################", key)
+  console.log("################", key);
   cookie.remove(key, { expires: 1 });
 };
 

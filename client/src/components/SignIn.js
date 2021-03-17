@@ -39,16 +39,19 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(7),
     height: theme.spacing(7),
   },
+  mains: {
+    marginBottom: "75px"
+  }
 }));
 
 export default function SignIn({ history }) {
   const classes = useStyles();
   const [loginVal, setLoginVal] = useState({
-    username: "",
-    password: "",
+    user_name: "",
+    user_password: "",
   });
 
-  const { username, password } = loginVal;
+  const { user_name, user_password } = loginVal;
 
   const handleChange = (text) => (event) => {
     setLoginVal({ ...loginVal, [text]: event.target.value });
@@ -62,20 +65,20 @@ export default function SignIn({ history }) {
         const { message, status } = res.data;
         if (status) {
           authenticate(res, () => {
-            window.location.reload()
+            window.location.reload();
             history.push("/home");
-            setLoginVal({ ...loginVal, username: "", password: "" });
+            setLoginVal({ ...loginVal, user_name: "", user_password: "" });
           });
         } else {
           alert(message);
         }
-      }) 
+      })
       .catch((err) => console.error(err));
   };
 
   console.log("login values", loginVal);
   return (
-    <div id="bodys">
+    <div className={classes.mains}>
       {isAuth() ? <Redirect to="/home" /> : null}
       <Container component="main" maxWidth="xs" id="container">
         <CssBaseline />
@@ -103,8 +106,8 @@ export default function SignIn({ history }) {
               name="username"
               autoComplete="username"
               autoFocus
-              value={username}
-              onChange={handleChange("username")}
+              value={user_name}
+              onChange={handleChange("user_name")}
             />
             <TextField
               variant="outlined"
@@ -116,8 +119,8 @@ export default function SignIn({ history }) {
               type="password"
               id="password"
               autoComplete="current-password"
-              value={password}
-              onChange={handleChange("password")}
+              value={user_password}
+              onChange={handleChange("user_password")}
             />
             <Button
               type="submit"
@@ -128,13 +131,65 @@ export default function SignIn({ history }) {
             >
               Sign In
             </Button>
-            <Grid container>
+            <Grid container direction="column">
+              <Grid item>
+                <Link to="/otpauth" variant="body2">
+                  {"Login with mobile"}
+                </Link>
+              </Grid>
               <Grid item>
                 <Link to="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
+            {/* <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="username"
+              label="User Name"
+              name="username"
+              autoComplete="username"
+              autoFocus
+              value={user_name}
+              onChange={handleChange("user_name")}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={user_password}
+              onChange={handleChange("user_password")}
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </Button>
+            <Grid container direction="column">
+              <Grid item>
+                <Link to="/otpauth" variant="body2">
+                  {"Login with mobile"}
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link to="/signup" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid> */}
           </form>
         </div>
       </Container>

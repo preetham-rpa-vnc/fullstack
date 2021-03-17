@@ -40,11 +40,11 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
   const [formVal, setFormVal] = useState({
-    fname: "",
+    first_name: "",
     // lname: "",
-    username: "",
-    mobile: "",
-    password: "",
+    user_name: "",
+    user_mobile: "",
+    user_password: "",
   });
 
   const fillForm = (text) => (event) => {
@@ -52,26 +52,34 @@ export default function SignUp() {
     setFormVal({ ...formVal, [text]: event.target.value });
   };
 
-  const { fname, lname, username, mobile, password } = formVal;
+  const {
+    first_name,
+    last_name,
+    user_name,
+    user_mobile,
+    user_password,
+  } = formVal;
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (fname && username && mobile && password) {
-      Axios.post(`${process.env.REACT_APP_API_URI}/adduser`, formVal)
+    if (first_name && user_name && user_mobile && user_password) {
+      Axios.post(`${process.env.REACT_APP_API_URI}/signup`, formVal)
         .then((response) => {
-          const { message, exuser } = response.data;
-          if (!message) {
+          const { status, exuser } = response.data;
+          console.log("response.data", response.data);
+          if (!status) {
             alert(`${exuser}, already taken`);
+          } else {
+            alert(`${exuser}, Welcome our team`);
+            setFormVal({
+              ...formVal,
+              first_name: "",
+              last_name: "",
+              user_name: "",
+              user_mobile: "",
+              user_password: "",
+            });
           }
-          alert(`${exuser}, Welcome our team`);
-          setFormVal({
-            ...formVal,
-            fname: "",
-            lname: "",
-            username: "",
-            mobile: "",
-            password: "",
-          });
         })
         .catch((err) => console.log(err));
     } else {
@@ -81,7 +89,7 @@ export default function SignUp() {
 
   console.log(formVal);
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" style={{marginBottom: 30}}>
       {isAuth() ? <Redirect to="/home" /> : null}
       <CssBaseline />
       <div className={classes.paper}>
@@ -101,7 +109,7 @@ export default function SignUp() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
-                autoComplete="fname"
+                autoComplete="first_name"
                 name="firstName"
                 variant="outlined"
                 required
@@ -109,11 +117,11 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
-                value={fname}
-                onChange={fillForm("fname")}
+                value={first_name}
+                onChange={fillForm("first_name")}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6}> 
               <TextField
                 variant="outlined"
                 // required
@@ -121,9 +129,9 @@ export default function SignUp() {
                 id="lastname"
                 label="Last Name"
                 name="lastname"
-                autoComplete="lname"
-                value={lname}
-                onChange={fillForm("lname")}
+                autoComplete="last_name"
+                value={last_name}
+                onChange={fillForm("last_name")}
               />
             </Grid>
             <Grid item xs={12}>
@@ -134,9 +142,9 @@ export default function SignUp() {
                 id="username"
                 label="User Name"
                 name="username"
-                autoComplete="username"
-                value={username}
-                onChange={fillForm("username")}
+                autoComplete="user_name"
+                value={user_name}
+                onChange={fillForm("user_name")}
               />
             </Grid>
             <Grid item xs={12}>
@@ -148,9 +156,9 @@ export default function SignUp() {
                 id="mobile"
                 label="Mobile Number"
                 name="mobile"
-                autoComplete="mobile"
-                value={mobile}
-                onChange={fillForm("mobile")}
+                autoComplete="user_mobile"
+                value={user_mobile}
+                onChange={fillForm("user_mobile")}
               />
             </Grid>
             <Grid item xs={12}>
@@ -163,8 +171,8 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                value={password}
-                onChange={fillForm("password")}
+                value={user_password}
+                onChange={fillForm("user_password")}
               />
             </Grid>
           </Grid>

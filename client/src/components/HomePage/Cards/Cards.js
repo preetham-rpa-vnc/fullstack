@@ -15,6 +15,7 @@ import LinkIcon from "@material-ui/icons/Link";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import { Redirect } from "react-router-dom";
 import Axios from "axios";
+import { crops } from "../Items/CropItem";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,15 +47,52 @@ const useStyles = makeStyles((theme) => ({
   },
   price: {
     justifyContent: "center",
-    marginTop: theme.spacing(1),
     fontWeight: "bold",
     fontSize: theme.spacing(1.8),
   },
   itemName: {
-    marginTop: theme.spacing(2),
+    alignSelf: "center",
+  },
+  itemNames: {
+    fontWeight: "bold",
+    color: "#1f2922",
   },
   firstBody: {
     height: 300,
+  },
+  crops: {
+    fontSize: 14,
+    fontWeight: "700",
+    letterSpacing: "normal",
+    textAlign: "right",
+    color: "#141414",
+  },
+  variety: {
+    marginLeft: "auto",
+    margin: "-50px 0 0 135px",
+  },
+  model: {
+    fontSize: 14,
+    fontWeight: "700",
+    letterSpacing: "normal",
+    // textAlign: "right",
+    color: "#141414",
+  },
+  modelName: {
+    color: "#827575",
+    fontWeight: "bold",
+    display: "inline-block",
+    width: 116,
+    whiteSpace: "nowrap",
+    overflow: "hidden !important",
+    textOverflow: "ellipsis",
+  },
+  manufacture: {
+    flexShrink: "1",
+    flexGrow: "1",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   },
 }));
 const MediaCard = () => {
@@ -73,18 +111,19 @@ const MediaCard = () => {
     setItemData(items);
   };
 
-  useEffect(() => {
-    Axios.post("http://localhost:5000/insertalldat", machinery)
-      .then((allDatas) => {
-        console.log("all datas", allDatas);
-        setItemData(allDatas.data);
-      })
-      .catch((err) => console.log(err));
+  // useEffect(() => {
+  //   Axios.post("http://localhost:5000/insertalldata", crops)
+  //     .then((allDatas) => {
+  //       console.log("all datas", allDatas);
+  //       setItemData(allDatas.data);
+  //     })
+  //     .catch((err) => console.log(err));
 
-    // setItemData(machinery);
-  }, []);
+  //   // setItemData(machinery);
+  // }, []);
 
   useEffect(() => {
+    console.log("EEEEEEEEEEEEEEEEe", itemData);
     Axios.get("http://localhost:5000/getallitems")
       .then((allDatas) => {
         console.log("all datas", allDatas);
@@ -96,10 +135,15 @@ const MediaCard = () => {
     // setItemData(machinery);
   }, []);
 
+  const newFunc = (data) => {
+    console.log("newFun", data);
+    setItemData(data);
+  };
+
   console.log("item all data", itemData);
 
   const handleLink = () => {
-    <Redirect href="https://www.youtube.com/watch?v=nziA33FrhoI" />;
+    <Redirect href="https://www.youtube.com/watch?v=nziA33FrhoI" />
     // Redirect="https://www.youtube.com/watch?v=nziA33FrhoI"
   };
 
@@ -113,7 +157,11 @@ const MediaCard = () => {
           <Grid item>
             <Grid container spacing={2}>
               <Grid item xs={3} m={2} mx="auto" mt={2}>
-                <FirstBody passData={passData} className={classes.firstBody} />
+                <FirstBody
+                  itemData={itemData}
+                  passCrop={newFunc}
+                  className={classes.firstBody}
+                />
               </Grid>
               <Grid item xs={9}>
                 <Grid
@@ -123,8 +171,8 @@ const MediaCard = () => {
                   justify="flex-start"
                   alignItems="flex-start"
                 >
-                  {itemData.slice().map((data, index) => {
-                    const { youtube, crops } = data;
+                  {itemData.slice(0, 12).map((data, index) => {
+                    const { youtube, crops, model } = data;
                     return (
                       <Grid
                         key={index}
@@ -137,21 +185,12 @@ const MediaCard = () => {
                           <CardActionArea onClick={() => handleClick(data._id)}>
                             <Grid container>
                               <Grid item xs={6} className={classes.itemName}>
-                                <Grid>
-                                  <Typography variant="h5">
-                                    {data.name}
-                                  </Typography>
-                                </Grid>
-                                <Grid
-                                  container
-                                  variant="h4"
-                                  spacing={1}
-                                  // align="center"
-                                  className={classes.price}
+                                <Typography
+                                  variant="h5"
+                                  className={classes.itemNames}
                                 >
-                                  <Grid item>₹</Grid>
-                                  <Grid item>{data.price}</Grid>
-                                </Grid>
+                                  {data.name}
+                                </Typography>
                               </Grid>
                               <Grid item xs={6}>
                                 <CardMedia
@@ -172,34 +211,63 @@ const MediaCard = () => {
                                   >
                                     <Grid variant="h4">crop</Grid>
                                     <Grid container xs={12} spacing={1}>
-                                      {crops.slice(0, 2).map((datas) => {
+                                      <Grid item>
+                                        <Typography
+                                          variant="h6"
+                                          className={classes.crops}
+                                        >
+                                          {data.crops}
+                                        </Typography>
+                                      </Grid>
+                                      {/* {crops.slice().map((datas) => {
                                         return (
                                           <Grid item>
                                             <Typography
                                               variant="h6"
+                                              className={classes.crops}
                                             >
                                               {datas}
                                             </Typography>
                                           </Grid>
                                         );
-                                      })}
+                                      })} */}
                                     </Grid>
                                   </Grid>
                                 </Grid>
-                                <Divider />
-                                <Grid item xs={6}>
-                                  <Typography variant="h6">Variety</Typography>
+                                <Divider orientation="vertical" flexItem />
+                                <Grid
+                                  item
+                                  container
+                                  xs={6}
+                                  direction="column"
+                                  className={classes.variety}
+                                >
+                                  <Box item m={1}>
+                                    <Grid item>
+                                      <Typography className={classes.model}>
+                                        Model
+                                      </Typography>
+                                    </Grid>
+                                    <Grid item>
+                                      <Typography className={classes.modelName}>
+                                        {model}
+                                      </Typography>
+                                    </Grid>
+                                  </Box>
                                 </Grid>
                               </Grid>
                               <Divider />
                               <Grid container className={classes.crop}>
                                 <Grid item xs={6} align="left">
                                   <Typography variant="subtitle1">
-                                    Manufactured
+                                    Manufacturer
                                   </Typography>
                                 </Grid>
                                 <Grid item xs={6}>
-                                  <Typography variant="h6">
+                                  <Typography
+                                    variant="h6"
+                                    className={classes.manufacture}
+                                  >
                                     {data.manufactured}
                                   </Typography>
                                 </Grid>
@@ -226,10 +294,15 @@ const MediaCard = () => {
                           </CardActionArea>
                           <CardActions>
                             <Grid container spacing={2}>
-                              <Grid item xs={6}>
-                                <Link size="small" color="primary">
-                                  Name
-                                </Link>
+                              <Grid
+                                item
+                                container
+                                xs={6}
+                                spacing={1}
+                                className={classes.price}
+                              >
+                                <Grid item>₹</Grid>
+                                <Grid item>{data.price}</Grid>
                               </Grid>
                               <Grid item xs={6}>
                                 <Links

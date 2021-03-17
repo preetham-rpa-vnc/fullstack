@@ -6,13 +6,15 @@ import SignUp from "./components/SignUp";
 import Cards from "./components/HomePage/Cards/Cards";
 import CSSGrid from "./components/HomePage/Cards/grid";
 import ProductDetails from "./components/ProductPage/ProductDetails";
-import Footer from "./components/HomePage/Footer/Footer"
-import Header from "./components/Header/Header"
+import Footer from "./components/HomePage/Footer/Footer";
+import Header from "./components/Header/Header";
+import OtpVerification from "./components/OtpVerification/OtpVerifiction";
 
 function App() {
   return (
     <Router>
       <Home />
+      <Route path="/otpauth" component={OtpVerification} />
       <Route exact path="/" component={SignIn} />
       <Route path="/signup" component={SignUp} />
       <Route path="/home" component={Cards} />
