@@ -183,7 +183,6 @@ module.exports = {
           if (result.rows.length > 0) {
             resolve({ status: false, exuser: result.rows[0].username });
           } else {
-
             pool.query(
               `INSERT INTO users (user_name, hashedpassword, user_type_id, user_status_id)
                VALUES ($1, $2, $3, $4) RETURNING user_id`,
@@ -257,7 +256,7 @@ module.exports = {
 
           if (result) {
             console.log("result", result.rows[0]);
-            resolve(result.rows[0])
+            resolve(result.rows[0]);
           }
         }
       );

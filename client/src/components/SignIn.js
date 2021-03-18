@@ -55,7 +55,7 @@ export default function SignIn({ history }) {
 
   const handleChange = (text) => (event) => {
     setLoginVal({ ...loginVal, [text]: event.target.value });
-  };
+  }; 
 
   const handleSubmit = (event) => {
     event.preventDefault();

@@ -14,8 +14,8 @@ function App() {
   return (
     <Router>
       <Home />
-      <Route path="/otpauth" component={OtpVerification} />
       <Route exact path="/" component={SignIn} />
+      <Route path="/otpauth" component={OtpVerification} />
       <Route path="/signup" component={SignUp} />
       <Route path="/home" component={Cards} />
       <Route path="/view" component={ViewItems} />

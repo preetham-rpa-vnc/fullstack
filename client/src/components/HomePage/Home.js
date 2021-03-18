@@ -155,7 +155,7 @@ export default function HideAppBar(props) {
                                 style={{
                                   backgroundColor: "#00b074",
                                   color: "white",
-                                }}
+                                }} 
                                 {...bindTrigger(popupState)}
                               >
                                 <Grid

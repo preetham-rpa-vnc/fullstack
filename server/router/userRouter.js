@@ -17,7 +17,7 @@ router.get("/getitem", (req, res) => {
     .getItems(id)
     .then((item) => {
       return res.json(item);
-    })
+    }) 
     .catch((err) => console.log(err));
 });
 
