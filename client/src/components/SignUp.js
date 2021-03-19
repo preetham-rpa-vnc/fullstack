@@ -48,7 +48,7 @@ export default function SignUp() {
   });
 
   const fillForm = (text) => (event) => {
-    console.log("rext checking", text);
+    console.log("rext checking", text); 
     setFormVal({ ...formVal, [text]: event.target.value });
   };
 

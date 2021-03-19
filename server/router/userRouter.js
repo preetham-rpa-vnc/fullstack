@@ -3,7 +3,7 @@ const userHelper = require("../helper/userHelper");
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const { serviceID, accountSID, authToken } = require("../config/otp_auth");
-const client = require("twilio")(accountSID, authToken);
+const client = require("twilio")("ACbb51be38a1319a3512ec4ad2fb9bc851", "8f19f3782b56003f44bd697b2784fc80");
 
 router.get("/getallitems", (req, res) => {
   userHelper.getAllItems().then((allItems) => {
@@ -17,7 +17,7 @@ router.get("/getitem", (req, res) => {
     .getItems(id)
     .then((item) => {
       return res.json(item);
-    }) 
+    })
     .catch((err) => console.log(err));
 });
 
@@ -76,15 +76,19 @@ router.post("/login", (req, res) => {
 
 router.post("/sendotp", (req, res) => {
   console.log("send otp", req.body);
+  const number = "+918606419976";
+  // console.log("serviceID", serviceID, authToken);
+  // console.log("accountSID", accountSID);
+  // console.log("client", client);
   const { contact_number } = req.body;
   userHelper.checkNuber(contact_number).then((resp) => {
     console.log("response", resp);
     if (resp) {
       client.verify
-        .services(serviceID)
+        .services("VAa99e7f615351b44d39c1be3311ee5e9f")
         .verifications.create({
           to: `+91${contact_number}`,
-          channel: `sms`,
+          channel: "sms",
         })
         .then((verification) => {
           console.log("verification", verification);
@@ -96,6 +100,13 @@ router.post("/sendotp", (req, res) => {
       res.json({ message: "Number doesn't exist" });
     }
   });
+
+  // const resp = {
+  //   first_name: "Asharudheen",
+  //   last_name: "kk",
+  //   user_mobile: "8606419976",
+  // };
+  // res.status(200).json({ status: "open", user: resp });
 });
 
 router.post("/verifyotp", (req, res) => {
@@ -103,7 +114,7 @@ router.post("/verifyotp", (req, res) => {
   const { otp, user_mobile } = req.body;
 
   client.verify
-    .services(serviceID)
+    .services("VAa99e7f615351b44d39c1be3311ee5e9f")
     .verificationChecks.create({
       to: `+91${user_mobile}`,
       code: otp,
