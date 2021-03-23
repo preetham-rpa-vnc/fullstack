@@ -12,9 +12,9 @@ const isProduction = process.env.NODE_ENV === "production";
 
 
 const pool = new Pool({
-    user: "testuser",
-    password: "test",
-    database: "testdb",
+    user: "testpf",
+    password: "123",
+    database: "pfdb",
     host: "localhost",
     port: 5432,
   }); 

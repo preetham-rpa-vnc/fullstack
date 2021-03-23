@@ -1,7 +1,7 @@
 const pool = require("../config/dbSql");
 
 module.exports = {
-  addProduct: (productDetails) => {
+  addProducts: (productDetails) => {
     const {
       EQUIPMENT,
       CROP,
@@ -20,13 +20,35 @@ module.exports = {
     } = productDetails;
 
     pool.query(
-      `INSER INTO manufacture (manufacture_name) VALUES ($1) RETURNING manufacture_id`,
+      `INSERT INTO manufacture (manufacture_name) VALUES ($1) RETURNING manufacture_id`,
       [MANUFACTURER],
-      (err, result) => {
+      (err, result1) => {
+        console.log("manufacture", result1);
+        console.log("manufacture error", err);
         pool.query(
-          `INSER INTO products (product_model, manufacture_id, product_price, product_default_language_id ) VALUES ($1, $2, $3, $4) 
+          `INSERT INTO products (product_model, manufacture_id, product_price, product_default_language_id ) VALUES ($1, $2, $3, $4) 
            RETURNING product_id`,
-           [MODEL, result.rows[0].manufacture_id, COST, 123]
+          [MODEL, result1.rows[0].manufacture_id, COST, 123],
+          (err2, result2) => {
+            console.log("products", result2);
+            console.log("products error", err2);
+            pool.query(
+              `INSERT INTO product_detail (product_id, product_name, product_description, phase_of_crop, product_use, product_prebuilt)
+            VALUES ($1, $2, $3, $4, $5, $6) RETURNING product_id`,
+              [
+                result2.rows[0].product_id,
+                EQUIPMENT,
+                DESCRIPTION,
+                PHASEOFCROP,
+                USAGE,
+                PREBUILT
+              ],
+              (err, response) => {
+                console.log("response", response);
+                console.log("error", err);
+              }
+            );
+          }
         );
       }
     );

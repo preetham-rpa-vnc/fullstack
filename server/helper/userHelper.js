@@ -262,4 +262,32 @@ module.exports = {
       );
     });
   },
+
+  getAllProduct: () => {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `select json_build_object('products', (
+        select json_agg(json_build_object('product_id', products.product_id, 
+        'model', product_model, 'price', product_price,
+        'crops', (select json_agg(crop_name)
+        from product_crops left join crops c on c.crop_id = product_crops.crop_id
+        where product_crops.product_id = products.product_id), 'manuf',
+        (select manufacture_name from manufacture where manufacture.manufacture_id = products.manufacture_id),
+        'product_name',  pd.product_name, 'pre_build', pd.product_prebuilt, 'usage', pd.product_use, 'description', 
+        pd.product_description)) from products
+         left join product_detail pd on products.product_id = pd.product_id
+        ), 'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name))
+         from crops), 'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name))
+         from manufacture))`,
+        (err, result) => {
+          console.log("@@@@@@@@@@@@@", err);
+          console.log(
+            "@@@@@@@@@@@@@result",
+            JSON.stringify(result.rows[0].json_build_object.products)
+          );
+          resolve(result.rows[0].json_build_object.products)
+        }
+      );
+    });
+  },
 };

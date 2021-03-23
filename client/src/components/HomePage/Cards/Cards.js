@@ -124,10 +124,10 @@ const MediaCard = () => {
 
   useEffect(() => {
     console.log("EEEEEEEEEEEEEEEEe", itemData);
-    Axios.get("http://localhost:5000/getallitems")
+    Axios.get("http://localhost:5000/getallproducts")
       .then((allDatas) => {
         console.log("all datas", allDatas);
-        setItemData(allDatas.data);
+        setItemData(allDatas.data); 
         // setCrops(allDatas.data.crop)
       })
       .catch((err) => console.log(err));
@@ -189,7 +189,7 @@ const MediaCard = () => {
                                   variant="h5"
                                   className={classes.itemNames}
                                 >
-                                  {data.name}
+                                  {data.product_name}
                                 </Typography>
                               </Grid>
                               <Grid item xs={6}>
@@ -268,7 +268,7 @@ const MediaCard = () => {
                                     variant="h6"
                                     className={classes.manufacture}
                                   >
-                                    {data.manufactured}
+                                    {data.manuf}
                                   </Typography>
                                 </Grid>
                               </Grid>
@@ -285,7 +285,7 @@ const MediaCard = () => {
                                 </Grid>
                                 <Grid item xs={6}>
                                   <Typography variant="h6">
-                                    {data.prebuilt}
+                                    {data.pre_build}
                                   </Typography>
                                 </Grid>
                               </Grid>

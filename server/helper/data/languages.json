@@ -1,0 +1,26 @@
+[
+  {
+    "language_name": "en",
+    "language_description": "English"
+  },
+  {
+    "language_name": "ta",
+    "language_description": "Tamil"
+  },
+  {
+    "language_name": "hi",
+    "language_description": "Hindi"
+  },
+  {
+    "language_name": "tl",
+    "language_description": "Telugu"
+  },
+  {
+    "language_name": "ml",
+    "language_description": "Malayalam"
+  },
+  {
+    "language_name": "kn",
+    "language_description": "Kannada"
+  }
+]

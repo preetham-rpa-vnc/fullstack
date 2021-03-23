@@ -116,14 +116,12 @@ alter table
     languages owner to testuser;
 
 create table product_detail (
-    product_id integer not null constraint product_detail_product_id_fkey references products,
-    product_name varchar not null constraint product_detail_product_name_key unique,
+    product_id integer not null,
+    product_name varchar not null,
     product_description text,
     phase_of_crop varchar(128) not null,
     product_use text,
-    product_prebuilt varchar(12),
-    language_id integer not null constraint product_detail_language_id_fkey references languages,
-    constraint product_detail_pkey primary key (product_id, language_id)
+    product_prebuilt varchar(12)
 );
 
 alter table
