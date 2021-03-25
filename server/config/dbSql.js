@@ -20,3 +20,18 @@ const pool = new Pool({
   }); 
 
 module.exports = pool;
+
+
+// APP_NAME = plant
+// APP_PORT = 8000
+// NODE_ENV = dev
+// env = dev
+// DB_USERNAME = postgres
+// DB_NAME = pland_farm
+// DB_PASSWORD = postgres
+// DB_PORT = 5432
+// DB_HOST = ec2-18-206-124-98.compute-1.amazonaws.com
+// DB_DIALECT = postgres
+
+// //! THIS IS FROM SSH key ON AWS
+// ec2-18-206-124-98.compute-1.amazonaws.com

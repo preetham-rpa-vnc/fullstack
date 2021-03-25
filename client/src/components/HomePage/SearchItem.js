@@ -1,8 +1,9 @@
 /* eslint-disable no-use-before-define */
-import React, { Fragment as div, useState } from "react";
+import React, { Fragment as div, useEffect, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
+import Axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -29,9 +30,24 @@ const defaultProps = {
   style: { width: "fit-content" },
 };
 
-export default function ComboBox() {
+export default function SearchItem() {
   const classes = useStyles();
   const [searchData, setSearchData] = useState({});
+  const [manufacture, setManufactures] = useState([])
+  const [crops, setCrops] = useState([])
+
+  useEffect(() => {
+    Axios
+      .get(`${process.env.REACT_APP_API_URI}/getmanufacture`)
+      .then((result) => {
+        console.log("@@@@@@@@@@@@@", result);
+        setManufactures(result.data.manuf)
+        setCrops(result.data.crops)
+      });
+  }, []);
+
+  console.log("&&&&&&&&&&&&&&&&&&&&&&&&&", manufacture);
+  console.log("&&&&&&&&&&&&&&&&&&&&&&&&&", top100Films);
 
   const handleChange = (event) => {
     console.log("event.targer.value", event.target.innerText);
@@ -64,8 +80,24 @@ export default function ComboBox() {
               <Grid item>
                 <Autocomplete
                   id="combo-box-demo"
-                  options={top100Films}
-                  getOptionLabel={(option) => option.title}
+                  options={manufacture}
+                  getOptionLabel={(option) => option.manuf_name}
+                  style={{ width: 300 }}
+                  onChange={handleChange}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Select Manufacturer"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item>
+                <Autocomplete
+                  id="combo-box-demo"
+                  options={crops}
+                  getOptionLabel={(option) => option.crop_name}
                   style={{ width: 300 }}
                   onChange={handleChange}
                   renderInput={(params) => (
@@ -77,23 +109,7 @@ export default function ComboBox() {
                   )}
                 />
               </Grid>
-              <Grid item>
-                <Autocomplete
-                  id="combo-box-demo"
-                  options={top100Films}
-                  getOptionLabel={(option) => option.title}
-                  style={{ width: 300 }}
-                  onChange={handleChange}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Select Region"
-                      variant="outlined"
-                    />
-                  )}
-                />
-              </Grid>
-              <Grid item>
+              {/* <Grid item>
                 <Autocomplete
                   id="combo-box-demo"
                   options={top100Films}
@@ -108,7 +124,7 @@ export default function ComboBox() {
                     />
                   )}
                 />
-              </Grid>
+              </Grid> */}
               <Grid item>
                 <Button
                   variant="contained"
@@ -116,7 +132,7 @@ export default function ComboBox() {
                   // color="primary"
                   className={classes.margin}
                   onClick={handleClick}
-                  style={{backgroundColor: "#30a05f", color: "white"}}
+                  style={{ backgroundColor: "#30a05f", color: "white" }}
                 >
                   Search
                 </Button>
@@ -131,7 +147,7 @@ export default function ComboBox() {
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
-  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Shawshank Redemption" },
   { title: "The Godfather", year: 1972 },
   { title: "The Godfather: Part II", year: 1974 },
   { title: "The Dark Knight", year: 2008 },

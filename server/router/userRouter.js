@@ -150,4 +150,24 @@ router.get("/getallproducts", (req, res) => {
   });
 });
 
+router.get("/search", (req, res) => {
+  userHelper.searchProduct().then(({ data, err }) => {
+    console.log("data", JSON.stringify(data));
+    console.log("error", err);
+    if (err) {
+      res.json(err);
+    }
+    if (data) {
+      res.json(data.rows[0]);
+    }
+  });
+});
+
+router.get("/getmanufacture", (req, res) => {
+  userHelper.getAllManufactures().then(result => {
+    console.log(typeof(result));
+    return res.json(result)
+  })
+})
+
 module.exports = router;

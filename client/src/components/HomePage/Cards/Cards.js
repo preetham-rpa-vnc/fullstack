@@ -126,7 +126,7 @@ const MediaCard = () => {
     console.log("EEEEEEEEEEEEEEEEe", itemData);
     Axios.get("http://localhost:5000/getallproducts")
       .then((allDatas) => {
-        console.log("all datas", allDatas);
+        console.log("all datas", allDatas.data);
         setItemData(allDatas.data); 
         // setCrops(allDatas.data.crop)
       })

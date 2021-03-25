@@ -184,7 +184,7 @@ module.exports = {
             resolve({ status: false, exuser: result.rows[0].username });
           } else {
             pool.query(
-              `INSERT INTO users (user_name, hashedpassword, user_type_id, user_status_id)
+              `INSERT INTO users (user_name, user_password, user_type_id, user_status_id)
                VALUES ($1, $2, $3, $4) RETURNING user_id`,
               [user_name, hashedpassword, user_type_id, user_status_id],
               (err, result) => {
@@ -225,18 +225,16 @@ module.exports = {
           }
           if (result.rowCount != 0) {
             const user = result.rows[0];
-            console.log("user.hashedpassword", user.hashedpassword);
+            console.log("user.user_password", user.user_password);
             console.log("user_password", user_password);
-            bcrypt
-              .compare(user_password, user.hashedpassword)
-              .then((status) => {
-                console.log("status", status);
-                if (status) {
-                  resolve({ user, status: true, message: "login succes" });
-                } else {
-                  resolve({ status: false, message: "wrong password" });
-                }
-              });
+            bcrypt.compare(user_password, user.user_password).then((status) => {
+              console.log("status", status);
+              if (status) {
+                resolve({ user, status: true, message: "login succes" });
+              } else {
+                resolve({ status: false, message: "wrong password" });
+              }
+            });
           } else {
             resolve({ status: false, message: "user doesn't exist" });
           }
@@ -263,31 +261,112 @@ module.exports = {
     });
   },
 
+  searchProduct: () => {
+    return new Promise((resolve, reject) => {
+      const num = 3;
+      const maufacture = "John Deere";
+      const crop = `'Wheat', 'Paddy'`;
+      pool.query(
+        `SELECT JSON_BUILD_OBJECT('products', (
+          SELECT JSON_AGG(JSON_BUILD_OBJECT(
+
+          ) FROM products LEFT JOIN product_detail pd ON products.product_id = pd.product_id
+                          INNER JOIN product_crops pc ON 
+          )
+        ))`,
+        (err, data) => {
+          console.log("error", err);
+          resolve({ data, err });
+        }
+      );
+    });
+  },
+
   getAllProduct: () => {
     return new Promise((resolve, reject) => {
       pool.query(
         `select json_build_object('products', (
+          
         select json_agg(json_build_object('product_id', products.product_id, 
+
         'model', product_model, 'price', product_price,
-        'crops', (select json_agg(crop_name)
-        from product_crops left join crops c on c.crop_id = product_crops.crop_id
-        where product_crops.product_id = products.product_id), 'manuf',
-        (select manufacture_name from manufacture where manufacture.manufacture_id = products.manufacture_id),
-        'product_name',  pd.product_name, 'pre_build', pd.product_prebuilt, 'usage', pd.product_use, 'description', 
-        pd.product_description)) from products
-         left join product_detail pd on products.product_id = pd.product_id
-        ), 'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name))
-         from crops), 'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name))
-         from manufacture))`,
+
+        'crops', (select json_agg(crop_name) from product_crops left join crops c on c.crop_id = product_crops.crop_id
+
+         where product_crops.product_id = products.product_id),
+
+        'manuf',(select manufacture_name from manufacture where manufacture.manufacture_id = products.manufacture_id),
+
+        'product_name',  pd.product_name, 
+        
+        'pre_build', pd.product_prebuilt, 
+        
+        'usage', pd.product_use, 
+        
+        'description', pd.product_description)) 
+        
+        from products left join product_detail pd on products.product_id = pd.product_id), 
+        
+        'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops),
+
+        'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture))`,
+
         (err, result) => {
-          console.log("@@@@@@@@@@@@@", err);
-          console.log(
-            "@@@@@@@@@@@@@result",
-            JSON.stringify(result.rows[0].json_build_object.products)
-          );
-          resolve(result.rows[0].json_build_object.products)
+          // console.log("@@@@@@@@@@@@@", err);
+          // console.log(
+          //   "@@@@@@@@@@@@@result",
+          //   JSON.stringify(result.rows[0].json_build_object.products)
+          // );
+          resolve(result.rows[0].json_build_object.products);
+        }
+      );
+    });
+  },
+
+  getAllManufactures: () => {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `select json_build_object( 
+          'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture),
+          'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops)
+        )
+       `,
+        (err, data) => {
+          console.log("error", err);
+          console.log("data", JSON.stringify(data.rows[0]));
+          resolve(data.rows[0].json_build_object);
         }
       );
     });
   },
 };
+
+// select json_build_object(
+
+//   'products',
+
+//   ( select json_agg(json_build_object(
+
+//   'product_id', products.product_id,
+
+//   'model', product_model, 'price', product_price,
+
+//   'crops', (select json_agg(crop_name) from product_crops left join crops c on c.crop_id = product_crops.crop_id where product_crops.product_id = products.product_id),
+
+//   'manuf',(select manufacture_name from manufacture where manufacture.manufacture_id = products.manufacture_id),
+
+//   'product_name',  pd.product_name,
+
+//   'pre_build', pd.product_prebuilt,
+
+//   'usage', pd.product_use,
+
+//   'description', pd.product_description)) from products
+
+//   left join product_detail pd on products.product_id = pd.product_id),
+
+//   'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops),
+
+//   'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture)
+
+//     )
