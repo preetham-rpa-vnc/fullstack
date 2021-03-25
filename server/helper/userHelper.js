@@ -261,26 +261,26 @@ module.exports = {
     });
   },
 
-  searchProduct: () => {
-    return new Promise((resolve, reject) => {
-      const num = 3;
-      const maufacture = "John Deere";
-      const crop = `'Wheat', 'Paddy'`;
-      pool.query(
-        `SELECT JSON_BUILD_OBJECT('products', (
-          SELECT JSON_AGG(JSON_BUILD_OBJECT(
+  // searchProduct: () => {
+  //   return new Promise((resolve, reject) => {
+  //     const num = 3;
+  //     const maufacture = "John Deere";
+  //     const crop = `'Wheat', 'Paddy'`;
+  //     pool.query(
+  //       `SELECT JSON_BUILD_OBJECT('products', (
+  //         SELECT JSON_AGG(JSON_BUILD_OBJECT(
 
-          ) FROM products LEFT JOIN product_detail pd ON products.product_id = pd.product_id
-                          INNER JOIN product_crops pc ON 
-          )
-        ))`,
-        (err, data) => {
-          console.log("error", err);
-          resolve({ data, err });
-        }
-      );
-    });
-  },
+  //         ) FROM products LEFT JOIN product_detail pd ON products.product_id = pd.product_id
+  //                         INNER JOIN product_crops pc ON 
+  //         )
+  //       ))`,
+  //       (err, data) => {
+  //         console.log("error", err);
+  //         resolve({ data, err });
+  //       }
+  //     );
+  //   });
+  // },
 
   getAllProduct: () => {
     return new Promise((resolve, reject) => {
