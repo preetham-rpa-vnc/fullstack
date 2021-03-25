@@ -30,38 +30,52 @@ const defaultProps = {
   style: { width: "fit-content" },
 };
 
-export default function SearchItem() {
+export default function SearchItem({ searchResult }) {
+  // console.log("datass", datass);
   const classes = useStyles();
-  const [searchData, setSearchData] = useState({});
-  const [manufacture, setManufactures] = useState([])
-  const [crops, setCrops] = useState([])
+  const [searchData, setSearchData] = useState({
+    manufacture: "",
+    crop: "",
+  });
+  const [manufactures, setManufactures] = useState([]);
+  const [crops, setCrops] = useState([]);
+  const [searchProducts, setSearchProducts] = useState({});
+
+  const { manufacture, crop } = searchData;
 
   useEffect(() => {
-    Axios
-      .get(`${process.env.REACT_APP_API_URI}/getmanufacture`)
-      .then((result) => {
+    Axios.get(`${process.env.REACT_APP_API_URI}/getsearchkeys`).then(
+      (result) => {
         console.log("@@@@@@@@@@@@@", result);
-        setManufactures(result.data.manuf)
-        setCrops(result.data.crops)
-      });
+        setManufactures(result.data.manuf);
+        setCrops(result.data.crops);
+      }
+    );
   }, []);
 
-  console.log("&&&&&&&&&&&&&&&&&&&&&&&&&", manufacture);
-  console.log("&&&&&&&&&&&&&&&&&&&&&&&&&", top100Films);
-
-  const handleChange = (event) => {
+  const handleChange = (text) => (event) => {
     console.log("event.targer.value", event.target.innerText);
-    setSearchData({
-      ...searchData,
-      [event.target.innerText]: event.target.innerText,
-    });
+    setSearchData({ ...searchData, [text]: event.target.innerText });
   };
 
   const handleClick = () => {
     console.log("last data", searchData);
+    Axios.get(`${process.env.REACT_APP_API_URI}/findsearchdata`, {
+      params: searchData,
+    })
+      .then((products) => {
+        console.log("@@@@@@@@@@@@", products.data);
+        if (!products.data) {
+          alert("Product Null");
+        }
+        setSearchProducts(...products.data);
+        searchResult(products.data)
+        // setSearchData({ ...searchData, manufacture: "", crop: "" });
+      })
+      .catch((err) => console.log(err));
   };
 
-  console.log("search data", searchData);
+  console.log("search data", searchProducts);
 
   return (
     <div container className={classes.container}>
@@ -80,10 +94,11 @@ export default function SearchItem() {
               <Grid item>
                 <Autocomplete
                   id="combo-box-demo"
-                  options={manufacture}
+                  options={manufactures}
                   getOptionLabel={(option) => option.manuf_name}
                   style={{ width: 300 }}
-                  onChange={handleChange}
+                  onChange={handleChange("manufacture")}
+                  // value={manufacture}
                   renderInput={(params) => (
                     <TextField
                       {...params}
@@ -99,7 +114,7 @@ export default function SearchItem() {
                   options={crops}
                   getOptionLabel={(option) => option.crop_name}
                   style={{ width: 300 }}
-                  onChange={handleChange}
+                  onChange={handleChange("crop")}
                   renderInput={(params) => (
                     <TextField
                       {...params}

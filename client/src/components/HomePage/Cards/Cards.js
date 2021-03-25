@@ -147,12 +147,18 @@ const MediaCard = () => {
     // Redirect="https://www.youtube.com/watch?v=nziA33FrhoI"
   };
 
+  const searchR = (searchProducts) => {
+    console.log("data################", searchProducts);
+    setItemData(searchProducts)
+    alert("serachR")
+  }
+
   return (
     <>
       <div className={classes.roots}>
         <Grid container direction="column" spacing={3}>
           <Grid item mt={3} className={classes.searchItem}>
-            <SeachItem />
+            <SeachItem searchResult={searchR} />
           </Grid>
           <Grid item>
             <Grid container spacing={2}>
@@ -216,7 +222,7 @@ const MediaCard = () => {
                                           variant="h6"
                                           className={classes.crops}
                                         >
-                                          {data.crops}
+                                          {data.product_crops}
                                         </Typography>
                                       </Grid>
                                       {/* {crops.slice().map((datas) => {
@@ -250,7 +256,7 @@ const MediaCard = () => {
                                     </Grid>
                                     <Grid item>
                                       <Typography className={classes.modelName}>
-                                        {model}
+                                        {data.product_model}
                                       </Typography>
                                     </Grid>
                                   </Box>
@@ -268,7 +274,7 @@ const MediaCard = () => {
                                     variant="h6"
                                     className={classes.manufacture}
                                   >
-                                    {data.manuf}
+                                    {data.product_manufacturer}
                                   </Typography>
                                 </Grid>
                               </Grid>
@@ -302,7 +308,7 @@ const MediaCard = () => {
                                 className={classes.price}
                               >
                                 <Grid item>₹</Grid>
-                                <Grid item>{data.price}</Grid>
+                                <Grid item>{data.product_price}</Grid>
                               </Grid>
                               <Grid item xs={6}>
                                 <Links

@@ -261,26 +261,41 @@ module.exports = {
     });
   },
 
-  // searchProduct: () => {
-  //   return new Promise((resolve, reject) => {
-  //     const num = 3;
-  //     const maufacture = "John Deere";
-  //     const crop = `'Wheat', 'Paddy'`;
-  //     pool.query(
-  //       `SELECT JSON_BUILD_OBJECT('products', (
-  //         SELECT JSON_AGG(JSON_BUILD_OBJECT(
+  searchProduct: (searchKeys) => {
+    return new Promise((resolve, reject) => {
+      console.log("searchkeys", searchKeys);
+      const { manufacture, crop } = searchKeys;
+      // const manufacture2 = "John Deere";
+      // const crop2 = "Wheat";
+      // const crop = `'Wheat', 'Paddy'`;
+      pool.query(
+        `SELECT JSON_BUILD_OBJECT('products', (
+          SELECT JSON_AGG(JSON_BUILD_OBJECT(
 
-  //         ) FROM products LEFT JOIN product_detail pd ON products.product_id = pd.product_id
-  //                         INNER JOIN product_crops pc ON 
-  //         )
-  //       ))`,
-  //       (err, data) => {
-  //         console.log("error", err);
-  //         resolve({ data, err });
-  //       }
-  //     );
-  //   });
-  // },
+            'product_id', products.product_id,
+            'product_model', products.product_model,
+            'product_price', products.product_price,
+            'product_crops', (SELECT JSON_AGG(crop_name) FROM product_crops INNER JOIN crops c ON c.crop_id = product_crops.crop_id
+                              WHERE product_crops.product_id = products.product_id),
+            'product_manufacturer', (SELECT manufacture_name FROM manufacture WHERE manufacture.manufacture_id = products.manufacture_id),
+            'product_name', pd.product_name,
+            'pre_build', pd.product_prebuilt,
+            'product_usage', pd.product_use,
+            'product_description', pd.product_description))
+
+          FROM products LEFT JOIN product_detail pd ON products.product_id = pd.product_id
+                          INNER JOIN product_crops pc ON products.product_id = pc.product_id 
+                            and crop_id in (SELECT crop_id FROM crops WHERE crop_name in ('${crop}'))
+                          INNER JOIN manufacture mf ON products.manufacture_id in (SELECT mf.manufacture_id FROM manufacture 
+                            WHERE mf.manufacture_name in ('${manufacture}'))
+        ))`,
+        (err, data) => {
+          // console.log("data", JSON.stringify(data.rows[0]));
+          resolve({ data, err });
+        }
+      );
+    });
+  },
 
   getAllProduct: () => {
     return new Promise((resolve, reject) => {
@@ -289,27 +304,27 @@ module.exports = {
           
         select json_agg(json_build_object('product_id', products.product_id, 
 
-        'model', product_model, 'price', product_price,
+        'product_model', product_model, 'product_price', product_price,
 
-        'crops', (select json_agg(crop_name) from product_crops left join crops c on c.crop_id = product_crops.crop_id
+        'product_crops', (select json_agg(crop_name) from product_crops left join crops c on c.crop_id = product_crops.crop_id
 
          where product_crops.product_id = products.product_id),
 
-        'manuf',(select manufacture_name from manufacture where manufacture.manufacture_id = products.manufacture_id),
+        'product_manufacturer',(select manufacture_name from manufacture where manufacture.manufacture_id = products.manufacture_id),
 
         'product_name',  pd.product_name, 
         
         'pre_build', pd.product_prebuilt, 
         
-        'usage', pd.product_use, 
+        'product_usage', pd.product_use, 
         
-        'description', pd.product_description)) 
+        'product_description', pd.product_description)) 
         
         from products left join product_detail pd on products.product_id = pd.product_id), 
         
-        'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops),
+        'product_crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops),
 
-        'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture))`,
+        'product_manufacturer', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture))`,
 
         (err, result) => {
           // console.log("@@@@@@@@@@@@@", err);
@@ -332,13 +347,13 @@ module.exports = {
         )
        `,
         (err, data) => {
-          console.log("error", err);
-          console.log("data", JSON.stringify(data.rows[0]));
           resolve(data.rows[0].json_build_object);
         }
       );
     });
   },
+
+
 };
 
 // select json_build_object(

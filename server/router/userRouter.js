@@ -150,24 +150,25 @@ router.get("/getallproducts", (req, res) => {
   });
 });
 
-router.get("/search", (req, res) => {
-  userHelper.searchProduct().then(({ data, err }) => {
-    console.log("data", JSON.stringify(data));
-    console.log("error", err);
+router.get("/getsearchkeys", (req, res) => {
+  userHelper.getAllManufactures().then((result) => {
+    return res.json(result);
+  });
+});
+
+router.get("/findsearchdata", (req, res) => {
+  console.log("req body", req.body);
+  console.log("req query", req.query);
+  userHelper.searchProduct(req.query).then(({ data, err }) => {
+    console.log("data@@@@@@@@@@@@@@@@@@@@@", JSON.stringify(data));
+    console.log("err", err);
     if (err) {
       res.json(err);
     }
     if (data) {
-      res.json(data.rows[0]);
+      res.status(200).json(data.rows[0].json_build_object.products);
     }
   });
 });
-
-router.get("/getmanufacture", (req, res) => {
-  userHelper.getAllManufactures().then(result => {
-    console.log(typeof(result));
-    return res.json(result)
-  })
-})
 
 module.exports = router;
