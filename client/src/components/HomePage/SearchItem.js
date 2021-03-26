@@ -30,7 +30,7 @@ const defaultProps = {
   style: { width: "fit-content" },
 };
 
-export default function SearchItem({ searchResult }) {
+ export default function SearchItem({ searchResult }) {
   // console.log("datass", datass);
   const classes = useStyles();
   const [searchData, setSearchData] = useState({

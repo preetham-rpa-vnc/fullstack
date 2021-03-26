@@ -340,4 +340,4 @@ const MediaCard = () => {
   );
 };
 
-export default MediaCard;
+ export default MediaCard;

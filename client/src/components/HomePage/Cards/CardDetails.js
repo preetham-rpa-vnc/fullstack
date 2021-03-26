@@ -69,7 +69,7 @@
 //   },
 // }));
 
-// export default function Album({ location }) {
+//  export default function Album({ location }) {
 //   const classes = useStyles();
 //   const id = queryString.parse(location.search);
 //   console.log("datas", id);

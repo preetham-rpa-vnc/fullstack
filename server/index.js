@@ -4,6 +4,7 @@ const db = require("./config/dbConnection");
 const bodyParser = require("body-parser");
 const userRouter = require("./router/userRouter");
 const adminRouter = require("./router/adminRouter");
+const useragent = require("express-useragent");
 require("dotenv").config();
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+app.use(useragent.express());
 
 app.use("/", userRouter);
 app.use("/admin", adminRouter);

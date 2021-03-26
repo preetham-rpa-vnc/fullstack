@@ -6,7 +6,7 @@ let state = {
   db: null,
 };
 
-module.exports.connect = () => {
+ module.exports.connect = () => {
   const dbName = "vncDb";
   mongoClient.connect(URL, { useUnifiedTopology: true }, (err, data) => {
     if (err) throw err;
@@ -15,4 +15,4 @@ module.exports.connect = () => {
   });
 };
  
-module.exports.get = () => state.db;
+ module.exports.get = () => state.db;

@@ -238,4 +238,4 @@ function FirstBody({ itemData, passCrop }) {
   );
 }
 
-export default FirstBody;
+ export default FirstBody;

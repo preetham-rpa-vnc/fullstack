@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AddProduct() {
+ export default function AddProduct() {
   const classes = useStyles();
   const [productValues, setProductValues] = useState({});
 

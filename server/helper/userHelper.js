@@ -4,7 +4,7 @@ const collection = require("../config/collections");
 const ObjectId = require("mongodb").ObjectID;
 const pool = require("../config/dbSql");
 
-module.exports = {
+ module.exports = {
   // addUser: (userData) => {
   //   console.log("user data", userData);
   //   const { fname, lname, username, email, password } = userData;

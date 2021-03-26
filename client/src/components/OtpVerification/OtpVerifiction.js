@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function OtpVerification({ history }) {
+ export default function OtpVerification({ history }) {
   const classes = useStyles();
   const [loginVal, setLoginVal] = useState({
     contact_number: "",

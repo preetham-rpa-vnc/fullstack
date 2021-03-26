@@ -448,4 +448,4 @@ function ProductDetails({ location }) {
   );
 }
 
-export default ProductDetails;
+ export default ProductDetails;

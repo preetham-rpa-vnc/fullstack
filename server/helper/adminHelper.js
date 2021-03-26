@@ -1,6 +1,6 @@
 const pool = require("../config/dbSql");
 
-module.exports = {
+ module.exports = {
   addProducts: (productDetails) => {
     const {
       EQUIPMENT,

@@ -3,6 +3,7 @@ const userHelper = require("../helper/userHelper");
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const { serviceID, accountSID, authToken } = require("../config/otp_auth");
+const { route } = require("./adminRouter");
 const client = require("twilio")(
   "ACbb51be38a1319a3512ec4ad2fb9bc851",
   "8f19f3782b56003f44bd697b2784fc80"
@@ -171,4 +172,13 @@ router.get("/findsearchdata", (req, res) => {
   });
 });
 
-module.exports = router;
+router.get("/useragent", (req, res, next) => {
+  res.setHeader(req.useragent)
+  res.send(req.useragent);
+  res.json(req.useragent);
+  // console.log(JSON.stringify(req.useragent));
+  console.log(req.useragent);
+  // next();
+});
+
+ module.exports = router;
