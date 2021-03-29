@@ -5,8 +5,8 @@ const jwt = require("jsonwebtoken");
 const { serviceID, accountSID, authToken } = require("../config/otp_auth");
 const { route } = require("./adminRouter");
 const client = require("twilio")(
-  "ACbb51be38a1319a3512ec4ad2fb9bc851",
-  "8f19f3782b56003f44bd697b2784fc80"
+  "AC2221cf66c7ddf5135ee91ef718627d59",
+  "f93e41ad73321991c09c75d13485def9"
 );
 
 router.get("/getallitems", (req, res) => {
@@ -89,7 +89,7 @@ router.post("/sendotp", (req, res) => {
     console.log("response", resp);
     if (resp) {
       client.verify
-        .services("VAa99e7f615351b44d39c1be3311ee5e9f")
+        .services("VA0108e086f14bbd70cbf726992f59ad00")
         .verifications.create({
           to: `+91${contact_number}`,
           channel: "sms",
@@ -118,7 +118,7 @@ router.post("/verifyotp", (req, res) => {
   const { otp, user_mobile } = req.body;
 
   client.verify
-    .services("VAa99e7f615351b44d39c1be3311ee5e9f")
+    .services("VA0108e086f14bbd70cbf726992f59ad00")
     .verificationChecks.create({
       to: `+91${user_mobile}`,
       code: otp,

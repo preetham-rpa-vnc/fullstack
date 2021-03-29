@@ -78,7 +78,7 @@ HideOnScroll.propTypes = {
 
   return (
     <>
-      {/* {isAuth() ? null : <Redirect to="/" />} */}
+      {isAuth() ? null : <Redirect to="/" />}
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar
