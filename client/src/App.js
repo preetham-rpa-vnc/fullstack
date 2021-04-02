@@ -10,6 +10,8 @@ import Footer from "./components/HomePage/Footer/Footer";
 import Header from "./components/Header/Header";
 import OtpVerification from "./components/OtpVerification/OtpVerifiction";
 import AddProduct from "./components/Admin/AddProduct";
+import UserLocation from "./components/UserLocation/UserLocation";
+import Weather from "./components/Weather/Weather";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <Route path="/product" component={ProductDetails} />
       <Route path="/grid" component={CSSGrid} />
       <Route path="/admin" component={AddProduct} />
+      <Route path="/location" component={UserLocation} />
+      <Route path="/weath" component={Weather} />
       <Footer />
     </Router>
   );

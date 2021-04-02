@@ -2,9 +2,9 @@ import cookie from "js-cookie";
 
 export const authenticate = (user, next) => {
   console.log("user", user);
-  const { first_name, last_name, user_mobile, token } = user;
+  const { user_profile_id, first_name, last_name, user_mobile, token } = user;
   setCookie("token", token);
-  setLocalStorage("user", { first_name, last_name, user_mobile });
+  setLocalStorage("user", { user_profile_id, first_name, last_name, user_mobile });
   next();
 };
 

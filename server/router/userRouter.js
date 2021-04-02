@@ -172,13 +172,23 @@ router.get("/findsearchdata", (req, res) => {
   });
 });
 
-router.get("/useragent", (req, res, next) => {
-  res.setHeader(req.useragent)
-  res.send(req.useragent);
-  res.json(req.useragent);
-  // console.log(JSON.stringify(req.useragent));
-  console.log(req.useragent);
-  // next();
+router.post("/checklocation", (req, res) =>{
+  console.log("req.  body", req.body);
+  userHelper.checkLocation(req.body).then(userResp => {
+    res.json(userResp)
+  })
+})
+
+router.post("/loginuserdata", (req, res) => {
+  // res.setHeader(req.useragent)
+  // res.send(req.useragent);
+  const { os, browser, platform } = req.useragent;
+  // res.json(req.useragent);
+  console.log(os, browser, platform);
+  console.log("req.body", req.body);
+  userHelper.userLoginDetails(req.body, req.useragent).then((result) => {
+    res.json({ message: "success" });
+  });
 });
 
- module.exports = router;
+module.exports = router;

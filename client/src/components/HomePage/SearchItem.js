@@ -30,7 +30,7 @@ const defaultProps = {
   style: { width: "fit-content" },
 };
 
- export default function SearchItem({ searchResult }) {
+export default function SearchItem({ searchResult }) {
   // console.log("datass", datass);
   const classes = useStyles();
   const [searchData, setSearchData] = useState({
@@ -69,7 +69,7 @@ const defaultProps = {
           alert("Product Null");
         }
         setSearchProducts(...products.data);
-        searchResult(products.data)
+        searchResult(products.data);
         // setSearchData({ ...searchData, manufacture: "", crop: "" });
       })
       .catch((err) => console.log(err));
@@ -81,7 +81,7 @@ const defaultProps = {
     <div container className={classes.container}>
       <Grid container direction="column" spacing={4}>
         <Grid item>
-          <Typography variant="h4">Search for seed near you</Typography>
+          <Typography variant="h4">Search Machineries</Typography>
         </Grid>
         <Grid item>
           <Box borderRadius={16} {...defaultProps} p={2}>
@@ -91,6 +91,22 @@ const defaultProps = {
               alignItems="center"
               className={classes.searchItems}
             >
+              <Grid item>
+                <Autocomplete
+                  id="combo-box-demo"
+                  options={crops}
+                  getOptionLabel={(option) => option.crop_name}
+                  style={{ width: 300 }}
+                  onChange={handleChange("crop")}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Select Crop"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
               <Grid item>
                 <Autocomplete
                   id="combo-box-demo"
@@ -108,22 +124,7 @@ const defaultProps = {
                   )}
                 />
               </Grid>
-              <Grid item>
-                <Autocomplete
-                  id="combo-box-demo"
-                  options={crops}
-                  getOptionLabel={(option) => option.crop_name}
-                  style={{ width: 300 }}
-                  onChange={handleChange("crop")}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Select Crop"
-                      variant="outlined"
-                    />
-                  )}
-                />
-              </Grid>
+
               {/* <Grid item>
                 <Autocomplete
                   id="combo-box-demo"
