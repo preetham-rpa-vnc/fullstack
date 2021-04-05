@@ -19,11 +19,11 @@ function App() {
   return (
     <Router>
       <Home />
-      <Route exact path="/landingPage" component={LandingPage} />
+      <Route exact path="/home" component={LandingPage} />
       <Route exact path="/" component={SignIn} />
       <Route path="/otpauth" component={OtpVerification} />
       <Route path="/signup" component={SignUp} />
-      <Route path="/home" component={Cards} />
+      <Route path="/landingPage" component={Cards} />
       <Route path="/view" component={ViewItems} />
       <Route path="/product" component={ProductDetails} />
       <Route path="/grid" component={CSSGrid} />
