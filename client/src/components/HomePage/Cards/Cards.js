@@ -162,7 +162,7 @@ const MediaCard = () => {
           </Grid>
           <Grid item>
             <Grid container spacing={2}>
-              <Grid item xs={3} m={2} mx="auto" mt={2}>
+              <Grid item xs={3} m={2} mx="auto" mt={2}> 
                 <FirstBody
                   itemData={itemData}
                   passCrop={newFunc}
