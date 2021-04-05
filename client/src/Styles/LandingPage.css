@@ -1,0 +1,105 @@
+.img-container {
+    position: relative;
+    color: white;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../Assets/PropositionCardImage.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    padding-top: 3rem;
+    height: 20em;
+  }
+  .search-header-txt{
+    color: #000000;
+    /* font-size: 36px;
+    font-weight: 600; */
+    font: normal normal 600 40px/60px Segoe UI;
+  }
+  .weather-search-div{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 0.39;
+    width: 10em;
+    height: 7em;
+    float: right;
+    margin-right: 10%;
+    margin-top: 2%;
+  }
+ .card-header{
+    text-align: center;
+    font: normal normal bold 20px/10px Arial;
+    letter-spacing: 0px;
+    color: #030303;
+    opacity: 1;
+ }
+ .card-img-txt{
+    margin-left: 12px;
+    font-size: 15px;
+    font-family: Franklin Gothic;
+    letter-spacing: 0px;
+    color: #5A5858;
+    opacity: 1;
+ }
+ .items-main-div{
+    padding-left: 2%;
+    padding-top: 2%;
+    background: #F1FFF9 0% 0% no-repeat padding-box;
+    padding-bottom: 2%;
+ }
+.seed-item-img{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+.seed-item-div{
+    margin-top: 2%;
+    padding-left: 5%;
+    background-color: white;
+    padding-top: 1.3%;
+}
+.seed-img-subtext{
+    margin-left: 20%;
+    font: normal normal bold 18px/20px Segoe UI;
+    letter-spacing: 0px;
+    color: #716E6E;
+    opacity: 1;
+}
+.degree-number{
+    font: normal normal bold 30px/53px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+.degree-txt{
+    font: normal normal 600 15px/40px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+.icon-style{
+    color: #000000;
+    margin-left: 15px;
+    font-size: 30px;
+}
+.weather-text-style{
+    font: normal normal 600 19px/21px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    margin-top: -10px;
+    margin-left: 6px;
+}
+.search-btn{
+    background: #2DE299 0% 0% no-repeat padding-box !important;
+    border-radius: 10px;
+    opacity: 1;
+    font: normal normal 600 17px/26px Segoe UI !important;
+    color: #FCF9F9 !important;
+    opacity: 1;
+}
+.menu-icon-style{
+    color:#000000;
+    margin-top: 9%;
+    cursor:pointer;
+    font-size: 40px;
+}

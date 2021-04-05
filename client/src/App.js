@@ -10,6 +10,7 @@ import Footer from "./components/HomePage/Footer/Footer";
 import Header from "./components/Header/Header";
 import OtpVerification from "./components/OtpVerification/OtpVerifiction";
 import AddProduct from "./components/Admin/AddProduct";
+import LandingPage from './components/LandingPage/LandingPage';
 import UserLocation from "./components/UserLocation/UserLocation";
 import Weather from "./components/Weather/Weather";
 import ForcasteWeather from "./components/Weather/ForecasteWeather";
@@ -18,6 +19,7 @@ function App() {
   return (
     <Router>
       <Home />
+      <Route exact path="/landingPage" component={LandingPage} />
       <Route exact path="/" component={SignIn} />
       <Route path="/otpauth" component={OtpVerification} />
       <Route path="/signup" component={SignUp} />
