@@ -71,7 +71,7 @@
 
 //  export default function Album({ location }) {
 //   const classes = useStyles();
-//   const id = queryString.parse(location.search);
+//   const id = queryString.parse(arch);
 //   console.log("datas", id);
 
 //   console.log(machinery);

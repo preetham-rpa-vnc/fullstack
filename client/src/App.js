@@ -12,6 +12,7 @@ import OtpVerification from "./components/OtpVerification/OtpVerifiction";
 import AddProduct from "./components/Admin/AddProduct";
 import UserLocation from "./components/UserLocation/UserLocation";
 import Weather from "./components/Weather/Weather";
+import ForcasteWeather from "./components/Weather/ForecasteWeather";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path="/admin" component={AddProduct} />
       <Route path="/location" component={UserLocation} />
       <Route path="/weath" component={Weather} />
+      <Route path="/weather" component={ForcasteWeather} />
       <Footer />
     </Router>
   );
