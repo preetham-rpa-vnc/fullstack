@@ -21,6 +21,8 @@ import sprayingPump from '../../Assets/sprayingPump.jpg';
 import icons from '../../Assets/languageIcons.PNG';
 import latestNews from '../../Assets/latestNews1.PNG';
 import latestNews2 from '../../Assets/latestNews2.PNG';
+import HamburgerMenuItems from "../HamburgerMenuItems/HamburgerMenuItems";
+
 
 export default function LandingPage(){
     let newsImg = [
@@ -77,6 +79,7 @@ export default function LandingPage(){
             <ItemCarousel items={newsImg}/>
             <SeedItems items={items2}/>
             <ItemsCard items={items}/>
+            <HamburgerMenuItems />
             <ItemCarousel items={carouselItems}/>
             <ItemCarousel items={bestItemCarousel} header={"Best Sellers"} style={true}/>
             <AppBar position="static" className="mid-bar">
