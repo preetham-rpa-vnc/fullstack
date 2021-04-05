@@ -22,7 +22,7 @@ export default function ItemsCard(props){
             <Grid container spacing={12}>
             {props.items.map((value, i)=>{
                 return(
-                <Grid item lg={3} xs={12} md={6}>
+                <Grid item lg={3} xs={12} md={3}>
                     <Card className={classes.root}>
                         <CardActionArea>
                             <p className="card-header">{value.heading}</p>

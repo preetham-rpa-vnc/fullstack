@@ -25,12 +25,12 @@ export default function SearchCard(){
         <div className="pr-0 pl-0">
       <div className="img-container">
         <Grid container spacing={12}>
-            <Grid item lg={1} xs={0} md={0}></Grid>
-            <Grid item lg={3} xs={2} md={2}>
+            <Grid item lg={1} xs={0} md={1}></Grid>
+            <Grid item lg={3} xs={2} md={3}>
                 <MenuIcon className="menu-icon-style"/>
             </Grid>
             <Grid item xs={1}></Grid>
-            <Grid item lg={4} xs={7} md={7}>
+            <Grid item lg={4} xs={7} md={4}>
                 <h1 className="search-header-txt">Search Crop near you</h1>
             </Grid>
             <Grid item xs={3}>
@@ -43,8 +43,8 @@ export default function SearchCard(){
             </Grid>
         </Grid>
         <Grid container spacing={12}>
-        <Grid item lg={3} xs={0}></Grid>
-        <Grid item lg={7} xs={12}>
+        <Grid item lg={3} xs={0} md={3}></Grid>
+        <Grid item lg={7} xs={12} md={7}>
         <OutlinedInput style={{backgroundColor:'white', width:'100%'}}
             id="outlined-adornment-amount"
             endAdornment={<InputAdornment position="end">
