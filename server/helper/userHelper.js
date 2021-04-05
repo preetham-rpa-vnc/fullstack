@@ -1,10 +1,10 @@
-const db = require("../config/dbConnection");
+// const db = require("../config/dbConnection");
 const bcrypt = require("bcrypt");
 const collection = require("../config/collections");
-const ObjectId = require("mongodb").ObjectID;
+// const ObjectId = require("mongodb").ObjectID;
 const pool = require("../config/dbSql");
 
- module.exports = {
+module.exports = {
   // addUser: (userData) => {
   //   console.log("user data", userData);
   //   const { fname, lname, username, email, password } = userData;
@@ -38,126 +38,126 @@ const pool = require("../config/dbSql");
   //   });
   // },
 
-  loginUsers: (loginUser) => {
-    console.log(loginUser);
-    const { username, password } = loginUser;
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collection.USER_COLLECTION)
-        .findOne({ username })
-        .then(async (user) => {
-          if (user) {
-            bcrypt.compare(password, user.password).then((resp) => {
-              if (resp) {
-                resolve({ user, message: "login success", status: true });
-              } else {
-                resolve({ message: "wrong passwored", status: false });
-              }
-            });
-          } else {
-            console.log("user doesn't exist");
-            resolve({ message: "user doesn't exist", status: false });
-          }
-        })
-        .catch((err) => console.log(err));
-    });
-  },
+  // loginUsers: (loginUser) => {
+  //   console.log(loginUser);
+  //   const { username, password } = loginUser;
+  //   return new Promise((resolve, reject) => {
+  //     db.get()
+  //       .collection(collection.USER_COLLECTION)
+  //       .findOne({ username })
+  //       .then(async (user) => {
+  //         if (user) {
+  //           bcrypt.compare(password, user.password).then((resp) => {
+  //             if (resp) {
+  //               resolve({ user, message: "login success", status: true });
+  //             } else {
+  //               resolve({ message: "wrong passwored", status: false });
+  //             }
+  //           });
+  //         } else {
+  //           console.log("user doesn't exist");
+  //           resolve({ message: "user doesn't exist", status: false });
+  //         }
+  //       })
+  //       .catch((err) => console.log(err));
+  //   });
+  // },
 
-  getAllItems: () => {
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collection.PRODUCT_COLLECTION)
-        .aggregate([
-          {
-            $unwind: "$crops",
-          },
-        ])
-        .toArray()
-        .then((itemsAll) => {
-          resolve(itemsAll);
-        });
-    });
-  },
+  // getAllItems: () => {
+  //   return new Promise((resolve, reject) => {
+  //     db.get()
+  //       .collection(collection.PRODUCT_COLLECTION)
+  //       .aggregate([
+  //         {
+  //           $unwind: "$crops",
+  //         },
+  //       ])
+  //       .toArray()
+  //       .then((itemsAll) => {
+  //         resolve(itemsAll);
+  //       });
+  //   });
+  // },
 
-  getItems: (id) => {
-    console.log("iiiiiiiiiiiiiid", id);
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collection.PRODUCT_COLLECTION)
-        .findOne({ _id: ObjectId(id) })
-        .then((item) => {
-          resolve(item);
-        })
-        .catch((err) => console.log(err));
-    });
-  },
+  // getItems: (id) => {
+  //   console.log("iiiiiiiiiiiiiid", id);
+  //   return new Promise((resolve, reject) => {
+  //     db.get()
+  //       .collection(collection.PRODUCT_COLLECTION)
+  //       .findOne({ _id: ObjectId(id) })
+  //       .then((item) => {
+  //         resolve(item);
+  //       })
+  //       .catch((err) => console.log(err));
+  //   });
+  // },
 
-  getSimilerItems: () => {
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collection.PRODUCT_COLLECTION)
-        .find({ crop: "All" })
-        .toArray()
-        .then((items) => {
-          resolve(items);
-        })
-        .catch((err) => console.log(err));
-    });
-  },
+  // getSimilerItems: () => {
+  //   return new Promise((resolve, reject) => {
+  //     db.get()
+  //       .collection(collection.PRODUCT_COLLECTION)
+  //       .find({ crop: "All" })
+  //       .toArray()
+  //       .then((items) => {
+  //         resolve(items);
+  //       })
+  //       .catch((err) => console.log(err));
+  //   });
+  // },
 
-  addAllData: (data) => {
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collection.CROP_COLLECTION)
-        .insert(data)
-        .then((res) => {
-          resolve(resp);
-        });
-    });
-  },
+  // addAllData: (data) => {
+  //   return new Promise((resolve, reject) => {
+  //     db.get()
+  //       .collection(collection.CROP_COLLECTION)
+  //       .insert(data)
+  //       .then((res) => {
+  //         resolve(resp);
+  //       });
+  //   });
+  // },
 
-  getAllCrop: () => {
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collection.CROP_COLLECTION)
-        .find()
-        .toArray()
-        .then((response) => {
-          resolve(response);
-        });
-    });
-  },
+  // getAllCrop: () => {
+  //   return new Promise((resolve, reject) => {
+  //     db.get()
+  //       .collection(collection.CROP_COLLECTION)
+  //       .find()
+  //       .toArray()
+  //       .then((response) => {
+  //         resolve(response);
+  //       });
+  //   });
+  // },
 
-  getSelectedCrops: (items) => {
-    console.log(" all items", items);
-    const item = ["All", "Paddy"];
-    return new Promise((resolve, reject) => {
-      return db
-        .get()
-        .collection(collection.PRODUCT_COLLECTION)
-        .aggregate([
-          {
-            $unwind: "$crops",
-          },
-          {
-            $match: {
-              crops: {
-                $in: [items],
-              },
-            },
-          },
-        ])
-        .toArray()
-        .then((resp) => {
-          resolve(resp);
-        });
+  // getSelectedCrops: (items) => {
+  //   console.log(" all items", items);
+  //   const item = ["All", "Paddy"];
+  //   return new Promise((resolve, reject) => {
+  //     return db
+  //       .get()
+  //       .collection(collection.PRODUCT_COLLECTION)
+  //       .aggregate([
+  //         {
+  //           $unwind: "$crops",
+  //         },
+  //         {
+  //           $match: {
+  //             crops: {
+  //               $in: [items],
+  //             },
+  //           },
+  //         },
+  //       ])
+  //       .toArray()
+  //       .then((resp) => {
+  //         resolve(resp);
+  //       });
 
-      // items.map(async (data, key) => {
-      //   console.log("iterate items", data);
+  //     // items.map(async (data, key) => {
+  //     //   console.log("iterate items", data);
 
-      // });
-    });
-  },
+  //     // });
+  //   });
+  // },
 
   addUser: (userData) => {
     console.log("user data", userData);
@@ -202,8 +202,8 @@ const pool = require("../config/dbSql");
                 if (err) {
                   throw err;
                 }
-                console.log(result.rows[0].username);
-                resolve({ status: true, exuser: result.rows[0].user_name });
+                console.log("result.rows[0]", result.rows[0].first_name);
+                resolve({ status: true, exuser: result.rows[0].first_name });
               }
             );
           }
@@ -224,13 +224,26 @@ const pool = require("../config/dbSql");
             throw err;
           }
           if (result.rowCount != 0) {
+            console.log("result.rows[0]$$$$$$$$$$$", result.rows[0]);
             const user = result.rows[0];
             console.log("user.user_password", user.user_password);
             console.log("user_password", user_password);
             bcrypt.compare(user_password, user.user_password).then((status) => {
               console.log("status", status);
               if (status) {
-                resolve({ user, status: true, message: "login succes" });
+                pool.query(
+                  `SELECT * FROM user_profile WHERE user_profile_id = $1`,
+                  [user.user_id],
+                  (err, userResult) => {
+                    console.log("user result", userResult.rows[0]);
+                    if (err) throw err;
+                    resolve({
+                      user: userResult.rows[0],
+                      status: true,
+                      message: "login succes",
+                    });
+                  }
+                );
               } else {
                 resolve({ status: false, message: "wrong password" });
               }
@@ -353,7 +366,80 @@ const pool = require("../config/dbSql");
     });
   },
 
+  userLoginDetails: (userLocation, userSystem) => {
+    console.log("userLocation", userLocation);
+    const { os, browser, platform } = userSystem;
+    const {
+      user_id,
+      user_name,
+      user_mobile,
+      status,
+      continent,
+      country,
+      state,
+      district,
+      // town,
+      postcode,
+    } = userLocation;
 
+    return new Promise((resolve, reject) => {
+      // pool.query(
+      //   `SELECT * FROM login_users WHERE user_name = $1`,
+      //   [user_name],
+      //   (err, result) => {
+      //     if (err) console.log(err);
+      //     console.log("r2@@@@@@@@@@@@@@@esult", result.rows[0]);
+      //     if (result.rows[0]) {
+      //       console.log("user is there buddy");
+      //     } else {
+      //       console.log("user is there buddy $$$$");
+      //     }
+      //   }
+      // );
+
+      pool.query(
+        `INSERT INTO login_users
+      (login_user_id, user_name, user_mobile, user_place_country, user_place_state, user_place_district, user_place_postcode, user_browser)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *
+      `,
+        [
+          user_id,
+          user_name,
+          user_mobile,
+          country,
+          state,
+          district,
+          postcode,
+          browser,
+        ],
+        (err, result) => {
+          // console.log("result@@@@@@@@@@", result);
+          // console.log("error@@@@@@@@@@", err);
+        }
+      );
+    });
+  },
+
+  checkLocation: (userName) => {
+    console.log("user name", userName);
+
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `SELECT * FROM login_users WHERE user_name = $1`,
+        [userName.first_name],
+        (err, result) => {
+          console.log("result", result);
+          if (result.rowCount > 0) {
+            console.log("results location", result.rows[0].user_place_country);
+            console.log("errrorr ", err);
+            resolve({ country: result.rows[0].user_place_country });
+          } else {
+            resolve({ country: null });
+          }
+        }
+      );
+    });
+  },
 };
 
 // select json_build_object(

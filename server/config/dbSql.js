@@ -10,7 +10,6 @@ const isProduction = process.env.NODE_ENV === "production";
 //   connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
 // });
 
-
 const pool = new Pool({
     user: "postgres",
     password: "postgres",

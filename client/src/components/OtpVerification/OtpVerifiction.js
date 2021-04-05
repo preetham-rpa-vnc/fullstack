@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     if (!contact_number) {
       alert("please fill all fields");
     } else if (contact_number.length < 10) {
-      alert(`${contact_number}, check you'r number`);
+      alert(`${contact_number}, check your number`);
     } else {
       setOpen(!open);
       Axios.post(`${process.env.REACT_APP_API_URI}/sendotp`, loginVal)

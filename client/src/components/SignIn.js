@@ -40,8 +40,8 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(7),
   },
   mains: {
-    marginBottom: "75px"
-  }
+    marginBottom: "75px",
+  },
 }));
 
 export default function SignIn({ history }) {
@@ -55,16 +55,16 @@ export default function SignIn({ history }) {
 
   const handleChange = (text) => (event) => {
     setLoginVal({ ...loginVal, [text]: event.target.value });
-  }; 
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     Axios.post(`${process.env.REACT_APP_API_URI}/login`, loginVal)
       .then((res) => {
         console.log("res.data", res.data);
-        const { message, status } = res.data;
+        const { message, status, user } = res.data;
         if (status) {
-          authenticate(res, () => {
+          authenticate(user, () => {
             window.location.reload();
             history.push("/home");
             setLoginVal({ ...loginVal, user_name: "", user_password: "" });

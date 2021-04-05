@@ -16,6 +16,8 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import { Redirect } from "react-router-dom";
 import Axios from "axios";
 import { crops } from "../Items/CropItem";
+import UserLocation from "../../UserLocation/UserLocation";
+import { isAuth } from "../../../helper/authHelper";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -111,23 +113,12 @@ const MediaCard = () => {
     setItemData(items);
   };
 
-  // useEffect(() => {
-  //   Axios.post("http://localhost:5000/insertalldata", crops)
-  //     .then((allDatas) => {
-  //       console.log("all datas", allDatas);
-  //       setItemData(allDatas.data);
-  //     })
-  //     .catch((err) => console.log(err));
-
-  //   // setItemData(machinery);
-  // }, []);
-
   useEffect(() => {
     console.log("EEEEEEEEEEEEEEEEe", itemData);
     Axios.get("http://localhost:5000/getallproducts")
       .then((allDatas) => {
         console.log("all datas", allDatas.data);
-        setItemData(allDatas.data); 
+        setItemData(allDatas.data);
         // setCrops(allDatas.data.crop)
       })
       .catch((err) => console.log(err));
@@ -143,15 +134,24 @@ const MediaCard = () => {
   console.log("item all data", itemData);
 
   const handleLink = () => {
-    <Redirect href="https://www.youtube.com/watch?v=nziA33FrhoI" />
+    <Redirect href="https://www.youtube.com/watch?v=nziA33FrhoI" />;
     // Redirect="https://www.youtube.com/watch?v=nziA33FrhoI"
   };
 
   const searchR = (searchProducts) => {
     console.log("data################", searchProducts);
-    setItemData(searchProducts)
-    alert("serachR")
-  }
+    setItemData(searchProducts);
+    alert("serachR");
+  };
+
+  const userDatas = (userDatails) => {
+    console.log("##########", userDatails);
+    Axios.post(`${process.env.REACT_APP_API_URI}/loginuserdata`, userDatails)
+      .then((userRes) => {
+        const { messsage } = userRes.data;
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -336,8 +336,9 @@ const MediaCard = () => {
           </Grid>
         </Grid>
       </div>
+      <UserLocation userDatas={userDatas} />
     </>
   );
 };
 
- export default MediaCard;
+export default MediaCard;
