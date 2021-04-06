@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   //   fullList: {
   //     width: "auto",
   //   },
-  //   hamburgerMenu: {
+  //   hamburgerMenu: { 
   //     color: "#fff",
   //   },
   divider: {
