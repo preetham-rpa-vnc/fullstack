@@ -65,7 +65,7 @@ export default function LandingPage() {
       <SearchCard />
       <SeedItems items={items2} />
       <ItemsCard items={items} />
-      <HamburgerMenuItems />
+      {/* <HamburgerMenuItems /> */}
     </div>
   );
 }

@@ -32,7 +32,6 @@ export default function SeedOptions({ item }) {
 
   return (
     <div>
-      <Divider />
       <Typography
         variant="h6"
         gutterBottom
