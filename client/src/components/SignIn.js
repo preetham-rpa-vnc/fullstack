@@ -20,7 +20,7 @@ import { authenticate, isAuth } from "../helper/authHelper";
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
-    display: "flex",
+    display: "flex", 
     flexDirection: "column", 
     alignItems: "center",
   },
@@ -66,7 +66,7 @@ export default function SignIn({ history }) {
         if (status) {
           authenticate(user, () => {
             window.location.reload();
-            history.push("/home");
+            history.push("/");
             setLoginVal({ ...loginVal, user_name: "", user_password: "" });
           });
         } else {
@@ -79,7 +79,7 @@ export default function SignIn({ history }) {
   console.log("login values", loginVal);
   return (
     <div className={classes.mains}>
-      {isAuth() ? <Redirect to="/home" /> : null}
+      {isAuth() ? <Redirect to="/" /> : null}
       <Container component="main" maxWidth="xs" id="container">
         <CssBaseline />
         <div className={classes.paper}>

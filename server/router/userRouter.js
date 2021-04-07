@@ -4,10 +4,7 @@ const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const { serviceID, accountSID, authToken } = require("../config/otp_auth");
 const { route } = require("./adminRouter");
-const client = require("twilio")(
-  "AC2221cf66c7ddf5135ee91ef718627d59",
-  "f93e41ad73321991c09c75d13485def9"
-);
+const client = require("twilio")(accountSID, authToken);
 
 router.get("/getallitems", (req, res) => {
   userHelper.getAllItems().then((allItems) => {
@@ -89,9 +86,10 @@ router.post("/sendotp", (req, res) => {
     console.log("response", resp);
     if (resp) {
       client.verify
-        .services("VA0108e086f14bbd70cbf726992f59ad00")
+        .services(serviceID)
         .verifications.create({
-          to: `+91${contact_number}`,
+          // to: `+91${contact_number}`,
+          to: number,
           channel: "sms",
         })
         .then((verification) => {
@@ -118,7 +116,7 @@ router.post("/verifyotp", (req, res) => {
   const { otp, user_mobile } = req.body;
 
   client.verify
-    .services("VA0108e086f14bbd70cbf726992f59ad00")
+    .services(serviceID)
     .verificationChecks.create({
       to: `+91${user_mobile}`,
       code: otp,
@@ -172,12 +170,12 @@ router.get("/findsearchdata", (req, res) => {
   });
 });
 
-router.post("/checklocation", (req, res) =>{
+router.post("/checklocation", (req, res) => {
   console.log("req.  body", req.body);
-  userHelper.checkLocation(req.body).then(userResp => {
-    res.json(userResp)
-  })
-})
+  userHelper.checkLocation(req.body).then((userResp) => {
+    res.json(userResp);
+  });
+});
 
 router.post("/loginuserdata", (req, res) => {
   // res.setHeader(req.useragent)

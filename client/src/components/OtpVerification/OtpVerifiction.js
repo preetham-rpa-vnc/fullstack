@@ -121,10 +121,15 @@ const useStyles = makeStyles((theme) => ({
         >
           Submit
         </Button>
-        <Grid container>
+        <Grid container direction="column">
           <Grid item>
-            <Link to="/" variant="body2">
-              {"Already have an account? Sign in"}
+            <Link to="/login" variant="body2">
+              {"Login with user"}
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/signup" variant="body2">
+              {"Don't have an account? Sign Up"}
             </Link>
           </Grid>
         </Grid>
@@ -157,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
           user.token = token;
           authenticate(user, () => {
             window.location.reload();
-            history.push("/home");
+            history.push("/");
             // setLoginVal({ ...loginVal, user_name: "", user_password: "" });
           });
         } else {
@@ -210,7 +215,7 @@ const useStyles = makeStyles((theme) => ({
 
   return (
     <div style={{marginBottom: "175px"}}>
-      {isAuth() ? <Redirect to="/home" /> : null}
+      {isAuth() ? <Redirect to="/" /> : null}
       <Container component="main" maxWidth="xs" id="container">
         <CssBaseline />
         <div className={classes.paper}>
