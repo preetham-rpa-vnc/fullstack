@@ -13,7 +13,8 @@ import AddProduct from "./components/Admin/AddProduct";
 import LandingPage from './components/LandingPage/LandingPage';
 import UserLocation from "./components/UserLocation/UserLocation";
 import Weather from "./components/Weather/Weather";
-import ForcasteWeather from "./components/Weather/ForecasteWeather";
+import ForcasteWeathers from "./components/Weather/ForecasteWeather";
+import ForcasteWeather from "./components/ForecastWeather/ForecastWeather";
 import Categories from './components/Caregories/Categories';
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
       <Route path="/admin" component={AddProduct} />
       <Route path="/location" component={UserLocation} />
       <Route path="/weath" component={Weather} />
-      <Route path="/weather" component={ForcasteWeather} />
+      <Route path="/weather" component={ForcasteWeathers} />
+      <Route path="/forecast" component={ForcasteWeather}/>
       <Footer />
     </Router>
   );

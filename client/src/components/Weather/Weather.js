@@ -11,12 +11,12 @@ const Weather = () => {
 
   const search = (event) => {
     if (event.key === "Enter") {
-      fetch(`${URL}/forecast?q=${query}&units=metric&APPID=${API_KEY}`)
+      fetch(`${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`)
         .then((res) => res.json())
         .then((data) => {
-          const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
+          // const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
          
-          console.log("dialy Data", dailyData);
+          // console.log("dialy Data", dailyData);
 
           console.log("result@@@@@@@@@@@@@@@sssSS", data);
           setWeather(data);

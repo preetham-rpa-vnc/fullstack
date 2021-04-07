@@ -46,7 +46,7 @@ export default function SearchCard() {
         </Grid>
         <Grid container spacing={12}>
           <Grid item lg={3} xs={0} md={3}></Grid>
-          <Grid item lg={7} xs={12} md={7}>
+          <Grid item lg={7} xs={12} md={7}> 
             <OutlinedInput
               style={{ backgroundColor: "white", width: "100%" }}
               id="outlined-adornment-amount"
