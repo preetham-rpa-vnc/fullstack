@@ -14,12 +14,14 @@ import LandingPage from './components/LandingPage/LandingPage';
 import UserLocation from "./components/UserLocation/UserLocation";
 import Weather from "./components/Weather/Weather";
 import ForcasteWeather from "./components/Weather/ForecasteWeather";
+import Categories from './components/Caregories/Categories';
 
 function App() {
   return (
     <Router>
       <Home />
       <Route exact path="/home" component={LandingPage} />
+      <Route exact path="/categories" component={Categories} />
       <Route exact path="/" component={SignIn} />
       <Route path="/otpauth" component={OtpVerification} />
       <Route path="/signup" component={SignUp} />

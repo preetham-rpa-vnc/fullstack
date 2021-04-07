@@ -79,7 +79,7 @@ export default function LandingPage(){
             <ItemCarousel items={newsImg}/>
             <SeedItems items={items2}/>
             <ItemsCard items={items}/>
-            <HamburgerMenuItems />
+            {/* <HamburgerMenuItems /> */}
             <ItemCarousel items={carouselItems}/>
             <ItemCarousel items={bestItemCarousel} header={"Best Sellers"} style={true}/>
             <AppBar position="static" className="mid-bar">
