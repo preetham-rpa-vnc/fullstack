@@ -12,10 +12,10 @@ import FirstBody from "./FirstBody/FirstBody";
 import { machinery } from "../Items/Items";
 import SeachItem from "../SearchItem";
 import LinkIcon from "@material-ui/icons/Link";
-import YouTubeIcon from "@material-ui/icons/YouTube";
+import YouTubeIcon from "@material-ui/icons/YouTube"; 
 import { Redirect } from "react-router-dom";
 import Axios from "axios";
-import { crops } from "../Items/CropItem";
+import { crops } from "../Items/CropItem"; 
 import UserLocation from "../../UserLocation/UserLocation";
 import { isAuth } from "../../../helper/authHelper";
 

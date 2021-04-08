@@ -171,7 +171,7 @@ router.get("/findsearchdata", (req, res) => {
 });
 
 router.post("/checklocation", (req, res) => {
-  console.log("req.  body", req.body);
+  console.log("req body", req.body);
   userHelper.checkLocation(req.body).then((userResp) => {
     res.json(userResp);
   });
@@ -186,6 +186,14 @@ router.post("/loginuserdata", (req, res) => {
   console.log("req.body", req.body);
   userHelper.userLoginDetails(req.body, req.useragent).then((result) => {
     res.json({ message: "success" });
+  });
+});
+
+router.get("/getuserlocation", (req, res) => {
+  const user = req.query;
+  console.log("user ##### user", user);
+  userHelper.checkLocation().then((location) => {
+    res.json({ location });
   });
 });
 

@@ -21,7 +21,7 @@ const ForcasteWeather = () => {
         );
         setDays(dailyData);
       });
-  }, []);
+  }, []); 
 
   const formatCards = () => {
     console.log("days", days);

@@ -10,7 +10,7 @@ function UserLocation({ userDatas }) {
   // console.log("@@@@@@@@@@@@", props.coords);
 
   useEffect(() => {
-    if (isAuth()) {
+    if (isAuth()) { 
       const { first_name } = isAuth();
       console.log("first_name", first_name);
       Axios.post(`${process.env.REACT_APP_API_URI}/checklocation`, {
@@ -118,7 +118,7 @@ function UserLocation({ userDatas }) {
 }
 
 export default geolocated({
-  positionOptions: {
+  positionOptions: { 
     enableHighAccuracy: false,
   },
   userDecisionTimeout: 5000,

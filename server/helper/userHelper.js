@@ -422,7 +422,6 @@ module.exports = {
 
   checkLocation: (userName) => {
     console.log("user name", userName);
-
     return new Promise((resolve, reject) => {
       pool.query(
         `SELECT * FROM login_users WHERE user_name = $1`,
@@ -430,9 +429,9 @@ module.exports = {
         (err, result) => {
           console.log("result", result);
           if (result.rowCount > 0) {
-            console.log("results location", result.rows[0].user_place_country);
+            console.log("results location", result.rows[0].user_place_district);
             console.log("errrorr ", err);
-            resolve({ country: result.rows[0].user_place_country });
+            resolve({ country: result.rows[0].user_place_district });
           } else {
             resolve({ country: null });
           }
@@ -440,6 +439,12 @@ module.exports = {
       );
     });
   },
+
+  // getUserLocation: () => {
+  //   return new Promise((resolve, reject) => {
+
+  //   })
+  // }
 };
 
 // select json_build_object(

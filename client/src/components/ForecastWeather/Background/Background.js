@@ -3,6 +3,8 @@ import { Box, Fade, Grid, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Weather from "../Weather/Weather";
 import Forecast from "../Forecast/Forecast";
+import Axios from "axios";
+import { isAuth } from "../../../helper/authHelper";
 
 import bgImage1 from "../../../Assets/backgroundWeather1.jpg";
 import bgImage2 from "../../../Assets/backgroundWeather2.jpg";
@@ -22,6 +24,18 @@ const useStyles = makeStyles((theme) => ({
 
 function Background() {
   const classes = useStyles();
+
+  if (isAuth()) {
+    const { first_name } = isAuth();
+    Axios.get(`${REACT_APP_API_URI}/getuserlocation`, {
+      params: first_name,
+    })
+      .then((userLocation) => {
+        console.log("user location", userLocation.data);
+      })
+      .catch((err) => console.log(err.message));
+  }
+
   return (
     <>
       <div className={classes.backGround}>
