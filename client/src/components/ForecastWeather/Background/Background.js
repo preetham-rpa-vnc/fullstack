@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Fade, Grid, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Weather from "../Weather/Weather";
@@ -22,25 +22,66 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const fives = [
+  {
+    one: "one",
+  },
+  {
+    two: "two",
+  },
+  {
+    Three: "Three",
+  },
+  {
+    Four: "Four",
+  },
+  {
+    Five: "Five",
+  },
+];
+
 function Background() {
   const classes = useStyles();
+  const [weather, setWeather] = useState([]);
+  const [foreCast, setForeCast] = useState();
 
-  if (isAuth()) {
-    const { first_name } = isAuth();
-    Axios.get(`${REACT_APP_API_URI}/getuserlocation`, {
-      params: first_name,
-    })
-      .then((userLocation) => {
-        console.log("user location", userLocation.data);
+  useEffect(() => {
+    if (isAuth()) {
+      console.log("is auth11");
+      const { first_name } = isAuth();
+      Axios.get(`${process.env.REACT_APP_API_URI}/getuserlocation`, {
+        params: {
+          first_name,
+        },
       })
-      .catch((err) => console.log(err.message));
-  }
+        .then((userLocation) => {
+          console.log("user location", userLocation.data);
+          const { district } = userLocation.data;
+          const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
+          const URL = "https://api.openweathermap.org/data/2.5";
+          const query = district;
+          const weatherURL = `${URL}/forecast?q=${query}&units=metric&APPID=${API_KEY}`;
+          fetch(weatherURL)
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("Data List Loaded", data);
+              setWeather(data);
+              const forecsatFiveDays = data.list.filter((reading) =>
+                reading.dt_txt.includes("18:00:00")
+              );
+
+              setForeCast(forecsatFiveDays);
+            });
+        })
+        .catch((err) => console.log(err.message));
+    }
+  }, []);
 
   return (
     <>
       <div className={classes.backGround}>
-        <Weather />
-        <Forecast />
+        <Weather weather={weather} />
+        <Forecast foreCast={foreCast} />
       </div>
     </>
   );
