@@ -15,6 +15,7 @@ import UserLocation from "./components/UserLocation/UserLocation";
 import Weather from "./components/Weather/Weather";
 import ForcasteWeathers from "./components/Weather/ForecasteWeather";
 import ForcasteWeather from "./components/ForecastWeather/ForecastWeather";
+import Categories from "./components/Caregories/Categories";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
       <Home />
       <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={SignIn} />
+      <Route exact path="/home" component={LandingPage} />
+      <Route exact path="/categories" component={Categories} />
+      <Route exact path="/" component={SignIn} />
       <Route path="/otpauth" component={OtpVerification} />
       <Route path="/signup" component={SignUp} />
       <Route path="/landingPage" component={Cards} />
