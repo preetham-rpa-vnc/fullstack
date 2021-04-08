@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
                   className={classes.media}
                   image={Logo}
                   title="Contemplative Reptile"
-                  onClick={() => (isAuth() ? history.push("/home") : history.push("/"))}
+                  onClick={() => (isAuth() ? history.push("/") : history.push("/"))}
                 />
               </Box>
             </Grid>

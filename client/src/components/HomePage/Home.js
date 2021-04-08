@@ -18,7 +18,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
-import { isAuth, signout } from "../../helper/authHelper"; 
+import { isAuth, signout } from "../../helper/authHelper";
 import Logo from "../../images/logo.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   desctopOptions: {
-    margin: theme.spacing(0, 0, 0, 2.3),
+    margin: theme.spacing(0, 0, 0, 2.1),
   },
   headerData: {
     float: "right",
@@ -41,6 +41,11 @@ const useStyles = makeStyles((theme) => ({
     height: 80,
     marginTop: 4,
     cursor: "pointer",
+  },
+  homeLink: {
+    textDecoration: "none",
+    color: "#716e6e",
+    fontFamily: "system-ui",
   },
 }));
 
@@ -62,9 +67,10 @@ HideOnScroll.propTypes = {
   window: PropTypes.func,
 };
 
- export default function HideAppBar(props) {
+export default function HideAppBar(props) {
   const classes = useStyles();
   const history = useHistory();
+  const location = history.location;
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleProfileMenuOpen = (event) => {
@@ -76,9 +82,14 @@ HideOnScroll.propTypes = {
     signout();
   };
 
+  const loginToHome = () => {
+    history.push("/");
+    window.location.reload();
+  };
+
   return (
     <>
-      {isAuth() ? null : <Redirect to="/" />}
+      {/* {isAuth() ? null : <Redirect to="/" />} */}
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar
@@ -97,7 +108,7 @@ HideOnScroll.propTypes = {
                     image={Logo}
                     title="Contemplative Reptile"
                     onClick={() =>
-                      isAuth() ? history.push("/home") : history.push("/")
+                      isAuth() ? history.push("/") : history.push("/")
                     }
                   />
                 </Typography>
@@ -105,7 +116,6 @@ HideOnScroll.propTypes = {
               <Grid item xs={6}>
                 {/* {isAuth()} */}
                 {isAuth() ? (
-                  console.log(),
                   <Box className={classes.headerData} justifyContent="flex-end">
                     <IconButton
                       color="default"
@@ -155,7 +165,7 @@ HideOnScroll.propTypes = {
                                 style={{
                                   backgroundColor: "#00b074",
                                   color: "white",
-                                }} 
+                                }}
                                 {...bindTrigger(popupState)}
                               >
                                 <Grid
@@ -167,7 +177,9 @@ HideOnScroll.propTypes = {
                                     <AccountCircle />
                                   </Grid>
                                   <Grid item>
-                                    <Typography>{isAuth().first_name}</Typography>
+                                    <Typography>
+                                      {isAuth().first_name}
+                                    </Typography>
                                   </Grid>
                                 </Grid>
                               </Button>
@@ -187,7 +199,96 @@ HideOnScroll.propTypes = {
                       </Grid>
                     </IconButton>
                   </Box>
-                ) : null}
+                ) : (
+                  <>
+                    {location.pathname == `/otpauth` ||
+                    location.pathname == `/login` ||
+                    location.pathname == `/signup` ? (
+                      <IconButton
+                        color="default"
+                        className={classes.loginDesctopOptions}
+                        style={{ float: "right" }}
+                        onClick={loginToHome}
+                      >
+                        <Grid container direction="column">
+                          <Grid item>
+                            <HomeIcon />
+                          </Grid>
+                          <Grid item>
+                            <Typography className={classes.homeLink}>
+                              Home
+                            </Typography>
+                          </Grid>
+                        </Grid>
+                      </IconButton>
+                    ) : (
+                      <Box
+                        className={classes.headerData}
+                        justifyContent="flex-end"
+                      >
+                        <IconButton
+                          color="default"
+                          className={classes.desctopOptions}
+                        >
+                          <Grid container direction="column">
+                            <Grid item>
+                              <HomeIcon />
+                            </Grid>
+                            <Grid item>
+                              <Typography>
+                                <Link to="/" className={classes.homeLink}>
+                                  Home
+                                </Link>
+                              </Typography>
+                            </Grid>
+                          </Grid>
+                        </IconButton>
+                        <IconButton
+                          color="default"
+                          className={classes.desctopOptions}
+                        >
+                          {/* <Grid containe xs={12}></Grid> */}
+                          <Grid container direction="column">
+                            <Grid item>
+                              <About />
+                            </Grid>
+                            <Grid item>
+                              <Typography>
+                                <Link to="/" className={classes.homeLink}>
+                                  About
+                                </Link>
+                              </Typography>
+                            </Grid>
+                          </Grid>
+                        </IconButton>
+                        <Button
+                          // variant="outlined"
+                          className={classes.desctopOptions}
+                          style={{
+                            border: "1px solid rgb(65 171 10 / 50%)",
+                            color: "#00b074",
+                          }}
+                          variant="outlined"
+                          color="primary"
+                          href="/otpauth"
+                        >
+                          <Grid
+                            container
+                            spacing={1}
+                            style={{ marginTop: "2px" }}
+                          >
+                            <Grid item>
+                              <AccountCircle />
+                            </Grid>
+                            <Grid item>
+                              <Typography>Sign In</Typography>
+                            </Grid>
+                          </Grid>
+                        </Button>
+                      </Box>
+                    )}
+                  </>
+                )}
               </Grid>
             </Grid>
           </Toolbar>
