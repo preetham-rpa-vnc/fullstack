@@ -1,5 +1,6 @@
 import react from "react";
 import {
+  Box,
   Button,
   CardMedia,
   Grid,
@@ -9,6 +10,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import logo from "../../../images/logo.png";
+import OtpInput from "react-otp-input";
 
 import bgImage1 from "../../../Assets/backgroundWeather1.jpg";
 import bgImage2 from "../../../Assets/backgroundWeather2.jpg";
@@ -38,14 +40,18 @@ const useStyles = makeStyles((theme) => ({
     margin: "20px 0 50px 0",
     textAlign: "center",
   },
-  content: {
-    lineHeight: 1,
-    fontVariantCaps: "all-petite-caps",
-    fontWeight: "bold",
+  //   otpField: {
+  //     color: "red",
+  //     background: "blue",
+  //     justifyContent: "center",
+  //     placeContent: "center",
+  //   },
+  inputField: {
+    margin: "0 0 0 184px",
   },
 }));
 
-const OtpAuth = () => {
+const OtpValidation = () => {
   const classes = useStyles();
   return (
     <>
@@ -62,29 +68,28 @@ const OtpAuth = () => {
                     variant="h3"
                     style={{ fontWeight: "bold", color: "#00b074" }}
                   >
-                    welcome back
-                  </Typography> 
-                  {/* </Typography> */}
+                    Enter Otp
+                  </Typography>
                 </Grid>
                 <Grid>
-                  <Typography variant="h6" className={classes.content}>
+                  <Typography variant="h6">
                     Sign In with your mobile number
                   </Typography>
                 </Grid>
               </Grid>
               <Grid item>
                 <Grid>{/* <Typography>Mobile Number</Typography> */}</Grid>
-                <Grid>
-                  <TextField
-                    autoFocus="on"
-                    id="outlined-textarea"
-                    label="Enter Mobile Number"
-                    placeholder="Mobile"
-                    multiline
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
-                  />
+                <Grid style={{ placeContent: "center" }}>
+                  <Box className={classes.inputField}>
+                    <OtpInput
+                      style={{ width: "50px" }}
+                      className={classes.otpField}
+                      // value={this.state.otp}
+                      // onChange={this.handleChange}
+                      numInputs={6}
+                      separator={<span>=</span>}
+                    />
+                  </Box>
                 </Grid>
               </Grid>
               <Grid item>
@@ -100,4 +105,4 @@ const OtpAuth = () => {
   );
 };
 
-export default OtpAuth;
+export default OtpValidation;

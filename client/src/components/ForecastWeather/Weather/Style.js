@@ -47,6 +47,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontFamily: "sans-serif",
   },
+  media: {
+    width: "350px",
+    padding: "150px",
+  },
 }));
 
 export default useStyles;

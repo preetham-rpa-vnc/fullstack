@@ -192,8 +192,9 @@ router.post("/loginuserdata", (req, res) => {
 router.get("/getuserlocation", (req, res) => {
   const user = req.query;
   console.log("user ##### user", user);
-  userHelper.checkLocation().then((location) => {
-    res.json({ location });
+  userHelper.checkLocation(user).then((location) => {
+    console.log();
+    res.json(location);
   });
 });
 

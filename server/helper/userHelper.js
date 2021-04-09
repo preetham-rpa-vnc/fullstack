@@ -427,11 +427,11 @@ module.exports = {
         `SELECT * FROM login_users WHERE user_name = $1`,
         [userName.first_name],
         (err, result) => {
-          console.log("result", result);
+          // console.log("result", result);
           if (result.rowCount > 0) {
             console.log("results location", result.rows[0].user_place_district);
-            console.log("errrorr ", err);
-            resolve({ country: result.rows[0].user_place_district });
+            // console.log("errrorr ", err);
+            resolve({ district: result.rows[0].user_place_district });
           } else {
             resolve({ country: null });
           }

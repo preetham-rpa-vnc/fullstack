@@ -54,7 +54,7 @@ function Header() {
           >
             <AccountCircleOutlinedIcon />
             Register
-          </Button>
+          </Button> 
         </div>
       )}
     </>

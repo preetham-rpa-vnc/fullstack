@@ -55,7 +55,7 @@ export default function Categories(){
                         <Grid container spacing={12}>  
                         {categoryItems1.map((value,i)=>{
                             return(
-                            <Grid item lg={3} xs={12} md={2}>
+                            <Grid item lg={3} xs={12} md={3}>
                                 <CategoryItemCard item={value}/>
                             </Grid>
                             )
@@ -66,7 +66,7 @@ export default function Categories(){
                         <Grid container spacing={12}>  
                         {popularItems.map((value,i)=>{
                             return(
-                            <Grid item lg={3} xs={12} md={2}>
+                            <Grid item lg={3} xs={12} md={3}>
                                 <CategoryItemCard item={value}/>
                             </Grid>
                             )

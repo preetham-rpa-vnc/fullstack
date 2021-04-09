@@ -16,12 +16,16 @@ import Weather from "./components/Weather/Weather";
 import ForcasteWeathers from "./components/Weather/ForecasteWeather";
 import ForcasteWeather from "./components/ForecastWeather/ForecastWeather";
 import Categories from "./components/Caregories/Categories";
+import OtpAuth from "./components/Auth/SignIn/OtpAuth";
+import OtpValidation from "./components/Auth/SignIn/OtpValidation";
 
 function App() {
   return (
     <Router>
       <Home />
       <Route exact path="/" component={LandingPage} />
+      <Route path="/otp" component={OtpAuth} />
+      <Route path="/valid" component={OtpValidation} />
       <Route path="/login" component={SignIn} />
       <Route exact path="/home" component={LandingPage} />
       <Route exact path="/categories" component={Categories} />
