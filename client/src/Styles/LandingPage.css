@@ -133,10 +133,12 @@
 .carousel-img{
     height:12em;
     width:22em;
+    cursor: pointer;
 }
 .carousel-img2{
     height: 13em;
     margin-left: 10px;
+    cursor: pointer;
 }
 .carousel-text-style{
     text-align: center;
