@@ -19,6 +19,7 @@ import Categories from "./components/Caregories/Categories";
 import OtpAuth from "./components/Auth/SignIn/OtpAuth";
 import OtpValidation from "./components/Auth/SignIn/OtpValidation";
 
+import ItemDetails from './components/ItemDetails/ItemDetails';
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
       <Route path="/valid" component={OtpValidation} />
       <Route path="/login" component={SignIn} />
       <Route exact path="/home" component={LandingPage} />
+      <Route exact path="/itemDetails" component={ItemDetails} />
       <Route exact path="/categories" component={Categories} />
       {/* <Route exact path="/" component={SignIn} /> */}
       <Route path="/otpauth" component={OtpVerification} />

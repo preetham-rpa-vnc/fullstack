@@ -8,7 +8,7 @@ export default function SeedItems(props) {
       <Grid container spacing={12}>
         {props.items.map((value, i) => {
           return (
-            <Grid item lg={2} xs={6} md={2}>
+            <Grid item lg={2} xs={6} md={2} >
               <div>
                 <img className="seed-item-img" src={value.img1} />
                 <p className="seed-img-subtext">{value.text}</p>
