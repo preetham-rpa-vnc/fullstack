@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     },
     media: {
       height: 140,
+      marginLeft:'12px', marginTop:'12px', marginRight:'12px',border: '1px solid #021a40'
     },
   });
 
@@ -30,7 +31,7 @@ export default function ItemsCard(props){
                             {value.images.map((val,i)=>{
                                 return(
                                 <Grid item xs={6}>
-                                <CardMedia style={{marginLeft:'12px', marginTop:'12px', marginRight:'12px'}}
+                                <CardMedia style={useStyles.media}
                                 className={classes.media}
                                 image={val.img1}
                                 title="Contemplative Reptile"

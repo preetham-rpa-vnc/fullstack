@@ -4,10 +4,12 @@
     background: 
  url("../Assets/searchBackground.jpg");
     background-repeat: round;
+    
     background-size: cover;
     padding: 0;
     padding-top: 3rem;
     height: 20em;
+
   }
   .search-header-txt{
     color: #000000;
@@ -55,7 +57,9 @@
     width: 200px;
     height: 200px;
     margin-left: 28%;
+    opacity: 1;
     
+    border: 1px solid #021a40;
     border-radius: 50%;
 }
 
@@ -121,7 +125,7 @@
 .carousel-wrapper{
     padding-top: 1.5%;
     background-color:white;
- 
+    
 }
 .carousel-wrapper > .sc-jRQAMF > .sc-iCfLBT{
     display: none;
@@ -154,10 +158,16 @@
     margin-top: 2%;
     padding-left: 2em;
     margin:auto;
+    /* border: 1px solid #021a40; */
+    top: 551px;
+    left: 971px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
 }
 .carousel-img2{
     height: 12em;
     margin-left: 10px;
+    border: 1px solid #021a40;
 }
 .carousel-text-style{
     text-align: center;
