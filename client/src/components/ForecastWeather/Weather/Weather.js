@@ -62,18 +62,11 @@ function Weather({ weather }) {
               </Paper>
             </Grid>
             <Grid item xs={5}>
-              {/* <img
-                style={{ margin: "-40px" }}
-                src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png`}
-                alt={day.weather[0].description}
-              /> */}
-              {/* <i className={`owf owf- ${day.weather[0].id} owf-5x red`}></i> */}
-
-              <i className={`owf owf-${day.weather[0].id} owf-5x`}></i>
+              {/* <i className={`owf owf-${day.weather[0].id} owf-5x`}></i> */}
               <CardMedia
                 className={classes.media}
                 image={`https://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png`}
-                title="Paella dish"
+                title={moment(new Date()).format("MMMM Do, dddd")}
               />
             </Grid>
           </Grid>

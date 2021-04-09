@@ -91,7 +91,7 @@ export default function SignUp() {
   return (
     <Container component="main" maxWidth="xs" style={{marginBottom: 30}}>
       {isAuth() ? <Redirect to="/" /> : null}
-      <CssBaseline />
+      <CssBaseline /> 
       <div className={classes.paper}>
         {/* <Avatar className={classes.avatar}>
           <LockOutlinedIcon />

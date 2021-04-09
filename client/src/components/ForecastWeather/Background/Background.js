@@ -10,7 +10,7 @@ import bgImage1 from "../../../Assets/backgroundWeather1.jpg";
 import bgImage2 from "../../../Assets/backgroundWeather2.jpg";
 const useStyles = makeStyles((theme) => ({
   backGround: {
-    backgroundImage: `url(${bgImage1})`,
+    backgroundImage: `url(${bgImage1})`, 
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center center",

@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@material-ui/core";
 import useStyles from "./Style";
-import moment from "moment";
+import moment from "moment"; 
 
 function Forecast({ foreCast }) {
   console.log("fore cast", foreCast);
