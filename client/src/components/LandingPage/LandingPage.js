@@ -92,7 +92,7 @@ export default function LandingPage() {
       ],
     },
     {
-      heading: "Top Handpicked item for you",
+      heading: "Farm Essentials",
       images: [
         { img1: tractor3, text: "New Equipments" },
         { img1: tractorImg, text: "Tractor" },
@@ -100,17 +100,17 @@ export default function LandingPage() {
         { img1: seedImg2, text: "Seeds" },
       ],
     },
+    // {
+    //   heading: "Top Handpicked item for you",
+    //   images: [
+    //     { img1: tractor3, text: "New Equipments" },
+    //     { img1: tractorImg, text: "Tractor" },
+    //     { img1: tractor2, text: "New Equipments" },
+    //     { img1: seedImg, text: "Seeds" },
+    //   ],
+    // },
     {
-      heading: "Top Handpicked item for you",
-      images: [
-        { img1: tractor3, text: "New Equipments" },
-        { img1: tractorImg, text: "Tractor" },
-        { img1: tractor2, text: "New Equipments" },
-        { img1: seedImg, text: "Seeds" },
-      ],
-    },
-    {
-      heading: "Top Handpicked item for you",
+      heading: "Popular Categories",
       images: [
         { img1: tractor3, text: "New Equipments" },
         { img1: tractorImg, text: "Tractor" },
@@ -121,15 +121,16 @@ export default function LandingPage() {
   ];
   let items2 = [
     { img1: seedImg, text: "Seed" },
-    { img1: seedImg2, text: "Seed" },
+    
+    // { img1: fertilizer, text: "Fertilizer" },
     { img1: fertilizer, text: "Fertilizer" },
-    { img1: fertilizer, text: "Fertilizer" },
-    { img1: rotavator, text: "Rotavator" },
-    { img1: rotavator2, text: "Rotavator" },
+    { img1: rotavator, text: "Machinary" },
+    { img1: rotavator2, text: "Buy Or Rent" },
+    { img1: seedImg2, text: "MSP Details" },
   ];
   let carouselItems = [
     { img1: tractorImg, text: "Tractor" },
-    { img1: seedImg2, text: "Seed" },
+    { img1: seedImg2, text: "Seeds" },
     { img1: tractor3, text: "Trailors" },
     { img1: fertilizer, text: "Fertilizer" },
     { img1: rotavator, text: "Rotavator" },
@@ -162,14 +163,18 @@ export default function LandingPage() {
       <SearchCard />
       <ItemCarousel items={newsImg} />
       <SeedItems items={items2} />
-      <ItemsCard items={items} />
-      {/* <HamburgerMenuItems /> */}
-      <ItemCarousel items={carouselItems} />
       <ItemCarousel
         items={bestItemCarousel}
         header={"Best Sellers"}
         style={true}
       />
+      <ItemsCard items={items} />
+      {/* <HamburgerMenuItems /> */}
+      <ItemCarousel items={carouselItems} 
+      style={true}
+      
+      />
+     
       <AppBar position="static" className="mid-bar">
         <Toolbar>
           <Grid container spacing={12}>
@@ -178,7 +183,7 @@ export default function LandingPage() {
               <img style={{ marginTop: "3%", height: "6em" }} src={icons} />
             </Grid>
             <Grid item lg={3} xs={12} md={3}>
-              <p className="mid-bar-text1">PLAND.FARM</p>
+              <p className="mid-bar-text2">PLAND.FARM</p>
             </Grid>
             <Grid item lg={3} xs={12} md={3}>
               <p className="mid-bar-text2">In your language</p>

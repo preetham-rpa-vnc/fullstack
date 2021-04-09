@@ -17,7 +17,6 @@ import ForcasteWeathers from "./components/Weather/ForecasteWeather";
 import ForcasteWeather from "./components/ForecastWeather/ForecastWeather";
 import Categories from "./components/Caregories/Categories";
 import ItemDetails from './components/ItemDetails/ItemDetails';
-
 function App() {
   return (
     <Router>
@@ -27,7 +26,7 @@ function App() {
       <Route exact path="/home" component={LandingPage} />
       <Route exact path="/itemDetails" component={ItemDetails} />
       <Route exact path="/categories" component={Categories} />
-      <Route exact path="/" component={SignIn} />
+      {/* <Route exact path="/" component={SignIn} /> */}
       <Route path="/otpauth" component={OtpVerification} />
       <Route path="/signup" component={SignUp} />
       <Route path="/landingPage" component={Cards} />
