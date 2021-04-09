@@ -142,16 +142,6 @@ export default function SearchCard() {
               <h1 className="search-header-txt">Search Crop near you</h1>
             </Grid>
             {isAuth() ? <>{CurrentWeather()}</> : null}
-
-            {/* <Grid item xs={3}>
-              <div className="weather-search-div">
-                <span className="degree-number">14°</span>
-                <span className="degree-txt">C</span>
-                <CloudQueueIcon className="icon-style" />
-                <p className="weather-text-style">Cloudy</p>
-                <p className="weather-text-style">B'lore, India</p>
-              </div>
-            </Grid> */}
           </Grid>
           <Grid container spacing={12}>
             <Grid item lg={3} xs={0} md={3}></Grid>
