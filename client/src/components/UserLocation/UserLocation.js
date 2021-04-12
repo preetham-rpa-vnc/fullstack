@@ -17,6 +17,7 @@ function UserLocation({ userDatas }) {
         Axios.post(`${process.env.REACT_APP_API_URI}/checklocation`, {
           first_name,
         }).then((resp) => {
+          // window.location.reload()
           console.log("##########################", resp);
           if (resp.data.country === null) {
             const { latitude, longitude } = position.coords;
