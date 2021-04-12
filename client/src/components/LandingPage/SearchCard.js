@@ -12,6 +12,7 @@ import { CardMedia, Paper } from "@material-ui/core";
 import Axios from "axios";
 import { isAuth } from "../../helper/authHelper";
 import { useHistory } from "react-router";
+import UserLocation from "../UserLocation/UserLocation";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,12 +76,16 @@ export default function SearchCard() {
           fetch(weatherURL)
             .then((res) => res.json())
             .then((data) => {
+              if (data && data.cod === 200) {
+                setWeather(...weather, [data]);
+              }
               console.log("Data List Loaded", data);
-              setWeather(...weather, [data]);
             });
         })
         .catch((err) => console.log(err));
     }, []);
+
+    console.log("wEEEEEEEEEEEEEEe", weather);
 
     const handleClick = () => {
       history.push("/forecast");
@@ -88,46 +93,63 @@ export default function SearchCard() {
 
     return (
       <Grid className={classes.mainGrid}>
-        {weather &&
-          weather.map((data, index) => (
-            <Paper
-              elevation={3}
-              className={classes.paper}
-              key={index}
-              onClick={handleClick}
-            >
-              <Grid container direction="column" spacing={0}>
-                <Grid
-                  item
-                  container
-                  className={classes.temp}
-                  direction="row"
-                  spacing={2}
+        {weather ? (
+          <>
+            {weather &&
+              weather.map((data, index) => (
+                <Paper
+                  elevation={3}
+                  className={classes.paper}
+                  key={index}
+                  onClick={handleClick}
                 >
-                  <Grid item>{data.main.temp}°C</Grid>
-                  <Grid item>
-                    <CardMedia
-                      className={classes.media}
-                      image={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-                      title="Paella dish"
-                    />
+                  <Grid container direction="column" spacing={0}>
+                    <Grid
+                      item
+                      container
+                      className={classes.temp}
+                      direction="row"
+                      spacing={2}
+                    >
+                      <Grid item>{data.main.temp}°C</Grid>
+                      <Grid item>
+                        <CardMedia
+                          className={classes.media}
+                          image={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+                          title="Paella dish"
+                        />
+                      </Grid>
+                    </Grid>
+                    <Grid item className={classes.description}>
+                      {data.weather[0].description}
+                    </Grid>
+                    <Grid item className={classes.description}>
+                      {data.name}, {data.sys.country}
+                    </Grid>
                   </Grid>
-                </Grid>
-                <Grid item className={classes.description}>
-                  {data.weather[0].description}
-                </Grid>
-                <Grid item className={classes.description}>
-                  {data.name}, {data.sys.country}
-                </Grid>
-              </Grid>
-            </Paper>
-          ))}
+                </Paper>
+              ))}
+          </>
+        ) : (
+          <div>
+            <h1>please turn on you location</h1>
+          </div>
+        )}
       </Grid>
     );
   };
 
-  console.log("weather alll data", weather);
+  const userDatas = (userDatails) => {
+    console.log("search card inside", userDatails);
+    Axios.post(`${process.env.REACT_APP_API_URI}/loginuserdata`, userDatails)
+      .then((userRes) => {
+        window.location.reload();
+        const { messsage } = userRes.data;
+      })
+      .catch((err) => console.log(err));
+  };
 
+  console.log("weather alll data", weather);
   return (
     <>
       <div className="pr-0 pl-0">
@@ -162,6 +184,7 @@ export default function SearchCard() {
           </Grid>
         </div>
       </div>
+      <UserLocation userDatas={userDatas} />
     </>
   );
 }

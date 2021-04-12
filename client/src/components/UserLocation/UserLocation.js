@@ -6,20 +6,19 @@ import { isAuth } from "../../helper/authHelper";
 
 function UserLocation({ userDatas }) {
   const [userPlace, setUserPlace] = useState({});
-
-  // console.log("@@@@@@@@@@@@", props.coords);
+  console.log("Enter inside first");
 
   useEffect(() => {
-    if (isAuth()) { 
-      const { first_name } = isAuth();
-      console.log("first_name", first_name);
-      Axios.post(`${process.env.REACT_APP_API_URI}/checklocation`, {
-        first_name,
-      }).then((resp) => {
-        console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@4444444444442", resp.data);
-        if (resp.data.country === null) {
-          const successfullLookup = (position) => {
-            console.log("postion", position);
+    const successfullLookup = (position) => {
+      console.log("postion", position);
+      if (isAuth()) {
+        const { first_name } = isAuth();
+
+        Axios.post(`${process.env.REACT_APP_API_URI}/checklocation`, {
+          first_name,
+        }).then((resp) => {
+          console.log("##########################", resp);
+          if (resp.data.country === null) {
             const { latitude, longitude } = position.coords;
             opencage
               .geocode({
@@ -69,39 +68,33 @@ function UserLocation({ userDatas }) {
               .catch((error) => {
                 console.log("error", error.message);
               });
-          };
+          }
+        });
+      }
+    };
 
-          const userDenied = (err) => {
-            console.log("posposition", err);
-            const { code, message } = err;
-            if (code) {
-              const userPlace = {
-                user_id: isAuth().user_profile_id,
-                user_name: isAuth().first_name,
-                user_mobile: isAuth().user_mobile,
-              };
-              setUserPlace(code);
-              // userDatas(code);
-              userDatas(userPlace);
-            }
-          };
+    const userDenied = (err) => {
+      console.log("posposition", err);
+      const { code, message } = err;
+      if (code) {
+        // const userPlace = {
+        //   user_id: isAuth().user_profile_id,
+        //   user_name: isAuth().first_name,
+        //   user_mobile: isAuth().user_mobile,
+        // };
+        // setUserPlace(code);
+        // // userDatas(code);
+        // userDatas(userPlace);
+      }
+    };
 
-          navigator.geolocation.getCurrentPosition(
-            successfullLookup,
-            userDenied
-          );
-        } else {
-          console.log("location already taken");
-        }
-      });
-    }
+    navigator.geolocation.getCurrentPosition(successfullLookup, userDenied);
+    console.log("userPlace", userPlace);
   }, []);
-
-  console.log("userPlace", userPlace);
 
   return (
     <>
-      {/* <div>
+      {/* <div> 
         <h1>Continent</h1>
         {userPlace.continent}
         <h1>country</h1>
@@ -118,7 +111,7 @@ function UserLocation({ userDatas }) {
 }
 
 export default geolocated({
-  positionOptions: { 
+  positionOptions: {
     enableHighAccuracy: false,
   },
   userDecisionTimeout: 5000,

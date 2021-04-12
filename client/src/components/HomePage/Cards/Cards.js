@@ -143,7 +143,7 @@ const MediaCard = () => {
     setItemData(searchProducts);
     alert("serachR");
   };
-
+ 
   const userDatas = (userDatails) => {
     console.log("##########", userDatails);
     Axios.post(`${process.env.REACT_APP_API_URI}/loginuserdata`, userDatails)
@@ -339,6 +339,6 @@ const MediaCard = () => {
       <UserLocation userDatas={userDatas} />
     </>
   );
-};
+}; 
 
 export default MediaCard;

@@ -48,7 +48,7 @@ router.get("/getselectedcrops", (req, res) => {
     .catch((err) => console.log("check error", err));
 });
 
-router.post("/signup", (req, res) => {
+router.post("/signup", (req, res) => { 
   userHelper.addUser(req.body).then((response) => {
     console.log("rsponse", response);
     return res.status(200).json(response);
@@ -88,8 +88,8 @@ router.post("/sendotp", (req, res) => {
       client.verify
         .services(serviceID)
         .verifications.create({
-          // to: `+91${contact_number}`,
-          to: number,
+          to: `+91${contact_number}`,
+          // to: contact_number,
           channel: "sms",
         })
         .then((verification) => {
