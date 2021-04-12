@@ -11,10 +11,10 @@ const isProduction = process.env.NODE_ENV === "production";
 // });
 
 const pool = new Pool({
-    user: "postgres",
-    password: "postgres",
+    user: "testpf",
+    password: "123",
     database: "pfdb",
-    host: "ec2-54-166-251-184.compute-1.amazonaws.com",
+    host: "localhost",
     port: 5432,
   }); 
 
