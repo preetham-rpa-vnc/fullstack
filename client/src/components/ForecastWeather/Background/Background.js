@@ -65,11 +65,12 @@ function Background() {
             .then((res) => res.json())
             .then((data) => {
               console.log("Data List Loaded", data);
-              setWeather(data);
+              // setWeather(data);
               const forecsatFiveDays = data.list.filter((reading) =>
                 reading.dt_txt.includes("18:00:00")
               );
-
+              const allData = { ...data, forecsatFiveDays}
+              setWeather(allData);  
               setForeCast(forecsatFiveDays);
             });
         })

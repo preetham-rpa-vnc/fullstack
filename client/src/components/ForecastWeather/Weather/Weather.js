@@ -11,17 +11,18 @@ import useStyle from "./Style";
 import moment from "moment";
 
 function Weather({ weather }) {
+  console.log("@@@@@@@@@@@@@@@22", weather);
   const classes = useStyle();
 
-  const { city, list } = weather;
+  const { city, list, forecsatFiveDays } = weather;
   const liveWeather = list;
   console.log("live weather", liveWeather);
   console.log("city", city);
 
   return (
     <div>
-      {list &&
-        list.slice(0, 1).map((day, index) => (
+      {forecsatFiveDays &&
+        forecsatFiveDays.slice(0, 1).map((day, index) => (
           <Grid container spacing={1}>
             <Grid item xs={7}>
               <Paper elevation={3} className={classes.paper}>

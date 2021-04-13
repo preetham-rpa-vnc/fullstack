@@ -183,10 +183,10 @@ export default function LandingPage() {
               <img style={{ marginTop: "3%", height: "6em" }} src={icons} />
             </Grid>
             <Grid item lg={3} xs={12} md={3}>
-              <p className="mid-bar-text2">PLAND.FARM</p>
+              <p className="mid-bar-text2">PLAND.FARM</p> 
             </Grid>
             <Grid item lg={3} xs={12} md={3}>
-              <p className="mid-bar-text2">In your language</p>
+              <p className="mid-bar-text3">In your language</p>
             </Grid>
           </Grid>
         </Toolbar>
