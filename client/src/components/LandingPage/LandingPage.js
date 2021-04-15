@@ -23,6 +23,7 @@ import latestNews from "../../Assets/latestNews1.PNG";
 import latestNews2 from "../../Assets/latestNews2.PNG";
 import HamburgerMenuItems from "../HamburgerMenuItems/HamburgerMenuItems";
 
+
 // export default function LandingPage() {
 //   let items = [
 //     {
@@ -80,7 +81,7 @@ import HamburgerMenuItems from "../HamburgerMenuItems/HamburgerMenuItems";
 //   );
 // }
 export default function LandingPage() {
-  let newsImg = [{ img1: latestNews }, { img1: latestNews2 }];
+  // let newsImg = [{ img1: latestNews }, { img1: latestNews2 }];
   let items = [
     {
       heading: "Top Handpicked item for you",
@@ -136,14 +137,14 @@ export default function LandingPage() {
     { img1: rotavator, text: "Rotavator" },
     { img1: rotavator2, text: "Rotavator" },
   ];
-  let bestItemCarousel = [
-    { img1: rotavator2 },
-    { img1: tractor2 },
-    { img1: tractor3 },
-    { img1: fertilizer },
-    { img1: rotavator },
-    { img1: rotavator2 },
-  ];
+  // let bestItemCarousel = [
+  //   { img1: rotavator2 },
+  //   { img1: tractor2 },
+  //   { img1: tractor3 },
+  //   { img1: fertilizer },
+  //   { img1: rotavator },
+  //   { img1: rotavator2 },
+  // ];
   let trendingItemsCarousel = [
     { img1: cultivator, text: "Cultivator", price: "From 2000/-" },
     { img1: rotavator2, text: "Rotavator", price: "From 5000/-" },
@@ -161,18 +162,17 @@ export default function LandingPage() {
   return (
     <div style={{ backgroundColor: "#F1FFF9" }}>
       <SearchCard />
-      <ItemCarousel items={newsImg} />
+      {/* <ItemCarousel items={newsImg} /> */}
       <SeedItems items={items2} />
-      <ItemCarousel
+      {/* <ItemCarousel
         items={bestItemCarousel}
         header={"Best Sellers"}
         style={true}
-      />
-      <ItemsCard items={items} />
+      /> */}
+      {/* <ItemsCard items={items} /> */}
       {/* <HamburgerMenuItems /> */}
       <ItemCarousel items={carouselItems} 
       style={true}
-      
       />
      
       <AppBar position="static" className="mid-bar">
@@ -183,7 +183,7 @@ export default function LandingPage() {
               <img style={{ marginTop: "3%", height: "6em" }} src={icons} />
             </Grid>
             <Grid item lg={3} xs={12} md={3}>
-              <p className="mid-bar-text2">PLAND.FARM</p>
+              <p className="mid-bar-text1">PLAND.FARM</p>
             </Grid>
             <Grid item lg={3} xs={12} md={3}>
               <p className="mid-bar-text2">In your language</p>

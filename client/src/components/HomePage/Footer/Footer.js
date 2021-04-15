@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
                 © 2021 VNC Digital Services.
               </Typography>
               <Typography variant="caption" color="inherit">
-                designed and Developed by Asharudheen. All Right Reserved
+                 All Right Reserved
               </Typography>
             </Grid>
             <Divider

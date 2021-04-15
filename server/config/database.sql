@@ -1,4 +1,3 @@
-
 create table users (
     user_id bigserial not null constraint users_pkey primary key,
     user_name varchar(48) not null constraint users_user_name_key unique,
@@ -163,3 +162,20 @@ create table product_listing (
 
 alter table
     product_listing owner to testuser;
+
+create table cropDetails (
+    Slno integer,
+    StateName varchar,
+    DistrictName text,
+    MarketName varchar(128),
+    Commodity text,
+    Variety varchar(12),
+    Grade varchar(12),
+    MinPrice integer,
+    MaxPrice integer,
+    ModalPrice integer,
+    PriceDate date
+);
+
+alter table
+    cropDetails owner to testuser;

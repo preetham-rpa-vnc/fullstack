@@ -2,20 +2,18 @@ import React, { useEffect, useState } from "react";
 import "../../Styles/LandingPage.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloudQueueIcon from "@material-ui/icons/CloudQueue";
-import Grid from "@material-ui/core/Grid";
+
 import { makeStyles } from "@material-ui/core/styles";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import Button from "@material-ui/core/Button";
 import HamburgerMenu from "../HamburgerMenuItems/HamburgerMenuItems";
-import Select from "react-select";
-import InputLabel from '@material-ui/core/InputLabel';
-import { MDBBtn } from "mdbreact";
-import FormControl from '@material-ui/core/FormControl';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
-// import {MDBBtn} from "mdbreact";
-//import { Dropdown } from "semantic-ui-react";
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { lightGreen } from "@material-ui/core/colors";
+
+
 const Distance = [
   { label: "20km", value: 1 },
   { label: "30km", value: 2 },
@@ -49,13 +47,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
 }));
-
 
 export default function SearchCard() {
   const classes = useStyles();
   
+
   
+
+
+
+
+
   return (
     <div className="pr-0 pl-0">
       <div className="img-container">
@@ -78,53 +88,62 @@ export default function SearchCard() {
             </div>
           </Grid>
         </Grid>
-        
         <Grid container spacing={14}>
         <Grid item lg={3} xs={0} md={3}></Grid>
           <Grid item lg={7} xs={12} md={7}>
-            <center>
+            <div>
             <OutlinedInput
               style={{ backgroundColor: "white", width: "100%"}}
               id="outlined-adornment-amount"
               endAdornment={
                 
-                
                 <InputAdornment position="end">
-              
-         <div className="container">
-                     <div className="row">
-                     <diV className="col-md-12" style={{marginRight:"150px"}}>
-                     <Select options={Crops} placeholder="Select Crops" id="c2"/>
-                    </diV>
-         </div>
-         </div>
-         <div className="container">
-                     <div className="row">
-                     <diV className="col-md-12" style={{marginRight:"150px"}}>
-          <Select options={Machines} placeholder="Select Machinary" id="m1"/>
-                    </diV>
-         </div>
-         </div>
-         <div className="container">
-                     <div className="row">
-                     <diV className="col-md-12" style={{marginRight:"200px"}}>
-                     <Select options={Distance} placeholder="Select Distance"/>
-                    </diV>
-         </div>
-         </div>
-         {/* <Button variant="contained" className="search-btn"style={{marginRight:"150px"}} >
+                 <div style={{marginRight:"10px"}}>   <Autocomplete id="combo-box-demo"
+      options={Crops}
+      getOptionLabel={(option) => option.label}
+      style={{ width: 200 }}
+      renderInput={(params) => <TextField {...params} label="Select Crops" variant="outlined" />}
+    />
+                   </div> 
+   
+    <div style={{marginRight:"10px"}}><Autocomplete 
+      id="combo-box-demo"
+      options={Machines}
+      getOptionLabel={(option) => option.label}
+      style={{ width: 200}}
+     
+      renderInput={(params) => <TextField {...params} label="Select Machines" variant="outlined" />}
+    /></div>
+    <div style={{marginRight:"10px"}}>
+    <Autocomplete
+      id="combo-box-demo"
+      options={Distance}
+      getOptionLabel={(option) => option.label}
+      style={{ width: 300}}
+      renderInput={(params) => <TextField {...params} label="Select Distance from your place" variant="outlined" />}
+    />
+    </div>
+     
+      <Button variant="contained" className="search-btn" style={{marginLeft: "15px"}}>
                     Search
-                  </Button> */}
-                  <button type="button" className="btn btn-success">Search</button>
-          
+                  </Button>
                 </InputAdornment>
               }
               labelWidth={60}
             />
-            </center>
-        
+            </div>
+          
               </Grid> 
-          </Grid>
+     
+    </Grid>
+
+        
+                    
+        
+                  
+          
+                
+        
        
       </div>
     </div>

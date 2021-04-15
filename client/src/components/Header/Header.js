@@ -16,17 +16,21 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { Box, Grid, Slide, useScrollTrigger } from "@material-ui/core";
 import LogOut from "@material-ui/icons/ExitToApp";
-import HomeIcon from "@material-ui/icons/HomeRounded";
+import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 import About from "@material-ui/icons/InfoRounded";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
+  
     grow: {
       flexGrow: 1,
+      
     },
     menuButton: {
       marginRight: theme.spacing(2),
+
     },
+
     title: {
       display: "block",
       // [theme.breakpoints.up("sm")]: {
@@ -44,14 +48,14 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: 0,
       width: "100%",
       [theme.breakpoints.up("sm")]: {
-        marginLeft: theme.spacing(3),
+        marginLeft: theme.spacing(2),
         width: "auto",
       },
     },
     searchIcon: {
       padding: theme.spacing(0, 2),
       height: "100%",
-      position: "absolute",
+      position: "relative",
       pointerEvents: "none",
       display: "flex",
       alignItems: "center",
@@ -145,13 +149,13 @@ const useStyles = makeStyles((theme) => ({
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <HomeIcon />
+        <IconButton style={{color:"black"}}>
+          <HomeTwoToneIcon />
         </IconButton>
-        <p>Home</p>
+ 
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
+        <IconButton>
           <About />
         </IconButton>
         <p>About</p>
@@ -183,7 +187,7 @@ const useStyles = makeStyles((theme) => ({
           >
             <MenuIcon />
           </IconButton> */}
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Typography className={classes.title} variant="h2" noWrap>
               PLAND.FARM
             </Typography>
 
@@ -208,7 +212,7 @@ const useStyles = makeStyles((theme) => ({
                 {/* <Grid containe xs={12}></Grid> */}
                 <Grid container direction="column">
                   <Grid item>
-                    <HomeIcon />
+                    <HomeTwoToneIcon />
                   </Grid>
                   <Grid item>
                     <Typography>Home</Typography>

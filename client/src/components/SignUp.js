@@ -90,7 +90,7 @@ export default function SignUp() {
   console.log(formVal);
   return (
     <Container component="main" maxWidth="xs" style={{marginBottom: 30}}>
-      {isAuth() ? <Redirect to="/" /> : null}
+      {isAuth() ? <Redirect to="/home" /> : null}
       <CssBaseline />
       <div className={classes.paper}>
         {/* <Avatar className={classes.avatar}>
@@ -187,7 +187,7 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link to="/login" variant="body2">
+              <Link to="/" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

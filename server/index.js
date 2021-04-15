@@ -1,11 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-// const db = require("./config/dbConnection");
 const bodyParser = require("body-parser");
 const userRouter = require("./router/userRouter");
 const adminRouter = require("./router/adminRouter");
 const useragent = require("express-useragent");
 require("dotenv").config();
+
+
 
 const app = express();
 // db.connect();

@@ -1,0 +1,912 @@
+Sl no.,State Name,District Name,Market Name,Commodity,Variety,Grade,Min Price (Rs./Quintal),Max Price (Rs./Quintal),Modal Price (Rs./Quintal),Price Date
+1,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,4/13/2021
+2,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,4/13/2021
+3,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,3500,4000,3800,4/13/2021
+4,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5300,5400,5350,4/12/2021
+5,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,4/10/2021
+6,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,4800,5200,5000,4/10/2021
+7,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2500,3000,2600,4/9/2021
+8,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,4/9/2021
+9,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,4800,5200,5000,4/9/2021
+10,UTTAR PRADESH,Allahabad,Jasra,Amla(Nelli Kai),Amla,FAQ,1975,1975,1975,4/9/2021
+11,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2500,3000,2600,4/8/2021
+12,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4000,4200,4100,4/8/2021
+13,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4800,4900,4850,4/8/2021
+14,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,6000,6500,6500,4/8/2021
+15,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,4000,4000,4000,4/8/2021
+16,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,4800,5200,5000,4/8/2021
+17,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,4/8/2021
+18,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,4/7/2021
+19,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,4/7/2021
+20,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,4/7/2021
+21,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,4800,5200,5000,4/7/2021
+22,RAJASTHAN,Kota,Kota (FV),Amla(Nelli Kai),Other,FAQ,1700,1800,1750,4/7/2021
+23,,UdhamSinghNagar,Kashipur,Amla(Nelli Kai),Amla,FAQ,1300,1300,1300,4/7/2021
+24,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,4/6/2021
+25,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,4/6/2021
+26,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,4800,5200,5000,4/6/2021
+27,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,4/6/2021
+28,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2600,3000,2600,4/5/2021
+29,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,4/5/2021
+30,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,4/5/2021
+31,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,4800,5200,5000,4/5/2021
+32,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2600,3000,3000,4/4/2021
+33,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2600,3000,3000,4/3/2021
+34,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4800,5000,4900,4/3/2021
+35,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,4/3/2021
+36,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,4/3/2021
+37,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2600,3000,2600,4/2/2021
+38,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4500,4700,4600,4/2/2021
+39,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,4/2/2021
+40,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,4/2/2021
+41,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2400,2600,2500,4/2/2021
+42,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4500,4700,4600,4/1/2021
+43,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,4/1/2021
+44,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2000,3000,2500,4/1/2021
+45,CHHATTISGARH,Dhamtari,Nagari,Amla(Nelli Kai),Amla,FAQ,8000,8000,8000,3/31/2021
+46,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,3/31/2021
+47,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,4000,4000,4000,3/31/2021
+48,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,3/31/2021
+49,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,3000,4000,3500,3/31/2021
+50,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1750,1375,3/30/2021
+51,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4800,5000,4900,3/30/2021
+52,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,3/30/2021
+53,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,4300,4300,4300,3/30/2021
+54,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,3500,4000,3750,3/30/2021
+55,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2200,2600,2400,3/30/2021
+56,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4000,4200,4100,3/29/2021
+57,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4300,4500,4450,3/29/2021
+58,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/29/2021
+59,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,4000,4000,4000,3/29/2021
+60,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,4200,4500,4200,3/28/2021
+61,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,3/28/2021
+62,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2200,2600,2400,3/28/2021
+63,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,4200,4800,4300,3/27/2021
+64,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4000,4200,4100,3/27/2021
+65,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4400,4500,4450,3/27/2021
+66,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,4800,4000,3/27/2021
+67,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2200,2600,2400,3/27/2021
+68,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,3/26/2021
+69,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4400,4500,4450,3/26/2021
+70,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/26/2021
+71,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3500,3000,3/26/2021
+72,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2200,2600,2400,3/26/2021
+73,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,3/25/2021
+74,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,3/25/2021
+75,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2000,2400,2200,3/25/2021
+76,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,3/24/2021
+77,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,3/24/2021
+78,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/24/2021
+79,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2000,3000,2500,3/24/2021
+80,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2100,2500,2300,3/24/2021
+81,,UdhamSinghNagar,Kashipur,Amla(Nelli Kai),Amla,FAQ,1900,1900,1900,3/24/2021
+82,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1750,1375,3/23/2021
+83,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,4000,4500,4200,3/23/2021
+84,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,3/23/2021
+85,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,3/23/2021
+86,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,5000,6500,6000,3/23/2021
+87,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,3000,3500,3300,3/23/2021
+88,PUNJAB,Ropar (Rupnagar),Morinda,Amla(Nelli Kai),Amla,FAQ,7000,7000,7000,3/23/2021
+89,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,3/23/2021
+90,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,4000,4500,4400,3/22/2021
+91,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,3/22/2021
+92,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,3/22/2021
+93,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,5000,5000,5000,3/22/2021
+94,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/22/2021
+95,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,4000,4000,4000,3/22/2021
+96,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2000,2200,2100,3/22/2021
+97,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3800,4500,4100,3/21/2021
+98,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,3/21/2021
+99,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2000,2200,2200,3/21/2021
+100,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/21/2021
+101,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,4200,4700,4500,3/20/2021
+102,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,3/20/2021
+103,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,3/20/2021
+104,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/20/2021
+105,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/20/2021
+106,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,3/20/2021
+107,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,4000,4600,4500,3/19/2021
+108,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4400,4600,4500,3/19/2021
+109,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,3700,3800,3750,3/19/2021
+110,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/19/2021
+111,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,3/18/2021
+112,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,3/18/2021
+113,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,3/18/2021
+114,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,5000,6000,6000,3/18/2021
+115,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/18/2021
+116,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,3000,2500,3/18/2021
+117,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1700,1900,1800,3/18/2021
+118,,Nanital,Ramnagar,Amla(Nelli Kai),Other,FAQ,300,500,400,3/18/2021
+119,CHHATTISGARH,Gariyaband,Devbhog,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,3/17/2021
+120,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3500,3500,3/17/2021
+121,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,3900,4100,4000,3/17/2021
+122,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4300,4400,4350,3/17/2021
+123,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,4000,4000,4000,3/17/2021
+124,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/17/2021
+125,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3500,3500,3500,3/17/2021
+126,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,3000,2500,3/17/2021
+127,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/17/2021
+128,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3000,4000,3750,3/16/2021
+129,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,4000,3500,3/16/2021
+130,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4000,4200,4100,3/16/2021
+131,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,3600,3700,3650,3/16/2021
+132,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/16/2021
+133,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,3/16/2021
+134,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/16/2021
+135,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,3/16/2021
+136,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,4000,3500,3/15/2021
+137,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4500,4700,4600,3/15/2021
+138,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,3/15/2021
+139,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/15/2021
+140,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,3/15/2021
+141,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1700,1900,1800,3/15/2021
+142,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,4000,3500,3/14/2021
+143,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2000,3000,2500,3/14/2021
+144,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,3200,2800,3/14/2021
+145,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,3/13/2021
+146,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/13/2021
+147,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3500,3500,3500,3/13/2021
+148,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,3000,2700,3/13/2021
+149,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2500,3000,3000,3/13/2021
+150,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1700,1900,1800,3/13/2021
+151,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,3/12/2021
+152,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4400,4600,4500,3/12/2021
+153,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,3/12/2021
+154,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/12/2021
+155,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2000,3000,2500,3/12/2021
+156,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4400,4600,4500,3/11/2021
+157,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,5000,6000,6000,3/11/2021
+158,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,3/11/2021
+159,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/11/2021
+160,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,800,1500,1200,3/11/2021
+161,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2600,3200,2800,3/11/2021
+162,PUNJAB,Ferozpur,Zira,Amla(Nelli Kai),Other,FAQ,1500,1700,1600,3/11/2021
+163,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/11/2021
+164,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3500,4000,3850,3/10/2021
+165,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4300,4500,4400,3/10/2021
+166,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,3/10/2021
+167,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/10/2021
+168,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,1000,1800,1500,3/10/2021
+169,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3600,3600,3600,3/10/2021
+170,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3500,4000,3850,3/9/2021
+171,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4300,4500,4400,3/9/2021
+172,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/9/2021
+173,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2000,3000,2500,3/9/2021
+174,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,3250,3250,3250,3/9/2021
+175,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2700,3200,3000,3/9/2021
+176,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,3/9/2021
+177,,Nanital,Ramnagar,Amla(Nelli Kai),Other,FAQ,300,500,400,3/9/2021
+178,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3500,4000,3800,3/8/2021
+179,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,3/8/2021
+180,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,3500,4000,3800,3/8/2021
+181,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,3/8/2021
+182,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,3/8/2021
+183,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,3/8/2021
+184,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,5200,5800,5500,3/8/2021
+185,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,800,1800,1500,3/8/2021
+186,MAHARASHTRA,Chandrapur,Chandrapur(Ganjwad),Amla(Nelli Kai),Other,FAQ,3200,3200,3200,3/7/2021
+187,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,3000,3500,3300,3/7/2021
+188,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2400,3500,2800,3/7/2021
+189,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3500,4000,3800,3/6/2021
+190,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,4200,5000,4500,3/6/2021
+191,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,3/6/2021
+192,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,3/6/2021
+193,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,3/6/2021
+194,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,3900,3900,3900,3/6/2021
+195,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2400,3500,2800,3/6/2021
+196,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/6/2021
+197,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3200,4000,3700,3/5/2021
+198,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,3/5/2021
+199,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,3/5/2021
+200,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,3/5/2021
+201,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,3000,3500,3300,3/5/2021
+202,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,3850,4105,3850,3/5/2021
+203,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3200,3500,3350,3/5/2021
+204,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/5/2021
+205,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,3/4/2021
+206,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,3/4/2021
+207,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3500,3000,3/4/2021
+208,PUNJAB,Gurdaspur,Batala,Amla(Nelli Kai),Amla,FAQ,500,550,520,3/4/2021
+209,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,3/4/2021
+210,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/4/2021
+211,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3000,4000,3600,3/3/2021
+212,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,4200,3500,3/3/2021
+213,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,3/3/2021
+214,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,3/3/2021
+215,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,3/3/2021
+216,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,1000,1500,1200,3/3/2021
+217,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3200,3200,3200,3/3/2021
+218,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,3/3/2021
+219,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2400,2800,2600,3/3/2021
+220,PUNJAB,Patiala,Patiala,Amla(Nelli Kai),Amla,FAQ,3000,5000,4000,3/3/2021
+221,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/3/2021
+222,,UdhamSinghNagar,Kashipur,Amla(Nelli Kai),Amla,FAQ,1600,1800,1700,3/3/2021
+223,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3500,4000,3850,3/2/2021
+224,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3700,4100,3900,3/2/2021
+225,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,3/2/2021
+226,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,3/2/2021
+227,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,3/2/2021
+228,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,4250,4250,4250,3/2/2021
+229,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,1000,1800,1500,3/2/2021
+230,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,2500,3000,2750,3/2/2021
+231,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2000,2500,2300,3/2/2021
+232,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/2/2021
+233,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,3/2/2021
+234,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,3000,3500,3300,3/1/2021
+235,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,3/1/2021
+236,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,4000,4000,4000,3/1/2021
+237,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,3560,3560,3560,3/1/2021
+238,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,3000,2500,3/1/2021
+239,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,3/1/2021
+240,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,3/1/2021
+241,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3400,4000,3900,2/28/2021
+242,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,3000,3500,3300,2/28/2021
+243,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,3000,2700,2/28/2021
+244,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/28/2021
+245,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3000,4000,3650,2/27/2021
+246,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,3000,3500,3300,2/27/2021
+247,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3500,4200,4000,2/27/2021
+248,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,2/27/2021
+249,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5100,5200,5150,2/27/2021
+250,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,4000,4000,4000,2/27/2021
+251,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/27/2021
+252,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1200,1000,2/27/2021
+253,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,2/27/2021
+254,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,3500,3500,3500,2/27/2021
+255,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,3000,2500,2/27/2021
+256,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/27/2021
+257,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/27/2021
+258,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2500,3500,3250,2/26/2021
+259,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/26/2021
+260,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,3000,3500,3300,2/26/2021
+261,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,2/26/2021
+262,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,2/26/2021
+263,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/26/2021
+264,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,2/26/2021
+265,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3500,3500,3500,2/26/2021
+266,PUNJAB,Sangrur,Bhawanigarh,Amla(Nelli Kai),Other,FAQ,3000,3300,3150,2/26/2021
+267,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/26/2021
+268,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/26/2021
+269,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/26/2021
+270,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,3475,3700,3500,2/26/2021
+271,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3000,3800,3500,2/25/2021
+272,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/25/2021
+273,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,3000,3500,3300,2/25/2021
+274,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,2/25/2021
+275,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5100,5200,5150,2/25/2021
+276,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/25/2021
+277,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,2/25/2021
+278,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3600,3600,3600,2/25/2021
+279,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,3000,2500,2/25/2021
+280,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/25/2021
+281,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/25/2021
+282,CHHATTISGARH,Gariyaband,Devbhog,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,2/24/2021
+283,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3000,4000,3650,2/24/2021
+284,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,2/24/2021
+285,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5100,5200,5150,2/24/2021
+286,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,2/24/2021
+287,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1200,1000,2/24/2021
+288,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3300,3300,3300,2/24/2021
+289,PUNJAB,Faridkot,Faridkot,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,2/24/2021
+290,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,3000,2800,2/24/2021
+291,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,3000,2500,2/24/2021
+292,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2000,2200,2200,2/24/2021
+293,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2000,2200,2100,2/24/2021
+294,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/24/2021
+295,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,3475,3700,3500,2/24/2021
+296,UTTAR PRADESH,Allahabad,Jasra,Amla(Nelli Kai),Amla,FAQ,600,650,620,2/24/2021
+297,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3000,4000,3600,2/23/2021
+298,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3500,3300,2/23/2021
+299,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,2/23/2021
+300,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5400,5550,5500,2/23/2021
+301,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,2/23/2021
+302,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1200,1000,2/23/2021
+303,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3300,3300,3300,2/23/2021
+304,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,3000,2500,2/23/2021
+305,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2000,2200,2100,2/23/2021
+306,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/23/2021
+307,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,3000,4000,3700,2/22/2021
+308,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,3000,3500,3300,2/22/2021
+309,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3700,3500,2/22/2021
+310,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,2/22/2021
+311,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5600,5700,5650,2/22/2021
+312,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/22/2021
+313,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3500,3250,2/22/2021
+314,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,3000,2200,2/22/2021
+315,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1700,1900,1800,2/22/2021
+316,GUJARAT,Anand,Khambhat(Veg Yard Khambhat),Amla(Nelli Kai),Other,FAQ,3500,4500,4000,2/21/2021
+317,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/21/2021
+318,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,2/21/2021
+319,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1600,1800,1700,2/21/2021
+320,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5700,5800,5750,2/20/2021
+321,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/20/2021
+322,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,2/20/2021
+323,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/20/2021
+324,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/20/2021
+325,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2500,3800,3300,2/19/2021
+326,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/19/2021
+327,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/19/2021
+328,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,2/19/2021
+329,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5600,5700,5650,2/19/2021
+330,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,2/19/2021
+331,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,2/19/2021
+332,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,800,1400,1200,2/19/2021
+333,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,2/19/2021
+334,PUNJAB,Faridkot,Faridkot,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/19/2021
+335,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2600,3000,2800,2/19/2021
+336,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/19/2021
+337,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/19/2021
+338,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2200,2000,2/19/2021
+339,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2500,4000,3350,2/18/2021
+340,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/18/2021
+341,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5400,5600,5500,2/18/2021
+342,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5700,5900,5750,2/18/2021
+343,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,6000,7000,7000,2/18/2021
+344,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/18/2021
+345,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1200,2500,1900,2/18/2021
+346,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1500,1200,2/18/2021
+347,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/18/2021
+348,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2200,2000,2/18/2021
+349,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2500,3500,3250,2/17/2021
+350,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/17/2021
+351,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2900,3500,3200,2/17/2021
+352,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5400,5600,5500,2/17/2021
+353,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,2/17/2021
+354,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/17/2021
+355,MAHARASHTRA,Nagpur,Nagpur,Amla(Nelli Kai),Other,FAQ,4000,4200,4150,2/17/2021
+356,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,2/17/2021
+357,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1500,1000,2/17/2021
+358,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3400,3200,2/17/2021
+359,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/17/2021
+360,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/17/2021
+361,CHHATTISGARH,Gariyaband,Devbhog,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,2/16/2021
+362,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2500,3500,3250,2/16/2021
+363,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/16/2021
+364,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3500,3400,2/16/2021
+365,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5400,5600,5500,2/16/2021
+366,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5900,6000,5980,2/16/2021
+367,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/16/2021
+368,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,2/16/2021
+369,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,2700,3000,2850,2/16/2021
+370,PUNJAB,Gurdaspur,Batala,Amla(Nelli Kai),Amla,FAQ,500,540,520,2/16/2021
+371,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,2000,2500,2200,2/16/2021
+372,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2200,2000,2/16/2021
+373,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,13700,12500,2/16/2021
+374,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,3000,2/15/2021
+375,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/15/2021
+376,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3600,3500,2/15/2021
+377,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5500,5700,5600,2/15/2021
+378,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5800,5900,5850,2/15/2021
+379,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/15/2021
+380,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,2/15/2021
+381,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,2950,2950,2950,2/15/2021
+382,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3400,3200,2/15/2021
+383,PUNJAB,Sangrur,Bhawanigarh,Amla(Nelli Kai),Other,FAQ,3600,3600,3600,2/15/2021
+384,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2400,3000,2500,2/15/2021
+385,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/15/2021
+386,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2200,2000,2/15/2021
+387,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/15/2021
+388,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/14/2021
+389,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3500,3200,2/14/2021
+390,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,2/14/2021
+391,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/14/2021
+392,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1900,2100,2000,2/14/2021
+393,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2500,3500,3100,2/13/2021
+394,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/13/2021
+395,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/13/2021
+396,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3600,3500,2/13/2021
+397,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5500,5700,5600,2/13/2021
+398,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5800,5900,5860,2/13/2021
+399,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,2/13/2021
+400,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/13/2021
+401,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/13/2021
+402,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1900,2100,2000,2/13/2021
+403,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3000,2750,2/12/2021
+404,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/12/2021
+405,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2800,3600,3200,2/12/2021
+406,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5300,5500,5400,2/12/2021
+407,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5900,6000,5980,2/12/2021
+408,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/12/2021
+409,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,2/12/2021
+410,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3500,3250,2/12/2021
+411,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2200,2700,2500,2/12/2021
+412,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1900,2100,2000,2/12/2021
+413,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,2900,2/11/2021
+414,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3500,3200,2/11/2021
+415,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5300,5500,5400,2/11/2021
+416,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,5400,5500,5450,2/11/2021
+417,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,5000,6000,6000,2/11/2021
+418,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/11/2021
+419,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2200,1900,2/11/2021
+420,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3500,3500,3500,2/11/2021
+421,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,3300,3300,3300,2/11/2021
+422,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,1800,2500,2300,2/11/2021
+423,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/11/2021
+424,PUNJAB,Nawanshahr,Nawan Shahar(Subzi Mandi),Amla(Nelli Kai),Amla,FAQ,3000,3500,3300,2/11/2021
+425,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/11/2021
+426,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1900,2100,2000,2/11/2021
+427,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/11/2021
+428,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,3000,2/10/2021
+429,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/10/2021
+430,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3100,3500,3200,2/10/2021
+431,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5300,5500,5400,2/10/2021
+432,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6300,6400,6350,2/10/2021
+433,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/10/2021
+434,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,2500,3000,2800,2/10/2021
+435,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1400,900,2/10/2021
+436,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3500,3250,2/10/2021
+437,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,1800,2500,2300,2/10/2021
+438,PUNJAB,Patiala,Patiala,Amla(Nelli Kai),Amla,FAQ,800,1200,1000,2/10/2021
+439,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/10/2021
+440,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2500,3800,3350,2/9/2021
+441,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/9/2021
+442,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/9/2021
+443,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3300,3100,2/9/2021
+444,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5400,5600,5500,2/9/2021
+445,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6200,6300,6250,2/9/2021
+446,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,2/9/2021
+447,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/9/2021
+448,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1200,2500,1900,2/9/2021
+449,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,2/9/2021
+450,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2300,2800,2500,2/9/2021
+451,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/9/2021
+452,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/9/2021
+453,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/9/2021
+454,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,3000,2/8/2021
+455,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/8/2021
+456,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2500,2300,2/8/2021
+457,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5400,5600,5500,2/8/2021
+458,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6300,6400,6350,2/8/2021
+459,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/8/2021
+460,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1500,1000,2/8/2021
+461,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3500,3250,2/8/2021
+462,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,3300,3300,3300,2/8/2021
+463,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,1500,2200,1800,2/8/2021
+464,,Bhatinda,Maur,Amla(Nelli Kai),Amla,FAQ,2800,3000,2900,2/8/2021
+465,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/8/2021
+466,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/8/2021
+467,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/8/2021
+468,UTTAR PRADESH,Bijnor,Najibabad,Amla(Nelli Kai),Amla,FAQ,1500,1700,1600,2/8/2021
+469,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1900,2200,2000,2/7/2021
+470,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3600,3500,2/7/2021
+471,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,5000,6000,6000,2/7/2021
+472,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1200,2200,1700,2/7/2021
+473,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/7/2021
+474,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2500,3800,3200,2/6/2021
+475,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/6/2021
+476,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1950,2200,2000,2/6/2021
+477,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3500,3200,2/6/2021
+478,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6400,6600,6500,2/6/2021
+479,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6100,6200,6150,2/6/2021
+480,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/6/2021
+481,MAHARASHTRA,Nagpur,Nagpur,Amla(Nelli Kai),Other,FAQ,3500,3600,3575,2/6/2021
+482,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1200,1000,2/6/2021
+483,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3500,3500,3500,2/6/2021
+484,PUNJAB,Sangrur,Bhawanigarh,Amla(Nelli Kai),Other,FAQ,4500,4500,4500,2/6/2021
+485,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/6/2021
+486,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/6/2021
+487,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,3000,2/5/2021
+488,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/5/2021
+489,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1950,2200,2000,2/5/2021
+490,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3600,3500,2/5/2021
+491,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6400,6600,6500,2/5/2021
+492,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6400,6500,6450,2/5/2021
+493,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/5/2021
+494,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1200,2200,1700,2/5/2021
+495,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1500,1000,2/5/2021
+496,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3300,3500,3400,2/5/2021
+497,PUNJAB,Sangrur,Bhawanigarh,Amla(Nelli Kai),Other,FAQ,4000,4000,4000,2/5/2021
+498,,Bhatinda,Maur,Amla(Nelli Kai),Amla,FAQ,3700,4000,3800,2/5/2021
+499,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/5/2021
+500,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/5/2021
+501,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1500,3000,2500,2/4/2021
+502,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/4/2021
+503,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1800,2200,2020,2/4/2021
+504,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3300,3700,3400,2/4/2021
+505,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,2/4/2021
+506,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6900,7000,6950,2/4/2021
+507,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,5000,6000,6000,2/4/2021
+508,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/4/2021
+509,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1000,2000,1500,2/4/2021
+510,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,500,1400,1100,2/4/2021
+511,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3500,3500,3500,2/4/2021
+512,PUNJAB,Faridkot,Faridkot,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,2/4/2021
+513,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,3100,3100,3100,2/4/2021
+514,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2600,3000,2800,2/4/2021
+515,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2000,2200,2100,2/4/2021
+516,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,11300,14700,12500,2/4/2021
+517,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,2850,2/3/2021
+518,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/3/2021
+519,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1800,2200,2050,2/3/2021
+520,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3300,3600,3500,2/3/2021
+521,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6100,6300,6200,2/3/2021
+522,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,7100,7200,7140,2/3/2021
+523,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/3/2021
+524,MADHYA PRADESH,Satna,Mehar,Amla(Nelli Kai),Amla,FAQ,4500,4600,4550,2/3/2021
+525,MAHARASHTRA,Nagpur,Nagpur,Amla(Nelli Kai),Other,FAQ,3800,4000,3950,2/3/2021
+526,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,2/3/2021
+527,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,1000,1500,1200,2/3/2021
+528,,Mohali,Lalru,Amla(Nelli Kai),Amla,FAQ,800,1400,1000,2/3/2021
+529,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,3100,2700,2/3/2021
+530,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,2/3/2021
+531,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1700,1900,1800,2/3/2021
+532,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10000,14000,12000,2/3/2021
+533,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/2/2021
+534,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1800,2000,1950,2/2/2021
+535,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3800,3500,2/2/2021
+536,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,2/2/2021
+537,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,2/2/2021
+538,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/2/2021
+539,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,2/2/2021
+540,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3000,3000,2/2/2021
+541,PUNJAB,Faridkot,Faridkot,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,2/2/2021
+542,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/2/2021
+543,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2200,2000,2/2/2021
+544,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/2/2021
+545,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,2/1/2021
+546,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3800,3500,2/1/2021
+547,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,6000,6200,6100,2/1/2021
+548,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,2/1/2021
+549,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2500,3000,2750,2/1/2021
+550,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1000,2500,1800,2/1/2021
+551,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,500,1500,1100,2/1/2021
+552,PUNJAB,Muktsar,Bariwala,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,2/1/2021
+553,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,2/1/2021
+554,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,2/1/2021
+555,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,2/1/2021
+556,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1800,2000,1950,1/31/2021
+557,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3800,3500,1/31/2021
+558,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,1/31/2021
+559,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,1/31/2021
+560,CHHATTISGARH,Gariyaband,Devbhog,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,1/30/2021
+561,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,2800,1/30/2021
+562,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/30/2021
+563,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1800,2000,1950,1/30/2021
+564,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3800,3500,1/30/2021
+565,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,1/30/2021
+566,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1400,1000,1/30/2021
+567,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1700,3300,2500,1/30/2021
+568,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2000,2300,2300,1/30/2021
+569,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,1/30/2021
+570,RAJASTHAN,Kota,Kota (FV),Amla(Nelli Kai),Other,FAQ,1000,1200,1100,1/30/2021
+571,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,2775,3000,2800,1/30/2021
+572,CHHATTISGARH,Gariyaband,Devbhog,Amla(Nelli Kai),Other,FAQ,6000,10000,6000,1/29/2021
+573,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,2800,1/29/2021
+574,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/29/2021
+575,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,2700,3400,2800,1/29/2021
+576,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5800,6000,5900,1/29/2021
+577,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,7200,7300,7250,1/29/2021
+578,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/29/2021
+579,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/29/2021
+580,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1500,1200,1/29/2021
+581,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,1/29/2021
+582,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2300,2300,2300,1/29/2021
+583,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,1/29/2021
+584,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,1/29/2021
+585,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,2775,3000,2800,1/29/2021
+586,UTTAR PRADESH,Allahabad,Jasra,Amla(Nelli Kai),Amla,FAQ,650,750,700,1/29/2021
+587,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3000,2650,1/28/2021
+588,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1800,2000,1950,1/28/2021
+589,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3100,3400,3300,1/28/2021
+590,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,1/28/2021
+591,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,5500,6000,6000,1/28/2021
+592,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/28/2021
+593,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2000,2500,2250,1/28/2021
+594,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,1/28/2021
+595,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1300,1000,1/28/2021
+596,PUNJAB,Muktsar,Bariwala,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/28/2021
+597,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,838,2134,1486,1/28/2021
+598,,Mohali,Lalru,Amla(Nelli Kai),Amla,FAQ,1200,1380,1200,1/28/2021
+599,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,3000,2800,1/28/2021
+600,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,1/28/2021
+601,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,1/28/2021
+602,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10300,14700,12500,1/28/2021
+603,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,2570,2750,2600,1/28/2021
+604,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/27/2021
+605,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,1/27/2021
+606,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3300,3100,1/27/2021
+607,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,1/27/2021
+608,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6600,6700,6650,1/27/2021
+609,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/27/2021
+610,MAHARASHTRA,Nagpur,Nagpur,Amla(Nelli Kai),Other,FAQ,3800,4000,3950,1/27/2021
+611,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/27/2021
+612,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1500,1100,1/27/2021
+613,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1800,2000,1900,1/27/2021
+614,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10500,14500,12500,1/27/2021
+615,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2200,2150,1/26/2021
+616,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/26/2021
+617,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,500,1200,1000,1/26/2021
+618,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3300,3150,1/26/2021
+619,PUNJAB,Faridkot,Faridkot,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/26/2021
+620,,Mohali,Lalru,Amla(Nelli Kai),Amla,FAQ,800,1000,1000,1/26/2021
+621,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2000,1750,1/26/2021
+622,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2000,2200,2100,1/26/2021
+623,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,2575,2750,2600,1/26/2021
+624,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/25/2021
+625,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2200,2150,1/25/2021
+626,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3400,3200,1/25/2021
+627,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,1/25/2021
+628,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6500,6650,6600,1/25/2021
+629,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,4000,4000,4000,1/25/2021
+630,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/25/2021
+631,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2000,2500,2250,1/25/2021
+632,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/25/2021
+633,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,2890,2890,2890,1/25/2021
+634,PUNJAB,Sangrur,Ahmedgarh,Amla(Nelli Kai),Other,FAQ,500,700,600,1/25/2021
+635,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1750,3500,2625,1/25/2021
+636,PUNJAB,Faridkot,Faridkot,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,1/25/2021
+637,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,2800,2650,1/25/2021
+638,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,2000,2200,2100,1/25/2021
+639,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10500,14500,12500,1/25/2021
+640,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,2500,2700,2550,1/25/2021
+641,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2400,2250,1/24/2021
+642,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3000,3400,3100,1/24/2021
+643,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/24/2021
+644,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,2500,2800,2650,1/24/2021
+645,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,1/24/2021
+646,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2000,1700,1/24/2021
+647,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/23/2021
+648,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2400,2250,1/23/2021
+649,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/23/2021
+650,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6800,6900,6850,1/23/2021
+651,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/23/2021
+652,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2000,2500,2250,1/23/2021
+653,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,3520,3520,3520,1/23/2021
+654,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1100,900,1/23/2021
+655,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,1/23/2021
+656,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/23/2021
+657,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2000,1700,1/23/2021
+658,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,2450,2700,2500,1/23/2021
+659,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1800,3500,2800,1/22/2021
+660,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/22/2021
+661,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1900,2300,2150,1/22/2021
+662,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/22/2021
+663,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,6700,6800,6750,1/22/2021
+664,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/22/2021
+665,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/22/2021
+666,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,2040,2250,2250,1/22/2021
+667,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,400,1200,900,1/22/2021
+668,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,3000,3200,3100,1/22/2021
+669,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,1/22/2021
+670,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,2450,2700,2500,1/22/2021
+671,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1800,3500,2850,1/21/2021
+672,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/21/2021
+673,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/21/2021
+674,KERELA,Idukki,Munnar,Amla(Nelli Kai),Other,FAQ,4000,5000,5000,1/21/2021
+675,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/21/2021
+676,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2000,2200,2100,1/21/2021
+677,MAHARASHTRA,Nagpur,Nagpur,Amla(Nelli Kai),Other,FAQ,3800,4000,3950,1/21/2021
+678,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/21/2021
+679,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,400,1500,1100,1/21/2021
+680,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,1/21/2021
+681,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1500,2500,2000,1/21/2021
+682,PUNJAB,Pathankot,Pathankot,Amla(Nelli Kai),Amla,FAQ,1800,2000,1900,1/21/2021
+683,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/21/2021
+684,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1800,3500,3000,1/20/2021
+685,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/20/2021
+686,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/20/2021
+687,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4000,4150,4100,1/20/2021
+688,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/20/2021
+689,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2000,2500,2250,1/20/2021
+690,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/20/2021
+691,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,400,1500,1200,1/20/2021
+692,PUNJAB,Muktsar,Bariwala,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/20/2021
+693,PUNJAB,Faridkot,Faridkot,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,1/20/2021
+694,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/20/2021
+695,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/20/2021
+696,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,1875,2000,1900,1/20/2021
+697,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1800,3500,2800,1/19/2021
+698,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/19/2021
+699,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/19/2021
+700,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4000,4120,4100,1/19/2021
+701,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,3800,4200,4000,1/19/2021
+702,MAHARASHTRA,Nagpur,Nagpur,Amla(Nelli Kai),Other,FAQ,3000,3500,3375,1/19/2021
+703,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/19/2021
+704,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,400,1400,1000,1/19/2021
+705,PUNJAB,Pathankot,Pathankot,Amla(Nelli Kai),Amla,FAQ,1800,2000,1900,1/19/2021
+706,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,1/19/2021
+707,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1800,3500,3000,1/18/2021
+708,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/18/2021
+709,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3500,3800,3500,1/18/2021
+710,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4900,5100,5000,1/18/2021
+711,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,3600,3700,3650,1/18/2021
+712,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/18/2021
+713,MAHARASHTRA,Nagpur,Nagpur,Amla(Nelli Kai),Other,FAQ,3000,3200,3150,1/18/2021
+714,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/18/2021
+715,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1500,1200,1/18/2021
+716,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,738,738,738,1/18/2021
+717,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,1800,2500,2100,1/18/2021
+718,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/18/2021
+719,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10500,14500,12500,1/18/2021
+720,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2300,2200,1/17/2021
+721,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3200,3500,3400,1/17/2021
+722,MAHARASHTRA,Nagpur,Nagpur,Amla(Nelli Kai),Other,FAQ,3000,3200,3150,1/17/2021
+723,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2200,1900,1/17/2021
+724,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/17/2021
+725,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1800,3500,2800,1/16/2021
+726,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/16/2021
+727,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3500,4000,3500,1/16/2021
+728,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/16/2021
+729,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4000,4120,4100,1/16/2021
+730,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,5000,5000,5000,1/16/2021
+731,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/16/2021
+732,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2000,2500,2250,1/16/2021
+733,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1200,900,1/16/2021
+734,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1423,1423,1423,1/16/2021
+735,PUNJAB,Faridkot,Faridkot,Amla(Nelli Kai),Amla,FAQ,2500,2500,2500,1/16/2021
+736,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/16/2021
+737,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1000,2500,1800,1/16/2021
+738,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,1755,2000,1800,1/16/2021
+739,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/15/2021
+740,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3800,4000,3800,1/15/2021
+741,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4900,5100,5000,1/15/2021
+742,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4100,4200,4150,1/15/2021
+743,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1200,2200,1700,1/15/2021
+744,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/15/2021
+745,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/15/2021
+746,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,1755,2000,1800,1/15/2021
+747,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/14/2021
+748,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4000,4150,4100,1/14/2021
+749,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/14/2021
+750,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,1800,2200,2000,1/14/2021
+751,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2200,2000,1/14/2021
+752,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,2150,2150,2150,1/14/2021
+753,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1500,1000,1/14/2021
+754,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/14/2021
+755,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/14/2021
+756,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/14/2021
+757,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,3000,1/13/2021
+758,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5900,6100,6000,1/13/2021
+759,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4100,4200,4150,1/13/2021
+760,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,5000,5000,5000,1/13/2021
+761,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/13/2021
+762,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2000,2500,2250,1/13/2021
+763,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1500,1200,1/13/2021
+764,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1300,2000,1650,1/13/2021
+765,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/13/2021
+766,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/13/2021
+767,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10500,14500,12500,1/13/2021
+768,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,1775,2000,1800,1/13/2021
+769,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,2850,1/12/2021
+770,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1300,1150,1/12/2021
+771,HIMACHAL PRADESH,Hamirpur,Hamirpur,Amla(Nelli Kai),Amla,FAQ,2000,2000,2000,1/12/2021
+772,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/12/2021
+773,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4000,4150,4100,1/12/2021
+774,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/12/2021
+775,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,0,0,2450,1/12/2021
+776,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1300,1000,1/12/2021
+777,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,826,826,826,1/12/2021
+778,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,1800,2000,1950,1/12/2021
+779,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/12/2021
+780,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/12/2021
+781,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/12/2021
+782,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10500,14500,12500,1/12/2021
+783,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,2000,3500,2850,1/11/2021
+784,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/11/2021
+785,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,2000,2200,2150,1/11/2021
+786,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4500,4600,4550,1/11/2021
+787,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/11/2021
+788,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,2000,2500,2250,1/11/2021
+789,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,0,0,2850,1/11/2021
+790,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,800,1500,1000,1/11/2021
+791,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1800,1800,1800,1/11/2021
+792,,Bhatinda,Maur,Amla(Nelli Kai),Amla,FAQ,3800,4100,4000,1/11/2021
+793,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/11/2021
+794,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/11/2021
+795,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10000,14000,12000,1/11/2021
+796,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,1575,1800,1600,1/11/2021
+797,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/10/2021
+798,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3500,4100,3800,1/10/2021
+799,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,1575,1800,1600,1/10/2021
+800,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1500,3500,3100,1/9/2021
+801,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/9/2021
+802,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3800,4100,4000,1/9/2021
+803,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,5000,5200,5100,1/9/2021
+804,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,1/9/2021
+805,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,0,0,2650,1/9/2021
+806,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1300,1000,1/9/2021
+807,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1500,1800,1650,1/9/2021
+808,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/9/2021
+809,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1000,1500,1300,1/9/2021
+810,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1500,3200,2650,1/8/2021
+811,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/8/2021
+812,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/8/2021
+813,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3500,4000,3700,1/8/2021
+814,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4900,5100,5000,1/8/2021
+815,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4600,4700,4650,1/8/2021
+816,KERELA,Idukki,Nedumkandam,Amla(Nelli Kai),Other,FAQ,6000,6000,6000,1/8/2021
+817,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1200,700,1/8/2021
+818,PUNJAB,Muktsar,Bariwala,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/8/2021
+819,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1748,1748,1748,1/8/2021
+820,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,2000,2600,2300,1/8/2021
+821,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/8/2021
+822,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1200,1500,1300,1/8/2021
+823,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/8/2021
+824,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1200,3500,2450,1/7/2021
+825,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/7/2021
+826,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/7/2021
+827,KERELA,Idukki,Kattappana,Amla(Nelli Kai),Other,FAQ,3100,3500,3400,1/7/2021
+828,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4900,5100,5000,1/7/2021
+829,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,1/7/2021
+830,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/7/2021
+831,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,0,0,2560,1/7/2021
+832,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1500,1300,1/7/2021
+833,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,731,1828,1280,1/7/2021
+834,PUNJAB,Ferozpur,Firozepur City,Amla(Nelli Kai),Amla,FAQ,1500,1700,1600,1/7/2021
+835,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/7/2021
+836,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1200,1500,1300,1/7/2021
+837,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/7/2021
+838,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10000,14000,12000,1/7/2021
+839,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1500,3000,2350,1/6/2021
+840,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/6/2021
+841,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/6/2021
+842,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4800,5000,4900,1/6/2021
+843,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,1/6/2021
+844,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/6/2021
+845,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/6/2021
+846,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,900,600,1/6/2021
+847,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1815,2065,1940,1/6/2021
+848,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/6/2021
+849,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,1700,1700,1700,1/6/2021
+850,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/6/2021
+851,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/6/2021
+852,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1500,3000,2300,1/5/2021
+853,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/5/2021
+854,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/5/2021
+855,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4800,5000,4900,1/5/2021
+856,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4700,4800,4750,1/5/2021
+857,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/5/2021
+858,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/5/2021
+859,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,300,1000,700,1/5/2021
+860,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1800,2200,2000,1/5/2021
+861,PUNJAB,Sangrur,Malerkotla,Amla(Nelli Kai),Amla,FAQ,1650,2000,1800,1/5/2021
+862,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/5/2021
+863,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1000,1500,1250,1/5/2021
+864,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/5/2021
+865,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10000,14000,12000,1/5/2021
+866,UTTAR PRADESH,Faizabad,Faizabad,Amla(Nelli Kai),Amla,FAQ,1525,1700,1550,1/5/2021
+867,GUJARAT,Ahmedabad,Ahmedabad,Amla(Nelli Kai),Other,FAQ,1500,3000,2350,1/4/2021
+868,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/4/2021
+869,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/4/2021
+870,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4900,5100,5000,1/4/2021
+871,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/4/2021
+872,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,1500,2000,1750,1/4/2021
+873,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2200,1900,1/4/2021
+874,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,0,0,1850,1/4/2021
+875,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,500,1100,900,1/4/2021
+876,PUNJAB,Muktsar,Bariwala,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/4/2021
+877,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1300,1300,1300,1/4/2021
+878,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/4/2021
+879,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1200,1500,1350,1/4/2021
+880,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/4/2021
+881,RAJASTHAN,Kota,Kota (FV),Amla(Nelli Kai),Other,FAQ,1000,1400,1200,1/4/2021
+882,RAJASTHAN,Udaipur,Udaipur,Amla(Nelli Kai),Other,FAQ,10000,14000,12000,1/4/2021
+883,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/3/2021
+884,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/3/2021
+885,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1000,1500,1300,1/3/2021
+886,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/3/2021
+887,RAJASTHAN,Kota,Kota (FV),Amla(Nelli Kai),Other,FAQ,1000,1500,1250,1/3/2021
+888,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/2/2021
+889,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1500,2000,1800,1/2/2021
+890,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4400,4600,4500,1/2/2021
+891,ANDHRA PRADESH,Amarawati,Amrawati(Frui & Veg. Market),Amla(Nelli Kai),Other,FAQ,1500,2000,1750,1/2/2021
+892,PUNJAB,Fazilka,Abohar,Amla(Nelli Kai),Amla,FAQ,1850,2105,2105,1/2/2021
+893,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1500,1200,1/2/2021
+894,PUNJAB,Muktsar,Bariwala,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/2/2021
+895,PUNJAB,Barnala,Barnala,Amla(Nelli Kai),Amla,FAQ,1500,1700,1600,1/2/2021
+896,,Bhatinda,Maur,Amla(Nelli Kai),Amla,FAQ,4000,4100,4050,1/2/2021
+897,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/2/2021
+898,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,1500,1500,1500,1/2/2021
+899,RAJASTHAN,Chittorgarh,Chittorgarh,Amla(Nelli Kai),Other,FAQ,1200,1500,1350,1/2/2021
+900,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/2/2021
+901,RAJASTHAN,Kota,Kota (FV),Amla(Nelli Kai),Other,FAQ,1000,1800,1400,1/2/2021
+902,GUJARAT,Surendranagar,Vadhvan,Amla(Nelli Kai),Amla,FAQ,1000,1250,1125,1/1/2021
+903,GUJARAT,Vadodara(Baroda),Vadodara(Sayajipura),Amla(Nelli Kai),Other,FAQ,1800,2000,1950,1/1/2021
+904,KERELA,Malappuram,Kondotty,Amla(Nelli Kai),Other,FAQ,4400,4600,4500,1/1/2021
+905,KERELA,Malappuram,Kottakkal,Amla(Nelli Kai),Other,FAQ,4200,4300,4250,1/1/2021
+906,KERELA,Malappuram,Perinthalmanna,Amla(Nelli Kai),Amla,FAQ,2800,3200,3000,1/1/2021
+907,MAHARASHTRA,Pune,Pune,Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/1/2021
+908,PUNJAB,Amritsar,Amritsar(Amritsar Mewa Mandi),Amla(Nelli Kai),Amla,FAQ,700,1200,900,1/1/2021
+909,PUNJAB,Muktsar,Muktsar,Amla(Nelli Kai),Amla,FAQ,1000,1500,1250,1/1/2021
+910,PUNJAB,Sangrur,Sangrur,Amla(Nelli Kai),Amla,FAQ,1200,1200,1200,1/1/2021
+911,RAJASTHAN,Jaipur,Chomu(F&V),Amla(Nelli Kai),Other,FAQ,1500,2500,2000,1/1/2021
