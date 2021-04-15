@@ -115,7 +115,7 @@ const MediaCard = () => {
 
   useEffect(() => {
     console.log("EEEEEEEEEEEEEEEEe", itemData);
-    Axios.get("http://localhost:5000/getallproducts")
+    Axios.get(`${process.env.REACT_APP_API_URI}/getallproducts`)
       .then((allDatas) => {
         console.log("all datas", allDatas.data);
         setItemData(allDatas.data);

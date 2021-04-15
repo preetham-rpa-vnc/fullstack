@@ -15,7 +15,7 @@ app.use(
     origin: "*",
   })
 );
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use(useragent.express());
 
 app.use("/", userRouter);

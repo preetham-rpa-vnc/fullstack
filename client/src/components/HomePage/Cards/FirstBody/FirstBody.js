@@ -80,7 +80,7 @@ function FirstBody({ itemData, passCrop }) {
   const [itemCrop, setItemCrop] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/getallcrops")
+  Axios.get(`${process.env.REACT_APP_API_URI}/getallcrops`)
       .then((allDatas) => {
         setAllCrops(allDatas.data);
       })
@@ -103,7 +103,7 @@ function FirstBody({ itemData, passCrop }) {
     if (selectedCrop.length === 0) {
       console.log("ite empty");
     } else {
-      Axios.get("http://localhost:5000/getselectedcrops", {
+      Axios.get(`${process.env.REACT_APP_API_URI}/getselectedcrops`, {
         params: {
           selectedCrop,
         },

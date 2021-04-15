@@ -160,7 +160,7 @@ function ProductDetails({ location }) {
   } = productItem;
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/getitem`, {
+    Axios.get(`${process.env.REACT_APP_API_URI}/getitem`, {
       params: id,
     }).then((item) => {
       setProductItem(item.data);
