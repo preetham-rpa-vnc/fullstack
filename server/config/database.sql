@@ -163,7 +163,7 @@ create table product_listing (
 alter table
     product_listing owner to testuser;
 
-create table cropDetails (
+create table if not exists cropDetails (
     Slno integer,
     StateName varchar,
     DistrictName text,

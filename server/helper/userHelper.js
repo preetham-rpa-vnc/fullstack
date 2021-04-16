@@ -3,14 +3,14 @@ const bcrypt = require("bcrypt");
 const collection = require("../config/collections");
 // const ObjectId = require("mongodb").ObjectID;
 const pool = require("../config/dbSql");
-const path = require('path'); 
+const path = require("path");
 // const reader = require("xlsx");
-const fastcsv = require('fast-csv');
-const fs = require('fs');
+const fastcsv = require("fast-csv");
+const fs = require("fs");
 const { constants } = require("buffer");
 const { Stream } = require("stream");
 
-const currDir = path.join('./Masterdata/');
+const currDir = path.join("./Masterdata/");
 // Function to get the filenames present
 // in the directory
 const readdir = (dirname) => {
@@ -26,56 +26,53 @@ const readdir = (dirname) => {
 };
 //csvFilter.js
 const filtercsvFiles = (filename) => {
-  return filename.split('.')[1] === 'csv';
+  return filename.split(".")[1] === "csv";
 };
 readdir(currDir).then((filenames) => {
   filenames = filenames.filter(filtercsvFiles);
 
-  for (let i = 0; i <  filenames.length; i++) {
+  for (let i = 0; i < filenames.length; i++) {
     let currFilePath = currDir + filenames[i];
 
     //Use fast-csv to parse the files
     let csvData = [];
- let csvStream= fastcsv
+    let csvStream = fastcsv
       .parseFile(currFilePath)
-      .on('data', (data) => {
+      .on("data", (data) => {
         csvData.push(data);
       })
-      .on('end', () => {
+      .on("end", () => {
         csvData.shift();
-console.log(csvData);
-        const query=
-  "INSERT INTO cropDetails (Slno, StateName, DistrictName, MarketName,Commodity, Variety,Grade,MinPrice,MaxPrice,ModalPrice,PriceDate)\
-   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
-  //  [Slno, State_Name, DistrictName , MarketName,Commodity, Variety, Grade, MinPrice, MaxPrice, ModalPrice, PriceDate]
-// const query="INSERT INTO cropDetails(col1,col2,col3,col4,col5,col6,col7,col8,col9,col10,col11) values ?";
-pool.connect((err, client, done) => {
-  if(err) throw err;
-  
-  try {
-    csvData.forEach(row => {
-      client.query(query, row, (err, res) => {
-        if (err) {
-          console.log(err.stack);
-        } else {
-          console.log("inserted " + res.rowCount + " row:", row);
-        }
+        console.log(csvData);
+        const query =
+          "INSERT INTO cropDetails (Slno, StateName, DistrictName, MarketName,Commodity, Variety,Grade,MinPrice,MaxPrice,ModalPrice,PriceDate)\
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
+        //  [Slno, State_Name, DistrictName , MarketName,Commodity, Variety, Grade, MinPrice, MaxPrice, ModalPrice, PriceDate]
+        // const query="INSERT INTO cropDetails(col1,col2,col3,col4,col5,col6,col7,col8,col9,col10,col11) values ?";
+        pool.connect((err, client, done) => {
+          if (err) throw err;
+
+          try {
+            csvData.forEach((row) => {
+              client.query(query, row, (err, res) => {
+                if (err) {
+                  console.log(err.stack);
+                } else {
+                  console.log("inserted " + res.rowCount + " row:", row);
+                }
+              });
+            });
+          } finally {
+            done();
+          }
+        });
       });
-    });
-  } finally {
-    done();
+    Stream.pipeline(csvStream);
   }
 });
-        
-      });
-      Stream.pipeline(csvStream)
-  }
-});
-
-
 
 // const stream = fs.createReadStream("./MasterData/Ajwan_MasterData.csv");
- const ws = fs.createWriteStream("./MasterData/Ajwan_MasterData.csv");
+const ws = fs.createWriteStream("./MasterData/Ajwan_MasterData.csv");
 // let csvData = [];
 
 // let csvStream = fastcsv
@@ -126,7 +123,7 @@ pool.connect((err, client, done) => {
 
       fastcsv
         .write(jsonData, { headers: true })
-        .on("finish", function() {
+        .on("finish", function () {
           console.log("Write to bezkoder_postgresql_fastcsv.csv successfully!");
         })
         .pipe(ws);
@@ -134,11 +131,8 @@ pool.connect((err, client, done) => {
   });
 });
 
-
 module.exports = {
   // Reading our test file
-
- 
 
   // addUser: (userData) => {
   //   console.log("user data", userData);
@@ -552,10 +546,7 @@ module.exports = {
         (err, result) => {
           if (result) {
             if (result.rowCount > 0) {
-              console.log(
-                "user location",
-                result.rows[0]
-              );
+              console.log("user location", result.rows[0]);
               if (result.rows[0].user_place_district) {
                 console.log(
                   "results location",
