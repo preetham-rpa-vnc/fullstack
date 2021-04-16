@@ -23,8 +23,12 @@ app.use("/admin", cors(),adminRouter);
 app.use(bodyParser.json());
 app.use(useragent.express());
 
+
 // app.use("/", userRouter);
 // app.use("/admin", adminRouter);
+app.use("/api/user", userRouter);
+app.use("/admin", adminRouter);
+
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running PORT ${PORT}`));

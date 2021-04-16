@@ -27,7 +27,7 @@ function Weather({ weather }) {
             <Grid item xs={7}>
               <Paper elevation={3} className={classes.paper}>
                 <Typography variant="h3" className={classes.place}>
-                  {city.name ? city.name : null}, Keral, {city.country}
+                  {city.name ? city.name : null}, {city.country}
                 </Typography>
                 <Grid container className={classes.tempGrid}>
                   <Grid item xs={6}>

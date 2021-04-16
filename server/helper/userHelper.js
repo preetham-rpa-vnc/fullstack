@@ -555,26 +555,44 @@ module.exports = {
     });
   },
 
+
   checkLocation: (userName) => {
     console.log("user name", userName);
-
     return new Promise((resolve, reject) => {
       pool.query(
         `SELECT * FROM login_users WHERE user_name = $1`,
         [userName.first_name],
         (err, result) => {
-          console.log("result", result);
-          if (result.rowCount > 0) {
-            console.log("results location", result.rows[0].user_place_country);
-            console.log("errrorr ", err);
-            resolve({ country: result.rows[0].user_place_country });
+          if (result) {
+            if (result.rowCount > 0) {
+              console.log(
+                "user location",
+                result.rows[0]
+              );
+              if (result.rows[0].user_place_district) {
+                console.log(
+                  "results location",
+                  result.rows[0].user_place_state
+                );
+                resolve({ district: result.rows[0].user_place_state });
+              }
+            } else {
+              resolve({ country: null });
+            }
           } else {
+            console.log("results are", result);
             resolve({ country: null });
           }
         }
       );
     });
   },
+
+  // getUserLocation: () => {
+  //   return new Promise((resolve, reject) => {
+
+  //   })
+  // }
 };
 
 // select json_build_object(
@@ -606,3 +624,4 @@ module.exports = {
 //   'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture)
 
 //     )
+  
