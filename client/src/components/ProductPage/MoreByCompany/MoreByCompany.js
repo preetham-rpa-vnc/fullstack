@@ -81,7 +81,7 @@ const MediaCard = () => {
   };
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/getsimileritems`)
+    Axios.get(`${process.env.REACT_APP_API_URI}/getsimileritems`)
       .then((items) => {
         console.log("similar items ", items.data);
         setItemData(items.data);

@@ -12,10 +12,12 @@ import logo from "../../../images/logo.png";
 
 import bgImage1 from "../../../Assets/backgroundWeather1.jpg";
 import bgImage2 from "../../../Assets/backgroundWeather2.jpg";
+import bgImage3 from "../../../Assets/AuthPage.jpg";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
-    backgroundImage: `url(https://cdn.pixabay.com/photo/2016/11/21/14/57/wheat-1845835_960_720.jpg)`,
+    // backgroundImage: `url(https://cdn.pixabay.com/photo/2016/11/21/14/57/wheat-1845835_960_720.jpg)`,
+    backgroundImage: `url(${bgImage3})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center center",
@@ -63,7 +65,7 @@ const OtpAuth = () => {
                     style={{ fontWeight: "bold", color: "#00b074" }}
                   >
                     welcome back
-                  </Typography> 
+                  </Typography>
                   {/* </Typography> */}
                 </Grid>
                 <Grid>

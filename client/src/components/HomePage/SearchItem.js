@@ -88,7 +88,7 @@ export default function SearchItem({ searchResult }) {
             <Grid
               container
               spacing={3}
-              alignItems="center"
+              alignItems="center" 
               className={classes.searchItems}
             >
               <Grid item>

@@ -48,7 +48,7 @@ export default function SignUp() {
   });
 
   const fillForm = (text) => (event) => {
-    console.log("rext checking", text); 
+    console.log("rext checking", text);
     setFormVal({ ...formVal, [text]: event.target.value });
   };
 
@@ -89,8 +89,8 @@ export default function SignUp() {
 
   console.log(formVal);
   return (
-    <Container component="main" maxWidth="xs" style={{marginBottom: 30}}>
-      {isAuth() ? <Redirect to="/home" /> : null}
+    <Container component="main" maxWidth="xs" style={{ marginBottom: 30 }}>
+      {isAuth() ? <Redirect to="/" /> : null}
       <CssBaseline />
       <div className={classes.paper}>
         {/* <Avatar className={classes.avatar}>
@@ -121,7 +121,7 @@ export default function SignUp() {
                 onChange={fillForm("first_name")}
               />
             </Grid>
-            <Grid item xs={12} sm={6}> 
+            <Grid item xs={12} sm={6}>
               <TextField
                 variant="outlined"
                 // required
@@ -187,7 +187,7 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link to="/" variant="body2">
+              <Link to="/otpauth" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

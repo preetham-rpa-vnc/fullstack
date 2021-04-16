@@ -31,7 +31,7 @@ export const isAuth = () => {
     } else {
       return false;
     }
-  }
+  } 
 };
 
 export const removeCookie = (key) => {

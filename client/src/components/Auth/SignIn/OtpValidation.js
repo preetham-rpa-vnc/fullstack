@@ -104,5 +104,5 @@ const OtpValidation = () => {
     </>
   );
 };
-
 export default OtpValidation;
+

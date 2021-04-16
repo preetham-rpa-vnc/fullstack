@@ -12,10 +12,10 @@ import FirstBody from "./FirstBody/FirstBody";
 import { machinery } from "../Items/Items";
 import SeachItem from "../SearchItem";
 import LinkIcon from "@material-ui/icons/Link";
-import YouTubeIcon from "@material-ui/icons/YouTube";
+import YouTubeIcon from "@material-ui/icons/YouTube"; 
 import { Redirect } from "react-router-dom";
 import Axios from "axios";
-import { crops } from "../Items/CropItem";
+import { crops } from "../Items/CropItem"; 
 import UserLocation from "../../UserLocation/UserLocation";
 import { isAuth } from "../../../helper/authHelper";
 
@@ -115,7 +115,7 @@ const MediaCard = () => {
 
   useEffect(() => {
     console.log("EEEEEEEEEEEEEEEEe", itemData);
-    Axios.get("http://localhost:5000/getallproducts")
+    Axios.get(`${process.env.REACT_APP_API_URI}/getallproducts`)
       .then((allDatas) => {
         console.log("all datas", allDatas.data);
         setItemData(allDatas.data);
@@ -143,7 +143,7 @@ const MediaCard = () => {
     setItemData(searchProducts);
     alert("serachR");
   };
-
+ 
   const userDatas = (userDatails) => {
     console.log("##########", userDatails);
     Axios.post(`${process.env.REACT_APP_API_URI}/loginuserdata`, userDatails)
@@ -339,6 +339,6 @@ const MediaCard = () => {
       <UserLocation userDatas={userDatas} />
     </>
   );
-};
+}; 
 
 export default MediaCard;

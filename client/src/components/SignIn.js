@@ -102,7 +102,7 @@ export default function SignIn({ history }) {
               required
               fullWidth
               id="username"
-              label="User Name"
+              label="User Name" 
               name="username"
               autoComplete="username"
               autoFocus
