@@ -1,0 +1,133 @@
+Sl no.,State Name,District Name,Market Name,Commodity,Variety,Grade,Min Price (Rs./Quintal),Max Price (Rs./Quintal),Modal Price (Rs./Quintal),Price Date
+1,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3300,3900,3700,4/9/2021
+2,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3200,3800,3600,4/8/2021
+3,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3300,3900,3700,4/7/2021
+4,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3200,3800,3600,4/6/2021
+5,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3200,3800,3600,4/5/2021
+6,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2500,3000,2800,4/5/2021
+7,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3600,4000,3800,4/3/2021
+8,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3900,4100,4000,4/1/2021
+9,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2500,3000,2800,4/1/2021
+10,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3600,4000,3800,3/31/2021
+11,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2500,3000,2800,3/31/2021
+12,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3700,3900,3800,3/30/2021
+13,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3600,4000,3800,3/29/2021
+14,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2400,3000,2600,3/29/2021
+15,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4100,4400,4300,3/26/2021
+16,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4200,4500,4400,3/25/2021
+17,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4100,4400,4300,3/24/2021
+18,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4200,4500,4400,3/23/2021
+19,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4000,4500,4300,3/22/2021
+20,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2300,2700,2500,3/20/2021
+21,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2800,2600,3/19/2021
+22,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2800,2600,3/18/2021
+23,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2300,2900,2700,3/17/2021
+24,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3200,3/17/2021
+25,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2800,2600,3/16/2021
+26,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2800,2600,3/15/2021
+27,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2500,3000,2800,3/15/2021
+28,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2600,2900,2700,3/12/2021
+29,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2500,3000,2800,3/12/2021
+30,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2800,3000,2900,3/10/2021
+31,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2500,3000,2800,3/10/2021
+32,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2500,3000,2800,3/9/2021
+33,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,3/9/2021
+34,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,3000,2600,3/8/2021
+35,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,3/8/2021
+36,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3200,3100,3/6/2021
+37,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,3/6/2021
+38,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3200,3100,3/5/2021
+39,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,3/5/2021
+40,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3100,3500,3300,3/4/2021
+41,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,3/4/2021
+42,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3400,3200,3/3/2021
+43,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,3/3/2021
+44,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3400,3200,3/2/2021
+45,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3100,3500,3300,3/1/2021
+46,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,3/1/2021
+47,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3400,3200,2/26/2021
+48,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/26/2021
+49,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3100,3500,3300,2/25/2021
+50,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/25/2021
+51,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3400,3200,2/24/2021
+52,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/24/2021
+53,MADHYA PRADESH,Khandwa,Khandwa,Alsandikai,Alsandikai,FAQ,4444,4444,4444,2/24/2021
+54,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3100,3500,3300,2/23/2021
+55,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/23/2021
+56,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3400,3200,2/22/2021
+57,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/22/2021
+58,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4100,4400,4200,2/20/2021
+59,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/20/2021
+60,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4000,4600,4100,2/19/2021
+61,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/19/2021
+62,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4100,4400,4200,2/18/2021
+63,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/18/2021
+64,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4000,4300,4100,2/17/2021
+65,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2500,2200,2/17/2021
+66,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3900,4200,4000,2/16/2021
+67,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,2/16/2021
+68,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4000,4300,4100,2/15/2021
+69,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,2/15/2021
+70,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4100,4300,4200,2/12/2021
+71,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,2/12/2021
+72,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4000,4200,4100,2/11/2021
+73,KARNATAKA,Davangere,Davangere,Alsandikai,Alsandikai,FAQ,2000,2500,2300,2/11/2021
+74,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,2/11/2021
+75,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4200,4600,4400,2/10/2021
+76,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,2/10/2021
+77,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4100,4500,4300,2/9/2021
+78,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3200,2/9/2021
+79,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4200,4600,4400,2/8/2021
+80,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3200,2/8/2021
+81,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4400,5000,4600,2/6/2021
+82,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3200,2/6/2021
+83,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4300,5000,4600,2/5/2021
+84,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4400,5000,4600,2/4/2021
+85,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3200,2/4/2021
+86,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4200,5000,4600,2/3/2021
+87,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3200,2/3/2021
+88,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4300,5100,4700,2/2/2021
+89,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4200,5000,4600,2/1/2021
+90,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,4000,3500,2/1/2021
+91,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4200,5000,4600,1/30/2021
+92,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,4000,3500,1/30/2021
+93,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4000,5000,4500,1/29/2021
+94,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,4000,3500,1/29/2021
+95,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4100,5100,4600,1/28/2021
+96,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,4000,3500,1/28/2021
+97,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4000,5000,4500,1/27/2021
+98,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,4000,3500,1/27/2021
+99,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,4000,5000,4500,1/25/2021
+100,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3400,1/25/2021
+101,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2600,3000,2800,1/22/2021
+102,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3400,1/22/2021
+103,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2500,2900,2700,1/21/2021
+104,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3400,1/21/2021
+105,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2600,3000,2800,1/20/2021
+106,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3400,1/20/2021
+107,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2500,2900,2700,1/19/2021
+108,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,1/19/2021
+109,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2600,3000,2800,1/18/2021
+110,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,1/18/2021
+111,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2600,2500,1/16/2021
+112,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,1/16/2021
+113,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2600,2500,1/15/2021
+114,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,1/15/2021
+115,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2600,2500,1/13/2021
+116,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2000,2400,2200,1/13/2021
+117,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2800,2600,1/12/2021
+118,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2400,3000,2600,1/12/2021
+119,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2600,3000,2800,1/11/2021
+120,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2400,3000,2600,1/11/2021
+121,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2400,2800,2700,1/8/2021
+122,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2400,3000,2600,1/8/2021
+123,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2600,3000,2800,1/7/2021
+124,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2400,3000,2600,1/7/2021
+125,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,2800,3400,3000,1/6/2021
+126,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,2400,3000,2600,1/6/2021
+127,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3800,3400,1/5/2021
+128,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,4000,3600,1/4/2021
+129,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3200,1/4/2021
+130,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3200,3100,1/2/2021
+131,KARNATAKA,Udupi,Udupi,Alsandikai,Alsandikai,FAQ,3000,3500,3200,1/2/2021
+132,KARNATAKA,Bangalore,"Binny Mill (F&V), Bangalore",Alsandikai,Alsandikai,FAQ,3000,3400,3200,1/1/2021

@@ -22,7 +22,34 @@ import icons from "../../Assets/languageIcons.PNG";
 import latestNews from "../../Assets/latestNews1.PNG";
 import latestNews2 from "../../Assets/latestNews2.PNG";
 import HamburgerMenuItems from "../HamburgerMenuItems/HamburgerMenuItems";
+import CardMedia from '@material-ui/core/CardMedia';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
+const useStyles = makeStyles({
+  root: {
+    maxWidth:620,
+   
+    height:450,
+    // marginBottom:"3%",
+   
+    // border: "1px solid #021a40",
+    float:"right",
+    backgroundColor:"white",
+  },
+ 
+  title: {
+    fontSize: 14,
+  },
+  // pos: {
+  //   marginBottom: 12,
+  // },
+});
 // export default function LandingPage() {
 //   let items = [
 //     {
@@ -80,7 +107,9 @@ import HamburgerMenuItems from "../HamburgerMenuItems/HamburgerMenuItems";
 //   );
 // }
 export default function LandingPage() {
-  let newsImg = [{ img1: latestNews }, { img1: latestNews2 }];
+  // let newsImg = [{ img1: latestNews }, { img1: latestNews2 }];
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
   let items = [
     {
       heading: "Top Handpicked item for you",
@@ -125,7 +154,7 @@ export default function LandingPage() {
     // { img1: fertilizer, text: "Fertilizer" },
     { img1: fertilizer, text: "Fertilizer" },
     { img1: rotavator, text: "Machinary" },
-    { img1: rotavator2, text: "Buy Or Rent" },
+    { img1: rotavator2, text: "Buy/Rent" },
     { img1: seedImg2, text: "MSP Details" },
   ];
   let carouselItems = [
@@ -136,14 +165,14 @@ export default function LandingPage() {
     { img1: rotavator, text: "Rotavator" },
     { img1: rotavator2, text: "Rotavator" },
   ];
-  let bestItemCarousel = [
-    { img1: rotavator2 },
-    { img1: tractor2 },
-    { img1: tractor3 },
-    { img1: fertilizer },
-    { img1: rotavator },
-    { img1: rotavator2 },
-  ];
+  // let bestItemCarousel = [
+  //   { img1: rotavator2 },
+  //   { img1: tractor2 },
+  //   { img1: tractor3 },
+  //   { img1: fertilizer },
+  //   { img1: rotavator },
+  //   { img1: rotavator2 },
+  // ];
   let trendingItemsCarousel = [
     { img1: cultivator, text: "Cultivator", price: "From 2000/-" },
     { img1: rotavator2, text: "Rotavator", price: "From 5000/-" },
@@ -161,18 +190,50 @@ export default function LandingPage() {
   return (
     <div style={{ backgroundColor: "#F1FFF9" }}>
       <SearchCard />
-      <ItemCarousel items={newsImg} />
+      {/* <ItemCarousel items={newsImg} /> */}
       <SeedItems items={items2} />
-      <ItemCarousel
+      {/* <ItemCarousel
         items={bestItemCarousel}
         header={"Best Sellers"}
         style={true}
-      />
-      <ItemsCard items={items} />
+      /> */}
+      {/* <ItemsCard items={items} /> */}
       {/* <HamburgerMenuItems /> */}
+      <div  style={{marginTop:"3%",backgroundColor: "#F1FFF9" }}>
+    
+      <Card className="Card">
+      <iframe width="820" height="450"
+src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
+</iframe>
+
+      <CardActionArea className={classes.root}>
+        {/* <CardMedia
+          component="img"
+          alt="machine"
+          height="200"
+          image={cultivator}
+          title="Machine"
+        /> */}
+      
+        <CardContent>
+          <Typography gutterBottom variant="h4" component="h1" style={{textAlign:"center"}}>
+            Machinery
+          </Typography>
+          <Typography variant="h6" color="textPrimary" component="p">
+            When you are looking to buy high-quality seed, There are many reasons why should you choose <strong>Pland.Farm</strong> 
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      {/* <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+      </CardActions> */}
+    </Card>
+      </div>
+     
       <ItemCarousel items={carouselItems} 
       style={true}
-      
       />
      
       <AppBar position="static" className="mid-bar">
@@ -183,10 +244,10 @@ export default function LandingPage() {
               <img style={{ marginTop: "3%", height: "6em" }} src={icons} />
             </Grid>
             <Grid item lg={3} xs={12} md={3}>
-              <p className="mid-bar-text2">PLAND.FARM</p> 
+              <p className="mid-bar-text1">PLAND.FARM</p>
             </Grid>
             <Grid item lg={3} xs={12} md={3}>
-              <p className="mid-bar-text3">In your language</p>
+              <p className="mid-bar-text2">In your language</p>
             </Grid>
           </Grid>
         </Toolbar>
