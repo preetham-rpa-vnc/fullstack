@@ -97,7 +97,90 @@ export default function SearchCard() {
   const classes = useStyles();
   const [weather, setWeather] = useState([]);
   const history = useHistory();
-  const userDatas = (userDatails) => {
+
+  const CurrentWeather = () => {
+    useEffect(() => {
+      const { first_name } = isAuth();
+      Axios.get(`${process.env.REACT_APP_API_URI}/getuserlocation`, {
+        params: {
+          first_name,
+        },
+      })
+        .then((userLocation) => {
+          console.log("user location", userLocation.data);
+          const { district } = userLocation.data;
+          const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
+          const URL = "https://api.openweathermap.org/data/2.5";
+          const query = district;
+          const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
+          fetch(weatherURL)
+            .then((res) => res.json())
+            .then((data) => {
+              if (data && data.cod === 200) {
+                setWeather(...weather, [data]);
+              }
+              console.log("Data List Loaded", data);
+            });
+        })
+        .catch((err) => console.log(err));
+    }, []);
+
+    console.log("wEEEEEEEEEEEEEEe", weather);
+
+    const handleClick = () => {
+      history.push("/forecast");
+    };
+
+    return (
+      <Grid className={classes.mainGrid}>
+        {weather ? (
+          <>
+            {weather &&
+              weather.map((data, index) => (
+                <Paper
+                  elevation={3}
+                  className={classes.paper}
+                  key={index}
+                  onClick={handleClick}
+                >
+                  <Grid container direction="column" spacing={0}>
+                    <Grid
+                      item
+                      container
+                      className={classes.temp}
+                      direction="row"
+                      spacing={2}
+                    >
+                      <Grid item>{data.main.temp}°C</Grid>
+                      <Grid item>
+                        <CardMedia
+                          className={classes.media}
+                          image={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+                          title="Paella dish"
+                        />
+                      </Grid>
+                    </Grid>
+                    <Grid item className={classes.description}>
+                      {data.weather[0].description}
+                    </Grid>
+                    <Grid item className={classes.description}>
+                      {data.name}, {data.sys.country}
+                    </Grid>
+                  </Grid>
+                </Paper>
+              ))}
+          </>
+        ) : (
+          <div>
+            <h1>please turn on you location</h1>
+          </div>
+        )}
+      </Grid>
+    );
+  };
+console.log("weather alll data", weather);
+  
+const userDatas = (userDatails) => {
     console.log("search card inside", userDatails);
     Axios.post(`${process.env.REACT_APP_API_URI}/loginuserdata`, userDatails)
       .then((userRes) => {
@@ -115,7 +198,9 @@ export default function SearchCard() {
           <Grid item lg={3} xs={2} md={3}>
             <HamburgerMenu />
           </Grid>
-          <Grid item xs={1}></Grid>
+          <Grid item xs={1}>
+               {isAuth() ? <>{CurrentWeather()}</> : null} 
+          </Grid>
           <Grid item lg={4} xs={7} md={4}>
             <h1 className="search-header-txt">Search Crop near you</h1>
           </Grid>
@@ -126,7 +211,7 @@ export default function SearchCard() {
               <CloudQueueIcon className="icon-style" />
               <p className="weather-text-style">Cloudy</p>
               <p className="weather-text-style">B'lore, India</p>
-              {isAuth() ? <>{CurrentWeather()}</> : null}
+            
             </div>
           </Grid>
         </Grid>
@@ -235,90 +320,4 @@ export default function SearchCard() {
       <UserLocation userDatas={userDatas} />
     </>
   );
-  const CurrentWeather = () => {
-    useEffect(() => {
-      const { first_name } = isAuth();
-      Axios.get(`${process.env.REACT_APP_API_URI}/getuserlocation`, {
-        params: {
-          first_name,
-        },
-      })
-        .then((userLocation) => {
-          console.log("user location", userLocation.data);
-          const { district } = userLocation.data;
-          const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
-          const URL = "https://api.openweathermap.org/data/2.5";
-          const query = district;
-          const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
-          fetch(weatherURL)
-            .then((res) => res.json())
-            .then((data) => {
-              if (data && data.cod === 200) {
-                setWeather(...weather, [data]);
-              }
-              console.log("Data List Loaded", data);
-            });
-        })
-        .catch((err) => console.log(err));
-    }, []);
-
-    console.log("wEEEEEEEEEEEEEEe", weather);
-
-    const handleClick = () => {
-      history.push("/forecast");
-    };
-
-    return (
-      <Grid className={classes.mainGrid}>
-        {weather ? (
-          <>
-            {weather &&
-              weather.map((data, index) => (
-                <Paper
-                  elevation={3}
-                  className={classes.paper}
-                  key={index}
-                  onClick={handleClick}
-                >
-                  <Grid container direction="column" spacing={0}>
-                    <Grid
-                      item
-                      container
-                      className={classes.temp}
-                      direction="row"
-                      spacing={2}
-                    >
-                      <Grid item>{data.main.temp}°C</Grid>
-                      <Grid item>
-                        <CardMedia
-                          className={classes.media}
-                          image={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-                          title="Paella dish"
-                        />
-                      </Grid>
-                    </Grid>
-                    <Grid item className={classes.description}>
-                      {data.weather[0].description}
-                    </Grid>
-                    <Grid item className={classes.description}>
-                      {data.name}, {data.sys.country}
-                    </Grid>
-                  </Grid>
-                </Paper>
-              ))}
-          </>
-        ) : (
-          <div>
-            <h1>please turn on you location</h1>
-          </div>
-        )}
-      </Grid>
-    );
-  };
-
-  
-
-  console.log("weather alll data", weather);
-
- 
 }

@@ -163,19 +163,19 @@ create table product_listing (
 alter table
     product_listing owner to testuser;
 
-create table cropDetails (
-    Slno integer,
-    StateName varchar,
-    DistrictName text,
-    MarketName varchar(128),
-    Commodity text,
-    Variety varchar(12),
-    Grade varchar(12),
-    MinPrice integer,
-    MaxPrice integer,
-    ModalPrice integer,
-    PriceDate date
-);
+-- create table cropDetails (
+--     Slno integer,
+--     StateName varchar,
+--     DistrictName text,
+--     MarketName varchar(128),
+--     Commodity text,
+--     Variety varchar(12),
+--     Grade varchar(12),
+--     MinPrice integer,
+--     MaxPrice integer,
+--     ModalPrice integer,
+--     PriceDate date
+-- );
 
-alter table
-    cropDetails owner to testuser;
+-- alter table
+--     cropDetails owner to testuser;

@@ -33,7 +33,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth:620,
+    maxWidth:660,
    
     height:450,
     // marginBottom:"3%",
@@ -224,12 +224,44 @@ src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
           </Typography>
         </CardContent>
       </CardActionArea>
+      </Card>
+
+      <div  style={{marginTop:"1%",backgroundColor: "lightblue" }}>  
+      <Card className="Card">
+      <div style={{float:"left", backgroundColor:"white"}}  ><CardActionArea className={classes.root}>
+         {/* <CardMedia 
+          component="img"
+          alt="machine"
+          height="200"
+          image={cultivator}
+          title="Machine"
+        /> */}
+      
+        <CardContent>
+          <Typography gutterBottom variant="h4" component="h1" style={{textAlign:"center"}}>
+            Best Farming Techniques
+          </Typography>
+          <Typography variant="h6" color="textPrimary" component="p">
+            When you are looking to buy high-quality seed, There are many reasons why should you choose <strong>Pland.Farm</strong> 
+          </Typography>
+        </CardContent>
+      </CardActionArea></div>
+      
+      <iframe width="820" height="450" float="right"
+src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
+</iframe>
+     
+  
+        </Card>   
+       
+ </div>
+     
       {/* <CardActions>
         <Button size="small" color="primary">
           Share
         </Button>
       </CardActions> */}
-    </Card>
+    
       </div>
      
       <ItemCarousel items={carouselItems} 
