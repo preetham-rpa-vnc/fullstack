@@ -11,20 +11,20 @@ require("dotenv").config();
 
 const app = express();
 // db.connect();
-app.use(cors());
-// app.use(
-//   cors({
-//     origin: "*",
-//   })
-// );
-app.use(express.json({ extended: false }));
-app.use("/", cors(),userRouter);
-app.use("/admin", cors(),adminRouter);
+// app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+// app.use(express.json({ extended: false }));
+// app.use("/", cors(),userRouter);
+// app.use("/admin", cors(),adminRouter);
 app.use(bodyParser.json());
 app.use(useragent.express());
 
 
-// app.use("/", userRouter);
+app.use("/", userRouter);
 // app.use("/admin", adminRouter);
 app.use("/api/user", userRouter);
 app.use("/admin", adminRouter);
