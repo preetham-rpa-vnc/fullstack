@@ -424,9 +424,9 @@ module.exports = {
               if (result.rows[0].user_place_district) {
                 console.log(
                   "results location",
-                  result.rows[0].user_place_district
+                  result.rows[0].user_place_state
                 );
-                resolve({ district: result.rows[0].user_place_district });
+                resolve({ district: result.rows[0].user_place_state });
               }
             } else {
               resolve({ country: null });

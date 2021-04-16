@@ -18,7 +18,7 @@ app.use(
 app.use(bodyParser.json()); 
 app.use(useragent.express());
 
-app.use("/", userRouter);
+app.use("/api/user", userRouter);
 app.use("/admin", adminRouter);
 
 const PORT = process.env.PORT;
