@@ -117,10 +117,10 @@
     font-size: 30px;
 }
 .weather-text-style{
-    font: normal normal 600 19px/21px Segoe UI;
+    font: normal normal 600 19px/21px sans-serif;
     letter-spacing: 0px;
     color: #000000;
-    opacity: 1;
+    opacity: 4;
     margin-top: -10px;
     margin-left: 6px;
 }

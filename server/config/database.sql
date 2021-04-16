@@ -163,6 +163,7 @@ create table product_listing (
 alter table
     product_listing owner to testuser;
 
+<<<<<<< HEAD
 create table if not exists cropDetails (
     Slno integer,
     StateName varchar,
@@ -179,3 +180,21 @@ create table if not exists cropDetails (
 
 alter table
     cropDetails owner to testuser;
+=======
+-- create table cropDetails (
+--     Slno integer,
+--     StateName varchar,
+--     DistrictName text,
+--     MarketName varchar(128),
+--     Commodity text,
+--     Variety varchar(12),
+--     Grade varchar(12),
+--     MinPrice integer,
+--     MaxPrice integer,
+--     ModalPrice integer,
+--     PriceDate date
+-- );
+
+-- alter table
+--     cropDetails owner to testuser;
+>>>>>>> 61976e563f17a525804e2d1b9476733e830482cc

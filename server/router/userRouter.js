@@ -197,4 +197,5 @@ router.get("/getuserlocation", (req, res) => {
     res.json(location);
   });
 });
+
 module.exports = router;

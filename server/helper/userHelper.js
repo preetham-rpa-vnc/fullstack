@@ -512,6 +512,20 @@ module.exports = {
     } = userLocation;
 
     return new Promise((resolve, reject) => {
+      // pool.query(
+      //   `SELECT * FROM login_users WHERE user_name = $1`,
+      //   [user_name],
+      //   (err, result) => {
+      //     if (err) console.log(err);
+      //     console.log("r2@@@@@@@@@@@@@@@esult", result.rows[0]);
+      //     if (result.rows[0]) {
+      //       console.log("user is there buddy");
+      //     } else {
+      //       console.log("user is there buddy $$$$");
+      //     }
+      //   }
+      // );
+
       pool.query(
         `INSERT INTO login_users
       (login_user_id, user_name, user_mobile, user_place_country, user_place_state, user_place_district, user_place_postcode, user_browser)
@@ -528,14 +542,13 @@ module.exports = {
           browser,
         ],
         (err, result) => {
-          if (result) {
-            console.log("result@@@@@@@@@@", result.rows[0]);
-          }
-          console.log("error@@@@@@@@@@", err);
+          // console.log("result@@@@@@@@@@", result);
+          // console.log("error@@@@@@@@@@", err);
         }
       );
     });
   },
+
 
   checkLocation: (userName) => {
     console.log("user name", userName);
@@ -602,3 +615,4 @@ module.exports = {
 //   'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture)
 
 //     )
+  
