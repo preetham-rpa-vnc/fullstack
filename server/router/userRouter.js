@@ -48,7 +48,7 @@ router.get("/getselectedcrops", (req, res) => {
     .catch((err) => console.log("check error", err));
 });
 
-router.post("/signup", (req, res) => { 
+router.post("/signup", (req, res) => {
   userHelper.addUser(req.body).then((response) => {
     console.log("rsponse", response);
     return res.status(200).json(response);
@@ -56,6 +56,7 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  console.log("##########", req.body);
   userHelper.loginUser(req.body).then((response) => {
     if (response.status) {
       const token = jwt.sign(
@@ -78,9 +79,6 @@ router.post("/login", (req, res) => {
 router.post("/sendotp", (req, res) => {
   console.log("send otp", req.body);
   const number = "+918606419976";
-  // console.log("serviceID", serviceID, authToken);
-  // console.log("accountSID", accountSID);
-  // console.log("client", client);
   const { contact_number } = req.body;
   userHelper.checkNuber(contact_number).then((resp) => {
     console.log("response", resp);
@@ -102,13 +100,6 @@ router.post("/sendotp", (req, res) => {
       res.json({ message: "Number doesn't exist" });
     }
   });
-
-  // const resp = {
-  //   first_name: "Asharudheen",
-  //   last_name: "kk",
-  //   user_mobile: "8606419976",
-  // };
-  // res.status(200).json({ status: "open", user: resp });
 });
 
 router.post("/verifyotp", (req, res) => {

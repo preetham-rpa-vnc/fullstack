@@ -43,12 +43,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
- export default function OtpVerification({ history }) {
+export default function OtpVerification({ history }) {
   const classes = useStyles();
-  const [loginVal, setLoginVal] = useState({
-    contact_number: "",
-    otp: "",
-  });
+  const [loginVal, setLoginVal] = useState({});
   const [numberField, setNumberField] = useState(true);
   const [otpField, setOtpField] = useState(false);
   const [otpUser, setOtpUser] = useState({});
@@ -71,9 +68,30 @@ const useStyles = makeStyles((theme) => ({
     console.log("check status", contact_number);
     if (!contact_number) {
       alert("please fill all fields");
-    } else if (contact_number.length < 10) {
-      alert(`${contact_number}, check your number`);
-    } else {
+    } else if (isNaN(contact_number)) {
+      // alert(contact_number);
+      const name = contact_number;
+      Axios.post(`${process.env.REACT_APP_API_URI}/login`, { name })
+        .then((res) => {
+          console.log("res.data", res.data);
+          const { message, status, user } = res.data;
+          if (status) {
+            authenticate(user, () => {
+              window.location.reload();
+              history.push("/");
+              setLoginVal({ ...loginVal, user_name: "", user_password: "" });
+            });
+          } else {
+            alert(message);
+          }
+        })
+        .catch((err) => console.error(err));
+    }
+    // else if (contact_number.length < 10) {
+    //   alert(`${contact_number}, check your number`);
+    // }
+    else {
+      // alert(contact_number);
       setOpen(!open);
       Axios.post(`${process.env.REACT_APP_API_URI}/sendotp`, loginVal)
         .then((resp) => {
@@ -103,9 +121,9 @@ const useStyles = makeStyles((theme) => ({
           margin="normal"
           required
           fullWidth
-          type="number"
+          // type="text"
           // id="username"
-          label="Contact Number"
+          label="Mobile or User Name"
           // name="username"
           autoComplete="contactnumber"
           autoFocus
@@ -214,7 +232,7 @@ const useStyles = makeStyles((theme) => ({
   console.log("login values", loginVal);
 
   return (
-    <div style={{marginBottom: "175px"}}>
+    <div style={{ marginBottom: "175px" }}>
       {isAuth() ? <Redirect to="/" /> : null}
       <Container component="main" maxWidth="xs" id="container">
         <CssBaseline />

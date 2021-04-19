@@ -9,88 +9,146 @@ function UserLocation({ userDatas }) {
   console.log("Enter inside first");
 
   useEffect(() => {
-    const successfullLookup = (position) => {
-      console.log("postion", position);
-      if (isAuth()) {
-        const { first_name } = isAuth();
+    // const successfullLookup = (position) => {
+    //   console.log("postion", position);
+    //   if (isAuth()) {
+    //     const { first_name } = isAuth();
 
-        Axios.post(`${process.env.REACT_APP_API_URI}/checklocation`, {
-          first_name,
-        }).then((resp) => {
-          // window.location.reload()
-          console.log("##########################", resp);
-          if (resp.data.country === null) {
-            const { latitude, longitude } = position.coords;
-            opencage
-              .geocode({
-                q: `${latitude}, ${longitude}`,
-                key: "d20212f395f44fb6a9ac96ce354f4f0c",
-              })
-              .then((data) => {
-                // console.log(JSON.stringify(data));
-                console.log("data", data);
-                if (data.status.code === 200) {
-                  if (data.results.length > 0) {
-                    var place = data.results[0];
+    //     Axios.post(`${process.env.REACT_APP_API_URI}/checklocation`, {
+    //       first_name,
+    //     }).then((resp) => {
+    //       // window.location.reload()
+    //       console.log("##########################", resp);
+    //       if (resp.data.country === null) {
+    //         const { latitude, longitude } = position.coords;
+    //         opencage
+    //           .geocode({
+    //             q: `${latitude}, ${longitude}`,
+    //             key: "d20212f395f44fb6a9ac96ce354f4f0c",
+    //           })
+    //           .then((data) => {
+    //             // console.log(JSON.stringify(data));
+    //             console.log("data", data);
+    //             if (data.status.code === 200) {
+    //               if (data.results.length > 0) {
+    //                 var place = data.results[0];
 
-                    const userPlace = {
-                      user_id: isAuth().user_profile_id,
-                      user_name: isAuth().first_name,
-                      user_mobile: isAuth().user_mobile,
-                      status: data.status.code,
-                      continent: place.components.continent,
-                      country: place.components.country,
-                      state: place.components.state,
-                      district: place.components.state_district,
-                      // town: place.components.town,
-                      postcode: place.components.postcode,
-                      timezone: place.annotations.timezone.name,
-                      formatted: place.formatted,
-                    };
-                    setUserPlace(userPlace);
-                    userDatas(userPlace);
-                  }
-                } else if (data.status.code === 402) {
-                  const message = "hit free trial daily limit";
-                  console.log("hit free trial daily limit");
-                  console.log(
-                    "become a customer: https://opencagedata.com/pricing"
-                  );
-                  setUserPlace({ status: data.status.code });
-                  userDatas({ status: data.status.code });
-                } else {
-                  // other possible response codes:
-                  // https://opencagedata.com/api#codes
-                  console.log("error", data.status.message);
-                  setUserPlace(data.status.message);
-                  userDatas(data.status.message);
-                }
-              })
-              .catch((error) => {
-                console.log("error", error.message);
-              });
-          }
-        });
-      }
-    };
+    //                 const userPlace = {
+    //                   user_id: isAuth().user_profile_id,
+    //                   user_name: isAuth().first_name,
+    //                   user_mobile: isAuth().user_mobile,
+    //                   status: data.status.code,
+    //                   continent: place.components.continent,
+    //                   country: place.components.country,
+    //                   state: place.components.state,
+    //                   district: place.components.state_district,
+    //                   // town: place.components.town,
+    //                   postcode: place.components.postcode,
+    //                   timezone: place.annotations.timezone.name,
+    //                   formatted: place.formatted,
+    //                 };
+    //                 setUserPlace(userPlace);
+    //                 userDatas(userPlace);
+    //               }
+    //             } else if (data.status.code === 402) {
+    //               const message = "hit free trial daily limit";
+    //               console.log("hit free trial daily limit");
+    //               console.log(
+    //                 "become a customer: https://opencagedata.com/pricing"
+    //               );
+    //               setUserPlace({ status: data.status.code });
+    //               userDatas({ status: data.status.code });
+    //             } else {
+    //               // other possible response codes:
+    //               // https://opencagedata.com/api#codes
+    //               console.log("error", data.status.message);
+    //               setUserPlace(data.status.message);
+    //               userDatas(data.status.message);
+    //             }
+    //           })
+    //           .catch((error) => {
+    //             console.log("error", error.message);
+    //           });
+    //       }
+    //     });
+    //   }
+    // };
+    if (isAuth()) {
+      const successfullLookup = (position) => {
+        const { latitude, longitude } = position.coords;
+        console.log("latitude", latitude);
+        console.log("longitude", longitude);
+        // setLatLong(position.coords);
+        opencage
+          .geocode({
+            q: `${latitude}, ${longitude}`,
+            key: "d20212f395f44fb6a9ac96ce354f4f0c",
+          })
+          .then((data) => {
+            // console.log(JSON.stringify(data));
+            console.log("all location data", data);
+            if (data.status.code === 200) {
+              if (data.results.length > 0) {
+                var place = data.results[0];
 
-    const userDenied = (err) => {
-      console.log("posposition", err);
-      const { code, message } = err;
-      if (code) {
-        // const userPlace = {
-        //   user_id: isAuth().user_profile_id,
-        //   user_name: isAuth().first_name,
-        //   user_mobile: isAuth().user_mobile,
-        // };
-        // setUserPlace(code);
-        // // userDatas(code);
-        // userDatas(userPlace);
-      }
-    };
+                const userPlace = {
+                  user_id: isAuth().user_profile_id,
+                  user_name: isAuth().first_name,
+                  user_mobile: isAuth().user_mobile,
+                  latitude: place.geometry.lat,
+                  longitude: place.geometry.lng,
+                  status: data.status.code,
+                  continent: place.components.continent,
+                  country: place.components.country,
+                  state: place.components.state,
+                  district: place.components.state_district,
+                  // town: place.components.town,
+                  postcode: place.components.postcode,
+                  timezone: place.annotations.timezone.name,
+                  formatted: place.formatted,
+                };
+                setUserPlace(userPlace);
+                userDatas(userPlace);
+              }
+            } else if (data.status.code === 402) {
+              const message = "hit free trial daily limit";
+              console.log("hit free trial daily limit");
+              console.log(
+                "become a customer: https://opencagedata.com/pricing"
+              );
+              setUserPlace({ status: data.status.code });
+              userDatas({ status: data.status.code });
+            } else {
+              // other possible response codes:
+              // https://opencagedata.com/api#codes
+              console.log("error", data.status.message);
+              setUserPlace(data.status.message);
+              userDatas(data.status.message);
+            }
+          })
+          .catch((error) => {
+            console.log("error", error.message);
+          });
+      };
 
-    navigator.geolocation.getCurrentPosition(successfullLookup, userDenied);
-    console.log("userPlace", userPlace);
+      const userDenied = (err) => {
+        console.log("posposition", err);
+        const { code, message } = err;
+        if (code) {
+          // const userPlace = {
+          //   user_id: isAuth().user_profile_id,
+          //   user_name: isAuth().first_name,
+          //   user_mobile: isAuth().user_mobile,
+          // };
+          // setUserPlace(code);
+          // // userDatas(code);
+          // userDatas(userPlace);
+        }
+      };
+
+      navigator.geolocation.getCurrentPosition(successfullLookup, userDenied);
+      console.log("userPlace", userPlace);
+    }
   }, []);
 
   return (

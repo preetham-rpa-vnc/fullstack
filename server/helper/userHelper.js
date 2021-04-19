@@ -343,39 +343,21 @@ module.exports = {
 
   loginUser: (userData) => {
     console.log("login user data", userData);
-    const { user_name, user_password } = userData;
+    const { name } = userData;
     return new Promise((resolve, reject) => {
       pool.query(
         `SELECT * FROM users WHERE user_name = $1`,
-        [user_name],
+        [name],
         (err, result) => {
+          // console.log("Result", result);
           if (err) {
             throw err;
           }
           if (result.rowCount != 0) {
-            console.log("result.rows[0]$$$$$$$$$$$", result.rows[0]);
-            const user = result.rows[0];
-            console.log("user.user_password", user.user_password);
-            console.log("user_password", user_password);
-            bcrypt.compare(user_password, user.user_password).then((status) => {
-              console.log("status", status);
-              if (status) {
-                pool.query(
-                  `SELECT * FROM user_profile WHERE user_profile_id = $1`,
-                  [user.user_id],
-                  (err, userResult) => {
-                    console.log("user result", userResult.rows[0]);
-                    if (err) throw err;
-                    resolve({
-                      user: userResult.rows[0],
-                      status: true,
-                      message: "login succes",
-                    });
-                  }
-                );
-              } else {
-                resolve({ status: false, message: "wrong password" });
-              }
+            resolve({
+              user: result.rows[0],
+              status: true,
+              message: "login succes",
             });
           } else {
             resolve({ status: false, message: "user doesn't exist" });
@@ -385,8 +367,57 @@ module.exports = {
     });
   },
 
+  // loginUser: (userData) => {
+  //   console.log("login user data", userData);
+  //   const { user_name, user_password } = userData;
+  //   return new Promise((resolve, reject) => {
+  //     pool.query(
+  //       `SELECT * FROM users WHERE user_name = $1`,
+  //       [user_name],
+  //       (err, result) => {
+  //         if (err) {
+  //           throw err;
+  //         }
+  //         if (result.rowCount != 0) {
+  //           console.log("result.rows[0]$$$$$$$$$$$", result.rows[0]);
+  //           const user = result.rows[0];
+  //           console.log("user.user_password", user.user_password);
+  //           console.log("user_password", user_password);
+  //           bcrypt.compare(user_password, user.user_password).then((status) => {
+  //             console.log("status", status);
+  //             if (status) {
+  //               pool.query(
+  //                 `SELECT * FROM user_profile WHERE user_profile_id = $1`,
+  //                 [user.user_id],
+  //                 (err, userResult) => {
+  //                   console.log("user result", userResult.rows[0]);
+  //                   if (err) throw err;
+  //                   resolve({
+  //                     user: userResult.rows[0],
+  //                     status: true,
+  //                     message: "login succes",
+  //                   });
+  //                 }
+  //               );
+  //             } else {
+  //               resolve({ status: false, message: "wrong password" });
+  //             }
+  //           });
+  //         } else {
+  //           resolve({ status: false, message: "user doesn't exist" });
+  //         }
+  //       }
+  //     );
+  //   });
+  // },
+
   checkNuber: (mobileNumber) => {
-    console.log("mobileNumber", mobileNumber);
+    if (mobileNumber.match(/^-?\d+$/)) {
+      console.log("It's a whole number!", mobileNumber);
+    } else if (mobileNumber.match(/^-?\d+*\.\d+$/)) {
+      console.log("It's a decimal number!", mobileNumber);
+    }
+    console.log("mobileNumber", mobileNumber.indexOf(`1`, `2`));
     return new Promise((resolve, reject) => {
       pool.query(
         `SELECT * FROM user_profile WHERE user_mobile = $1`,
@@ -549,7 +580,6 @@ module.exports = {
     });
   },
 
-
   checkLocation: (userName) => {
     console.log("user name", userName);
     return new Promise((resolve, reject) => {
@@ -615,4 +645,3 @@ module.exports = {
 //   'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture)
 
 //     )
-  
