@@ -90,7 +90,7 @@ export default function SearchCard() {
       console.log("allLocationData", allLocationData);
       const { longitude, latitude, district, country } = allLocationData;
       const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
-      const URL = "http://api.openweathermap.org/data/2.5";
+      const URL = "https://api.openweathermap.org/data/2.5";
       const query = district;
       // const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
       const weatherURL = `${URL}/weather?q=${query}&lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
