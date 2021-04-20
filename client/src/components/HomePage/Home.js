@@ -178,7 +178,7 @@ export default function HideAppBar(props) {
                                   </Grid>
                                   <Grid item>
                                     <Typography>
-                                      {isAuth().first_name}
+                                      {isAuth().name}
                                     </Typography>
                                   </Grid>
                                 </Grid>
@@ -267,7 +267,7 @@ export default function HideAppBar(props) {
                           style={{
                             border: "1px solid rgb(65 171 10 / 50%)",
                             color: "#00b074",
-                          }}
+                          }} 
                           variant="outlined"
                           color="primary"
                           href="/otpauth"

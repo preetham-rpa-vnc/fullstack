@@ -36,7 +36,7 @@ function Header() {
             align="center"
             className={classes.signIn}
           >
-            {isAuth().first_name}
+            {isAuth().name}
           </Typography>
         </div>
       ) : (

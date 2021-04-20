@@ -123,7 +123,7 @@ export default function OtpVerification({ history }) {
           fullWidth
           // type="text"
           // id="username"
-          label="Mobile or User Name"
+          label="Enter Mobile"
           // name="username"
           autoComplete="contactnumber"
           autoFocus
@@ -165,12 +165,12 @@ export default function OtpVerification({ history }) {
     setOpen(!open);
     event.preventDefault();
     const { user } = otpUser;
-    const { user_mobile } = user;
+    const { mobile } = user;
     console.log(" userData", otpUser);
     console.log("user", user);
     Axios.post(`${process.env.REACT_APP_API_URI}/verifyotp`, {
       otp,
-      user_mobile,
+      mobile,
     })
       .then((resp) => {
         setOpen(false);

@@ -288,22 +288,66 @@ module.exports = {
   //   });
   // },
 
+  // addUser: (userData) => {
+  //   console.log("user data", userData);
+  //   const {
+  //     first_name,
+  //     last_name,
+  //     user_name,
+  //     user_mobile,
+  //     user_password,
+  //   } = userData;
+  //   const user_type_id = 101;
+  //   const user_status_id = 101;
+  //   return new Promise(async (resolve, reject) => {
+  //     const hashedpassword = await bcrypt.hash(user_password, 10);
+  //     pool.query(
+  //       `SELECT * FROM users WHERE user_name = $1`,
+  //       [user_name],
+  //       (err, result) => {
+  //         if (err) {
+  //           throw err;
+  //         }
+  //         console.log(result.rows);
+  //         if (result.rows.length > 0) {
+  //           resolve({ status: false, exuser: result.rows[0].username });
+  //         } else {
+  //           pool.query(
+  //             `INSERT INTO users (user_name, user_password, user_type_id, user_status_id)
+  //              VALUES ($1, $2, $3, $4) RETURNING user_id`,
+  //             [user_name, hashedpassword, user_type_id, user_status_id],
+  //             (err, result) => {
+  //               if (err) {
+  //                 throw err;
+  //               }
+  //             }
+  //           );
+
+  //           pool.query(
+  //             `INSERT INTO user_profile (first_name, last_name, user_mobile)
+  //              VALUES ($1, $2, $3) RETURNING *`,
+  //             [first_name, last_name, user_mobile],
+  //             (err, result) => {
+  //               if (err) {
+  //                 throw err;
+  //               }
+  //               console.log("result.rows[0]", result.rows[0].first_name);
+  //               resolve({ status: true, exuser: result.rows[0].first_name });
+  //             }
+  //           );
+  //         }
+  //       }
+  //     );
+  //   });
+  // },
+
   addUser: (userData) => {
     console.log("user data", userData);
-    const {
-      first_name,
-      last_name,
-      user_name,
-      user_mobile,
-      user_password,
-    } = userData;
-    const user_type_id = 101;
-    const user_status_id = 101;
+    const { name, mobile, email } = userData;
     return new Promise(async (resolve, reject) => {
-      const hashedpassword = await bcrypt.hash(user_password, 10);
       pool.query(
-        `SELECT * FROM users WHERE user_name = $1`,
-        [user_name],
+        `SELECT * FROM user_profile WHERE name = $1`,
+        [name],
         (err, result) => {
           if (err) {
             throw err;
@@ -313,26 +357,21 @@ module.exports = {
             resolve({ status: false, exuser: result.rows[0].username });
           } else {
             pool.query(
-              `INSERT INTO users (user_name, user_password, user_type_id, user_status_id)
-               VALUES ($1, $2, $3, $4) RETURNING user_id`,
-              [user_name, hashedpassword, user_type_id, user_status_id],
-              (err, result) => {
-                if (err) {
-                  throw err;
-                }
-              }
-            );
-
-            pool.query(
-              `INSERT INTO user_profile (first_name, last_name, user_mobile)
+              `INSERT INTO user_profile (name, mobile, email)
                VALUES ($1, $2, $3) RETURNING *`,
-              [first_name, last_name, user_mobile],
+              [name, mobile, email],
               (err, result) => {
                 if (err) {
                   throw err;
                 }
-                console.log("result.rows[0]", result.rows[0].first_name);
-                resolve({ status: true, exuser: result.rows[0].first_name });
+                console.log(
+                  "result.rows[0]",
+                  result.rows[0]
+                );
+                resolve({
+                  status: true,
+                  exuser: result.rows[0]
+                });
               }
             );
           }
@@ -412,15 +451,15 @@ module.exports = {
   // },
 
   checkNuber: (mobileNumber) => {
-    if (mobileNumber.match(/^-?\d+$/)) {
-      console.log("It's a whole number!", mobileNumber);
-    } else if (mobileNumber.match(/^-?\d+*\.\d+$/)) {
-      console.log("It's a decimal number!", mobileNumber);
-    }
-    console.log("mobileNumber", mobileNumber.indexOf(`1`, `2`));
+    // if (mobileNumber.match(/^-?\d+$/)) {
+    //   console.log("It's a whole number!", mobileNumber);
+    // } else if (mobileNumber.match(/^-?\d+*\.\d+$/)) {
+    //   console.log("It's a decimal number!", mobileNumber);
+    // }
+    // console.log("mobileNumber", mobileNumber.indexOf(`1`, `2`));
     return new Promise((resolve, reject) => {
       pool.query(
-        `SELECT * FROM user_profile WHERE user_mobile = $1`,
+        `SELECT * FROM user_profile WHERE mobile = $1`,
         [mobileNumber],
         (err, result) => {
           if (err) throw err;

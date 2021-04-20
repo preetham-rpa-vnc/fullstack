@@ -65,7 +65,7 @@ const OtpAuth = () => {
                     style={{ fontWeight: "bold", color: "#00b074" }}
                   >
                     welcome back
-                  </Typography>
+                  </Typography> 
                   {/* </Typography> */}
                 </Grid>
                 <Grid>

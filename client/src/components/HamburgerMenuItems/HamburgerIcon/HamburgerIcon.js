@@ -65,7 +65,7 @@ function HamburgerIcon() {
       <Button
         variant="contained"
         size="large"
-        style={{ background: "rgb(0, 176, 116)" }}
+        style={{ background: "rgb(0, 176, 116)" }} 
         onClick={toggleDrawer("left", true)}
       >
         <HamburgerMenu
