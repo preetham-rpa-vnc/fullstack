@@ -138,7 +138,7 @@ const useStyles = makeStyles((theme) => ({
     height: 50,
     textAlign: "center",
   },
-}));
+})); 
 
 function ProductDetails({ location }) {
   const [productItem, setProductItem] = useState("");

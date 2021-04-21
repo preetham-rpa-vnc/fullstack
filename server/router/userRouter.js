@@ -48,14 +48,32 @@ router.get("/getselectedcrops", (req, res) => {
     .catch((err) => console.log("check error", err));
 });
 
-router.post("/signup", (req, res) => { 
+router.post("/signup", (req, res) => {
   userHelper.addUser(req.body).then((response) => {
     console.log("rsponse", response);
+    const { status, exuser } = response;
+    const { name, email, mobile } = exuser;
+    if (status) {
+      client.verify
+        .services(serviceID)
+        .verifications.create({
+          to: `+91${mobile}`,
+          // to: contact_number,
+          channel: "sms",
+        })
+        .then((verification) => {
+          console.log("verification", verification);
+          console.log(`Sent verification: '${verification.sid}'`);
+          // res.status(200).json({ verification, status: "open", user: resp });
+          return res.status(200).json(response);
+        });
+    }
     return res.status(200).json(response);
   });
 });
 
 router.post("/login", (req, res) => {
+  console.log("##########", req.body);
   userHelper.loginUser(req.body).then((response) => {
     if (response.status) {
       const token = jwt.sign(
@@ -78,9 +96,6 @@ router.post("/login", (req, res) => {
 router.post("/sendotp", (req, res) => {
   console.log("send otp", req.body);
   const number = "+918606419976";
-  // console.log("serviceID", serviceID, authToken);
-  // console.log("accountSID", accountSID);
-  // console.log("client", client);
   const { contact_number } = req.body;
   userHelper.checkNuber(contact_number).then((resp) => {
     console.log("response", resp);
@@ -102,23 +117,16 @@ router.post("/sendotp", (req, res) => {
       res.json({ message: "Number doesn't exist" });
     }
   });
-
-  // const resp = {
-  //   first_name: "Asharudheen",
-  //   last_name: "kk",
-  //   user_mobile: "8606419976",
-  // };
-  // res.status(200).json({ status: "open", user: resp });
 });
 
 router.post("/verifyotp", (req, res) => {
   console.log("verify otp", req.body);
-  const { otp, user_mobile } = req.body;
+  const { otp, mobile } = req.body;
 
   client.verify
     .services(serviceID)
     .verificationChecks.create({
-      to: `+91${user_mobile}`,
+      to: `+91${mobile}`,
       code: otp,
     })
     .then((check) => {

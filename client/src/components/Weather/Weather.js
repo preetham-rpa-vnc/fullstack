@@ -5,7 +5,9 @@ import { useState } from "react";
 const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
 const URL = "https://api.openweathermap.org/data/2.5";
 
-const Weather = () => {
+const Weather = ({ location }) => {
+  // const id = queryString.parse(location.search);
+  // console.log("idsssssssss", id);
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
@@ -15,7 +17,7 @@ const Weather = () => {
         .then((res) => res.json())
         .then((data) => {
           // const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
-         
+
           // console.log("dialy Data", dailyData);
 
           console.log("result@@@@@@@@@@@@@@@sssSS", data);

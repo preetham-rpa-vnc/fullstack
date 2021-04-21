@@ -18,7 +18,7 @@ function Weather({ weather }) {
   const liveWeather = list;
   console.log("live weather", liveWeather);
   console.log("city", city);
-
+ 
   return (
     <div>
       {forecsatFiveDays &&

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "85vh",
     backgroundColor: "#cccccc",
     filter: "blur(0px)",
-    position: "relative",
+    position: "relative", 
     // padding: theme.spacing(4.4, 6.3, 0, 6.3),
   },
   logo: {

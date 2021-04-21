@@ -18,6 +18,7 @@ import ForcasteWeather from "./components/ForecastWeather/ForecastWeather";
 import Categories from "./components/Caregories/Categories";
 import OtpAuth from "./components/Auth/SignIn/OtpAuth";
 import OtpValidation from "./components/Auth/SignIn/OtpValidation";
+import SignUps from "./components/Auth/SignUp/SignUp";
 import Main from "./components/Auth/SignIn/Main";
 import ItemDetails from "./components/ItemDetails/ItemDetails";
 // function App() {
@@ -25,10 +26,10 @@ import ItemDetails from "./components/ItemDetails/ItemDetails";
 function App() { 
   return (
     <Router>
-      <Home />
+      <Home /> 
       <Route exact path="/" component={LandingPage} />
       <Route path="/otp" component={OtpAuth} />
-
+      <Route path="/signup" component={SignUps} />
       <Route path="/main" component={Main} />
       <Route path="/valid" component={OtpValidation} />
       <Route path="/login" component={SignIn} />
@@ -37,7 +38,7 @@ function App() {
       <Route exact path="/categories" component={Categories} />
       {/* <Route exact path="/" component={SignIn} /> */}
       <Route path="/otpauth" component={OtpVerification} />
-      <Route path="/signup" component={SignUp} />
+      <Route path="/signups" component={SignUp} />
       <Route path="/landingPage" component={Cards} />
       <Route path="/view" component={ViewItems} />
       <Route path="/product" component={ProductDetails} />

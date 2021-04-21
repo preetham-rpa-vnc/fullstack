@@ -73,7 +73,7 @@ export default function SignIn({ history }) {
           alert(message);
         }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err)); 
   };
 
   console.log("login values", loginVal);

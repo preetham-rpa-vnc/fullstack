@@ -109,7 +109,7 @@ const MediaCard = () => {
     // history.push(`/view?id=${id}`);
   };
 
-  const passData = (items) => {
+  const passData = (items) => { 
     setItemData(items);
   };
 
