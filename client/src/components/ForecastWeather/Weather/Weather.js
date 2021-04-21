@@ -39,7 +39,7 @@ function Weather({ weather }) {
                     <Box>
                       <Grid
                         container
-                        direction="column"
+                        direction="column" 
                         spacing={1}
                         className={classes.weatherAll}
                       >

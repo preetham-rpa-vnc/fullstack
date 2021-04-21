@@ -11,18 +11,18 @@ const isProduction = process.env.NODE_ENV === "production";
 // });
 
 const pool = new Pool({
-    user: "testpf",
-    password: "123",
-    database: "pfdb",
-    host: "localhost",
-    port: 5432,
-  }); 
+  user: "testpf",
+  password: "123",
+  database: "pfdb",
+  host: "localhost",
+  port: 5432,
+});
 
-  // ! host: "ec2-54-166-251-184.compute-1.amazonaws.com",
+// ! host: "ec2-54-166-251-184.compute-1.amazonaws.com",
 
- module.exports = pool;
+// ! host: "ec2-50-16-217-72.compute-1.amazonaws.com"
 
-
+module.exports = pool;
 
 // APP_NAME = plant
 // APP_PORT = 8000

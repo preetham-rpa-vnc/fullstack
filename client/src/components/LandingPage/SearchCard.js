@@ -88,12 +88,13 @@ export default function SearchCard() {
     // }, []);
     useEffect(() => {
       console.log("allLocationData", allLocationData);
-      const { longitude, latitude, district, country } = allLocationData;
+      const { longitude, latitude, district, country, state } = allLocationData;
       const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
       const URL = "https://api.openweathermap.org/data/2.5";
-      const query = district;
-      // const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
-      const weatherURL = `${URL}/weather?q=${query}&lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
+      // const query = "Karnataka";
+      const query = state;
+      const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
+      // const weatherURL = `${URL}/weather?q=${query}&lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
       fetch(weatherURL)
         .then((res) => res.json())
         .then((data) => {
@@ -105,15 +106,16 @@ export default function SearchCard() {
           }
           console.log("Data List Loadedes", data);
           // setWeather([...weather, data]);
-        });
+        })
+        .catch((err) => console.log(err));
     }, [allLocationData]);
     console.log("wEEEEEEEEEEEEEEe", weather);
 
     const handleClick = () => {
-      const { longitude, latitude, district, country } = allLocationData;
+      const { longitude, latitude, district, country, state } = allLocationData;
 
       history.push(
-        `/forecast?longitude=${longitude}&latitude=${latitude}&district=${district}`
+        `/forecast?longitude=${longitude}&latitude=${latitude}&state=${state}`
       );
     };
 
