@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../../Styles/LandingPage.css";
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { lightGreen } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloudQueueIcon from "@material-ui/icons/CloudQueue";
 import Grid from "@material-ui/core/Grid";
@@ -13,7 +16,29 @@ import Axios from "axios";
 import { isAuth } from "../../helper/authHelper";
 import { useHistory } from "react-router";
 import UserLocation from "../UserLocation/UserLocation";
+const Distance = [
+  { label: "20km", value: 1 },
+  { label: "30km", value: 2 },
+  { label: "40km", value: 3 },
+  { label: "5km", value: 4 },
+  { label: "6km", value: 5 },
+  { label: "7km", value: 6 },
+];
+const Crops = [
+  { label: "Wheat", value: 355 },
+  { label: "Rice", value: 54 },
+  { label: "Tomato", value: 43 },
+  { label: "Potato", value: 61 },
+  { label: "Groundnut", value: 965 },
+  { label: "Sunflower", value: 46 },
+  { label: "oats", value: 58 }
+];
 
+const Machines = [
+  { label: "Rotavator", value: 3 },
+  { label: "Spraying Pump", value:2 },
+  { label: "Tractor", value: 1 }
+]
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -28,7 +53,8 @@ const useStyles = makeStyles((theme) => ({
     background: "rgb(255 255 255 / 12%)",
     textAlign: "center",
     borderRadius: 10,
-    padding: "10px 20px 0px 20px",
+    padding: theme.spacing(2),
+    color: theme.palette.text.secondary,
     cursor: "pointer",
   },
   temp: {
@@ -50,6 +76,13 @@ const useStyles = makeStyles((theme) => ({
   media: {
     width: "55px",
     padding: "13px",
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
   },
 }));
 
@@ -173,6 +206,33 @@ export default function SearchCard() {
                 id="outlined-adornment-amount"
                 endAdornment={
                   <InputAdornment position="end">
+                   <div style={{marginRight:"5px"}}>   
+                 <Autocomplete id="combo-box-demo"
+      options={Crops}
+      getOptionLabel={(option) => option.label}
+      style={{ width: 205 }}
+      renderInput={(params) => <TextField {...params} label="Select Crops" variant="filled" />}
+    />
+                   </div> 
+   
+    <div style={{marginRight:"5px"}}>
+      <Autocomplete 
+      id="combo-box-demo"
+      options={Machines}
+      getOptionLabel={(option) => option.label}
+      style={{ width: 200}}
+     
+      renderInput={(params) => <TextField {...params} label="Select Machines" variant="filled" />}
+    /></div>
+    <div style={{marginRight:"10px"}}>
+    <Autocomplete
+      id="combo-box-demo"
+      options={Distance}
+      getOptionLabel={(option) => option.label}
+      style={{ width: 220}}
+      renderInput={(params) => <TextField {...params} label="Select Distance" variant="filled" />}
+    />
+    </div>
                     <Button variant="contained" className="search-btn">
                       Search
                     </Button>
