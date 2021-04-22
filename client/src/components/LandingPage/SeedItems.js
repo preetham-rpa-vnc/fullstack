@@ -8,10 +8,10 @@ export default function SeedItems(props) {
       <Grid container spacing={12}>
         {props.items.map((value, i) => {
           return (
-            <Grid item lg={2} xs={6} md={2} >
-              <div>
+            <Grid item lg={2}  xs={5} md={2} style={{marginLeft:"3%"}} >
+            <div className="row" style={{textAlign:"center"}}>
                 <img className="seed-item-img" src={value.img1} />
-                <p className="seed-img-subtext">{value.text}</p>
+                <p className="seed-img-subtext"  style={{textAlign:"center"}}>{value.text}</p>
               </div>
             </Grid>
           );
