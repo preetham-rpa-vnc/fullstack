@@ -1,4 +1,4 @@
-import react from "react";
+import react, { useState } from "react";
 import {
   Button,
   CardMedia,
@@ -13,6 +13,8 @@ import logo from "../../../images/logo.png";
 import bgImage1 from "../../../Assets/backgroundWeather1.jpg";
 import bgImage2 from "../../../Assets/backgroundWeather2.jpg";
 import bgImage3 from "../../../Assets/AuthPage.jpg";
+import Axios from "axios";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -47,8 +49,33 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const OtpAuth = () => {
+const OtpAuth = ({ history }) => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const [number, setNumber] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setOpen(!open);
+    Axios.post(`${process.env.REACT_APP_API_URI}/sendotp`, { number })
+      .then((resp) => {
+        console.log("res.data send otp", resp.data);
+        setOpen(false);
+        // setOtpUser(resp.data);
+        const { user, message, status, otpId } = resp.data;
+        console.log("user only ", user);
+        // const status = "open";
+        console.log(status);
+        if (status === "open") {
+          // setNumberField(false);
+          // setOtpField(true);
+          history.push(`/valid?mobile=${number}&name=${user.name}&`);
+        } else {
+          alert("message");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
   return (
     <>
       <Grid className={classes.mainGrid} container direction="column">
@@ -65,7 +92,7 @@ const OtpAuth = () => {
                     style={{ fontWeight: "bold", color: "#00b074" }}
                   >
                     welcome back
-                  </Typography> 
+                  </Typography>
                   {/* </Typography> */}
                 </Grid>
                 <Grid>
@@ -86,13 +113,23 @@ const OtpAuth = () => {
                     className={classes.textField}
                     margin="normal"
                     variant="outlined"
+                    onChange={(event) => setNumber(event.target.value)}
                   />
                 </Grid>
+                <Link to="/signup" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
               </Grid>
               <Grid item>
-                <Button variant="contained" size="large" color="primary">
+                <Button
+                  variant="contained"
+                  size="large"
+                  color="primary"
+                  onClick={handleSubmit}
+                >
                   Sign In
                 </Button>
+               
               </Grid>
             </Grid>
           </Paper>

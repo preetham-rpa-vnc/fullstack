@@ -49,7 +49,7 @@ export default function OtpVerification({ history }) {
   const [numberField, setNumberField] = useState(true);
   const [otpField, setOtpField] = useState(false);
   const [otpUser, setOtpUser] = useState({});
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   // const handleClose = () => {
   //   setOpen(false);
   // };
@@ -123,8 +123,8 @@ export default function OtpVerification({ history }) {
           fullWidth
           // type="text"
           // id="username"
-          label="Enter Mobile"
-          // name="username"
+          label="Enter Mobile" 
+          // name="username" 
           autoComplete="contactnumber"
           autoFocus
           value={contact_number}

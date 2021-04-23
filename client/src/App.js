@@ -28,7 +28,7 @@ function App() {
     <Router>
       <Home /> 
       <Route exact path="/" component={LandingPage} />
-      <Route path="/otp" component={OtpAuth} />
+      <Route path="/otpauth" component={OtpAuth} />
       <Route path="/signup" component={SignUps} />
       <Route path="/main" component={Main} />
       <Route path="/valid" component={OtpValidation} />
@@ -37,7 +37,7 @@ function App() {
       <Route exact path="/itemDetails" component={ItemDetails} />
       <Route exact path="/categories" component={Categories} />
       {/* <Route exact path="/" component={SignIn} /> */}
-      <Route path="/otpauth" component={OtpVerification} />
+      <Route path="/otp" component={OtpVerification} />
       <Route path="/signups" component={SignUp} />
       <Route path="/landingPage" component={Cards} />
       <Route path="/view" component={ViewItems} />

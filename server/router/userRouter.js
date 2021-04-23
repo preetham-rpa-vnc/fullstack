@@ -95,15 +95,16 @@ router.post("/login", (req, res) => {
 
 router.post("/sendotp", (req, res) => {
   console.log("send otp", req.body);
-  const number = "+918606419976";
-  const { contact_number } = req.body;
-  userHelper.checkNuber(contact_number).then((resp) => {
+  // const number = "+918606419976";
+  const { number } = req.body;
+  userHelper.checkNuber(number).then((resp) => {
     console.log("response", resp);
+    res.status(200).json({ status: "open", user: resp });
     if (resp) {
       client.verify
         .services(serviceID)
         .verifications.create({
-          to: `+91${contact_number}`,
+          to: `+91${number}`,
           // to: contact_number,
           channel: "sms",
         })
