@@ -89,7 +89,7 @@ export default function ItemDetails() {
                         <OndemandVideoIcon className="icon-style2" style={{marginLeft:'14px', }}/>
                         <span className="item-img-txt">Preview Video</span>
                     </div>
-                </Grid>
+                </Grid> 
                 <Grid item lg={7} xs={12} md={7}>
                     <p className="item-header">John Deere 275 TU 5D SP Plus Tractor</p>
                     <p className="item-text">Brand: Mahindra</p>

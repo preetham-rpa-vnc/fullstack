@@ -5,20 +5,12 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Link from "@material-ui/core/Typography";
 import { Box, Divider, Grid, Paper, Typography } from "@material-ui/core";
 import { useHistory, Link as Links } from "react-router-dom";
-import FirstBody from "./FirstBody/FirstBody";
-import { machinery } from "../Items/Items";
-import SeachItem from "../SearchItem";
 import LinkIcon from "@material-ui/icons/Link";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import { Redirect } from "react-router-dom";
 import Axios from "axios";
-import { crops } from "../Items/CropItem";
-import UserLocation from "../../UserLocation/UserLocation";
-import { isAuth } from "../../../helper/authHelper";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -158,16 +150,16 @@ const MediaCard = () => {
       <div className={classes.roots}>
         <Grid container direction="column" spacing={3}>
           <Grid item mt={3} className={classes.searchItem}>
-            <SeachItem searchResult={searchR} />
+            {/* <SeachItem searchResult={searchR} /> */}
           </Grid>
           <Grid item>
             <Grid container spacing={2}>
               <Grid item xs={3} m={2} mx="auto" mt={2}>
-                <FirstBody
+                {/* <FirstBody
                   itemData={itemData}
                   passCrop={newFunc}
                   className={classes.firstBody}
-                />
+                /> */}
               </Grid>
               <Grid item xs={9}>
                 <Grid
@@ -177,7 +169,7 @@ const MediaCard = () => {
                   justify="flex-start"
                   alignItems="flex-start"
                 >
-                  {itemData.slice(0, 12).map((data, index) => {
+                  {itemData.slice(0, 1).map((data, index) => {
                     const { youtube, crops, model } = data;
                     return (
                       <Grid
@@ -225,18 +217,6 @@ const MediaCard = () => {
                                           {data.product_crops}
                                         </Typography>
                                       </Grid>
-                                      {/* {crops.slice().map((datas) => {
-                                        return (
-                                          <Grid item>
-                                            <Typography
-                                              variant="h6"
-                                              className={classes.crops}
-                                            >
-                                              {datas}
-                                            </Typography>
-                                          </Grid>
-                                        );
-                                      })} */}
                                     </Grid>
                                   </Grid>
                                 </Grid>
@@ -336,7 +316,7 @@ const MediaCard = () => {
           </Grid>
         </Grid>
       </div>
-      <UserLocation userDatas={userDatas} />
+      {/* <UserLocation userDatas={userDatas} /> */}
     </>
   );
 };

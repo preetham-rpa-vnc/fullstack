@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     filter: "blur(0px)",
     position: "relative",
     // padding: theme.spacing(4.4, 6.3, 0, 6.3),
-  },
+  }, 
   logo: {
     width: "220px",
     height: "100px",

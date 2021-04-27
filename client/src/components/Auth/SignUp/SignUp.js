@@ -156,7 +156,7 @@ const SignUp = ({ history }) => {
   console.log("response data", responseData);
   console.log("otp val", otpVal);
   return (
-    <>
+    <> 
       {isAuth() ? <Redirect to="/" /> : null}
       <Grid className={classes.mainGrid} container direction="column">
         <Grid item style={{ alignSelf: "center" }}>

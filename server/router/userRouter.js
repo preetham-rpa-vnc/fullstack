@@ -152,7 +152,7 @@ router.post("/verifyotp", (req, res) => {
 });
 
 router.get("/getallproducts", (req, res) => {
-  console.log("req.body", req.body);
+  console.log("req.body", req.body); 
   userHelper.getAllProduct().then((allData) => {
     return res.json(allData);
   });
