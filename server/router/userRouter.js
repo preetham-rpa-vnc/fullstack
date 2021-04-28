@@ -157,11 +157,11 @@ router.get("/getallproducts", (req, res) => {
   });
 });
 
-router.get("/getsearchkeys", (req, res) => {
-  userHelper.getAllManufactures().then((result) => {
-    return res.json(result);
-  });
-});
+// router.get("/getsearchkeys", (req, res) => {
+//   userHelper.getAllManufactures().then((result) => {
+//     return res.json(result);
+//   });
+// });
 
 router.get("/findsearchdata", (req, res) => {
   console.log("req body", req.body);

@@ -90,11 +90,6 @@ const useStyles = makeStyles({
   
     maxWidth:"600px",
     margin:"1%",
-    
-     
-  //  height:"500",
-    // border: "1px solid #021a40",
-    // float:"right",
     backgroundColor:"white",
   },
   title: {
@@ -217,61 +212,49 @@ export default function LandingPage() {
 src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
 </iframe>
  
-<Card className={classes.root} style={{float:"right"}}>
-<div className="row" >
-         <left>
-           <img src={local} alt="" className="avatar-img rounded"></img>
-           </left>
-        <CardContent style={{float:"right",marginTop:"3%"}} >
-          <Typography gutterBottom variant="h5" component="h2">
-            Support Local
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          Buy Local. Sell Local. Support your local community of growers and farmers
-          </Typography>
-        </CardContent>
+<div className={classes.root} style={{float:"right"}}>
+
+         <div className="row align-items-center">
+         <div className="photo">
+         <img src={local} alt="" className="avatar-img rounded" style={{marginLeft:"10px"}}></img>
          </div>
-         <div className="row">
-         <left>
-           <img src={local} alt="" className="avatar-img rounded"></img>
-           </left>
-        <CardContent style={{float:"right"}}>
-          <Typography gutterBottom variant="h5" component="h4">
-            Support Local
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          Buy Local. Sell Local. Support your local community of growers and farmers
-          </Typography>
-        </CardContent>
+           <div className="content">
+             <h2>Support Local</h2>
+             <p>Buy Local. Sell Local. Support your local community of growers and farmers</p>
+           </div>
          </div>
-         <div className="row">
-         <left>
-           <img src={local} alt="" className="avatar-img rounded"></img>
-           </left>
-        <CardContent style={{float:"right"}}>
-          <Typography gutterBottom variant="h5" component="h4">
-            Support Local
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          Buy Local. Sell Local. Support your local community of growers and farmers
-          </Typography>
-        </CardContent>
+         <div className="row align-items-center">
+         <div className="photo">
+         <img src={local} alt="" className="avatar-img rounded" style={{marginLeft:"10px"}}></img>
          </div>
-         <div className="row">
-         <left>
-           <img src={local} alt="" className="avatar-img rounded"></img>
-           </left>
-        <CardContent style={{float:"right"}}>
-          <Typography gutterBottom variant="h5" component="h2">
-            Support Local
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          Buy Local. Sell Local. Support your local community of growers and farmers
-          </Typography>
-        </CardContent>
+           <div className="content">
+             <h2>Secure Transcation</h2>
+             <p>Pay securely through a number of digital payment options. Release payment to seller upon physical inspection of seed. Your personal information stays with just you</p>
+           </div>
          </div>
-         
-    </Card>
+         <div className="img-txt">
+         <div className="row align-items-center">
+         <div className="photo">
+         <img src={local} alt="" className="avatar-img rounded" style={{marginLeft:"10px"}}></img>
+         </div>
+           <div className="content">
+             <h2>Quality Seed</h2>
+             <p>What you see is what you buy. We partner with Hannaford and Pacific Seeds to list treated and germination-tested seed on our marketplace</p>
+           </div>
+         </div>
+         </div>
+         <div className="img-txt">
+         <div className="row align-items-center">
+         <div className="photo">
+         <img src={local} alt="" className="avatar-img rounded" style={{marginLeft:"10px"}}></img>
+         </div>
+           <div className="content">
+             <h2>Verified Sellers</h2>
+             <p>Access a large and growing community of verified sellers in your region.</p>
+           </div>
+         </div>
+         </div>
+    </div>
             </div>
  </div>
 </div>

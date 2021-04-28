@@ -21,6 +21,7 @@ import OtpValidation from "./components/Auth/SignIn/OtpValidation";
 import SignUps from "./components/Auth/SignUp/SignUp";
 import Main from "./components/Auth/SignIn/Main";
 import ItemDetails from "./components/ItemDetails/ItemDetails";
+import CropDetails from "./components/MSP/CropDetails";
 // function App() {
 // import ItemDetails from './components/ItemDetails/ItemDetails';
 function App() { 
@@ -37,6 +38,7 @@ function App() {
       <Route exact path="/itemDetails" component={ItemDetails} />
       <Route exact path="/categories" component={Categories} />
       {/* <Route exact path="/" component={SignIn} /> */}
+      <Route exact path="/crops" component={CropDetails}/>
       <Route path="/otpauth" component={OtpVerification} />
       <Route path="/signups" component={SignUp} />
       <Route path="/landingPage" component={Cards} />

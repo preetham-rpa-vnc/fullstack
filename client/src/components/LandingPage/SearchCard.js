@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment as div, useEffect, useState } from "react";
 import "../../Styles/LandingPage.css";
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { lightGreen } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloudQueueIcon from "@material-ui/icons/CloudQueue";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Button from "@material-ui/core/Button";
+import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
+import Axios from "axios";
+// import Button from "@material-ui/core/Button";
 import HamburgerMenu from "../HamburgerMenuItems/HamburgerMenuItems";
 import { CardMedia, Paper } from "@material-ui/core";
-import Axios from "axios";
 import { isAuth } from "../../helper/authHelper";
 import { useHistory } from "react-router";
 import UserLocation from "../UserLocation/UserLocation";
@@ -84,20 +81,86 @@ const useStyles = makeStyles((theme) => ({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
+  // margin: {
+  //   margin: theme.spacing(1),
+  // },
+  // extendedIcon: {
+  //   marginRight: theme.spacing(1),
+  // },
+  searchItems: {
+    borderColor: "red",
+    justifyContent: "center",
+  },
+  container: {
+    textAlign: "-webkit-center",
+  },
 }));
 
-export default function SearchCard() {
+const defaultProps = {
+  bgcolor: "background.paper",
+  borderColor: "#f1f1f1",
+  // borderColor: "#3f51b5",
+  m: 1,
+  border: 1,
+  style: { width: "fit-content" },
+};
+export default function SearchCard(searchResult) {
   const classes = useStyles();
   const [weather, setWeather] = useState([]);
   const [allLocationData, setAllLocationData] = useState([]);
   const history = useHistory();
 
+ 
+  const [searchData, setSearchData] = useState({
+    manufacture: "",
+    crop: "",
+  });
+  const [manufactures, setManufactures] = useState([]);
+  const [crops, setCrops] = useState([]);
+  const [searchProducts, setSearchProducts] = useState({});
+
+  const { manufacture, crop } = searchData;
+
+  useEffect(() => {
+    Axios.get(`${process.env.REACT_APP_API_URI}/getallcrops`).then(
+      (result) => {
+        console.log("@@@@@@@@@@@@@", result);
+        setCrops(result.data.crops);
+      }
+    );
+  }, []);
+
+  const handleChange = (text) => (event) => {
+    console.log("event.targer.value", event.target.innerText);
+    setSearchData({ ...searchData, [text]: event.target.innerText });
+  };
+
+  const handleClick = () => {
+    console.log("last data", searchData);
+    Axios.get(`${process.env.REACT_APP_API_URI}/findsearchdata`, {
+      params: searchData,
+    })
+      .then((products) => {
+        console.log("@@@@@@@@@@@@", products.data);
+        if (!products.data) {
+          alert("Product Null");
+        }
+        setSearchProducts(...products.data);
+        searchResult(products.data);
+        // setSearchData({ ...searchData, manufacture: "", crop: "" });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  console.log("search data", searchProducts);
+
+
   const CurrentWeather = () => {
     // useEffect(() => {
-    //   const { first_name } = isAuth();
+    //   const { name } = isAuth();
     //   Axios.get(`${process.env.REACT_APP_API_URI}/getuserlocation`, {
     //     params: {
-    //       first_name,
+    //       name,
     //     },
     //   })
     //     .then((userLocation) => {
@@ -121,10 +184,10 @@ export default function SearchCard() {
     // }, []);
     useEffect(() => {
       console.log("allLocationData", allLocationData);
-      const { longitude, latitude, district, country } = allLocationData;
+      const { longitude, latitude, district, postcode } = allLocationData;
       const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
       const URL = "https://api.openweathermap.org/data/2.5";
-      const query = district;
+      const query =postcode;
       // const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
       const weatherURL = `${URL}/weather?q=${query}&lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
       fetch(weatherURL)
@@ -274,50 +337,87 @@ export default function SearchCard() {
             </Grid>
             {isAuth() ? <>{CurrentWeather()}</> : null}
           </Grid>
-          <Grid container spacing={12}>
-            <Grid item lg={3} xs={0} md={3}></Grid>
-            <Grid item lg={7} xs={12} md={7}>
-              <OutlinedInput
-                style={{ backgroundColor: "white", width: "100%" }}
-                id="outlined-adornment-amount"
-                endAdornment={
-                  <InputAdornment position="end">
-                   <div style={{marginRight:"5px"}}>   
-                 <Autocomplete id="combo-box-demo"
-      options={Crops}
-      getOptionLabel={(option) => option.label}
-      style={{ width: 205 }}
-      renderInput={(params) => <TextField {...params} label="Select Crops" variant="filled" />}
-    />
-                   </div> 
-   
-    <div style={{marginRight:"5px"}}>
-      <Autocomplete 
-      id="combo-box-demo"
-      options={Machines}
-      getOptionLabel={(option) => option.label}
-      style={{ width: 200}}
-     
-      renderInput={(params) => <TextField {...params} label="Select Machines" variant="filled" />}
-    /></div>
-    <div style={{marginRight:"10px"}}>
-    <Autocomplete
-      id="combo-box-demo"
-      options={Distance}
-      getOptionLabel={(option) => option.label}
-      style={{ width: 220}}
-      renderInput={(params) => <TextField {...params} label="Select Distance" variant="filled" />}
-    />
-    </div>
-                    <Button variant="contained" className="search-btn">
-                      Search
-                    </Button>
-                  </InputAdornment>
-                }
-                labelWidth={60}
-              />
+          <div container className={classes.container}>
+      {/* <Grid container direction="column" spacing={4}> */}
+        <Grid item>
+          <Box borderRadius={16} {...defaultProps} p={2}>
+            <Grid
+              container
+              spacing={3}
+              alignItems="center" 
+              className={classes.searchItems}
+            >
+              <Grid item>
+                <Autocomplete
+                  id="combo-box-demo"
+                  options={crops}
+                 
+                  getOptionLabel={(option) => option.crop_name}
+                  style={{ width: 200 }}
+                  onChange={handleChange("crop")}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Select Crop"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item>
+                <Autocomplete
+                  id="combo-box-demo"
+                  options={manufactures}
+                  
+                  getOptionLabel={(option) => option.manuf_name}
+                  style={{ width: 210 }}
+                  onChange={handleChange("manufacture")}
+                  value={manufacture}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Select Machineries"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item>
+                <Autocomplete
+                  id="combo-box-demo"
+                  options={Distance}
+                  getOptionLabel={(option) => option.label}
+                  // getOptionLabel={(option) => option.manuf_name}
+                  style={{ width: 200 }}
+                  // onChange={handleChange("manufacture")}
+                  // value={manufacture}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Select Distance"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  size="large"
+                  // color="primary"
+                  className={classes.margin}
+                  onClick={handleClick}
+                  style={{ backgroundColor: "#30a05f", color: "white" }}
+                >
+                  Search
+                </Button>
+              </Grid>
             </Grid>
-          </Grid>
+          </Box>
+        </Grid>
+      {/* </Grid> */}
+    </div>
+  
         </div>
       </div>
     </>

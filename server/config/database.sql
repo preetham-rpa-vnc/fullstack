@@ -16,6 +16,9 @@ create table user_profile (
     first_name varchar(48),
     last_name varchar(48),
     user_mobile bigint,
+    mobile bigint,
+    name varchar(48),
+    email varchar(48),
     created_at timestamp default now(),
     updated_at timestamp default now()
 );
@@ -163,7 +166,6 @@ create table product_listing (
 alter table
     product_listing owner to testuser;
 
-<<<<<<< HEAD
 create table if not exists cropDetails (
     Slno integer,
     StateName varchar,
@@ -180,7 +182,6 @@ create table if not exists cropDetails (
 
 alter table
     cropDetails owner to testuser;
-=======
 -- create table cropDetails (
 --     Slno integer,
 --     StateName varchar,
@@ -197,4 +198,4 @@ alter table
 
 -- alter table
 --     cropDetails owner to testuser;
->>>>>>> 61976e563f17a525804e2d1b9476733e830482cc
+

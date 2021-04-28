@@ -274,3 +274,4 @@ const SignUp = ({ history }) => {
 };
 
 export default SignUp;
+ 
