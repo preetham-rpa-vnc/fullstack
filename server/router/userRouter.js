@@ -31,11 +31,11 @@ router.get("/getsimileritems", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.get("/getallcrops", (req, res) => {
-  userHelper.getAllCrop().then((allCrop) => {
-    res.json(allCrop);
-  });
-});
+// router.get("/getallcrops", (req, res) => {
+//   userHelper.getAllCrop().then((allCrop) => {
+//     res.json(allCrop);
+//   });
+// });
 
 router.get("/getselectedcrops", (req, res) => {
   const items = req.query.selectedCrop;

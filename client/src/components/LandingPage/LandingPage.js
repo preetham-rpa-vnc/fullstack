@@ -87,17 +87,17 @@ import { Typography } from "@material-ui/core";
 // }
 const useStyles = makeStyles({
   root: {
+
   
     maxWidth:"600px",
     margin:"1%",
-    backgroundColor:"white",
-    maxWidth: "600px",
-    margin: "1%",
-
+    backgroundColor:"white"
+    
     //  height:"500",
     // border: "1px solid #021a40",
     // float:"right",
-    backgroundColor: "white",
+ 
+
   },
   title: {
     fontSize: 14,
@@ -218,6 +218,7 @@ export default function LandingPage() {
         <div className="row mx-md-5 p-2">
           <div className="col-12 col-md-7">
             <div className="col-12 col-md-5 rounded my-auto">
+
             <iframe width="600" height="450" style={{marginTop:"1%", borderRadius:"10px"}}
 src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
 </iframe>
@@ -265,103 +266,7 @@ src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
          </div>
          </div>
     </div>
-              <iframe
-                width="600"
-                height="450"
-                style={{ marginTop: "1%", borderRadius: "10px" }}
-                src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1"
-              ></iframe>
 
-              <Card className={classes.root} style={{ float: "right" }}>
-                <div className="row">
-                  <left>
-                    <img
-                      src={local}
-                      alt=""
-                      className="avatar-img rounded"
-                    ></img>
-                  </left>
-                  <CardContent style={{ float: "right", marginTop: "3%" }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Support Local
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      Buy Local. Sell Local. Support your local community of
-                      growers and farmers
-                    </Typography>
-                  </CardContent>
-                </div>
-                <div className="row">
-                  <left>
-                    <img
-                      src={local}
-                      alt=""
-                      className="avatar-img rounded"
-                    ></img>
-                  </left>
-                  <CardContent style={{ float: "right" }}>
-                    <Typography gutterBottom variant="h5" component="h4">
-                      Support Local
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      Buy Local. Sell Local. Support your local community of
-                      growers and farmers
-                    </Typography>
-                  </CardContent>
-                </div>
-                <div className="row">
-                  <left>
-                    <img
-                      src={local}
-                      alt=""
-                      className="avatar-img rounded"
-                    ></img>
-                  </left>
-                  <CardContent style={{ float: "right" }}>
-                    <Typography gutterBottom variant="h5" component="h4">
-                      Support Local
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      Buy Local. Sell Local. Support your local community of
-                      growers and farmers
-                    </Typography>
-                  </CardContent>
-                </div>
-                <div className="row">
-                  <left>
-                    <img
-                      src={local}
-                      alt=""
-                      className="avatar-img rounded"
-                    ></img>
-                  </left>
-                  <CardContent style={{ float: "right" }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Support Local
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      Buy Local. Sell Local. Support your local community of
-                      growers and farmers
-                    </Typography>
-                  </CardContent>
-                </div>
-              </Card>
             </div>
           </div>
         </div>

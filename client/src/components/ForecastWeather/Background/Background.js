@@ -96,7 +96,7 @@ const fives = [
           console.log("user location", userLocation.data);
           // const { district } = userLocation.data;
           
-          const { longitude, latitude, district } = allLocationData;
+          const { longitude, latitude, state,district } = allLocationData;
           const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
           const URL = "https://api.openweathermap.org/data/2.5";
           const query = state;
