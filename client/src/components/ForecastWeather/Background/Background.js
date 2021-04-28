@@ -99,7 +99,7 @@ const fives = [
           const { longitude, latitude, district } = allLocationData;
           const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
           const URL = "https://api.openweathermap.org/data/2.5";
-          const query = district;
+          const query = state;
           // const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
           const weatherURL = `${URL}/forecast?q=${query}&lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
           //  fetch(`${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`)

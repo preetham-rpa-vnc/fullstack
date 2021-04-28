@@ -1,7 +1,7 @@
 import React, { Fragment as div, useEffect, useState } from "react";
 import "../../Styles/LandingPage.css";
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import { lightGreen } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloudQueueIcon from "@material-ui/icons/CloudQueue";
@@ -28,14 +28,14 @@ const Crops = [
   { label: "Potato", value: 61 },
   { label: "Groundnut", value: 965 },
   { label: "Sunflower", value: 46 },
-  { label: "oats", value: 58 }
+  { label: "oats", value: 58 },
 ];
 
 const Machines = [
   { label: "Rotavator", value: 3 },
-  { label: "Spraying Pump", value:2 },
-  { label: "Tractor", value: 1 }
-]
+  { label: "Spraying Pump", value: 2 },
+  { label: "Tractor", value: 1 },
+];
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -190,6 +190,13 @@ export default function SearchCard(searchResult) {
       const query =postcode;
       // const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
       const weatherURL = `${URL}/weather?q=${query}&lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
+      const { longitude, latitude, district, country, state } = allLocationData;
+      const API_KEY = "9bce70d79e57b879afe5f1cf9352b137";
+      const URL = "https://api.openweathermap.org/data/2.5";
+      // const query = "Karnataka";
+      const query = state;
+      const weatherURL = `${URL}/weather?q=${query}&units=metric&APPID=${API_KEY}`;
+      // const weatherURL = `${URL}/weather?q=${query}&lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
       fetch(weatherURL)
         .then((res) => res.json())
         .then((data) => {
@@ -201,15 +208,16 @@ export default function SearchCard(searchResult) {
           }
           console.log("Data List Loadedes", data);
           // setWeather([...weather, data]);
-        });
+        })
+        .catch((err) => console.log(err));
     }, [allLocationData]);
     console.log("wEEEEEEEEEEEEEEe", weather);
 
     const handleClick = () => {
-      const { longitude, latitude, district, country } = allLocationData;
+      const { longitude, latitude, district, country, state } = allLocationData;
 
       history.push(
-        `/forecast?longitude=${longitude}&latitude=${latitude}&district=${district}`
+        `/forecast?longitude=${longitude}&latitude=${latitude}&state=${state}`
       );
     };
 
@@ -337,6 +345,7 @@ export default function SearchCard(searchResult) {
             </Grid>
             {isAuth() ? <>{CurrentWeather()}</> : null}
           </Grid>
+
           <div container className={classes.container}>
       {/* <Grid container direction="column" spacing={4}> */}
         <Grid item>
@@ -412,6 +421,67 @@ export default function SearchCard(searchResult) {
                   Search
                 </Button>
               </Grid>
+          <Grid container spacing={12}>
+            <Grid item lg={3} xs={0} md={3}></Grid>
+            <Grid item lg={7} xs={12} md={7}>
+              <OutlinedInput
+                style={{ backgroundColor: "white", width: "100%" }}
+                id="outlined-adornment-amount"
+                endAdornment={
+                  <InputAdornment position="end">
+                    <div style={{ marginRight: "5px" }}>
+                      <Autocomplete
+                        id="combo-box-demo"
+                        options={Crops}
+                        getOptionLabel={(option) => option.label}
+                        style={{ width: 205 }}
+                        renderInput={(params) => (
+                          <TextField
+                            {...params}
+                            label="Select Crops"
+                            variant="filled"
+                          />
+                        )}
+                      />
+                    </div>
+
+                    <div style={{ marginRight: "5px" }}>
+                      <Autocomplete
+                        id="combo-box-demo"
+                        options={Machines}
+                        getOptionLabel={(option) => option.label}
+                        style={{ width: 200 }}
+                        renderInput={(params) => (
+                          <TextField
+                            {...params}
+                            label="Select Machines"
+                            variant="filled"
+                          />
+                        )}
+                      />
+                    </div>
+                    <div style={{ marginRight: "10px" }}>
+                      <Autocomplete
+                        id="combo-box-demo"
+                        options={Distance}
+                        getOptionLabel={(option) => option.label}
+                        style={{ width: 220 }}
+                        renderInput={(params) => (
+                          <TextField
+                            {...params}
+                            label="Select Distance"
+                            variant="filled"
+                          />
+                        )}
+                      />
+                    </div>
+                    <Button variant="contained" className="search-btn">
+                      Search
+                    </Button>
+                  </InputAdornment>
+                }
+                labelWidth={60}
+              />
             </Grid>
           </Box>
         </Grid>

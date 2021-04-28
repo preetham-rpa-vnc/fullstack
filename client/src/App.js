@@ -5,7 +5,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Cards from "./components/HomePage/Cards/Cards";
 import CSSGrid from "./components/HomePage/Cards/grid";
-import ProductDetails from "./components/ProductPage/ProductDetails";
+import ProductDetails from "./components/ItemDetails/ProductDetails/ProductDetails";
 import Footer from "./components/HomePage/Footer/Footer";
 import Header from "./components/Header/Header";
 import OtpVerification from "./components/OtpVerification/OtpVerifiction";
@@ -21,7 +21,10 @@ import OtpValidation from "./components/Auth/SignIn/OtpValidation";
 import SignUps from "./components/Auth/SignUp/SignUp";
 import Main from "./components/Auth/SignIn/Main";
 import ItemDetails from "./components/ItemDetails/ItemDetails";
+
 import CropDetails from "./components/MSP/CropDetails";
+
+import Carousel from "./components/LandingPage/Carousel";
 // function App() {
 // import ItemDetails from './components/ItemDetails/ItemDetails';
 function App() { 
@@ -29,7 +32,7 @@ function App() {
     <Router>
       <Home /> 
       <Route exact path="/" component={LandingPage} />
-      <Route path="/otp" component={OtpAuth} />
+      <Route path="/otpauth" component={OtpAuth} />
       <Route path="/signup" component={SignUps} />
       <Route path="/main" component={Main} />
       <Route path="/valid" component={OtpValidation} />
@@ -38,18 +41,19 @@ function App() {
       <Route exact path="/itemDetails" component={ItemDetails} />
       <Route exact path="/categories" component={Categories} />
       {/* <Route exact path="/" component={SignIn} /> */}
-      <Route exact path="/crops" component={CropDetails}/>
-      <Route path="/otpauth" component={OtpVerification} />
+      <Route path="/otp" component={OtpVerification} />
       <Route path="/signups" component={SignUp} />
       <Route path="/landingPage" component={Cards} />
       <Route path="/view" component={ViewItems} />
-      <Route path="/product" component={ProductDetails} />
+      {/* <Route path="/products" component={ProductDetails} /> */}
       <Route path="/grid" component={CSSGrid} />
       <Route path="/admin" component={AddProduct} />
       <Route path="/location" component={UserLocation} />
       <Route path="/weath" component={Weather} />
       <Route path="/weather" component={ForcasteWeathers} />
       <Route path="/forecast" component={ForcasteWeather} />
+      <Route path="/carousel" component={Carousel} />
+      <Route path="/product" component={ProductDetails} />
       <Footer />
     </Router>
   );

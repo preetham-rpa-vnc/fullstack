@@ -86,7 +86,7 @@ export default function SearchItem({ searchResult }) {
         <Grid item>
           <Box borderRadius={16} {...defaultProps} p={2}>
             <Grid
-              container
+              container 
               spacing={3}
               alignItems="center" 
               className={classes.searchItems}

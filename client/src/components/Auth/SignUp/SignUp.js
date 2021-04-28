@@ -26,6 +26,7 @@ import bgImage3 from "../../../Assets/AuthPage.jpg";
 import Axios from "axios";
 import { authenticate, isAuth } from "../../../helper/authHelper";
 import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -155,7 +156,7 @@ const SignUp = ({ history }) => {
   console.log("response data", responseData);
   console.log("otp val", otpVal);
   return (
-    <>
+    <> 
       {isAuth() ? <Redirect to="/" /> : null}
       <Grid className={classes.mainGrid} container direction="column">
         <Grid item style={{ alignSelf: "center" }}>
@@ -221,6 +222,9 @@ const SignUp = ({ history }) => {
                     onChange={fillForm("email")}
                   />
                 </Grid>
+                <Link to="/otpauth" variant="body2">
+                  Already have an account? Sign in
+                </Link>
               </Grid>
               <Grid item>
                 <Button
