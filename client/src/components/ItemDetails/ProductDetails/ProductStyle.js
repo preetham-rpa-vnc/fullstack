@@ -3,17 +3,17 @@ import bgImage3 from "../../../Assets/AuthPage.jpg";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
-    backgroundImage: `url(${bgImage3})`,
+    // backgroundImage: `url(${bgImage3})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center center",
-    backgroundColor: "#cccccc",
+    backgroundColor: "#fff",
     filter: "blur(0px)",
     position: "relative",
     justifyContent: "center",
   },
   paper: {
-    background: "rgb(0 0 0 / 10%)",
+    background: "rgb(255 255 255 / 10%)",
     alignSelf: "center",
     borderRadius: 10,
     marginTop: 56,
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   boxOne: {
     width: "150px",
     borderColor: "slategray",
-    background: "rgb(0 0 0 / 30%)",
+    background: "rgb(255 255 255 / 30%)",
     borderWidth: "2px 2px 0px",
     borderStyle: "solid",
     borderImage: "initial",
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0px 0 15px 0px",
     width: "100%",
     borderColor: "slategray",
-    background: "rgb(0 0 0 / 30%)",
+    background: "rgb(255 255 255 / 30%)",
     borderWidth: "2px 2px 2px",
     borderStyle: "solid",
     borderImage: "initial",
@@ -51,16 +51,16 @@ const useStyles = makeStyles((theme) => ({
   boxThree: {
     textAlign: "center",
     width: "100%",
-    borderColor: "slategray",
-    background: "rgb(0 0 0 / 30%)",
+    borderColor: "slategray", 
+    background: "rgb(255 255 255 / 30%)",
     borderWidth: "2px 2px 2px",
     borderStyle: "solid",
     borderImage: "initial",
     borderRadius: "0px 0px 10px 10px",
   },
   thirdBox: {
-    padding: 70,
-    color: "white",
+    padding: 15,
+    // color: "white",
     fontWeight: "bold",
   },
   boxHeader: {

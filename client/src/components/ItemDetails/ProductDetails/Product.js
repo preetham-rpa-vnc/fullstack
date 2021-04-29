@@ -10,14 +10,15 @@ import {
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import CheckCircleRoundedIcon from "@material-ui/icons/CheckCircleRounded";
 import useStyles from "./ProductStyle";
+import PopupDetails from "./DetailsPopup";
 
 function Product() {
   const classes = useStyles();
-
+  // PopupDetails()
   return (
     <Paper className={classes.paper}>
       <Grid container spacing={2} xs={12}>
-        <Grid item xs={7} spacing={1}>
+        <Grid item xs={12} sm={7} spacing={1}>
           <Grid item>
             <Card className={classes.card}>
               <CardMedia
@@ -33,11 +34,12 @@ function Product() {
             spacing={1}
             className={classes.productDetails}
             xs={12}
+            sm={12}
           >
-            <Grid item xs={4}>
+            <Grid item xs={3} sm={4}>
               Industry Leader
             </Grid>
-            <Grid item container xs={4} spacing={1}>
+            <Grid item container xs={7} sm={4} spacing={1}>
               <Grid item>Trustseal Verified</Grid>
               <Grid item>
                 <CheckCircleRoundedIcon
@@ -48,7 +50,8 @@ function Product() {
             <Grid
               item
               container
-              xs={4}
+              xs={6}
+              sm={4}
               spacing={1}
               style={{ cursor: "pointer" }}
             >
@@ -59,7 +62,7 @@ function Product() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item container xs={5}>
+        <Grid item container xs={12} sm={5} spacing={1}>
           <Grid item style={{ alignSelf: "center" }}>
             <Typography
               variant="h3"
@@ -68,13 +71,14 @@ function Product() {
               John Deer
             </Typography>
           </Grid>
-          <Grid item container xs={12} spacing={0}>
+          <Grid item container xs={12} spacing={2}>
             <Grid
               item
               container
-              xs={4}
-              spacing={1}
-              direction="column"
+              xs={3}
+              sm={3}
+              spacing={0}
+              direction="column" 
               style={{
                 color: "#0f690f",
                 textAlign: "left",
@@ -89,11 +93,11 @@ function Product() {
             <Grid
               item
               container
-              xs={2}
-              spacing={1}
+              xs={3}
+              sm={2}
+              spacing={0}
               direction="column"
               style={{
-                color: "white",
                 textAlign: "left",
                 fontWeight: "bold",
                 fontSize: "x-large",
@@ -106,8 +110,8 @@ function Product() {
             <Grid
               item
               container
-              xs={6}
-              spacing={1}
+              xs={3}
+              spacing={0}
               direction="column"
               style={{
                 textAlign: "left",
@@ -120,31 +124,21 @@ function Product() {
               <Grid item>120000</Grid>
             </Grid>
           </Grid>
-          <Grid item container xs={12} style={{ textAlign: "left" }}>
-            <Grid item xs={4}>
+          <Grid item container xs={12} spacing={1} style={{ textAlign: "left" }}>
+            <Grid item xs={5} sm={7} md={5}>
               <Button
                 variant="contained"
                 size="large"
                 className={classes.margin}
                 style={{ backgroundColor: "#00b074", color: "white" }}
-                target="_blank"
+                // target="_blank"
                 // href={youtube}
               >
-                Youtube
+                Contact
               </Button>
             </Grid>
-            <Grid item xs={8}>
-              <Button
-                variant="contained"
-                size="large"
-                color="secondary"
-                className={classes.margin}
-                style={{ backgroundColor: "#00b074" }}
-                target="_blank"
-                // href={website}
-              >
-                Website
-              </Button>
+            <Grid item xs={7} sm={5} md={7}>
+              <PopupDetails />
             </Grid>
           </Grid>
         </Grid>

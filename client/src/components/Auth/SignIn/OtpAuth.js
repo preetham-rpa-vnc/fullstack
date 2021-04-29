@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     filter: "blur(0px)",
     position: "relative",
     // padding: theme.spacing(4.4, 6.3, 0, 6.3),
-  }, 
+  },
   logo: {
     width: "220px",
     height: "100px",
@@ -87,7 +87,7 @@ const OtpAuth = ({ history }) => {
             <Grid container direction="column" spacing={3}>
               <Grid item>
                 <Grid>
-                  <Typography
+                  <Typography 
                     variant="h3"
                     style={{ fontWeight: "bold", color: "#00b074" }}
                   >
@@ -107,6 +107,7 @@ const OtpAuth = ({ history }) => {
                   <TextField
                     autoFocus="on"
                     id="outlined-textarea"
+                    type="number"
                     label="Enter Mobile Number"
                     placeholder="Mobile"
                     multiline
@@ -129,7 +130,6 @@ const OtpAuth = ({ history }) => {
                 >
                   Sign In
                 </Button>
-               
               </Grid>
             </Grid>
           </Paper>

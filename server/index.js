@@ -6,9 +6,6 @@ const adminRouter = require("./router/adminRouter");
 const useragent = require("express-useragent");
 require("dotenv").config();
 
-
-
-
 const app = express();
 // db.connect();
 // app.use(cors());

@@ -15,15 +15,8 @@ function Description() {
   const classes = useStyles();
 
   return (
-    <Grid item container direction="column" style={{ padding: "70px" }}>
+    <Grid item container direction="column" style={{ padding: "30px" }}>
       <Grid item container>
-        <Grid item>
-          <Box borderBottom={0} className={classes.boxOne}>
-            <Typography className={classes.boxHeader}>
-              Product Details
-            </Typography>
-          </Box>
-        </Grid>
         <Grid item>
           <Box borderBottom={0} className={classes.boxOne}>
             <Typography className={classes.boxHeader}>
@@ -31,38 +24,43 @@ function Description() {
             </Typography>
           </Box>
         </Grid>
+        {/* <Grid item>
+          <Box borderBottom={0} className={classes.boxOne}>
+            <Typography className={classes.boxHeader}>
+              Company Profile
+            </Typography>
+          </Box>
+        </Grid> */}
       </Grid>
       <Grid item>
         <Box className={classes.boxTwo}>
           <Typography
             style={{
               padding: "8px",
-              color: "white",
+              // color: "white",
               fontWeight: "bold",
               fontSize: "27px",
               fontVariantCaps: "all-small-caps",
             }}
           >
-            Product Details
+            Company Details
           </Typography>
         </Box>
       </Grid>
       <Grid item>
         <Box className={classes.boxThree}>
-          {/* <Grid>
-                <Grid></Grid>
-                <Grid></Grid>
-              </Grid> */}
           <Typography className={classes.thirdBox}>
-            John Deere 5D series tractors range from 36HP to 55 HP. The 5D
-            series tractors are multi utility in nature, efficient in both
-            agricultural applications as well as heavy duty haulage. These
-            tractors offer higher comfort in terms of wider operator station,
-            neutral safety switch , and lower maintenance cost. John Deere 5D
-            series includes PowerPro models and Value+++ models, offering our
-            customers a wide range of tractors to select from.
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum
           </Typography>
-        </Box>
+        </Box> 
       </Grid>
     </Grid>
   );
