@@ -151,12 +151,13 @@ padding-bottom: 1%;
     height:12em;
     width:20em;
     margin-top: 2%;
-    padding-left: 2em;
+    border: 1px black solid ;
     margin:auto;
 }
 .carousel-img2{
     height: 12em;
-    margin-left: 10px;
+    margin-left: 5px;
+    border: 1px black solid ;
 }
 .carousel-text-style{
     text-align: center;
@@ -380,13 +381,24 @@ padding-bottom: 1%;
 .rounded {
     border-radius: .25rem!important;
 }
-img, svg {
-    vertical-align: middle;
-    margin-top: 1%;
+.img-text {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
 }
-img {
-    border-style: none;
-    margin-top: 6%; 
-    float:left;
-   
+.photo,
+.content {
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: 2%;
+}
+.photo {
+  width: 10%;
+  
+  align-self: flex-start;
+}
+
+.content {
+  width: 80%;
+ 
 }

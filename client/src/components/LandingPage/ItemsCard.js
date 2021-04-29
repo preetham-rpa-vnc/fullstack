@@ -37,9 +37,7 @@ export default function ItemsCard(props){
                                 title="Contemplative Reptile"
                                 />
                                 <p className="card-img-txt">{val.text}</p>
-                                <Link to="/otpauth" variant="body2" style={{marginLeft:"20%"}}>
-                  {"More Details"}
-                </Link>
+                      
                             </Grid>
                             )})}
                             </Grid>

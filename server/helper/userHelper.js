@@ -8,7 +8,48 @@ const path = require("path");
 const fastcsv = require("fast-csv");
 const fs = require("fs");
 const { constants } = require("buffer");
-const { Stream } = require("stream");
+const  {Stream } = require("stream");
+
+// function readFileToJson(filename){
+// const wb=reader.readFile(filename);
+// const firstTabName=wb.SheetNames[0];
+// const ws=wb.Sheets[firstTabName];
+// const data =reader.utils.sheet_to_json(ws);
+// return data;
+// }
+// const tagetDir=path.join(__dirname,"../MasterData");
+// const files=fs.readdirSync(tagetDir);
+ 
+
+// files.forEach(function(file){
+//   const fileExtension=path.parse(file).ext;
+//    let combinedData=[];
+//   if(fileExtension===".xlsx" && file[0] !== "~"){
+//     const fullFilePath=path.join(__dirname,"../MasterData",file);
+//     const data=readFileToJson(fullFilePath);
+//      combinedData=combinedData.concat(data);
+//     //  combinedData.shift();
+    
+//   } 
+  
+// });  
+//   console.log(combinedData);
+//   // const query ="INSERT INTO cropDetails (Slno, StateName, DistrictName, MarketName,Commodity, Variety,Grade,MinPrice,MaxPrice,ModalPrice,PriceDate) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
+//   // const query=`INSERT INTO cropDetails (Slno, StateName, DistrictName, MarketName,Commodity, Variety,Grade,MinPrice,MaxPrice,ModalPrice,PriceDate)
+//   // VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *`;
+//   // combinedData.forEach((row) => {
+//   //   pool.query(
+//   //     query,row,
+//   //     (err, res) => {
+//   //       if (err) {
+//   //         console.log(err.stack);
+//   //       } else {
+//   //         console.log("inserted " + res.rowCount);
+//   //       }
+//   //     }
+//   //   );
+//   //  });
+
 
 const currDir = path.join("./Masterdata/");
 // Function to get the filenames present
@@ -24,7 +65,6 @@ const readdir = (dirname) => {
     });
   });
 };
-//csvFilter.js
 const filtercsvFiles = (filename) => {
   return filename.split(".")[1] === "csv";
 };
@@ -67,48 +107,12 @@ readdir(currDir).then((filenames) => {
           }
         });
       });
-    Stream.pipeline(csvStream);
+    Stream.pipe(csvStream);
   }
 });
 
 // const stream = fs.createReadStream("./MasterData/Ajwan_MasterData.csv");
 const ws = fs.createWriteStream("./MasterData/Ajwan_MasterData.csv");
-// let csvData = [];
-
-// let csvStream = fastcsv
-//   .parse()
-//   .on("data", function(data) {
-//     csvData.push(data);
-//   })
-//   .on("end", function() {
-//     // remove the first line: header
-//     csvData.shift();
-// const query=
-//   "INSERT INTO cropDetails (Slno, State_Name, DistrictName, MarketName,Commodity, Variety,Grade,MinPrice,MaxPrice,ModalPrice,PriceDate)\
-//    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
-//   // [Slno, State_Name, DistrictName , MarketName,Commodity, Variety, Grade, MinPrice, MaxPrice, ModalPrice, PriceDate]
-
-// pool.connect((err, client, done) => {
-//   if (err) throw err;
-
-//   try {
-//     csvData.forEach(row => {
-//       client.query(query, row, (err, res) => {
-//         if (err) {
-//           console.log(err.stack);
-//         } else {
-//           console.log("inserted " + res.rowCount + " row:", row);
-//         }
-//       });
-//     });
-//   } finally {
-//     done();
-//   }
-// });
-// });
-
-// stream.pipe(csvStream);
-
 pool.connect((err, client, done) => {
   if (err) throw err;
 
@@ -130,6 +134,8 @@ pool.connect((err, client, done) => {
     }
   });
 });
+
+
 
 module.exports = {
   // Reading our test file
@@ -387,7 +393,7 @@ module.exports = {
       pool.query(
         `SELECT * FROM users WHERE user_name = $1`,
         [name],
-        (err, result) => {
+        (err, result) => { 
           // console.log("Result", result);
           if (err) {
             throw err;
@@ -550,20 +556,20 @@ module.exports = {
     });
   },
 
-  getAllManufactures: () => {
-    return new Promise((resolve, reject) => {
-      pool.query(
-        `select json_build_object( 
-          'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture),
-          'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops)
-        )
-       `,
-        (err, data) => {
-          resolve(data.rows[0].json_build_object);
-        }
-      );
-    });
-  },
+  // getAllManufactures: () => {
+  //   return new Promise((resolve, reject) => {
+  //     pool.query(
+  //       `select json_build_object( 
+  //         'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture),
+  //         'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops)
+  //       )
+  //      `,
+  //       (err, data) => {
+  //         resolve(data.rows[0].json_build_object);
+  //       }
+  //     );
+  //   });
+  // },
 
   userLoginDetails: (userLocation, userSystem) => {
     console.log("userLocation", userLocation);

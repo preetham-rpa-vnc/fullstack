@@ -21,6 +21,9 @@ import OtpValidation from "./components/Auth/SignIn/OtpValidation";
 import SignUps from "./components/Auth/SignUp/SignUp";
 import Main from "./components/Auth/SignIn/Main";
 import ItemDetails from "./components/ItemDetails/ItemDetails";
+
+import CropDetails from "./components/MSP/CropDetails";
+
 import Carousel from "./components/LandingPage/Carousel";
 // function App() {
 // import ItemDetails from './components/ItemDetails/ItemDetails';
