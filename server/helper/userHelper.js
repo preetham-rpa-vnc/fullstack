@@ -509,8 +509,7 @@ module.exports = {
     });
   },
 
-  getItems: (id) => {
-  console.log("id@@@@@@@@@@@@@@@@@@@id", id);
+  getItem: (id) => {
     return new Promise((resolve, reject) => {
       pool.query(
         `SELECT JSON_BUILD_OBJECT('products', (
@@ -527,10 +526,12 @@ module.exports = {
             'product_description', pd.product_description))
           FROM products INNER JOIN product_detail pd ON products.product_id = pd.product_id
                         INNER JOIN product_crops pc ON products.product_id = pc.product_id
-                        WHERE products.product_id = 2
+                        WHERE products.product_id = ${id}
             ))`,
                         // and product_name in (SELECT product_name FROM products WHERE product_id = 2) 
           (err, data) => {
+            // console.log("all datas",data);
+            resolve(data.rows[0].json_build_object.products)
             console.log("all datas",data.rows[0].json_build_object.products);
             console.log("Error", err);
           }

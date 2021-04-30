@@ -51,8 +51,8 @@ const useStyles = makeStyles((theme) => ({
   return (
     <AppBar position="static" className={classes.footerBack}>
       <Toolbar>
-        <Grid container xs={12}>
-          <Grid item container xs={6} direction="row">
+        <Grid container sm={12} md={12}>
+          <Grid item container xs={6} sm={6} md={6} direction="row">
             <Grid item>
               <Box>
                 <CardMedia

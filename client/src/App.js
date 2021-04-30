@@ -21,6 +21,7 @@ import OtpValidation from "./components/Auth/SignIn/OtpValidation";
 import SignUps from "./components/Auth/SignUp/SignUp";
 import Main from "./components/Auth/SignIn/Main";
 import ItemDetails from "./components/ItemDetails/ItemDetails";
+import Test from "./components/LandingPage/Test";
 
 import CropDetails from "./components/MSP/CropDetails";
 
@@ -28,9 +29,10 @@ import Carousel from "./components/LandingPage/Carousel";
 // function App() {
 // import ItemDetails from './components/ItemDetails/ItemDetails';
 function App() { 
-  return (
+  return ( 
     <Router>
       <Home /> 
+      <Route exact path="/test" component={Test} />
       <Route exact path="/" component={LandingPage} />
       <Route path="/otpauth" component={OtpAuth} />
       <Route path="/signup" component={SignUps} />

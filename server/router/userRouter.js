@@ -15,7 +15,7 @@ router.get("/getallitems", (req, res) => {
 router.get("/getitem", (req, res) => {
   const id = req.query;
   userHelper
-    .getItems(id)
+    .getItem(id.id)
     .then((item) => {
       return res.json(item);
     })
@@ -168,7 +168,7 @@ router.get("/findsearchdata", (req, res) => {
   console.log("req body", req.body);
   console.log("req query", req.query);
   userHelper.searchProduct(req.query).then(({ data, err }) => {
-    console.log("data@@@@@@@@@@@@@@@@@@@@@", JSON.stringify(data));
+    // console.log("data@@@@@@@@@@@@@@@@@@@@@", JSON.stringify(data));
     console.log("err", err);
     if (err) {
       res.json(err);

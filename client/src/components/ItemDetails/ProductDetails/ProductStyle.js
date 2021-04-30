@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import MediaQuery from "react-responsive";
 import bgImage3 from "../../../Assets/AuthPage.jpg";
 
 const useStyles = makeStyles((theme) => ({
@@ -51,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   boxThree: {
     textAlign: "center",
     width: "100%",
-    borderColor: "slategray", 
+    borderColor: "slategray",
     background: "rgb(255 255 255 / 30%)",
     borderWidth: "2px 2px 2px",
     borderStyle: "solid",
@@ -74,6 +75,32 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     margin: "0px 0px 15px 0px",
   },
+  dataOne: {
+    color: "#0f690f",
+    textAlign: "left",
+    fontWeight: "bold",
+    fontSize: "x-large",
+    fontFamily: "monospace",
+  },
+  dataTwo: {
+    textAlign: "left",
+    fontWeight: "bold",
+    fontSize: "x-large",
+    fontFamily: "monospace",
+  },
+  dataThree: {
+    textAlign: "left",
+    fontWeight: "100",
+    fontSize: "x-large",
+    fontFamily: "monospace",
+  },
+  popup: {
+    fontWeight: "bold",
+    fontSize: "x-large",
+    // textAlign: "center",
+    // textDecoration: "underline",
+  },
 }));
+
 
 export default useStyles;
