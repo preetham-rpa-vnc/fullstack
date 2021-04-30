@@ -8,7 +8,8 @@ const path = require("path");
 const fastcsv = require("fast-csv");
 const fs = require("fs");
 const { constants } = require("buffer");
-const  {Stream } = require("stream");
+const { Stream } = require("stream");
+const { resolve } = require("path");
 
 // function readFileToJson(filename){
 // const wb=reader.readFile(filename);
@@ -19,7 +20,6 @@ const  {Stream } = require("stream");
 // }
 // const tagetDir=path.join(__dirname,"../MasterData");
 // const files=fs.readdirSync(tagetDir);
- 
 
 // files.forEach(function(file){
 //   const fileExtension=path.parse(file).ext;
@@ -29,10 +29,10 @@ const  {Stream } = require("stream");
 //     const data=readFileToJson(fullFilePath);
 //      combinedData=combinedData.concat(data);
 //     //  combinedData.shift();
-    
-//   } 
-  
-// });  
+
+//   }
+
+// });
 //   console.log(combinedData);
 //   // const query ="INSERT INTO cropDetails (Slno, StateName, DistrictName, MarketName,Commodity, Variety,Grade,MinPrice,MaxPrice,ModalPrice,PriceDate) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
 //   // const query=`INSERT INTO cropDetails (Slno, StateName, DistrictName, MarketName,Commodity, Variety,Grade,MinPrice,MaxPrice,ModalPrice,PriceDate)
@@ -49,7 +49,6 @@ const  {Stream } = require("stream");
 //   //     }
 //   //   );
 //   //  });
-
 
 const currDir = path.join("./Masterdata/");
 // Function to get the filenames present
@@ -134,8 +133,6 @@ pool.connect((err, client, done) => {
     }
   });
 });
-
-
 
 module.exports = {
   // Reading our test file
@@ -370,13 +367,10 @@ module.exports = {
                 if (err) {
                   throw err;
                 }
-                console.log(
-                  "result.rows[0]",
-                  result.rows[0]
-                );
+                console.log("result.rows[0]", result.rows[0]);
                 resolve({
                   status: true,
-                  exuser: result.rows[0]
+                  exuser: result.rows[0],
                 });
               }
             );
@@ -393,7 +387,7 @@ module.exports = {
       pool.query(
         `SELECT * FROM users WHERE user_name = $1`,
         [name],
-        (err, result) => { 
+        (err, result) => {
           // console.log("Result", result);
           if (err) {
             throw err;
@@ -502,7 +496,7 @@ module.exports = {
             'product_description', pd.product_description))
 
           FROM products LEFT JOIN product_detail pd ON products.product_id = pd.product_id
-                          INNER JOIN product_crops pc ON products.product_id = pc.product_id 
+                        INNER JOIN product_crops pc ON products.product_id = pc.product_id 
                             and crop_id in (SELECT crop_id FROM crops WHERE crop_name in ('${crop}'))
                           INNER JOIN manufacture mf ON products.manufacture_id in (SELECT mf.manufacture_id FROM manufacture 
                             WHERE mf.manufacture_name in ('${manufacture}'))
@@ -513,6 +507,35 @@ module.exports = {
         }
       );
     });
+  },
+
+  getItems: (id) => {
+  console.log("id@@@@@@@@@@@@@@@@@@@id", id);
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `SELECT JSON_BUILD_OBJECT('products', (
+          SELECT JSON_AGG(JSON_BUILD_OBJECT(
+            'product_id', products.product_id,
+            'product_model', products.product_model,
+            'product_price', products.product_price,
+            'product_crops', (SELECT JSON_AGG(crop_name) FROM product_crops INNER JOIN crops c ON c.crop_id = product_crops.crop_id
+                              WHERE product_crops.product_id = products.product_id),
+            'product_manufacturer', (SELECT manufacture_name FROM manufacture WHERE manufacture.manufacture_id = products.manufacture_id),
+            'product_name', pd.product_name,
+            'pre_build', pd.product_prebuilt,
+            'product_usage', pd.product_use,
+            'product_description', pd.product_description))
+          FROM products INNER JOIN product_detail pd ON products.product_id = pd.product_id
+                        INNER JOIN product_crops pc ON products.product_id = pc.product_id
+                        WHERE products.product_id = 2
+            ))`,
+                        // and product_name in (SELECT product_name FROM products WHERE product_id = 2) 
+          (err, data) => {
+            console.log("all datas",data.rows[0].json_build_object.products);
+            console.log("Error", err);
+          }
+        )
+    })
   },
 
   getAllProduct: () => {
@@ -556,20 +579,20 @@ module.exports = {
     });
   },
 
-  // getAllManufactures: () => {
-  //   return new Promise((resolve, reject) => {
-  //     pool.query(
-  //       `select json_build_object( 
-  //         'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture),
-  //         'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops)
-  //       )
-  //      `,
-  //       (err, data) => {
-  //         resolve(data.rows[0].json_build_object);
-  //       }
-  //     );
-  //   });
-  // },
+  getAllManufactures: () => {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `select json_build_object( 
+          'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture),
+          'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops)
+        )
+       `,
+        (err, data) => {
+          resolve(data.rows[0].json_build_object);
+        }
+      );
+    });
+  },
 
   userLoginDetails: (userLocation, userSystem) => {
     console.log("userLocation", userLocation);

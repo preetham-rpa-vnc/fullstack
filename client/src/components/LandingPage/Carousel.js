@@ -21,7 +21,7 @@ function Example(props) {
         // Other logic
 
         return (
-          <Button onClick={onClick} className={className} style={style}>
+          <Button onClick={onClick} className={className} style={style}> 
             {next && "Next"}
             {prev && "Previous"}
           </Button>

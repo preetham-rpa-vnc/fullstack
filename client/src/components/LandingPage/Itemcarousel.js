@@ -32,10 +32,10 @@ export default function ItemCarousel(props) {
       .catch((err) => console.log(err));
   }, []);
 
-  function goToProductDetail(product) {
-    history.push(`/product?product=${product}`);
+  function goToProductDetail({product, id}) { 
+    history.push(`/product?id=${id}&product=${product}`);
   }
-  return (
+  return ( 
     <div
       className="carousel-wrapper"
       style={{ marginTop: props.style ? "2%" : "" }}
@@ -48,7 +48,7 @@ export default function ItemCarousel(props) {
               key={index}
               src="https://t4.ftcdn.net/jpg/02/18/35/69/240_F_218356901_sD5osSEexqWCL0MQWuSdCh3awhmh9mer.jpg"
               className={props.col ? "carousel-img2" : "carousel-img"}
-              onClick={() => goToProductDetail(value.product_name)}
+              onClick={() => goToProductDetail({product: value.product_name, id: value.product_id})}
             />
             <p className={props.col ? "carousel-text-style" : "carousel-text"}>
               {value.product_name}

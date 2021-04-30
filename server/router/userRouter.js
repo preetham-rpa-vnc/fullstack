@@ -13,7 +13,7 @@ router.get("/getallitems", (req, res) => {
 });
 
 router.get("/getitem", (req, res) => {
-  const id = req.query.id;
+  const id = req.query;
   userHelper
     .getItems(id)
     .then((item) => {
@@ -152,17 +152,17 @@ router.post("/verifyotp", (req, res) => {
 });
 
 router.get("/getallproducts", (req, res) => {
-  console.log("req.body", req.body); 
+  console.log("req.body", req.body);
   userHelper.getAllProduct().then((allData) => {
     return res.json(allData);
   });
 });
 
-// router.get("/getsearchkeys", (req, res) => {
-//   userHelper.getAllManufactures().then((result) => {
-//     return res.json(result);
-//   });
-// });
+router.get("/getsearchkeys", (req, res) => {
+  userHelper.getAllManufactures().then((result) => {
+    return res.json(result);
+  });
+});
 
 router.get("/findsearchdata", (req, res) => {
   console.log("req body", req.body);

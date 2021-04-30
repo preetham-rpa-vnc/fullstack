@@ -425,7 +425,7 @@ function ProductDetails({ location }) {
                   <Grid
                     item
                     xs={3}
-                    container
+                    container 
                     direction="column"
                     className={classes.joinDate}
                   >

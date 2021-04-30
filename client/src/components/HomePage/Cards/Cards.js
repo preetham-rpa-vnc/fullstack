@@ -122,7 +122,7 @@ const MediaCard = () => {
         // setCrops(allDatas.data.crop) 
       })
       .catch((err) => console.log(err));
-
+ 
     // setItemData(machinery);
   }, []);
 
