@@ -32,7 +32,7 @@ import SearchResult from "./components/SearchResult/SearchResult";
 function App() { 
   return ( 
     <Router>
-      <Home /> 
+      {/* <Home />  */}
       <Route exact path="/test" component={Test} />
       <Route exact path="/" component={LandingPage} />
       <Route path="/otpauth" component={OtpAuth} />

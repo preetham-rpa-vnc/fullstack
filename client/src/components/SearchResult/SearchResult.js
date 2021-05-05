@@ -6,18 +6,14 @@ import {
   CardMedia,
   Divider,
   Grid,
+  List,
   Paper,
+  Tab,
+  Tabs,
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
-
-const faces = [
-  "http://i.pravatar.cc/300?img=1",
-  "http://i.pravatar.cc/300?img=2",
-  "http://i.pravatar.cc/300?img=3",
-  "http://i.pravatar.cc/300?img=4",
-];
 
 const useStyles = makeStyles((theme) => ({
   headerGrid: {
@@ -31,10 +27,9 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     borderRadius: theme.spacing(0.5),
   },
-  // media: {
-  //   width: "100%",
-  //   height: 100,
-  // },
+  mainGrid: {
+    padding: theme.spacing(1.5),
+  },
   card: {
     maxWidth: 300,
     margin: "auto",
@@ -67,6 +62,15 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: -theme.spacing.unit,
     },
   },
+  scroll: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+    display: "flex",
+    height: 225,
+  },
+  tabs: {
+    // borderRight: `1px solid ${theme.palette.divider}`,
+  },
 }));
 
 const SearchResult = () => {
@@ -74,14 +78,60 @@ const SearchResult = () => {
 
   return (
     <Box mt={4}>
-      <Grid container md={12} className={classes.mainGrid}>
+      <Grid container className={classes.mainGrid} spacing={2}>
+        <Grid item container sm={3} md={2}>
+          <Grid item xs={6} sm={10} md={12} style={{ textAlignLast: "center" }}>
+            <Box textAlign="">
+              <Typography>Related Categories</Typography>
+            </Box>
+            <Box component="div" className={classes.scroll}>
+              <Tabs
+                orientation="vertical"
+                variant="scrollable"
+                // value={value}
+                // onChange={handleChange}
+                aria-label="Vertical tabs example"
+                className={classes.tabs}
+                // style={{ height: 20 }}
+              >
+                <Tab label="Item Ones" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Two" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Three" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Four" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Five" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Six" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Seven" style={{ margin: "-6px 0 -6px 0" }} />
+              </Tabs>
+            </Box>
+          </Grid>
 
-        <Grid item md={2}>
-          {/* <h1>md={3}</h1> */}
+          <Grid item xs={5} sm={10} md={12} style={{ textAlignLast: "center" }}>
+            <Box textAlign="center">
+              <Typography>Related Brands</Typography>
+            </Box>
+            <Box component="div" className={classes.scroll}>
+              <Tabs
+                orientation="vertical"
+                variant="scrollable"
+                // value={value}
+                // onChange={handleChange}
+                aria-label="Vertical tabs example"
+                className={classes.tabs}
+                // style={{ height: 20 }}
+              >
+                <Tab label="Item Ones" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Two" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Three" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Four" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Five" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Six" style={{ margin: "-6px 0 -6px 0" }} />
+                <Tab label="Item Seven" style={{ margin: "-6px 0 -6px 0" }} />
+              </Tabs>
+            </Box>
+          </Grid>
         </Grid>
 
-
-        <Grid item container direction="column" md={10} spacing={3}>
+        <Grid item container direction="column" sm={9} md={10} spacing={0}>
           <Grid item className={classes.headerGrid}>
             <Typography variant="h4" style={{ padding: 20 }}>
               Kerala, IN
@@ -95,11 +145,11 @@ const SearchResult = () => {
             // md={12}
             spacing={2}
           >
-            <Grid item >
+            <Grid item style={{ marginTop: "30px" }}>
               <Typography variant="h5">Machinary</Typography>
             </Grid>
-            <Grid item container spacing={2} >
-              <Grid item md={3}>
+            <Grid item container spacing={2}>
+              <Grid item xs={12} sm={4} md={3}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.media}
@@ -140,7 +190,7 @@ const SearchResult = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid item md={3}>
+              <Grid item md={3} xs={12} sm={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.media}
@@ -181,7 +231,7 @@ const SearchResult = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid item md={3}>
+              <Grid item md={3} xs={12} sm={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.media}
@@ -222,7 +272,7 @@ const SearchResult = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid item md={3}>
+              <Grid item md={3} xs={12} sm={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.media}

@@ -1,42 +1,66 @@
 import React from "react";
-import MediaQuery from "react-responsive";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
-function Test() {
-  const Example = () => (
-    <h2>
-      <h2>Device Test!</h2>
-      {/* <MediaQuery minDeviceWidth={360}>
-        <h2>You are a desktop or laptop</h2>
-        <MediaQuery minDeviceWidth={1824}>
-          <h2>You also have a huge screen</h2>
-        </MediaQuery>
-        <MediaQuery maxWidth={1224}>
-          <h2>You are sized like a tablet or mobile phone though</h2>
-        </MediaQuery>
-      </MediaQuery> */}
+const useStyles = makeStyles((theme) => ({
+  scroll: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+    display: "flex",
+    height: 224,
+  },
+  tabs: {
+    borderRight: `1px solid ${theme.palette.divider}`,
+  },
+}));
 
-      <MediaQuery minDeviceWidth={360}>
-        <h2>mini device width 360</h2>
-      </MediaQuery>
-      <MediaQuery maxDeviceWidth={600}>
-        <h2>max device width 360</h2>
-      </MediaQuery>
-      {/* <MediaQuery orientation="portrait">
-        <h2>You are portrait</h2>
-      </MediaQuery>
-      <MediaQuery orientation="landscape">
-        <h2>You are landscape</h2>
-      </MediaQuery>
-      <MediaQuery minResolution="2dppx">
-        <h2>You are retina</h2>
-      </MediaQuery> */}
-    </h2>
-  );
+export default function VerticalTabs() {
+  const classes = useStyles();
+  // const [value, setValue] = React.useState(0);
+
   return (
-    <h2>
-      <Example />
-    </h2>
+    <div className={classes.scroll}>
+      <Tabs
+        orientation="vertical"
+        variant="scrollable"
+        // value={value}
+        // onChange={handleChange}
+        aria-label="Vertical tabs example"
+        // className={classes.tabs}
+      >
+        <Tab label="Item Ones" />
+        <Tab label="Item Two" />
+        <Tab label="Item Three" />
+        <Tab label="Item Four" />
+        <Tab label="Item Five" />
+        <Tab label="Item Six" />
+        <Tab label="Item Seven" />
+      </Tabs>
+      {/* <TabPanel value={value} index={0}>
+        Item One
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        Item Two
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        Item Three
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        Item Four
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        Item Five
+      </TabPanel>
+      <TabPanel value={value} index={5}>
+        Item Six
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        Item Seven
+      </TabPanel> */}
+    </div>
   );
 }
-
-export default Test;
