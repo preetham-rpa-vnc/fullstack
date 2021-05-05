@@ -65,7 +65,7 @@ export default function SignIn({ history }) {
         const { message, status, user } = res.data;
         if (status) {
           authenticate(user, () => {
-            window.location.reload();
+            window.location.reload(); 
             history.push("/");
             setLoginVal({ ...loginVal, user_name: "", user_password: "" });
           });

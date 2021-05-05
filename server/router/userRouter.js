@@ -152,7 +152,7 @@ router.post("/verifyotp", (req, res) => {
 });
 
 router.get("/getallproducts", (req, res) => {
-  console.log("req.body", req.body);
+  // console.log("req.body", req.body);
   userHelper.getAllProduct().then((allData) => {
     return res.json(allData);
   });
@@ -165,7 +165,7 @@ router.get("/getsearchkeys", (req, res) => {
 });
 
 router.get("/findsearchdata", (req, res) => {
-  console.log("req body", req.body);
+  // console.log("req body", req.body);
   console.log("req query", req.query);
   userHelper.searchProduct(req.query).then(({ data, err }) => {
     // console.log("data@@@@@@@@@@@@@@@@@@@@@", JSON.stringify(data));
@@ -180,7 +180,7 @@ router.get("/findsearchdata", (req, res) => {
 });
 
 router.post("/checklocation", (req, res) => {
-  console.log("req body", req.body);
+  // console.log("req body", req.body);
   userHelper.checkLocation(req.body).then((userResp) => {
     res.json(userResp);
   });
@@ -192,7 +192,7 @@ router.post("/loginuserdata", (req, res) => {
   const { os, browser, platform } = req.useragent;
   // res.json(req.useragent);
   console.log(os, browser, platform);
-  console.log("req.body", req.body);
+  // console.log("req.body", req.body);
   userHelper.userLoginDetails(req.body, req.useragent).then((result) => {
     res.json({ message: "success" });
   });

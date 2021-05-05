@@ -183,14 +183,14 @@ export default function SearchCard() {
   console.log("weather alll data", weather);
 
   const [searchData, setSearchData] = useState({
-    manufacture: "",
     crop: "",
+    manufacturer: "",
   });
   const [manufactures, setManufactures] = useState([]);
   const [crops, setCrops] = useState([]);
   const [searchProducts, setSearchProducts] = useState({});
 
-  const { manufacture, crop } = searchData;
+  const { manufacturer, crop } = searchData;
 
   useEffect(() => {
     console.log("HHHHHHHHHHHHHHHHHHHHHHHHH");
@@ -206,12 +206,12 @@ export default function SearchCard() {
   console.log("crops", crops);
   console.log("manufactures", manufactures);
 
-  const handleChange = (text) => (event) => {
-    console.log("event.targer.value", event.target.innerText);
-    setSearchData({ ...searchData, [text]: event.target.innerText });
-  };
+  // const handleChange = (text) => (event) => {
+  //   console.log("event.targer.value", event.target.innerText);
+  //   setSearchData({ ...searchData, [text]: event.target.innerText });
+  // };
 
-  const handleClick = () => {
+  const submitSearch = () => {
     console.log("last data", searchData);
     Axios.get(`${process.env.REACT_APP_API_URI}/findsearchdata`, {
       params: searchData,
@@ -219,7 +219,7 @@ export default function SearchCard() {
       .then((products) => {
         console.log("@@@@@@@@@@@@", products.data);
         if (!products.data) {
-          alert("Product Null");
+          // alert("Product Null");
         }
         setSearchProducts(...products.data);
         // searchResult(products.data);
@@ -244,6 +244,18 @@ export default function SearchCard() {
       ...option,
     };
   });
+
+  const handleSearch = (data) => {
+    // event.preventDefault();
+    // console.log("event value", event);
+    const { item, value } = data;
+    console.log("event item", item);
+    console.log("event value", value);
+    // console.log("event item", item);
+    setSearchData({ ...searchData, [item]: value });
+  };
+
+  console.log("search data", searchData);
   return (
     <>
       <UserLocation userDatas={userDatas} />
@@ -267,7 +279,7 @@ export default function SearchCard() {
                     m={1}
                     style={{ fontFamily: "system-ui" }}
                   >
-                    Search Relevance Machines 
+                    Search Relevance Machines
                   </Box>
                 </Typography>
               </Grid>
@@ -289,6 +301,12 @@ export default function SearchCard() {
                         groupBy={(option) => option.firstLetter}
                         getOptionLabel={(option) => option.crop_name}
                         style={{ width: 180 }}
+                        onChange={(event, value) =>
+                          handleSearch({
+                            item: "crop",
+                            value: value ? value.crop_name : null,
+                          })
+                        }
                         renderInput={(params) => (
                           <TextField
                             {...params}
@@ -307,6 +325,12 @@ export default function SearchCard() {
                         groupBy={(option) => option.firstLetter}
                         getOptionLabel={(option) => option.manuf_name}
                         style={{ width: 180 }}
+                        onChange={(event, value) =>
+                          handleSearch({
+                            item: "manufacturer",
+                            value: value ? value.manuf_name : null,
+                          })
+                        }
                         renderInput={(params) => (
                           <TextField
                             {...params}
@@ -316,8 +340,7 @@ export default function SearchCard() {
                         )}
                       />
                     </Grid>
-
-                    <Grid item>
+                    {/* <Grid item>
                       <Autocomplete
                         id="grouped-demo"
                         // options={option}
@@ -334,14 +357,14 @@ export default function SearchCard() {
                           />
                         )}
                       />
-                    </Grid>
+                    </Grid> */}
                     <Grid item>
                       <Button
                         variant="contained"
                         size="large"
                         // color="primary"
                         className={classes.margin}
-                        onClick={handleClick}
+                        onClick={submitSearch}
                         style={{
                           backgroundColor: "#30a05f",
                           color: "white",

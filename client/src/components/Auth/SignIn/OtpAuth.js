@@ -4,14 +4,14 @@ import {
   CardMedia,
   Grid,
   Paper,
-  TextField,
+  TextField, 
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import logo from "../../../images/logo.png";
 
 import bgImage1 from "../../../Assets/backgroundWeather1.jpg";
-import bgImage2 from "../../../Assets/backgroundWeather2.jpg";
+import bgImage2 from "../../../";
 import bgImage3 from "../../../Assets/AuthPage.jpg";
 import Axios from "axios";
 import { Link } from "react-router-dom";

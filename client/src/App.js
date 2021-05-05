@@ -26,6 +26,7 @@ import Test from "./components/LandingPage/Test";
 import CropDetails from "./components/MSP/CropDetails";
 
 import Carousel from "./components/LandingPage/Carousel";
+import SearchResult from "./components/SearchResult/SearchResult";
 // function App() {
 // import ItemDetails from './components/ItemDetails/ItemDetails';
 function App() { 
@@ -56,6 +57,7 @@ function App() {
       <Route path="/forecast" component={ForcasteWeather} />
       <Route path="/carousel" component={Carousel} />
       <Route path="/product" component={ProductDetails} />
+      <Route path="/result" component={SearchResult} />
       <Footer />
     </Router>
   );

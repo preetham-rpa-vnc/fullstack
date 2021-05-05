@@ -13,7 +13,7 @@ const useStyles = makeStyles({
       height: 140,
     },
   });
-
+ 
 export default function CategoryCard(props){
     const classes = useStyles();  
     return(

@@ -11,10 +11,10 @@ const isProduction = process.env.NODE_ENV === "production";
 // });
 
 const pool = new Pool({
-    user: "postgres",
-    password: "postgres",
+    user: "testpf",
+    password: "123",
     database: "pfdb",
-    host: "ec2-50-16-217-72.compute-1.amazonaws.com",
+    host: "localhost",
     port: 5432,
   }); 
 
@@ -28,7 +28,7 @@ module.exports = pool;
 // APP_PORT = 8000
 // NODE_ENV = dev
 // env = dev
-// DB_USERNAME = postgres
+// DB_USERNAME = postgres 
 // DB_NAME = pland_farm
 // DB_PASSWORD = postgres
 // DB_PORT = 5432

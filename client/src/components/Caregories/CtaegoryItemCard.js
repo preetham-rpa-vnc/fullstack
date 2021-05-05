@@ -9,7 +9,7 @@ import redTreactor from '../../Assets/redTractor.jpg';
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
+      maxWidth: 345, 
     },
     media: {
       height: 140,

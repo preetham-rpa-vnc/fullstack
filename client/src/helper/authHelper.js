@@ -5,7 +5,7 @@ export const authenticate = (responseData, next) => {
   const { name, mobile, token } = responseData;
   setCookie("token", token);
   setLocalStorage("user", { name, mobile });
-  next();
+  next(); 
 };
 
 export const setLocalStorage = (key, value) => {

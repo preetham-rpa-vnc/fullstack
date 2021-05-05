@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${bgImage1})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    backgroundPosition: "center center",
+    backgroundPosition: "center center", 
     minHeight: "85vh",
     backgroundColor: "#cccccc",
     filter: "blur(0px)",

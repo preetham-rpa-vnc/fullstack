@@ -476,10 +476,11 @@ module.exports = {
   searchProduct: (searchKeys) => {
     return new Promise((resolve, reject) => {
       console.log("searchkeys", searchKeys);
-      const { manufacture, crop } = searchKeys;
+      const { manufacturer, crop } = searchKeys;
+      console.log(manufacturer, crop)
       // const manufacture2 = "John Deere";
       // const crop2 = "Wheat";
-      // const crop = `'Wheat', 'Paddy'`;
+      // const crops = `'Wheat', 'Paddy'`;
       pool.query(
         `SELECT JSON_BUILD_OBJECT('products', (
           SELECT JSON_AGG(JSON_BUILD_OBJECT(
@@ -499,10 +500,10 @@ module.exports = {
                         INNER JOIN product_crops pc ON products.product_id = pc.product_id 
                             and crop_id in (SELECT crop_id FROM crops WHERE crop_name in ('${crop}'))
                           INNER JOIN manufacture mf ON products.manufacture_id in (SELECT mf.manufacture_id FROM manufacture 
-                            WHERE mf.manufacture_name in ('${manufacture}'))
+                            WHERE mf.manufacture_name in ('${manufacturer}'))
         ))`,
         (err, data) => {
-          // console.log("data", JSON.stringify(data.rows[0]));
+          console.log("data", JSON.stringify(data.rows[0]));
           resolve({ data, err });
         }
       );
