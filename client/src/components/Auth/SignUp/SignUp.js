@@ -27,6 +27,7 @@ import Axios from "axios";
 import { authenticate, isAuth } from "../../../helper/authHelper";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
+import "./style.css"
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -110,7 +111,7 @@ const SignUp = ({ history }) => {
           if (!status) {
             alert(`${name}, already taken`);
           } else {
-            alert(`${name}, Welcome our team`);
+            // alert(`${name}, Welcome our team`);
             handleClickOpen();
             setFormVal({
               ...formVal,
@@ -156,7 +157,7 @@ const SignUp = ({ history }) => {
   console.log("response data", responseData);
   console.log("otp val", otpVal);
   return (
-    <> 
+    <>
       {isAuth() ? <Redirect to="/" /> : null}
       <Grid className={classes.mainGrid} container direction="column">
         <Grid item style={{ alignSelf: "center" }}>
@@ -194,7 +195,7 @@ const SignUp = ({ history }) => {
                     // fullWidth
                     variant="outlined"
                     label="Enter Name"
-                    placeholder="Placeholder"
+                    placeholder="Name"
                     className={classes.textField}
                     value={name}
                     onChange={fillForm("name")}
@@ -202,12 +203,14 @@ const SignUp = ({ history }) => {
                 </Grid>
                 <Grid item>
                   <TextField
+                    autoComplete="off"
                     required
                     variant="outlined"
                     label="Enter Mobile Number"
-                    placeholder="Placeholder"
+                    placeholder="Mobile"
                     className={classes.textField}
                     value={mobile}
+                    type="number"
                     onChange={fillForm("mobile")}
                   />
                 </Grid>
@@ -215,7 +218,7 @@ const SignUp = ({ history }) => {
                   <TextField
                     variant="outlined"
                     label="Enter Email"
-                    placeholder="Placeholder"
+                    placeholder="Email"
                     className={classes.textField}
                     helperText="Email address optional"
                     value={email}
@@ -278,4 +281,3 @@ const SignUp = ({ history }) => {
 };
 
 export default SignUp;
- 

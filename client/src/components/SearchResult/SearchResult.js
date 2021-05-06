@@ -151,7 +151,9 @@ const SearchResult = ({ location }) => {
 
             <Grid item>
               <Box textAlign="center">
-                <Typography style={{ marginBottom: "-13px", fontFamily: "Inter" }}>
+                <Typography
+                  style={{ marginBottom: "-13px", fontFamily: "Inter" }}
+                >
                   Related Brands
                 </Typography>
               </Box>
@@ -249,7 +251,7 @@ const SearchResult = ({ location }) => {
                             </Grid>
                             <Grid item>
                               <Typography variant="subtitle1">
-                                $ {data.product_price}
+                                ₹ {data.product_price}
                               </Typography>
                             </Grid>
                           </Grid>

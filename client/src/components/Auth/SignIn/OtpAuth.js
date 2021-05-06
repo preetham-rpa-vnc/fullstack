@@ -4,7 +4,7 @@ import {
   CardMedia,
   Grid,
   Paper,
-  TextField, 
+  TextField,
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -87,7 +87,7 @@ const OtpAuth = ({ history }) => {
             <Grid container direction="column" spacing={3}>
               <Grid item>
                 <Grid>
-                  <Typography 
+                  <Typography
                     variant="h3"
                     style={{ fontWeight: "bold", color: "#00b074" }}
                   >
@@ -105,13 +105,13 @@ const OtpAuth = ({ history }) => {
                 <Grid>{/* <Typography>Mobile Number</Typography> */}</Grid>
                 <Grid>
                   <TextField
-                    autoFocus="on"
-                    id="outlined-textarea"
                     type="number"
+                    autoFocus="on"
+                    // id="outlined-textarea"
                     label="Enter Mobile Number"
                     placeholder="Mobile"
-                    multiline
-                    className={classes.textField}
+                    // multiline
+                    // className={classes.textField}
                     margin="normal"
                     variant="outlined"
                     onChange={(event) => setNumber(event.target.value)}
