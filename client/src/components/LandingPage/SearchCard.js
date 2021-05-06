@@ -213,19 +213,20 @@ export default function SearchCard() {
 
   const submitSearch = () => {
     console.log("last data", searchData);
-    Axios.get(`${process.env.REACT_APP_API_URI}/findsearchdata`, {
-      params: searchData,
-    })
-      .then((products) => {
-        console.log("@@@@@@@@@@@@", products.data);
-        if (!products.data) {
-          // alert("Product Null");
-        }
-        setSearchProducts(...products.data);
-        // searchResult(products.data);
-        // setSearchData({ ...searchData, manufacture: "", crop: "" });
-      })
-      .catch((err) => console.log(err));
+    history.push(`/result?crop=${crop}&manufacturer=${manufacturer}`);
+    // Axios.get(`${process.env.REACT_APP_API_URI}/findsearchdata`, {
+    //   params: searchData,
+    // })
+    //   .then((products) => {
+    //     console.log("@@@@@@@@@@@@", products.data);
+    //     if (!products.data) {
+    //       // alert("Product Null");
+    //     }
+    //     setSearchProducts(...products.data);
+    //     // searchResult(products.data);
+    //     // setSearchData({ ...searchData, manufacture: "", crop: "" });
+    //   })
+    //   .catch((err) => console.log(err));
   };
 
   console.log("search data", searchProducts);

@@ -38,7 +38,7 @@ function Product({ selectedProduct }) {
               <Grid
                 item
                 container
-                spacing={1}
+                spacing={1} 
                 className={classes.productDetails}
                 xs={12}
                 sm={12}

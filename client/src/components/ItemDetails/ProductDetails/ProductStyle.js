@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     background: "rgb(255 255 255 / 10%)",
-    alignSelf: "center",
+    alignSelf: "center", 
     borderRadius: 10,
     marginTop: 56,
     width: "90%",
