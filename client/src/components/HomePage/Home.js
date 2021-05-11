@@ -177,9 +177,7 @@ export default function HideAppBar(props) {
                                     <AccountCircle />
                                   </Grid>
                                   <Grid item>
-                                    <Typography>
-                                      {isAuth().name}
-                                    </Typography>
+                                    <Typography>{isAuth().name}</Typography>
                                   </Grid>
                                 </Grid>
                               </Button>
@@ -231,16 +229,14 @@ export default function HideAppBar(props) {
                           className={classes.desctopOptions}
                         >
                           <Grid container direction="column">
-                            <Grid item>
-                              <HomeIcon />
-                            </Grid>
-                            <Grid item>
-                              <Typography>
-                                <Link to="/" className={classes.homeLink}>
-                                  Home
-                                </Link>
-                              </Typography>
-                            </Grid>
+                            <Link to="/" className={classes.homeLink}>
+                              <Grid item>
+                                <HomeIcon />
+                              </Grid>
+                              <Grid item>
+                                <Typography>Home</Typography>
+                              </Grid>
+                            </Link>
                           </Grid>
                         </IconButton>
                         <IconButton
@@ -267,7 +263,7 @@ export default function HideAppBar(props) {
                           style={{
                             border: "1px solid rgb(65 171 10 / 50%)",
                             color: "#00b074",
-                          }} 
+                          }}
                           variant="outlined"
                           color="primary"
                           href="/otpauth"

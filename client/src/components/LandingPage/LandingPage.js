@@ -14,7 +14,7 @@ import seedImg from "../../Assets/seedImage.jpg";
 import seedImg2 from "../../Assets/seedImage2.jpg";
 import fertilizer from "../../Assets/fertilizer.png";
 import rotavator from "../../Assets/rotavator.jpg";
-import rotavator2 from "../../Assets/rotavator2.jpg";
+import rotavator2 from "../../Assets/rotavator2.jpg"; 
 import ItemCarousel from "./Itemcarousel";
 import cultivator from "../../Assets/cultivator.jpg";
 import potatoPlanter from "../../Assets/potatoPlanter.jpg";
@@ -180,7 +180,7 @@ export default function LandingPage() {
     { img1: rotavator2, text: "Rotavator", price: "From 5000/-" },
     { img1: potatoPlanter, text: "Potato Planter", price: "From 20000/-" },
     { img1: sprayingPump, text: "Spraying Pump", price: "From 2000/-" },
-    { img1: rotavator, text: "Rotavator", price: "From 2000/-" },
+    { img1: rotavator, text: "Rotavator", price: "From 2000/-" }, 
     { img1: rotavator2, text: "Rotavator", price: "From 2000/-" },
   ];
   return (
@@ -289,7 +289,7 @@ src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
         </Toolbar>
       </AppBar>
       <ItemCarousel
-        items={trendingItemsCarousel}
+        items={trendingItemsCarousel} 
         header={"Trending Items"}
         style={true}
         col={true}

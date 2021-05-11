@@ -477,7 +477,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       console.log("searchkeys", searchKeys);
       const { manufacturer, crop } = searchKeys;
-      console.log(manufacturer, crop)
+      console.log(manufacturer, crop);
       // const manufacture2 = "John Deere";
       // const crop2 = "Wheat";
       // const crops = `'Wheat', 'Paddy'`;
@@ -494,7 +494,8 @@ module.exports = {
             'product_name', pd.product_name,
             'pre_build', pd.product_prebuilt,
             'product_usage', pd.product_use,
-            'product_description', pd.product_description))
+            'product_description', pd.product_description
+            ))
 
           FROM products LEFT JOIN product_detail pd ON products.product_id = pd.product_id
                         INNER JOIN product_crops pc ON products.product_id = pc.product_id 
@@ -524,20 +525,21 @@ module.exports = {
             'product_name', pd.product_name,
             'pre_build', pd.product_prebuilt,
             'product_usage', pd.product_use,
-            'product_description', pd.product_description))
+            'product_description', pd.product_description
+              ))
           FROM products INNER JOIN product_detail pd ON products.product_id = pd.product_id
                         INNER JOIN product_crops pc ON products.product_id = pc.product_id
                         WHERE products.product_id = ${id}
             ))`,
-                        // and product_name in (SELECT product_name FROM products WHERE product_id = 2) 
-          (err, data) => {
-            // console.log("all datas",data);
-            resolve(data.rows[0].json_build_object.products)
-            console.log("all datas",data.rows[0].json_build_object.products);
-            console.log("Error", err);
-          }
-        )
-    })
+        // and product_name in (SELECT product_name FROM products WHERE product_id = 2)
+        (err, data) => {
+          // console.log("all datas",data);
+          resolve(data.rows[0].json_build_object.products);
+          console.log("all datas", data.rows[0].json_build_object.products);
+          console.log("Error", err);
+        }
+      );
+    });
   },
 
   getAllProduct: () => {
@@ -675,6 +677,42 @@ module.exports = {
             resolve({ country: null });
           }
         }
+      );
+    });
+  },
+
+  getAllBrands: () => {
+    return new Promise((resolve, reject) => {
+      pool.query(`select * from manufacture`, (err, result) => {
+        // console.log("all brand result", result.rows);
+        resolve(result.rows);
+      });
+    });
+  },
+
+  getBrandItems: (brand) => {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `select json_build_object('products', (
+          select json_agg(json_build_object(
+              'product_id', products.product_id,
+              'product_name', pd.product_name,
+              'product_price', products.product_price,
+              'product_crops', (select json_agg(crop_name) from product_crops inner join crops c
+                                on c.crop_id = product_crops.crop_id
+                                where product_crops.product_id = products.product_id),
+              'manufacturer', (select manufacture_name from manufacture where manufacture.manufacture_id = products.manufacture_id)
+              ))
+          from products
+              inner join product_detail pd on products.product_id = pd.product_id
+              inner join manufacture mf on products.manufacture_id in (select mf.manufacture_id from manufacture
+              where mf.manufacture_name in ('${brand}'))
+          ))`, (err, result) => {
+            console.log("result", result.rows[0].json_build_object.products);
+            console.log("err", err);
+            if (err) resolve(err)
+            resolve(result.rows[0].json_build_object.products)
+          }
       );
     });
   },

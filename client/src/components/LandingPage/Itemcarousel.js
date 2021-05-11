@@ -41,6 +41,9 @@ export default function ItemCarousel(props) {
       style={{ marginTop: props.style ? "2%" : "" }}
     >
       <p className="carousel-header">{props.header}</p>
+
+      
+
       <Carousel breakPoints={props.col ? breakPoints2 : breakPoints}>
         {allItems.slice(0, 10).map((value, index) => (
           <>

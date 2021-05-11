@@ -207,4 +207,19 @@ router.get("/getuserlocation", (req, res) => {
   });
 });
 
+router.get("/getbrands", (req, res) => {
+  userHelper.getAllBrands().then(response => {
+    res.json(response)
+  })
+})
+
+router.get("/getbranditems", (req, res) => {
+  const { brand } = req.query
+  console.log("req.query", brand);
+  userHelper.getBrandItems(brand).then(response => {
+    // console.log(response);
+    res.json(response)
+  })
+})
+
 module.exports = router;

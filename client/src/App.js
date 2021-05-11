@@ -27,6 +27,8 @@ import CropDetails from "./components/MSP/CropDetails";
 
 import Carousel from "./components/LandingPage/Carousel";
 import SearchResult from "./components/SearchResult/SearchResult";
+import RentItems from "./components/RentItems/RentItems";
+import TestTwo from "./components/LandingPage/TestTwo";
 // function App() {
 // import ItemDetails from './components/ItemDetails/ItemDetails';
 function App() { 
@@ -34,6 +36,7 @@ function App() {
     <Router>
       <Home /> 
       <Route exact path="/test" component={Test} />
+      <Route exact path="/test2" component={TestTwo} />
       <Route exact path="/" component={LandingPage} />
       <Route path="/otpauth" component={OtpAuth} />
       <Route path="/signup" component={SignUps} />
@@ -58,6 +61,7 @@ function App() {
       <Route path="/carousel" component={Carousel} />
       <Route path="/product" component={ProductDetails} />
       <Route path="/result" component={SearchResult} />
+      <Route path="/rent" component={RentItems} />
       <Footer />
     </Router>
   );
