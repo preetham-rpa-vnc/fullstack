@@ -1,4 +1,4 @@
-import "semantic-ui-css/semantic.min.css";
+// import "semantic-ui-css/semantic.min.css";
 import "react-multi-carousel/lib/styles.css";
 // import "./style.css";
 import UAParser from "ua-parser-js";
@@ -103,7 +103,7 @@ const responsive = {
     paritialVisibilityGutter: 50,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 600, min: 0 },
     items: 1,
     // paritialVisibilityGutter: 30,
   },
@@ -166,7 +166,7 @@ const Body = ({ deviceType }) => {
     <Fragment>
       <section
         style={{
-          margin: "10px 0 20px 0",
+          margin: "20px 0 20px 0",
         }}
       >
         <Carousel

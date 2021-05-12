@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     fontSize: 30,
     fontFamily: "Inter",
-    margin: "0px 0px -17px 16px",
+    margin: "0px 0px -17px 8px",
     marginBottom: "-17px",
   },
   card: {
@@ -101,13 +101,13 @@ function Machineries() {
 
   return (
     <>
-      <Grid item>
+      <Grid item style={{ marginRight: "auto" }}>
         <Typography className={classes.headingOne} style={{ color: "#226d36" }}>
           Machineries Near You
         </Typography>
       </Grid>
 
-      <Grid item container spacing={2} style={{ padding: 16 }}>
+      <Grid item container md={12} spacing={2} style={{ marginTop: 10 }}>
         {images &&
           images.slice(0, 10).map((data, index) => (
             <Grid item xs={12} sm={4} md={3} key={index}>

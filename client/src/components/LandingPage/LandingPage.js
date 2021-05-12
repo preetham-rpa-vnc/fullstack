@@ -14,7 +14,7 @@ import seedImg from "../../Assets/seedImage.jpg";
 import seedImg2 from "../../Assets/seedImage2.jpg";
 import fertilizer from "../../Assets/fertilizer.png";
 import rotavator from "../../Assets/rotavator.jpg";
-import rotavator2 from "../../Assets/rotavator2.jpg"; 
+import rotavator2 from "../../Assets/rotavator2.jpg";
 import ItemCarousel from "./Itemcarousel";
 import cultivator from "../../Assets/cultivator.jpg";
 import potatoPlanter from "../../Assets/potatoPlanter.jpg";
@@ -87,17 +87,13 @@ import { Typography } from "@material-ui/core";
 // }
 const useStyles = makeStyles({
   root: {
+    maxWidth: "600px",
+    margin: "1%",
+    backgroundColor: "white",
 
-  
-    maxWidth:"600px",
-    margin:"1%",
-    backgroundColor:"white"
-    
     //  height:"500",
     // border: "1px solid #021a40",
     // float:"right",
- 
-
   },
   title: {
     fontSize: 14,
@@ -180,7 +176,7 @@ export default function LandingPage() {
     { img1: rotavator2, text: "Rotavator", price: "From 5000/-" },
     { img1: potatoPlanter, text: "Potato Planter", price: "From 20000/-" },
     { img1: sprayingPump, text: "Spraying Pump", price: "From 2000/-" },
-    { img1: rotavator, text: "Rotavator", price: "From 2000/-" }, 
+    { img1: rotavator, text: "Rotavator", price: "From 2000/-" },
     { img1: rotavator2, text: "Rotavator", price: "From 2000/-" },
   ];
   return (
@@ -196,7 +192,7 @@ export default function LandingPage() {
       {/* <ItemsCard items={items} /> */}
       {/* <HamburgerMenuItems /> */}
       <ItemCarousel items={carouselItems} style={true} />
-      
+
       <div id="howItWorks" className="mt-md-5 py-3">
         <div className="">
           <div className="text-center mb-2">
@@ -218,55 +214,89 @@ export default function LandingPage() {
         <div className="row mx-md-5 p-2">
           <div className="col-12 col-md-7">
             <div className="col-12 col-md-5 rounded my-auto">
+              <iframe
+                width="600"
+                height="450"
+                style={{ marginTop: "1%", borderRadius: "10px" }}
+                src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1"
+              ></iframe>
 
-            <iframe width="600" height="450" style={{marginTop:"1%", borderRadius:"10px"}}
-src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
-</iframe>
- 
-<div className={classes.root} style={{float:"right"}}>
-
-         <div className="row align-items-center">
-         <div className="photo">
-         <img src={local} alt="" className="avatar-img rounded" style={{marginLeft:"10px"}}></img>
-         </div>
-           <div className="content">
-             <h2>Support Local</h2>
-             <p>Buy Local. Sell Local. Support your local community of growers and farmers</p>
-           </div>
-         </div>
-         <div className="row align-items-center">
-         <div className="photo">
-         <img src={local} alt="" className="avatar-img rounded" style={{marginLeft:"10px"}}></img>
-         </div>
-           <div className="content">
-             <h2>Secure Transcation</h2>
-             <p>Pay securely through a number of digital payment options. Release payment to seller upon physical inspection of seed. Your personal information stays with just you</p>
-           </div>
-         </div>
-         <div className="img-txt">
-         <div className="row align-items-center">
-         <div className="photo">
-         <img src={local} alt="" className="avatar-img rounded" style={{marginLeft:"10px"}}></img>
-         </div>
-           <div className="content">
-             <h2>Quality Seed</h2>
-             <p>What you see is what you buy. We partner with Hannaford and Pacific Seeds to list treated and germination-tested seed on our marketplace</p>
-           </div>
-         </div>
-         </div>
-         <div className="img-txt">
-         <div className="row align-items-center">
-         <div className="photo">
-         <img src={local} alt="" className="avatar-img rounded" style={{marginLeft:"10px"}}></img>
-         </div>
-           <div className="content">
-             <h2>Verified Sellers</h2>
-             <p>Access a large and growing community of verified sellers in your region.</p>
-           </div>
-         </div>
-         </div>
-    </div>
-
+              <div className={classes.root} style={{ float: "right" }}>
+                <div className="row align-items-center">
+                  <div className="photo">
+                    <img
+                      src={local}
+                      alt=""
+                      className="avatar-img rounded"
+                      style={{ marginLeft: "10px" }}
+                    ></img>
+                  </div>
+                  <div className="content">
+                    <h2>Support Local</h2>
+                    <p>
+                      Buy Local. Sell Local. Support your local community of
+                      growers and farmers
+                    </p>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="photo">
+                    <img
+                      src={local}
+                      alt=""
+                      className="avatar-img rounded"
+                      style={{ marginLeft: "10px" }}
+                    ></img>
+                  </div>
+                  <div className="content">
+                    <h2>Secure Transcation</h2>
+                    <p>
+                      Pay securely through a number of digital payment options.
+                      Release payment to seller upon physical inspection of
+                      seed. Your personal information stays with just you
+                    </p>
+                  </div>
+                </div>
+                <div className="img-txt">
+                  <div className="row align-items-center">
+                    <div className="photo">
+                      <img
+                        src={local}
+                        alt=""
+                        className="avatar-img rounded"
+                        style={{ marginLeft: "10px" }}
+                      ></img>
+                    </div>
+                    <div className="content">
+                      <h2>Quality Seed</h2>
+                      <p>
+                        What you see is what you buy. We partner with Hannaford
+                        and Pacific Seeds to list treated and germination-tested
+                        seed on our marketplace
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="img-txt">
+                  <div className="row align-items-center">
+                    <div className="photo">
+                      <img
+                        src={local}
+                        alt=""
+                        className="avatar-img rounded"
+                        style={{ marginLeft: "10px" }}
+                      ></img>
+                    </div>
+                    <div className="content">
+                      <h2>Verified Sellers</h2>
+                      <p>
+                        Access a large and growing community of verified sellers
+                        in your region.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -289,7 +319,7 @@ src="https://www.youtube.com/embed/ez0_t22eTIM?autoplay=1&mute=1">
         </Toolbar>
       </AppBar>
       <ItemCarousel
-        items={trendingItemsCarousel} 
+        items={trendingItemsCarousel}
         header={"Trending Items"}
         style={true}
         col={true}
