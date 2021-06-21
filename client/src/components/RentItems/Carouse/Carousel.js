@@ -159,8 +159,9 @@ const images = [
   },
 ];
 
-const Body = ({ deviceType }) => {
+const Body = ({ products }) => {
   const classes = useStyles();
+  console.log("device type", products);
 
   return (
     <Fragment>
@@ -172,48 +173,49 @@ const Body = ({ deviceType }) => {
         <Carousel
           ssr
           partialVisbile
-          deviceType={deviceType}
+          // deviceType={deviceType}
           itemClass="image-item"
           responsive={responsive}
         >
-          {images.slice(0, 10).map((data) => {
-            return (
-              <Box style={{ height: 240 }}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.media}
-                    // image={
-                    //   "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
-                    // }
-                    image={data.image}
-                  />
-                  <CardContent className={classes.content}>
-                    <Typography
-                      className={"MuiTypography--heading"}
-                      variant={"h6"}
-                      gutterBottom
-                    >
-                      {data.name}
-                    </Typography>
-                    {/* <Typography
-                      className={"MuiTypography--subheading"}
-                      variant={"caption"}
-                    >
-                     ₹ {data.price}
-                    </Typography>
-                    <Divider className={classes.divider} light />
-                    {images.slice(0, 4).map((face) => (
-                      <Avatar
-                        className={classes.avatar}
-                        key={face}
-                        src={face}
-                      />
-                    ))} */}
-                  </CardContent>
-                </Card>
-              </Box>
-            );
-          })}
+          {products &&
+            products.slice(10, 22).map((data, index) => {
+              return (
+                <Box style={{ height: 260 }} key={index}>
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.media}
+                      image={
+                        "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
+                      }
+                      // image={data.image}
+                    />
+                    <CardContent className={classes.content}>
+                      <Typography
+                        className={"MuiTypography--heading"}
+                        variant={"h6"}
+                        gutterBottom
+                      >
+                        {data.product_name}
+                      </Typography>
+                      <Typography
+                        className={"MuiTypography--subheading"}
+                        variant={"caption"}
+                      >
+                        ₹ {data.product_price}
+                      </Typography>
+                      {/* <Divider className={classes.divider} light />
+                      {images.slice(0, 4).map((face) => (
+                        <Avatar
+                          className={classes.avatar}
+                          key={face}
+                          src={face}
+                        />
+                      ))} */}
+                    </CardContent>
+                  </Card>
+                </Box>
+              );
+            })}
         </Carousel>
       </section>
     </Fragment>

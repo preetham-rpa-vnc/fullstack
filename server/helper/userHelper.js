@@ -150,7 +150,7 @@ module.exports = {
   //           userData.password = await bcrypt.hash(userData.password, 10);
   //           db.get()
   //             .collection(collection.USER_COLLECTION)
-  //             .insertOne(userData)
+  //             .insertOne(userData) 
   //             .then((resp) => {
   //               console.log("response", resp.ops[0].username);
   //               resolve({
@@ -657,7 +657,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       pool.query(
         `SELECT * FROM login_users WHERE user_name = $1`,
-        [userName.first_name],
+        [userName.name],
         (err, result) => {
           if (result) {
             if (result.rowCount > 0) {
@@ -707,49 +707,43 @@ module.exports = {
               inner join product_detail pd on products.product_id = pd.product_id
               inner join manufacture mf on products.manufacture_id in (select mf.manufacture_id from manufacture
               where mf.manufacture_name in ('${brand}'))
-          ))`, (err, result) => {
-            console.log("result", result.rows[0].json_build_object.products);
-            console.log("err", err);
-            if (err) resolve(err)
-            resolve(result.rows[0].json_build_object.products)
-          }
+          ))`,
+        (err, result) => {
+          console.log("result", result.rows[0].json_build_object.products);
+          console.log("err", err);
+          if (err) resolve(err);
+          resolve(result.rows[0].json_build_object.products);
+        }
       );
     });
   },
 
-  // getUserLocation: () => {
-  //   return new Promise((resolve, reject) => {
-
-  //   })
-  // }
+  getSpecificItemData: (item) => {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `SELECT JSON_BUILD_OBJECT('products', (
+          SELECT JSON_AGG(JSON_BUILD_OBJECT(
+            'product_id', products.product_id, 
+            'product_model', product_model, 
+            'product_price', product_price,
+            'product_crops', (SELECT JSON_AGG(crop_name) FROM product_crops left join crops c on c.crop_id = product_crops.crop_id
+             WHERE product_crops.product_id = products.product_id),
+            'product_manufacturer',(SELECT manufacture_name FROM manufacture where manufacture.manufacture_id = products.manufacture_id),
+            'product_name',  pd.product_name, 
+            'pre_build', pd.product_prebuilt,
+            'product_usage', pd.product_use,
+            'product_description', pd.product_description
+            ))
+          FROM products left join product_detail pd on products.product_id = pd.product_id),
+            'product_crops', (SELECT JSON_AGG(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) FROM crops),
+            'product_manufacturer', (SELECT JSON_AGG(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) FROM manufacture))`,
+        (err, data) => {
+          console.log("@@@@@@@@ Data", data.rows[0].json_build_object.products);
+          console.log("@@@@@@@@ Eroor", err);
+          resolve(data.rows[0].json_build_object.products)
+        }
+        
+      );
+    });
+  },
 };
-
-// select json_build_object(
-
-//   'products',
-
-//   ( select json_agg(json_build_object(
-
-//   'product_id', products.product_id,
-
-//   'model', product_model, 'price', product_price,
-
-//   'crops', (select json_agg(crop_name) from product_crops left join crops c on c.crop_id = product_crops.crop_id where product_crops.product_id = products.product_id),
-
-//   'manuf',(select manufacture_name from manufacture where manufacture.manufacture_id = products.manufacture_id),
-
-//   'product_name',  pd.product_name,
-
-//   'pre_build', pd.product_prebuilt,
-
-//   'usage', pd.product_use,
-
-//   'description', pd.product_description)) from products
-
-//   left join product_detail pd on products.product_id = pd.product_id),
-
-//   'crops', (select json_agg(json_build_object('crop_id', crop_id, 'crop_name', crop_name)) from crops),
-
-//   'manuf', (select json_agg(json_build_object('manuf_id', manufacture_id, 'manuf_name', manufacture_name)) from manufacture)
-
-//     )

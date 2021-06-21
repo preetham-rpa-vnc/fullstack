@@ -21,7 +21,7 @@ import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 import { isAuth, signout } from "../../helper/authHelper";
 import Logo from "../../images/logo.png";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({ 
   iconName: {
     // textDecoration: blur,
     textDecoration: "solid",

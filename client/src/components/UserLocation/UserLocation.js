@@ -93,8 +93,8 @@ function UserLocation({ userDatas }) {
 
                 const userPlace = {
                   user_id: isAuth().user_profile_id,
-                  user_name: isAuth().first_name,
-                  user_mobile: isAuth().user_mobile,
+                  user_name: isAuth().name,
+                  user_mobile: isAuth().mobile,
                   latitude: place.geometry.lat,
                   longitude: place.geometry.lng,
                   status: data.status.code,

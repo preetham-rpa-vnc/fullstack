@@ -14,7 +14,7 @@ const pool = new Pool({
     user: "testpf",
     password: "123",
     database: "pfdb",
-    host: "localhost",
+    host: "localhost", 
     port: 5432,
   }); 
 // const pool = new Pool({

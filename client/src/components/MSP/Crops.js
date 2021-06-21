@@ -12,7 +12,7 @@ export class Crops extends Component {
   }
   getCrops = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API_URI}/getallcrops`);
+      const res =  axios.get(`${process.env.REACT_APP_API_URI}/getallcrops`);
       this.setState({ cropDetails: res.data });
     } catch (error) {
       console.error(error.message);
@@ -20,7 +20,7 @@ export class Crops extends Component {
   };
   onDelete = async Slno => {
     try {
-      await axios.delete(`/api/crops/${Slno}`);
+       axios.delete(`/api/crops/${Slno}`);
       this.getCrops();
     } catch (err) {
       console.log(err);

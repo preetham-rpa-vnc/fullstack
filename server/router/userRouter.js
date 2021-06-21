@@ -1,4 +1,3 @@
-const { response } = require("express");
 const userHelper = require("../helper/userHelper");
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
@@ -30,12 +29,6 @@ router.get("/getsimileritems", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
-
-// router.get("/getallcrops", (req, res) => {
-//   userHelper.getAllCrop().then((allCrop) => {
-//     res.json(allCrop);
-//   });
-// });
 
 router.get("/getselectedcrops", (req, res) => {
   const items = req.query.selectedCrop;
@@ -125,7 +118,7 @@ router.post("/verifyotp", (req, res) => {
   const { otp, mobile } = req.body;
 
   client.verify
-    .services(serviceID)
+    .services(serviceID) 
     .verificationChecks.create({
       to: `+91${mobile}`,
       code: otp,
@@ -208,18 +201,25 @@ router.get("/getuserlocation", (req, res) => {
 });
 
 router.get("/getbrands", (req, res) => {
-  userHelper.getAllBrands().then(response => {
-    res.json(response)
-  })
-})
+  userHelper.getAllBrands().then((response) => {
+    res.json(response);
+  });
+});
 
 router.get("/getbranditems", (req, res) => {
-  const { brand } = req.query
+  const { brand } = req.query;
   console.log("req.query", brand);
-  userHelper.getBrandItems(brand).then(response => {
+  userHelper.getBrandItems(brand).then((response) => {
     // console.log(response);
-    res.json(response)
-  })
-})
+    res.json(response);
+  });
+});
+
+router.get("/getspecificitemdata", (req, res) => {
+  const item = req.query;
+  userHelper.getSpecificItemData(item).then((response) => {
+    res.json(response);
+  });
+});
 
 module.exports = router;

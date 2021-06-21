@@ -14,15 +14,15 @@ function Weather({ weather }) {
   console.log("@@@@@@@@@@@@@@@22", weather);
   const classes = useStyle();
 
-  const { city, list, forecsatFiveDays } = weather;
+  const { city, list, dailyData } = weather;
   const liveWeather = list;
   console.log("live weather", liveWeather);
   console.log("city", city);
  
   return (
     <div>
-      {forecsatFiveDays &&
-        forecsatFiveDays.slice(0, 1).map((day, index) => (
+      {dailyData &&
+        dailyData.slice(0, 1).map((day, index) => (
           <Grid container spacing={1}>
             <Grid item xs={7}>
               <Paper elevation={3} className={classes.paper}>

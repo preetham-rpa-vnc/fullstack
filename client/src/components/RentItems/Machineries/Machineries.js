@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Box,
   Card,
   CardContent,
   CardMedia,
@@ -8,6 +9,9 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import LinkRoundedIcon from "@material-ui/icons/LinkRounded";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import { useHistory } from "react-router";
 
 const images = [
   {
@@ -83,7 +87,8 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     textAlign: "left",
-    padding: theme.spacing.unit * 3,
+    // padding: theme.spacing.unit * 3,
+    padding: "24px 24px 10px 24px",
   },
   divider: {
     margin: `${theme.spacing.unit * 2}px 0`,
@@ -94,10 +99,22 @@ const useStyles = makeStyles((theme) => ({
   subheading: {
     lineHeight: 1.8,
   },
+  model: {
+    width: 180,
+    // display: inlineBlock;
+    overflow: "hidden !important",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+  },
 }));
 
-function Machineries() {
+function Machineries({ products }) {
   const classes = useStyles();
+  const history = useHistory();
+
+  const handleClick = (product_id) => {
+    history.push(`/product?id=${product_id}`);
+  };
 
   return (
     <>
@@ -108,15 +125,23 @@ function Machineries() {
       </Grid>
 
       <Grid item container md={12} spacing={2} style={{ marginTop: 10 }}>
-        {images &&
-          images.slice(0, 10).map((data, index) => (
+        {products &&
+          products.slice(0, 10).map((data, index) => (
             <Grid item xs={12} sm={4} md={3} key={index}>
               <Card
                 className={classes.card}
-                // onClick={() => handleClick(data.product_id)}
+                onClick={() => handleClick(data.product_id)}
               >
-                <CardMedia className={classes.media} image={data.image} />
-                <CardContent className={classes.content}>
+                <CardMedia
+                  className={classes.media}
+                  image={
+                    "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
+                  }
+                />
+                <CardContent
+                  className={classes.content}
+                  style={{ marginBottom: "-10px" }}
+                >
                   <Typography
                     className={"MuiTypography--heading"}
                     variant="h6"
@@ -130,17 +155,22 @@ function Machineries() {
                   >
                     <Grid container md={12} direction="column">
                       <Grid item>
-                        <Typography variant="subtitle1">
-                          {data.product_manufacturer}
-                        </Typography>
-                      </Grid>
-                      <Grid item>
                         <Typography
                           variant="subtitle1"
                           className={classes.model}
                         >
-                          {data.product_model}
+                          {data.product_manufacturer}
                         </Typography>
+                      </Grid>
+                      <Grid item textOverflow="ellipsis">
+                        <Box>
+                          <Typography
+                            variant="subtitle1"
+                            className={classes.model}
+                          >
+                            {data.product_model}
+                          </Typography>
+                        </Box>
                       </Grid>
                       <Grid item>
                         <Typography variant="subtitle1">
@@ -151,11 +181,11 @@ function Machineries() {
                   </Typography>
                   <Divider className={classes.divider} light />
                   <Grid md={12} container>
-                    <Grid iem md={6}>
-                      Web site
+                    <Grid iem md={6} style={{ textAlign: "center" }}>
+                      <LinkRoundedIcon style={{ color: "#007eff" }} />
                     </Grid>
-                    <Grid iem md={6}>
-                      YouTube Link
+                    <Grid iem md={6} style={{ textAlign: "center" }}>
+                      <YouTubeIcon style={{ color: "#d40404" }} />
                     </Grid>
                   </Grid>
                 </CardContent>

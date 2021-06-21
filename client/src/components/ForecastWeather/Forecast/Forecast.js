@@ -23,7 +23,7 @@ function Forecast({ foreCast }) {
                       {moment(newDate).format("dddd")}
                     </Typography>
                   </Grid>
-                  <Grid item>
+                  <Grid item> 
                     <img
                       style={{ margin: "-40px" }}
                       src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}

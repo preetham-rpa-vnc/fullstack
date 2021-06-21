@@ -29,62 +29,6 @@ import local from "../../Assets/1.png";
 // import sample from "../../Assets/sample.mp4";
 import { Typography } from "@material-ui/core";
 
-// export default function LandingPage() {
-//   let items = [
-//     {
-//       heading: "Top Handpicked item for you",
-//       images: [
-//         { img1: tractor3, text: "New Equipments" },
-//         { img1: tractorImg, text: "Tractor" },
-//         { img1: tractor2, text: "New Equipments" },
-//         { img1: seedImg, text: "Seeds" },
-//       ],
-//     },
-//     {
-//       heading: "Top Handpicked item for you",
-//       images: [
-//         { img1: tractor3, text: "New Equipments" },
-//         { img1: tractorImg, text: "Tractor" },
-//         { img1: tractor2, text: "New Equipments" },
-//         { img1: seedImg2, text: "Seeds" },
-//       ],
-//     },
-//     {
-//       heading: "Top Handpicked item for you",
-//       images: [
-//         { img1: tractor3, text: "New Equipments" },
-//         { img1: tractorImg, text: "Tractor" },
-//         { img1: tractor2, text: "New Equipments" },
-//         { img1: seedImg, text: "Seeds" },
-//       ],
-//     },
-//     {
-//       heading: "Top Handpicked item for you",
-//       images: [
-//         { img1: tractor3, text: "New Equipments" },
-//         { img1: tractorImg, text: "Tractor" },
-//         { img1: tractor2, text: "New Equipments" },
-//         { img1: seedImg2, text: "Seeds" },
-//       ],
-//     },
-//   ];
-//   let items2 = [
-//     { img1: seedImg, text: "Seed" },
-//     { img1: seedImg2, text: "Seed" },
-//     { img1: fertilizer, text: "Fertilizer" },
-//     { img1: fertilizer, text: "Fertilizer" },
-//     { img1: rotavator, text: "Rotavator" },
-//     { img1: rotavator2, text: "Rotavator" },
-//   ];
-//   return (
-//     <div style={{ backgroundColor: "#F1FFF9" }}>
-//       <SearchCard />
-//       <SeedItems items={items2} />
-//       <ItemsCard items={items} />
-//       {/* <HamburgerMenuItems /> */}
-//     </div>
-//   );
-// }
 const useStyles = makeStyles({
   root: {
     maxWidth: "600px",
@@ -102,48 +46,8 @@ const useStyles = makeStyles({
 export default function LandingPage() {
   // let newsImg = [{ img1: latestNews }, { img1: latestNews2 }];
   const classes = useStyles();
-  // let items = [
-  //   {
-  //     heading: "Top Handpicked item for you",
-  //     images: [
-  //       { img1: tractor3, text: "New Equipments" },
-  //       { img1: tractorImg, text: "Tractor" },
-  //       { img1: tractor2, text: "New Equipments" },
-  //       { img1: seedImg, text: "Seeds" },
-  //     ],
-  //   },
-  //   {
-  //     heading: "Farm Essentials",
-  //     images: [
-  //       { img1: tractor3, text: "New Equipments" },
-  //       { img1: tractorImg, text: "Tractor" },
-  //       { img1: tractor2, text: "New Equipments" },
-  //       { img1: seedImg2, text: "Seeds" },
-  //     ],
-  //   },
-  // {
-  //   heading: "Top Handpicked item for you",
-  //   images: [
-  //     { img1: tractor3, text: "New Equipments" },
-  //     { img1: tractorImg, text: "Tractor" },
-  //     { img1: tractor2, text: "New Equipments" },
-  //     { img1: seedImg, text: "Seeds" },
-  //   ],
-  // },
-  //   {
-  //     heading: "Popular Categories",
-  //     images: [
-  //       { img1: tractor3, text: "New Equipments" },
-  //       { img1: tractorImg, text: "Tractor" },
-  //       { img1: tractor2, text: "New Equipments" },
-  //       { img1: seedImg2, text: "Seeds" },
-  //     ],
-  //   },
-  // ];
   let items2 = [
     { img1: seedImg, text: "Seed" },
-
-    // { img1: fertilizer, text: "Fertilizer" },
     { img1: fertilizer, text: "Fertilizer" },
     { img1: rotavator, text: "Machinary" },
     { img1: rotavator2, text: "Buy Or Rent" },
@@ -156,6 +60,7 @@ export default function LandingPage() {
     { img1: fertilizer, text: "Fertilizer" },
     { img1: rotavator, text: "Rotavator" },
     { img1: rotavator2, text: "Rotavator" },
+    ``,
   ];
   let bestItemCarousel = [
     { img1: rotavator2 },
@@ -182,15 +87,7 @@ export default function LandingPage() {
   return (
     <div style={{ backgroundColor: "#F1FFF9" }}>
       <SearchCard />
-      {/* <ItemCarousel items={newsImg} /> */}
       <SeedItems items={items2} />
-      {/* <ItemCarousel
-        items={bestItemCarousel}
-        header={"Best Sellers"}
-        style={true}
-      /> */}
-      {/* <ItemsCard items={items} /> */}
-      {/* <HamburgerMenuItems /> */}
       <ItemCarousel items={carouselItems} style={true} />
 
       <div id="howItWorks" className="mt-md-5 py-3">

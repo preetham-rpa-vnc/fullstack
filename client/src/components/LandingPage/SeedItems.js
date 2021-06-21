@@ -14,7 +14,7 @@ export default function SeedItems(props) {
               <div
                 className="row"
                 style={{ textAlign: "center", cursor: "pointer" }}
-                onClick={() => history.push(`/rent`)}
+                onClick={() => history.push(`/rent?item=${value.text}`)}
               >
                 <img className="seed-item-img" src={value.img1} />
                 <p className="seed-img-subtext" style={{ textAlign: "center" }}>

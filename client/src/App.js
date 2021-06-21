@@ -31,10 +31,10 @@ import RentItems from "./components/RentItems/RentItems";
 import TestTwo from "./components/LandingPage/TestTwo";
 // function App() {
 // import ItemDetails from './components/ItemDetails/ItemDetails';
-function App() { 
-  return ( 
+function App() {
+  return (
     <Router>
-      <Home /> 
+      <Home />
       <Route exact path="/test" component={Test} />
       <Route exact path="/test2" component={TestTwo} />
       <Route exact path="/" component={LandingPage} />

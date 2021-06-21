@@ -5,14 +5,13 @@ import {
   CardMedia,
   Divider,
   Grid,
-  Icon,
   Typography,
+  Box,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ArrowRightAltRoundedIcon from "@material-ui/icons/ArrowRightAltRounded";
-import KeyboardReturnRoundedIcon from "@material-ui/icons/KeyboardReturnRounded";
-import TrendingFlatRoundedIcon from "@material-ui/icons/TrendingFlatRounded";
 import KeyboardBackspaceRoundedIcon from "@material-ui/icons/KeyboardBackspaceRounded";
+import LinkRoundedIcon from "@material-ui/icons/LinkRounded";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 
 const useStyles = makeStyles((theme) => ({
   divider: {
@@ -61,9 +60,16 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 40,
     cursor: "pointer",
   },
+  model: {
+    width: 180,
+    // display: inlineBlock;
+    overflow: "hidden !important",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+  },
 }));
 
-function LoadMore({ changeDisplay }) {
+function LoadMore({ changeDisplay, products }) {
   const classes = useStyles();
 
   return (
@@ -99,15 +105,23 @@ function LoadMore({ changeDisplay }) {
           </Grid>
 
           <Grid item container spacing={2}>
-            {images &&
-              images.slice(0, 10).map((data, index) => (
-                <Grid item xs={12} sm={4} md={2} key={index}>
+            {products &&
+              products.slice(0, 90).map((data, index) => (
+                <Grid item xs={12} sm={4} md={3} key={index}>
                   <Card
                     className={classes.card}
                     // onClick={() => handleClick(data.product_id)}
                   >
-                    <CardMedia className={classes.media} image={data.image} />
-                    <CardContent className={classes.content}>
+                    <CardMedia
+                      className={classes.media}
+                      image={
+                        "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
+                      }
+                    />
+                    <CardContent
+                      className={classes.content}
+                      style={{ marginBottom: "-10px" }}
+                    >
                       <Typography
                         className={"MuiTypography--heading"}
                         variant="h6"
@@ -121,17 +135,22 @@ function LoadMore({ changeDisplay }) {
                       >
                         <Grid container md={12} direction="column">
                           <Grid item>
-                            <Typography variant="subtitle1">
-                              {data.product_manufacturer}
-                            </Typography>
-                          </Grid>
-                          <Grid item>
                             <Typography
                               variant="subtitle1"
                               className={classes.model}
                             >
-                              {data.product_model}
+                              {data.product_manufacturer}
                             </Typography>
+                          </Grid>
+                          <Grid item textOverflow="ellipsis">
+                            <Box>
+                              <Typography
+                                variant="subtitle1"
+                                className={classes.model}
+                              >
+                                {data.product_model}
+                              </Typography>
+                            </Box>
                           </Grid>
                           <Grid item>
                             <Typography variant="subtitle1">
@@ -142,11 +161,11 @@ function LoadMore({ changeDisplay }) {
                       </Typography>
                       <Divider className={classes.divider} light />
                       <Grid md={12} container>
-                        <Grid iem md={6}>
-                          Web site
+                        <Grid iem md={6} style={{ textAlign: "center" }}>
+                          <LinkRoundedIcon style={{ color: "#007eff" }} />
                         </Grid>
-                        <Grid iem md={6}>
-                          YouTube Link
+                        <Grid iem md={6} style={{ textAlign: "center" }}>
+                          <YouTubeIcon style={{ color: "#d40404" }} />
                         </Grid>
                       </Grid>
                     </CardContent>

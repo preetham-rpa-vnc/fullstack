@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import { Box, Button, Grid, Typography } from "@material-ui/core";
 import {
   createMuiTheme,
@@ -11,6 +11,8 @@ import Carousel from "./Carouse/Carousel";
 import Machineries from "./Machineries/Machineries";
 import { green, purple, red } from "@material-ui/core/colors";
 import LoadMore from "./LoadMore/LoadMore";
+import queryString from "query-string";
+import Axios from "axios";
 // import Carousel from "react-multi-carousel";
 
 const useStyles = makeStyles((theme) => ({
@@ -32,10 +34,23 @@ const theme = createMuiTheme({
   },
 });
 
-const RentItems = () => {
+const RentItems = ({ location }) => {
   const classes = useStyles();
   const [commonItem, setCommonItem] = useState("block");
   const [loadMore, setLoadMore] = useState("none");
+  const [products, setAllProducts] = useState([]);
+
+  const { item } = queryString.parse(location.search);
+
+  useEffect(() => {
+    Axios.get(`${process.env.REACT_APP_API_URI}/getspecificitemdata`, {
+      params: {
+        item,
+      },
+    }).then((result) => {
+      setAllProducts(result.data);
+    });
+  }, []);
 
   const handleCommonItem = () => {
     setCommonItem("none");
@@ -64,14 +79,13 @@ const RentItems = () => {
             // spacing={0}
           >
             <Grid container direction="column">
-              
               <Grid item>
                 <Typography className={classes.headingOne}>
                   Near Bengaluru
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={12} md={12}>
-                <Carousel />
+                <Carousel products={products} />
               </Grid>
             </Grid>
 
@@ -81,7 +95,7 @@ const RentItems = () => {
               // spacing={0}
               style={{ justifyContent: "center" }}
             >
-              <Machineries />
+              <Machineries products={products} />
             </Grid>
           </Grid>
         </Grid>
@@ -100,7 +114,7 @@ const RentItems = () => {
         </Box>
       </Box>
       <Box display={loadMore}>
-        <LoadMore changeDisplay={changeDisplay} />
+        <LoadMore changeDisplay={changeDisplay} products={products} />
       </Box>
     </>
   );
